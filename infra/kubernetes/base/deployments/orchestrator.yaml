@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orchestrator
+  namespace: vietcropdoctor
+  labels:
+    app: orchestrator
+    app.kubernetes.io/name: orchestrator
+    app.kubernetes.io/component: reasoning
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: orchestrator
+  template:
+    metadata:
+      labels:
+        app: orchestrator
+        app.kubernetes.io/name: orchestrator
+    spec:
+      containers:
+        - name: orchestrator
+          image: ghcr.io/vietcropdoctor/orchestrator:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8006
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: orchestrator-config
+          env:
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: vietcropdoctor-secrets
+                  key: JWT_SECRET
+          resources:
+            requests:
+              cpu: 250m
+              memory: 512Mi
+            limits:
+              cpu: "1"
+              memory: 2Gi
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8006
+            initialDelaySeconds: 30
+            periodSeconds: 30
+            timeoutSeconds: 10
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8006
+            initialDelaySeconds: 20
+            periodSeconds: 10
+            timeoutSeconds: 10
+            failureThreshold: 3

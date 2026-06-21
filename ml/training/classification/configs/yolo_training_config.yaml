@@ -1,0 +1,55 @@
+dataset:
+  dir: "data/dataset"
+  train: "data/dataset/train"
+  val: "data/dataset/val"
+  test: "data/dataset/test"
+  num_classes: 25
+  image_size: 224
+
+training:
+  epochs: 50
+  batch_size: 32
+  num_workers: 4
+  seed: 42
+  unfreeze_epoch: 10
+
+compare:
+  epochs: 10
+  lr: 0.0001
+
+optimizer:
+  name: "adamw"
+  lr: 0.001
+  weight_decay: 0.0001
+
+scheduler:
+  name: "cosine"
+  warmup_epochs: 3
+  min_lr: 0.000001
+
+model:
+  backbone: "yolov8s-cls"
+  model_path: "yolov8s-cls.pt"
+  pretrained: true
+  dropout: 0.3
+
+augmentation:
+  min_samples: 500
+  random_horizontal_flip: true
+  random_vertical_flip: false
+  random_rotation: 15
+  color_jitter:
+    brightness: 0.2
+    contrast: 0.2
+    saturation: 0.2
+  normalize:
+    mean: [0.485, 0.456, 0.406]
+    std: [0.229, 0.224, 0.225]
+
+output:
+  results_dir: "cv/results/yolo"
+  models_dir: "cv/results/yolo/models"
+  checkpoint_dir: "cv/results/yolo/checkpoints"
+  log_dir: "cv/results/yolo/logs"
+  save_best_only: true
+  early_stopping_patience: 10

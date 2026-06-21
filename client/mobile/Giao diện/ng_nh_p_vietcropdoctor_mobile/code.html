@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>VietCropDoctor - Đăng nhập</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#e3eadf",
+                    "tertiary": "#a72d51",
+                    "inverse-on-surface": "#ecf3e7",
+                    "surface-container": "#e9f0e5",
+                    "secondary-fixed-dim": "#ffb77d",
+                    "on-secondary-fixed": "#2f1500",
+                    "primary": "#006b2c",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#663500",
+                    "surface-container-highest": "#dde5d9",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#6e3900",
+                    "tertiary-fixed": "#ffd9de",
+                    "tertiary-container": "#c74668",
+                    "surface-dim": "#d5dcd1",
+                    "error": "#ba1a1a",
+                    "background": "#f4fcf0",
+                    "secondary": "#904d00",
+                    "on-primary-container": "#f7fff2",
+                    "on-background": "#171d16",
+                    "surface-container-low": "#eff6ea",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#62df7d",
+                    "surface-bright": "#f4fcf0",
+                    "surface-variant": "#dde5d9",
+                    "surface": "#f4fcf0",
+                    "on-primary-fixed-variant": "#005320",
+                    "secondary-container": "#fe932c",
+                    "secondary-fixed": "#ffdcc3",
+                    "on-tertiary-fixed": "#3f0016",
+                    "on-tertiary-fixed-variant": "#8a143c",
+                    "inverse-primary": "#62df7d",
+                    "tertiary-fixed-dim": "#ffb2bf",
+                    "outline-variant": "#bdcaba",
+                    "primary-fixed": "#7ffc97",
+                    "on-surface": "#171d16",
+                    "surface-tint": "#006e2d",
+                    "primary-container": "#00873a",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#2b322b",
+                    "on-tertiary-container": "#fffbff",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#3e4a3d",
+                    "on-primary-fixed": "#002109",
+                    "outline": "#6e7b6c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "component-gap": "12px",
+                    "container-padding-desktop": "32px",
+                    "container-padding-mobile": "16px",
+                    "unit": "8px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "title-md": ["Inter"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4fcf0;
+            overflow-x: hidden;
+        }
+        .login-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col justify-center items-center px-container-padding-mobile">
+<!-- Decorative Elements -->
+<div class="fixed top-[-10%] left-[-10%] w-64 h-64 bg-primary opacity-5 rounded-full blur-3xl"></div>
+<div class="fixed bottom-[-5%] right-[-5%] w-80 h-80 bg-secondary opacity-5 rounded-full blur-3xl"></div>
+<!-- Main Login Container -->
+<div class="w-full max-w-[400px] flex flex-col items-center">
+<!-- Logo & Branding Section -->
+<div class="mb-10 text-center animate-float">
+<img alt="VietCropDoctor Logo" class="w-24 h-24 object-contain mx-auto mb-4 drop-shadow-sm" src="https://lh3.googleusercontent.com/aida/ADBb0ui_cgSsoIUY6vVa1x8QaNIHhsjlTXACNqyXNZ5l7LPSUoyF4z8-zWMSFhzkkmAIvdRRQqFT5AT5vbM-CBBqHWSrKWsMhoYtOi6nN2yz1_VMKHJg7JOwA05IWU9sOE3a9ukKpaSqCodJHJMlWnBOcTPr29KuhhL5iNZcwcyFGzpMUjbbWEScRQA2-LWBERf6QixOYLGF-k_Ap8TPGiclWP5SCf3znrwr1hillftA_8R1b9YQGdLaTRFBAMw"/>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">
+                VietCropDoctor
+            </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 opacity-80">
+                Chuyên gia chẩn đoán cây trồng
+            </p>
+</div>
+<!-- Form Section -->
+<div class="w-full bg-surface-container-lowest border border-outline-variant p-gutter rounded-xl shadow-sm">
+<form class="space-y-6" id="loginForm">
+<!-- Input Group: Email/Phone -->
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1" for="identity">
+                        Email hoặc Số điện thoại
+                    </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[20px]">person</span>
+<input class="w-full h-12 pl-10 pr-4 bg-surface border border-outline-variant rounded-lg font-body-md text-body-md focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" id="identity" name="identity" placeholder="Nhập tài khoản" type="text"/>
+</div>
+</div>
+<!-- Input Group: Password -->
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1" for="password">
+                        Mật khẩu
+                    </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[20px]">lock</span>
+<input class="w-full h-12 pl-10 pr-10 bg-surface border border-outline-variant rounded-lg font-body-md text-body-md focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" id="password" name="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-3 flex items-center justify-center text-outline hover:text-on-surface-variant" onclick="togglePassword()" type="button">
+<span class="material-symbols-outlined text-[20px]" id="eyeIcon">visibility</span>
+</button>
+</div>
+<div class="flex justify-end pt-1">
+<a class="font-label-sm text-label-sm text-primary hover:underline" href="#">Quên mật khẩu?</a>
+</div>
+</div>
+<!-- Submit Button -->
+<button class="w-full h-12 bg-primary text-on-primary font-title-md text-title-md rounded-lg shadow-sm hover:brightness-110 active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2" type="submit">
+                    Đăng nhập
+                    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</form>
+<!-- Social Login Divider -->
+<div class="relative my-8 flex items-center">
+<div class="flex-grow border-t border-outline-variant"></div>
+<span class="mx-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Hoặc</span>
+<div class="flex-grow border-t border-outline-variant"></div>
+</div>
+<!-- Social Buttons -->
+<div class="grid grid-cols-2 gap-component-gap">
+<button class="flex items-center justify-center h-12 border border-outline-variant rounded-lg hover:bg-surface transition-colors">
+<img alt="Google" class="w-5 h-5 mr-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVFH_s4fJ97hije___i5v8ESBfRPTA4JXslwYply6Ky2Qww0h7wmVjQvyErb2wkygoIhcrdbbwD8kgZUPtWR496bFfCxmaZdgmxyNdjLnWJAqAVDbqyXRia9vGd_UAzml398ki7rYcmmuzYDz57V_ndCazhyE97e-iyLnJq2WlA6v-c5cj2OU2WjhRwC1lYXn3ClarIqHEjxMh17Chnj2Jvxcf7xnTs-7t4byvLq63H3fXxGwP0nTYlYhKknDq-_TsJxzG9Z2kK2Da"/>
+<span class="font-label-md text-label-md">Google</span>
+</button>
+<button class="flex items-center justify-center h-12 border border-outline-variant rounded-lg hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-primary mr-2" data-weight="fill">social_leaderboard</span>
+<span class="font-label-md text-label-md">Facebook</span>
+</button>
+</div>
+</div>
+<!-- Footer Links -->
+<div class="mt-8 text-center space-y-4">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Chưa có tài khoản? 
+                <a class="text-primary font-bold hover:underline ml-1" href="#">Đăng ký ngay</a>
+</p>
+<div class="flex items-center justify-center gap-4 text-outline font-label-sm text-label-sm">
+<a class="hover:text-on-surface-variant transition-colors" href="#">Điều khoản</a>
+<span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+<a class="hover:text-on-surface-variant transition-colors" href="#">Bảo mật</a>
+<span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+<a class="hover:text-on-surface-variant transition-colors" href="#">Trợ giúp</a>
+</div>
+</div>
+</div>
+<!-- Background Pattern -->
+<div class="fixed inset-0 pointer-events-none z-[-1] opacity-5 overflow-hidden">
+<div class="absolute inset-0" style="background-image: radial-gradient(#006b2c 1px, transparent 1px); background-size: 32px 32px;"></div>
+</div>
+<script>
+        function togglePassword() {
+            const pwdInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon');
+            if (pwdInput.type === 'password') {
+                pwdInput.type = 'text';
+                eyeIcon.textContent = 'visibility_off';
+            } else {
+                pwdInput.type = 'password';
+                eyeIcon.textContent = 'visibility';
+            }
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Mock interaction
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span>';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = originalContent;
+                btn.disabled = false;
+                alert('Chức năng đang được phát triển. Vui lòng quay lại sau!');
+            }, 1500);
+        });
+    </script>
+</body></html>

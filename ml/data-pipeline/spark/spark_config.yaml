@@ -1,0 +1,24 @@
+spark:
+  master: "local[*]"
+  app_name: "VietCropDoctor-Preprocessing"
+  driver_memory: "4g"
+  executor_memory: "2g"
+  executor_cores: 2
+  log_level: "WARN"
+
+paths:
+  raw_dataset:    "data/dataset"
+  processed_dir:  "data/processed"
+  stats_output:   "data/stats"
+
+preprocessing:
+  target_size: [224, 224]
+  normalize_mean: [0.485, 0.456, 0.406]
+  normalize_std:  [0.229, 0.224, 0.225]
+  augmentation:
+    horizontal_flip: true
+    vertical_flip:   false
+    rotation_degrees: 15
+    brightness_jitter: 0.2
+    contrast_jitter:   0.2
+  output_format: "parquet"   # parquet for feature store, jpeg for raw images

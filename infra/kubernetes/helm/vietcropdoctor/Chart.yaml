@@ -1,0 +1,14 @@
+apiVersion: v2
+name: vietcropdoctor
+version: 0.1.0
+appVersion: "1.0.0"
+description: VietCropDoctor — AI-powered plant disease detection for Vietnamese crops
+type: application
+keywords:
+  - agriculture
+  - ai
+  - rag
+  - plant-disease
+home: https://github.com/vietcropdoctor
+maintainers:
+  - name: VietCropDoctor Team

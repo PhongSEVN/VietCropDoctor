@@ -1,0 +1,65 @@
+{{- if .Values.ingress.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "vietcropdoctor.fullname" . }}
+  namespace: {{ include "vietcropdoctor.namespace" . }}
+  labels:
+    {{- include "vietcropdoctor.labels" (dict "svcName" "ingress" "root" $) | nindent 4 }}
+  {{- with .Values.ingress.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  ingressClassName: {{ .Values.ingress.className | default "nginx" }}
+  {{- if .Values.ingress.tls }}
+  tls:
+    {{- toYaml .Values.ingress.tls | nindent 4 }}
+  {{- end }}
+  rules:
+    - host: {{ .Values.ingress.host }}
+      http:
+        paths:
+          - path: /predict
+            pathType: Prefix
+            backend:
+              service:
+                name: vision-ai
+                port:
+                  number: 8001
+          - path: /diseases
+            pathType: Prefix
+            backend:
+              service:
+                name: vision-ai
+                port:
+                  number: 8001
+          - path: /query
+            pathType: Prefix
+            backend:
+              service:
+                name: rag-engine
+                port:
+                  number: 8002
+          - path: /chat
+            pathType: Prefix
+            backend:
+              service:
+                name: rag-engine
+                port:
+                  number: 8002
+          - path: /analytics
+            pathType: Prefix
+            backend:
+              service:
+                name: analytics
+                port:
+                  number: 8004
+          - path: /health
+            pathType: Prefix
+            backend:
+              service:
+                name: vision-ai
+                port:
+                  number: 8001
+{{- end }}

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vision-ai
+  namespace: vietcropdoctor
+  labels:
+    app: vision-ai
+spec:
+  type: ClusterIP
+  selector:
+    app: vision-ai
+  ports:
+    - name: http
+      port: 8001
+      targetPort: 8001
+      protocol: TCP

@@ -1,0 +1,45 @@
+# Alertmanager — receives firing alerts from Prometheus, groups/deduplicates them,
+# and routes them to receivers. View live alerts at http://localhost:9093.
+#
+# With no delivery channel configured, alerts are still grouped and visible in the
+# Alertmanager UI — enough to demo the alerting pipeline. To deliver for real,
+# uncomment an *_configs block under a receiver (email / Slack / webhook).
+global:
+  resolve_timeout: 5m
+
+route:
+  receiver: default
+  group_by: ['alertname', 'service']
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 3h
+  routes:
+    # Critical alerts get their own (faster-repeating) route.
+    - matchers:
+        - 'severity="critical"'
+      receiver: critical
+      repeat_interval: 1h
+
+receivers:
+  - name: default
+    # No channel → alerts visible in the UI only. Example channel:
+    # webhook_configs:
+    #   - url: "http://host.docker.internal:5001/alerts"
+
+  - name: critical
+    # TODO: real delivery for critical alerts. Examples:
+    # slack_configs:
+    #   - api_url: "https://hooks.slack.com/services/XXX/YYY/ZZZ"
+    #     channel: "#alerts"
+    # email_configs:
+    #   - to: "ops@example.com"
+    #     from: "alertmanager@vietcropdoctor.local"
+    #     smarthost: "smtp.example.com:587"
+    #     auth_username: "alertmanager@vietcropdoctor.local"
+    #     auth_password: "${SMTP_PASSWORD}"
+
+# Suppress warning-level alerts for a service while a critical one is already firing.
+inhibit_rules:
+  - source_matchers: ['severity="critical"']
+    target_matchers: ['severity="warning"']
+    equal: ['alertname', 'service']

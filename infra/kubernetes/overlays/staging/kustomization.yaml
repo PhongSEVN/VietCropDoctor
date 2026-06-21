@@ -1,0 +1,53 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: vietcropdoctor
+
+resources:
+  - ../../base
+
+# Staging: 1 replica each (enough for integration testing, cheaper)
+patches:
+  - patch: |-
+      - op: replace
+        path: /spec/replicas
+        value: 1
+    target:
+      kind: Deployment
+      name: rag-engine
+
+  - patch: |-
+      - op: replace
+        path: /spec/replicas
+        value: 1
+    target:
+      kind: Deployment
+      name: analytics
+
+  - patch: |-
+      - op: replace
+        path: /spec/replicas
+        value: 1
+    target:
+      kind: Deployment
+      name: gateway
+
+  # Point Ingress at the staging hostname
+  - patch: |-
+      - op: replace
+        path: /spec/rules/0/host
+        value: api-staging.vietcropdoctor.vn
+    target:
+      kind: Ingress
+      name: vietcropdoctor
+
+# Use staging image tags
+images:
+  - name: ghcr.io/vietcropdoctor/vision-ai
+    newTag: staging
+  - name: ghcr.io/vietcropdoctor/rag-engine
+    newTag: staging
+  - name: ghcr.io/vietcropdoctor/analytics
+    newTag: staging
+  - name: ghcr.io/vietcropdoctor/gateway
+    newTag: staging

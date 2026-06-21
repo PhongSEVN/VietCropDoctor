@@ -1,0 +1,132 @@
+name: Weekly Model Quality Check
+
+# Run every Monday at 06:00 UTC, after the weekly retrain DAG (Sunday 02:00 UTC).
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  # Allow manual trigger for ad-hoc quality audits
+  workflow_dispatch:
+    inputs:
+      model_name:
+        description: "MLflow registered model name"
+        default: "VietCropDoctor-Classifier"
+        required: false
+
+permissions:
+  contents: read
+  issues: write   # needed for gh issue create
+
+jobs:
+  evaluate:
+    name: Evaluate production model
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: pip
+
+      - name: Install evaluation dependencies
+        run: |
+          pip install --quiet \
+            mlflow>=2.11.0 \
+            torch torchvision \
+            scikit-learn \
+            dvc
+
+      - name: Pull held-out test set from DVC
+        env:
+          # Configure whichever remote your DVC uses.
+          # For S3: set AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY
+          # For GCS: set GOOGLE_APPLICATION_CREDENTIALS
+          AWS_ACCESS_KEY_ID:     ${{ secrets.DVC_AWS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.DVC_AWS_SECRET }}
+        run: |
+          dvc pull data/training/test --no-run-cache || \
+            echo "::warning::DVC pull failed — proceeding with local test data if present"
+
+      - name: Run model evaluation
+        id: eval
+        env:
+          MLFLOW_TRACKING_URI: ${{ secrets.MLFLOW_TRACKING_URI }}
+          MODEL_NAME: ${{ inputs.model_name || 'VietCropDoctor-Classifier' }}
+        run: |
+          python services/mlops/scripts/evaluate_model.py \
+            --model-name "${MODEL_NAME}" \
+            --test-dir   data/training/test \
+            --output     evaluation_result.json
+
+      - name: Check quality threshold and file issue if degraded
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          python - << 'PYEOF'
+          import json, os, subprocess, sys, textwrap
+          from pathlib import Path
+
+          result_path = Path("evaluation_result.json")
+          if not result_path.exists():
+              print("::error::evaluation_result.json not found — evaluation script may have failed")
+              sys.exit(1)
+
+          d = json.loads(result_path.read_text())
+          f1  = d.get("val_f1",   0.0)
+          acc = d.get("accuracy", 0.0)
+          n   = d.get("n_samples", 0)
+          ver = d.get("model_version", "unknown")
+          rid = d.get("run_id",        "unknown")
+
+          print(f"val_f1={f1:.4f}  accuracy={acc:.4f}  n_samples={n}  version={ver}")
+
+          if err := d.get("error"):
+              print(f"::error::Evaluation error: {err}")
+              sys.exit(1)
+
+          THRESHOLD = 0.85
+
+          if f1 < THRESHOLD:
+              title = f"Model quality degradation detected — F1: {f1:.4f}"
+              body = textwrap.dedent(f"""
+              ## :warning: Model Quality Below Threshold
+
+              The scheduled weekly evaluation detected a quality drop below the
+              **{THRESHOLD:.0%}** F1 threshold.
+
+              | Metric | Value |
+              |--------|-------|
+              | **val_f1** | `{f1:.4f}` (threshold: `{THRESHOLD}`) |
+              | accuracy | `{acc:.4f}` |
+              | test samples | `{n}` |
+              | model version | `{ver}` |
+              | MLflow run_id | `{rid}` |
+
+              ### Suggested actions
+              1. Review recent training run in MLflow.
+              2. Check for dataset drift in the analytics dashboard.
+              3. Manually trigger `retrain_classifier` in Airflow if needed.
+              """).strip()
+
+              print(f"F1 {f1:.4f} < {THRESHOLD} — creating GitHub issue")
+              subprocess.run(
+                  ["gh", "issue", "create",
+                   "--title",  title,
+                   "--body",   body,
+                   "--label",  "model-quality",
+                   "--repo",   os.environ["REPO"]],
+                  check=True,
+              )
+          else:
+              print(f"F1 {f1:.4f} >= {THRESHOLD} threshold — quality OK :white_check_mark:")
+          PYEOF
+
+      - name: Upload evaluation artefact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evaluation-result-${{ github.run_id }}
+          path: evaluation_result.json
+          retention-days: 90

@@ -1,0 +1,13 @@
+# Phụ thuộc cho BỘ ĐÁNH GIÁ retrieval (cài thêm vào môi trường rag-engine).
+# rag-engine đã có sẵn: torch, sentence-transformers, qdrant-client, rank-bm25.
+
+# NDCG — ưu tiên ranx; nếu ranx khó cài (kéo theo numba/llvmlite) thì dùng pytrec_eval.
+ranx>=0.3.16
+# pytrec_eval>=0.5          # fallback: bỏ comment nếu không cài được ranx
+
+# Kiểm định thống kê + tiện ích số
+scipy>=1.10
+numpy>=1.24
+
+# (Tuỳ chọn) pandas để bạn tự phân tích thêm results/*.csv — code KHÔNG bắt buộc.
+# pandas>=2.0

@@ -1,0 +1,76 @@
+name: Build and Push Docker Images
+
+on:
+  push:
+    branches: [main]
+
+env:
+  AWS_REGION: ap-southeast-1
+  ECR_REGISTRY: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ap-southeast-1.amazonaws.com
+
+jobs:
+  build:
+    name: Build ${{ matrix.service }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - service: vision-ai
+            image: vcd-vision-ai
+            context: services/vision-ai
+          - service: rag-engine
+            image: vcd-rag-engine
+            context: services/rag-engine
+          - service: analytics
+            image: vcd-analytics
+            context: services/analytics
+          - service: auth
+            image: vcd-auth
+            context: services/auth
+          - service: orchestrator
+            image: vcd-orchestrator
+            context: services/orchestrator
+          - service: gateway
+            image: vcd-gateway
+            context: services/gateway
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Log in to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Extract metadata (tags, labels)
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.ECR_REGISTRY }}/${{ matrix.image }}
+          tags: |
+            type=sha,prefix=sha-
+            type=ref,event=branch
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      - name: Build and push ${{ matrix.service }}
+        uses: docker/build-push-action@v5
+        with:
+          context: ${{ matrix.context }}
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha,scope=${{ matrix.service }}
+          cache-to: type=gha,mode=max,scope=${{ matrix.service }}
+
+      - name: Output image digest
+        run: echo "${{ matrix.service }} pushed with digest ${{ steps.build-push.outputs.digest }}"

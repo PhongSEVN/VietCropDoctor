@@ -1,0 +1,107 @@
+{
+  "__inputs": [],
+  "__elements": {},
+  "__requires": [
+    { "type": "datasource", "id": "prometheus", "name": "Prometheus", "version": "1.0.0" }
+  ],
+  "annotations": { "list": [] },
+  "description": "RAG pipeline: Qdrant query time, Ollama generation time, BM25 hybrid search",
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "fieldConfig": {
+        "defaults": { "unit": "s" },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "id": 1,
+      "targets": [
+        {
+          "datasource": { "type": "prometheus", "uid": "prometheus" },
+          "expr": "histogram_quantile(0.95, sum(rate(rag_latency_seconds_bucket{stage=\"retrieval\"}[5m])) by (le))",
+          "legendFormat": "Qdrant P95"
+        },
+        {
+          "datasource": { "type": "prometheus", "uid": "prometheus" },
+          "expr": "histogram_quantile(0.50, sum(rate(rag_latency_seconds_bucket{stage=\"retrieval\"}[5m])) by (le))",
+          "legendFormat": "Qdrant P50"
+        }
+      ],
+      "title": "Qdrant Query Latency",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "fieldConfig": {
+        "defaults": { "unit": "s" },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "id": 2,
+      "targets": [
+        {
+          "datasource": { "type": "prometheus", "uid": "prometheus" },
+          "expr": "histogram_quantile(0.95, sum(rate(rag_latency_seconds_bucket{stage=\"llm\"}[5m])) by (le))",
+          "legendFormat": "Ollama P95"
+        },
+        {
+          "datasource": { "type": "prometheus", "uid": "prometheus" },
+          "expr": "histogram_quantile(0.50, sum(rate(rag_latency_seconds_bucket{stage=\"llm\"}[5m])) by (le))",
+          "legendFormat": "Ollama P50"
+        }
+      ],
+      "title": "Ollama Generation Latency",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "fieldConfig": {
+        "defaults": { "unit": "short" },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
+      "id": 3,
+      "targets": [
+        {
+          "datasource": { "type": "prometheus", "uid": "prometheus" },
+          "expr": "sum(rate(rag_queries_total[5m])) by (search_type)",
+          "legendFormat": "{{ search_type }}"
+        }
+      ],
+      "title": "RAG Query Rate (dense vs hybrid BM25)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "fieldConfig": {
+        "defaults": { "unit": "short" },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 },
+      "id": 4,
+      "targets": [
+        {
+          "datasource": { "type": "prometheus", "uid": "prometheus" },
+          "expr": "avg(rag_context_docs_retrieved)",
+          "legendFormat": "Avg docs retrieved"
+        }
+      ],
+      "title": "Avg Context Documents Retrieved",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "30s",
+  "schemaVersion": 38,
+  "tags": ["rag", "llm", "qdrant"],
+  "time": { "from": "now-1h", "to": "now" },
+  "timepicker": {},
+  "timezone": "Asia/Ho_Chi_Minh",
+  "title": "RAG / LLM",
+  "uid": "rag-llm",
+  "version": 1
+}

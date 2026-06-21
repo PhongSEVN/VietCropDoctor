@@ -1,0 +1,43 @@
+# Dev overrides — single replicas, reduced resources, local images
+global:
+  registry: ghcr.io/vietcropdoctor
+  imageTag: dev
+  imagePullPolicy: IfNotPresent
+
+ingress:
+  host: api.vietcropdoctor.local
+
+services:
+  vision-ai:
+    replicaCount: 1
+    hpa:
+      enabled: false
+    resources:
+      requests:
+        cpu: 200m
+        memory: 512Mi
+      limits:
+        cpu: "1"
+        memory: 2Gi
+
+  rag-engine:
+    replicaCount: 1
+    hpa:
+      enabled: false
+    resources:
+      requests:
+        cpu: 100m
+        memory: 256Mi
+      limits:
+        cpu: 500m
+        memory: 1Gi
+
+  analytics:
+    replicaCount: 1
+    hpa:
+      enabled: false
+
+  gateway:
+    replicaCount: 1
+    hpa:
+      enabled: false

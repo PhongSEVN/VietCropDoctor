@@ -1,0 +1,45 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: vietcropdoctor
+
+resources:
+  - ../../base
+  - pdb.yaml   # PodDisruptionBudgets for HA guarantees
+
+# Prod: 2+ replicas for all stateless services
+patches:
+  - patch: |-
+      - op: replace
+        path: /spec/replicas
+        value: 2
+    target:
+      kind: Deployment
+      name: rag-engine
+
+  - patch: |-
+      - op: replace
+        path: /spec/replicas
+        value: 2
+    target:
+      kind: Deployment
+      name: analytics
+
+  - patch: |-
+      - op: replace
+        path: /spec/replicas
+        value: 3
+    target:
+      kind: Deployment
+      name: gateway
+
+# Use stable/prod image tags
+images:
+  - name: ghcr.io/vietcropdoctor/vision-ai
+    newTag: stable
+  - name: ghcr.io/vietcropdoctor/rag-engine
+    newTag: stable
+  - name: ghcr.io/vietcropdoctor/analytics
+    newTag: stable
+  - name: ghcr.io/vietcropdoctor/gateway
+    newTag: stable

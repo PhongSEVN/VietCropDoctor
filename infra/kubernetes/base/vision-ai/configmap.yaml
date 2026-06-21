@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vision-ai-config
+  namespace: vietcropdoctor
+data:
+  MODEL_PATH: "/models/best_model.pth"
+  KAFKA_BOOTSTRAP_SERVERS: "kafka:29092"
+  REDIS_URL: "redis://redis:6379/0"
+  MLFLOW_TRACKING_URI: "http://mlflow:5000"
+  ENSEMBLE_ENABLED: "false"
+  LOG_LEVEL: "INFO"

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VietCropDoctor - Chẩn đoán mới</title>
+<!-- Google Fonts: Inter & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e3eadf",
+                        "on-tertiary-fixed": "#3f0016",
+                        "background": "#f4fcf0",
+                        "surface-dim": "#d5dcd1",
+                        "on-primary-container": "#f7fff2",
+                        "surface-variant": "#dde5d9",
+                        "tertiary-fixed-dim": "#ffb2bf",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "tertiary-fixed": "#ffd9de",
+                        "tertiary-container": "#c74668",
+                        "on-primary-fixed-variant": "#005320",
+                        "error": "#ba1a1a",
+                        "primary-container": "#00873a",
+                        "inverse-primary": "#62df7d",
+                        "on-primary-fixed": "#002109",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#a72d51",
+                        "outline-variant": "#bdcaba",
+                        "secondary": "#904d00",
+                        "primary": "#006b2c",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#2b322b",
+                        "on-surface-variant": "#3e4a3d",
+                        "on-secondary-container": "#663500",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f4fcf0",
+                        "secondary-fixed": "#ffdcc3",
+                        "primary-fixed-dim": "#62df7d",
+                        "surface-container-low": "#eff6ea",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#171d16",
+                        "surface-container-highest": "#dde5d9",
+                        "surface": "#f4fcf0",
+                        "on-background": "#171d16",
+                        "surface-container": "#e9f0e5",
+                        "on-tertiary-container": "#fffbff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#7ffc97",
+                        "secondary-container": "#fe932c",
+                        "surface-tint": "#006e2d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#8a143c",
+                        "outline": "#6e7b6c",
+                        "inverse-on-surface": "#ecf3e7",
+                        "on-secondary-fixed": "#2f1500",
+                        "secondary-fixed-dim": "#ffb77d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-padding-desktop": "32px",
+                        "component-gap": "12px",
+                        "container-padding-mobile": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "title-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md h-screen overflow-hidden flex">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col h-screen w-[300px] fixed left-0 top-0 py-unit border-r border-outline-variant bg-surface-container-low z-40">
+<!-- Header -->
+<div class="px-6 py-4 flex flex-col gap-1 mb-4">
+<span class="font-headline-lg text-headline-lg font-bold text-primary">VietCropDoctor</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Digital Specialist</span>
+</div>
+<!-- CTA -->
+<div class="px-4 mb-6">
+<button class="w-full bg-primary text-on-primary rounded-xl py-4 px-4 flex items-center justify-center gap-2 hover:opacity-90 transition-opacity shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span class="font-title-md text-title-md">Cuộc trò chuyện mới</span>
+</button>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 flex flex-col gap-2 px-2">
+<a class="text-on-surface-variant mx-2 px-4 py-3 flex items-center gap-3 rounded-lg hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-label-md text-label-md">Lịch sử chẩn đoán</span>
+</a>
+<a class="text-on-surface-variant mx-2 px-4 py-3 flex items-center gap-3 rounded-lg hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="potted_plant">potted_plant</span>
+<span class="font-label-md text-label-md">Thư viện bệnh hại</span>
+</a>
+<a class="text-on-surface-variant mx-2 px-4 py-3 flex items-center gap-3 rounded-lg hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Cài đặt</span>
+</a>
+</div>
+<!-- Footer -->
+<div class="mt-auto px-2 pb-4">
+<a class="text-on-surface-variant mx-2 px-4 py-3 flex items-center gap-3 rounded-lg hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Đăng xuất</span>
+</a>
+</div>
+</nav>
+<!-- TopAppBar (Mobile) -->
+<header class="md:hidden flex justify-between items-center px-container-padding-mobile h-16 w-full fixed top-0 z-50 bg-surface border-b border-outline-variant">
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">VietCropDoctor</span>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<button class="hover:bg-surface-container-high p-2 rounded-full transition-colors"><span class="material-symbols-outlined" data-icon="notifications">notifications</span></button>
+<button class="hover:bg-surface-container-high p-2 rounded-full transition-colors"><span class="material-symbols-outlined" data-icon="help">help</span></button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 w-full md:ml-[300px] mt-16 md:mt-0 h-[calc(100vh-4rem)] md:h-screen overflow-y-auto bg-surface-bright">
+<div class="max-w-7xl mx-auto h-full p-container-padding-mobile md:p-container-padding-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter h-full">
+<!-- Left Panel: Upload Zone (40%) -->
+<div class="md:col-span-5 flex flex-col h-full min-h-[400px]">
+<div class="flex-1 bg-surface border-2 border-dashed border-outline-variant rounded-xl flex flex-col items-center justify-center p-8 text-center cursor-pointer hover:bg-surface-container-low hover:border-primary transition-all group relative overflow-hidden">
+<div class="bg-surface-container rounded-full p-6 mb-6 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-primary text-5xl" style="font-variation-settings: 'FILL' 1;">add_photo_alternate</span>
+</div>
+<h2 class="font-title-md text-title-md text-on-surface mb-2">Tải lên hình ảnh cây trồng để bắt đầu</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[250px]">
+                            Kéo thả hoặc nhấp để chọn ảnh chụp rõ nét phần cây bị bệnh (lá, thân, quả).
+                        </p>
+<!-- Hidden File Input (Semantic structure) -->
+<input accept="image/*" aria-label="Tải lên hình ảnh" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" type="file"/>
+</div>
+</div>
+<!-- Right Panel: Welcome & Actions (60%) -->
+<div class="md:col-span-7 flex flex-col justify-center py-8 md:pl-8">
+<div class="max-w-2xl">
+<!-- Welcome Header -->
+<h1 class="font-display-lg text-display-lg text-on-surface mb-4 leading-tight">
+                            Chào mừng bạn đến với <br/><span class="text-primary">VietCropDoctor</span>.
+                        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
+                            Tôi có thể giúp gì cho bạn hôm nay? Tải lên một bức ảnh để chẩn đoán bệnh, hoặc bắt đầu một cuộc trò chuyện để được tư vấn nông nghiệp.
+                        </p>
+<!-- Primary Action -->
+<button class="bg-secondary-container text-on-secondary-container rounded-full px-8 py-4 flex items-center gap-3 hover:opacity-90 transition-opacity shadow-sm border border-outline-variant/30 w-full sm:w-auto justify-center mb-16">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-title-md text-title-md font-semibold">Bắt đầu trò chuyện tạm thời</span>
+</button>
+<!-- Quick Suggestions (Bento-style Grid) -->
+<div>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+                                Gợi ý nhanh
+                            </h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Card 1 -->
+<div class="bg-surface border border-outline-variant rounded-xl p-5 hover:border-primary hover:shadow-sm transition-all cursor-pointer group">
+<div class="flex items-start gap-3">
+<div class="bg-surface-container-highest text-primary p-2 rounded-lg group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined">search</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold mb-1">Kiểm tra bệnh đạo ôn lúa</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Nhận diện sớm các đốm mắt én trên lá lúa.</p>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface border border-outline-variant rounded-xl p-5 hover:border-primary hover:shadow-sm transition-all cursor-pointer group">
+<div class="flex items-start gap-3">
+<div class="bg-surface-container-highest text-primary p-2 rounded-lg group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined">psychiatry</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold mb-1">Chẩn đoán bệnh lá cà chua</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Phân biệt đốm vòng và mốc sương.</p>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface border border-outline-variant rounded-xl p-5 hover:border-primary hover:shadow-sm transition-all cursor-pointer group">
+<div class="flex items-start gap-3">
+<div class="bg-surface-container-highest text-primary p-2 rounded-lg group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined">bug_report</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold mb-1">Cách trị rệp sáp</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Giải pháp sinh học và hóa học an toàn.</p>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface border border-outline-variant rounded-xl p-5 hover:border-primary hover:shadow-sm transition-all cursor-pointer group">
+<div class="flex items-start gap-3">
+<div class="bg-surface-container-highest text-primary p-2 rounded-lg group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined">water_drop</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold mb-1">Dấu hiệu thiếu đạm</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Vàng lá non hay lá già? Hướng dẫn bổ sung.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

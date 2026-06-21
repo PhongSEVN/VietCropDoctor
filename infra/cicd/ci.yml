@@ -1,0 +1,121 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-python:
+    name: Lint Python
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install linting tools
+        run: |
+          pip install flake8 mypy
+
+      - name: Run flake8
+        run: |
+          flake8 services/ \
+            --max-line-length=120 \
+            --exclude=__pycache__,.venv,migrations \
+            --count --statistics
+
+      - name: Run mypy
+        run: |
+          mypy services/ \
+            --ignore-missing-imports \
+            --no-strict-optional \
+            --follow-imports=silent
+        continue-on-error: true
+
+  test-python:
+    name: Test Python Services
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        service:
+          - vision-ai
+          - rag-engine
+          - analytics
+          - auth
+          - orchestrator
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies for ${{ matrix.service }}
+        working-directory: services/${{ matrix.service }}
+        run: |
+          pip install -r requirements.txt
+          pip install pytest pytest-asyncio pytest-cov httpx
+
+      - name: Run pytest for ${{ matrix.service }}
+        working-directory: services/${{ matrix.service }}
+        run: |
+          pytest tests/ \
+            --cov=app \
+            --cov-report=term-missing \
+            --cov-report=xml \
+            -v
+        env:
+          ENVIRONMENT: test
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coverage-${{ matrix.service }}
+          path: services/${{ matrix.service }}/coverage.xml
+
+  lint-yaml:
+    name: Lint Kubernetes YAML
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: "v1.28.0"
+
+      - name: Install kustomize
+        run: |
+          curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | bash
+          sudo mv kustomize /usr/local/bin/
+
+      - name: Validate base kustomization
+        working-directory: k8s/base
+        run: kustomize build . > /dev/null
+
+      - name: Validate dev overlay
+        working-directory: k8s/overlays/dev
+        run: kustomize build . > /dev/null
+
+      - name: Validate staging overlay
+        working-directory: k8s/overlays/staging
+        run: kustomize build . > /dev/null
+
+      - name: Validate prod overlay
+        working-directory: k8s/overlays/prod
+        run: kustomize build . > /dev/null
+
+      - name: Install yamllint
+        run: pip install yamllint
+
+      - name: Lint all YAML files
+        run: |
+          yamllint -d "{extends: default, rules: {line-length: {max: 200}}}" \
+            k8s/ monitoring/

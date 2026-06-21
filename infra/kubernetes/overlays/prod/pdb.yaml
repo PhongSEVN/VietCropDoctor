@@ -1,0 +1,35 @@
+# PodDisruptionBudgets ensure at least 1 pod stays running during voluntary
+# disruptions (node drain, rolling updates, cluster upgrades).
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: rag-engine-pdb
+  namespace: vietcropdoctor
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: rag-engine
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: analytics-pdb
+  namespace: vietcropdoctor
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: analytics
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: gateway-pdb
+  namespace: vietcropdoctor
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      app: gateway

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rag-engine-config
+  namespace: vietcropdoctor
+data:
+  QDRANT_HOST: "qdrant"
+  QDRANT_PORT: "6333"
+  KAFKA_BOOTSTRAP_SERVERS: "kafka:29092"
+  OLLAMA_BASE_URL: "http://ollama:11434"
+  LLM_BASE_URL: "http://ollama:11434"
+  MLFLOW_TRACKING_URI: "http://mlflow:5000"
+  LOG_LEVEL: "INFO"

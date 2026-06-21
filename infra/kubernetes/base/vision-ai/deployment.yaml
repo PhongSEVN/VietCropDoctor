@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vision-ai
+  namespace: vietcropdoctor
+  labels:
+    app: vision-ai
+    app.kubernetes.io/name: vision-ai
+    app.kubernetes.io/component: inference
+spec:
+  replicas: 1   # 1 due to GPU node constraint; scale via HPA up to available GPU nodes
+  selector:
+    matchLabels:
+      app: vision-ai
+  template:
+    metadata:
+      labels:
+        app: vision-ai
+        app.kubernetes.io/name: vision-ai
+    spec:
+      containers:
+        - name: vision-ai
+          image: ghcr.io/vietcropdoctor/vision-ai:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8001
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: vision-ai-config
+          resources:
+            requests:
+              cpu: 500m
+              memory: 1Gi
+            limits:
+              cpu: "2"
+              memory: 4Gi
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8001
+            initialDelaySeconds: 30
+            periodSeconds: 30
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8001
+            initialDelaySeconds: 15
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          volumeMounts:
+            - name: models
+              mountPath: /models
+      volumes:
+        - name: models
+          emptyDir: {}
+      # Uncomment to schedule on GPU nodes:
+      # nodeSelector:
+      #   accelerator: nvidia-gpu
+      # tolerations:
+      #   - key: nvidia.com/gpu
+      #     operator: Exists
+      #     effect: NoSchedule

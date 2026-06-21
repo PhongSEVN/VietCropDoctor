@@ -1,0 +1,11 @@
+# Phụ thuộc cho bộ kiểm thử RAGAS (cài thêm vào môi trường rag-engine/datn_python).
+# Dùng model LOCAL: Qwen (Ollama) làm LLM-judge + e5 (HuggingFace) embeddings.
+
+ragas>=0.2,<0.3
+langchain-ollama>=0.2
+langchain-huggingface>=0.1
+datasets>=2.16
+pandas>=2.0
+
+# rag-engine đã có sẵn: torch, sentence-transformers, qdrant-client, rank-bm25.
+# Ngoài ra cần Ollama đang chạy với model qwen2.5 (xem OLLAMA_MODEL trong .env).

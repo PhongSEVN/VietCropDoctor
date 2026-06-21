@@ -1,0 +1,71 @@
+groups:
+  - name: vietcropdoctor.inference
+    rules:
+
+      - alert: HighPredictionLatency
+        expr: >
+          histogram_quantile(0.95,
+            sum(rate(prediction_latency_seconds_bucket[5m])) by (le)
+          ) > 1
+        for: 5m
+        labels:
+          severity: warning
+          service: vision-ai
+        annotations:
+          summary: "P95 prediction latency exceeds 1 s"
+          description: >
+            P95 inference latency is {{ printf "%.2f" $value }}s over the last 5 minutes.
+            Check GPU utilisation and model checkpoint size.
+
+      - alert: LowModelConfidence
+        expr: avg(model_confidence_last) < 0.5
+        for: 10m
+        labels:
+          severity: warning
+          service: vision-ai
+        annotations:
+          summary: "Average model confidence below 50%"
+          description: >
+            Average confidence across all recent predictions is {{ printf "%.2f" $value }}.
+            Consider triggering a retraining run.
+
+      - alert: HighPredictionErrorRate
+        expr: >
+          sum(rate(http_requests_total{job="vision-ai", status=~"5.."}[5m]))
+          /
+          sum(rate(http_requests_total{job="vision-ai"}[5m])) > 0.05
+        for: 5m
+        labels:
+          severity: critical
+          service: vision-ai
+        annotations:
+          summary: "Vision-AI error rate > 5%"
+          description: "{{ humanizePercentage $value }} of /predict requests are failing."
+
+  - name: vietcropdoctor.rag
+    rules:
+
+      - alert: RAGServiceDown
+        expr: up{job="rag-engine"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: rag-engine
+        annotations:
+          summary: "RAG engine is unreachable"
+          description: "Prometheus cannot scrape rag-engine. The Q&A feature is unavailable."
+
+      - alert: HighRAGLatency
+        expr: >
+          histogram_quantile(0.95,
+            sum(rate(rag_latency_seconds_bucket{stage="llm"}[5m])) by (le)
+          ) > 30
+        for: 5m
+        labels:
+          severity: warning
+          service: rag-engine
+        annotations:
+          summary: "RAG LLM stage P95 > 30 s"
+          description: >
+            P95 LLM generation latency is {{ printf "%.1f" $value }}s.
+            Consider reducing context size or switching to a faster model.

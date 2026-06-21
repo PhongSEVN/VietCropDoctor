@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rag-engine
+  namespace: vietcropdoctor
+  labels:
+    app: rag-engine
+    app.kubernetes.io/name: rag-engine
+    app.kubernetes.io/component: retrieval
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: rag-engine
+  template:
+    metadata:
+      labels:
+        app: rag-engine
+        app.kubernetes.io/name: rag-engine
+    spec:
+      containers:
+        - name: rag-engine
+          image: ghcr.io/vietcropdoctor/rag-engine:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8002
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: rag-engine-config
+          resources:
+            requests:
+              cpu: 250m
+              memory: 512Mi
+            limits:
+              cpu: "1"
+              memory: 2Gi
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8002
+            initialDelaySeconds: 45
+            periodSeconds: 30
+            timeoutSeconds: 10
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8002
+            initialDelaySeconds: 20
+            periodSeconds: 10
+            timeoutSeconds: 10
+            failureThreshold: 3

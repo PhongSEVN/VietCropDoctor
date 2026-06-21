@@ -1,0 +1,63 @@
+dataset:
+  dir: "data/dataset"
+  train: "data/dataset/train"
+  val: "data/dataset/val"
+  test: "data/dataset/test"
+  num_classes: 25
+  image_size: 224
+
+training:
+  epochs: 50
+  batch_size: 8
+  num_workers: 2
+  seed: 42
+  unfreeze_epoch: 10
+
+# Class imbalance handling. strategy="none" disables class weighting.
+imbalance:
+  strategy: "none"       # none | balanced | inverse | sqrt | effective_number
+  beta: 0.999            # only used by effective_number
+
+# Test-Time Augmentation at evaluation. true = average softmax over flips/rotations.
+eval:
+  tta: false
+
+compare:
+  epochs: 10
+  lr: 0.0001
+
+optimizer:
+  name: "adamw"
+  lr: 0.0001
+  weight_decay: 0.0001
+
+scheduler:
+  name: "cosine"
+  warmup_epochs: 3
+  min_lr: 0.000001
+
+model:
+  backbone: "resnet50"
+  pretrained: true
+  dropout: 0.3
+
+augmentation:
+  min_samples: 500
+  random_horizontal_flip: true
+  random_vertical_flip: false
+  random_rotation: 15
+  color_jitter:
+    brightness: 0.2
+    contrast: 0.2
+    saturation: 0.2
+  normalize:
+    mean: [0.485, 0.456, 0.406]
+    std: [0.229, 0.224, 0.225]
+
+output:
+  results_dir: "cv/results/resnet50"
+  models_dir: "cv/results/resnet50/models"
+  checkpoint_dir: "cv/results/resnet50/checkpoints"
+  log_dir: "cv/results/resnet50/logs"
+  save_best_only: true
+  early_stopping_patience: 10

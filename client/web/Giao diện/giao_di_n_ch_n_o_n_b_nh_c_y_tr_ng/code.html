@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VietCropDoctor - Chẩn đoán</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#f4fcf0",
+                        "on-surface": "#171d16",
+                        "tertiary-container": "#c74668",
+                        "tertiary": "#a72d51",
+                        "surface-dim": "#d5dcd1",
+                        "surface-tint": "#006e2d",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#ecf3e7",
+                        "surface-container-low": "#eff6ea",
+                        "surface-bright": "#f4fcf0",
+                        "inverse-primary": "#62df7d",
+                        "surface-container": "#e9f0e5",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#ffdcc3",
+                        "tertiary-fixed-dim": "#ffb2bf",
+                        "primary-container": "#00873a",
+                        "secondary": "#904d00",
+                        "on-primary-fixed-variant": "#005320",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#dde5d9",
+                        "surface-variant": "#dde5d9",
+                        "on-background": "#171d16",
+                        "primary": "#006b2c",
+                        "on-secondary-fixed": "#2f1500",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "on-tertiary-fixed": "#3f0016",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#7ffc97",
+                        "on-primary-fixed": "#002109",
+                        "inverse-surface": "#2b322b",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#663500",
+                        "surface-container-high": "#e3eadf",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#3e4a3d",
+                        "on-tertiary-container": "#fffbff",
+                        "surface": "#f4fcf0",
+                        "on-tertiary-fixed-variant": "#8a143c",
+                        "outline": "#6e7b6c",
+                        "secondary-container": "#fe932c",
+                        "outline-variant": "#bdcaba",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#62df7d",
+                        "tertiary-fixed": "#ffd9de",
+                        "on-primary-container": "#f7fff2",
+                        "secondary-fixed-dim": "#ffb77d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "component-gap": "12px",
+                        "container-padding-mobile": "16px",
+                        "gutter": "24px",
+                        "container-padding-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "title-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Custom scrollbar for chat */
+        .chat-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .chat-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .chat-scroll::-webkit-scrollbar-thumb {
+            background-color: #bdcaba; /* outline-variant */
+            border-radius: 10px;
+        }
+        
+        .gradcam-overlay {
+            background: radial-gradient(circle at 40% 60%, rgba(255,0,0,0.6) 0%, rgba(255,165,0,0.4) 40%, rgba(0,0,0,0) 70%);
+            mix-blend-mode: multiply;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md h-screen flex overflow-hidden">
+<!-- Top Navigation (Mobile Only) -->
+<header class="md:hidden flex justify-between items-center px-container-padding-mobile h-16 w-full fixed top-0 z-50 bg-surface border-b border-outline-variant text-primary font-title-md">
+<div class="flex items-center gap-unit">
+<span class="material-symbols-outlined">menu</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold">VietCropDoctor</span>
+</div>
+<div class="flex items-center gap-component-gap">
+<span class="material-symbols-outlined hover:bg-surface-container-high transition-colors p-1 rounded-full cursor-pointer">notifications</span>
+<img alt="User Avatar" class="w-8 h-8 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDigX-HdF30szicZC_XhsVfTIwYqxbo6YuyvCgy3o4IjCiSXzt3BjiN8dJ4-IXdIOG5kRbXG6gCSLEuK0nW6g3Q_2axybInHrcPuD6XBS-DkReK5-xEHHXltrDBgBKwwfi3zTrATwyQvWc_dkzHbgHkLhNi8GCpCQxCkATAyoGXGDM_X00q0QBO-858C_M5qVbitliu4-7-3-xEd9Jba7-Mm8Tu4HFX4yUVcP6F6MJsGYyZhsb-ohGM035oh63uIS6kh2u7jOXpa3gV"/>
+</div>
+</header>
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col h-screen w-[300px] fixed left-0 top-0 py-unit border-r border-outline-variant z-40 bg-surface-container-low text-primary flex-shrink-0">
+<!-- Header -->
+<div class="px-container-padding-desktop py-4 mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold shadow-sm">
+                    VD
+                </div>
+<div>
+<h1 class="font-title-md text-title-md font-bold leading-tight">VietCropDoctor</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Digital Specialist</p>
+</div>
+</div>
+</div>
+<!-- CTA -->
+<div class="px-4 mb-6">
+<button class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary py-3 px-4 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-all shadow-[0_4px_14px_rgba(0,107,44,0.15)] font-label-md text-label-md font-semibold active:scale-[0.98]">
+<span class="material-symbols-outlined">add</span>
+                Cuộc trò chuyện mới
+            </button>
+</div>
+<!-- Tabs -->
+<div class="flex-1 overflow-y-auto chat-scroll px-2 flex flex-col gap-1">
+<!-- Active Tab -->
+<a class="flex items-center gap-3 bg-secondary-container text-on-secondary-container rounded-lg font-bold mx-2 px-4 py-3 active:scale-[0.98] duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined fill">history</span>
+                Lịch sử chẩn đoán
+            </a>
+<!-- History Items (Sub-items) -->
+<div class="pl-12 pr-4 py-2 flex flex-col gap-2">
+<div class="group flex items-center justify-between cursor-pointer">
+<span class="font-body-md text-sm text-on-surface truncate group-hover:text-primary transition-colors">Lúa - Đạo ôn - 20/10</span>
+</div>
+<div class="group flex items-center justify-between cursor-pointer">
+<span class="font-body-md text-sm text-on-surface-variant truncate group-hover:text-primary transition-colors">Cà chua - Đốm lá - 18/10</span>
+</div>
+<div class="group flex items-center justify-between cursor-pointer">
+<span class="font-body-md text-sm text-on-surface-variant truncate group-hover:text-primary transition-colors">Bưởi - Vàng lá - 15/10</span>
+</div>
+</div>
+<!-- Inactive Tabs -->
+<a class="flex items-center gap-3 text-on-surface-variant mx-2 px-4 py-3 hover:bg-surface-container-high transition-all rounded-lg font-label-md text-label-md mt-4" href="#">
+<span class="material-symbols-outlined">potted_plant</span>
+                Thư viện bệnh hại
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant mx-2 px-4 py-3 hover:bg-surface-container-high transition-all rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Cài đặt
+            </a>
+</div>
+<!-- Footer -->
+<div class="px-2 mt-auto pt-4 border-t border-outline-variant/30">
+<a class="flex items-center gap-3 text-on-surface-variant mx-2 px-4 py-3 hover:bg-surface-container-high transition-all rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">logout</span>
+                Đăng xuất
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-[300px] mt-16 md:mt-0 flex flex-col relative h-full bg-surface-bright">
+<!-- Top Banner -->
+<div class="bg-secondary-container text-on-secondary-container py-2 px-4 flex justify-between items-center z-10 shadow-sm shrink-0">
+<span class="font-label-md text-label-md flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">info</span>
+                Đăng nhập để lưu lịch sử chẩn đoán
+            </span>
+<button class="font-label-sm text-label-sm font-bold uppercase underline hover:opacity-80">Đăng nhập</button>
+</div>
+<!-- Split Layout Container -->
+<div class="flex-1 flex flex-col lg:flex-row overflow-hidden">
+<!-- Left Panel: Image & Analysis (40%) -->
+<div class="w-full lg:w-[40%] border-r border-outline-variant bg-surface flex flex-col p-gutter overflow-y-auto chat-scroll">
+<h2 class="font-title-md text-title-md text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined fill">image_search</span>
+                    Phân tích hình ảnh
+                </h2>
+<!-- Upload/Preview Zone -->
+<div class="relative w-full aspect-square rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest shadow-[0_8px_30px_rgba(0,107,44,0.06)] mb-gutter group">
+<!-- Base Image -->
+<img alt="Rice leaf with blast disease" class="w-full h-full object-cover" data-alt="A close-up shot of a green rice plant leaf showing symptoms of rice blast disease (Magnaporthe oryzae). The leaf has distinct diamond-shaped or spindle-shaped lesions with grayish centers and brownish-red borders. The lighting is bright and natural, typical of an outdoor agricultural setting, highlighting the texture of the leaf and the severity of the infection. The overall mood is clinical and diagnostic, focusing on agricultural pathology in a high-resolution, realistic style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3BfsVirjqZ_e43WfAC_-Dd-EtoGtcVVPYu-HeQDOVMIkETJRVtxthxAyGhwjQqk7thr-0hFldwVZMTOBux9_9N_CIg3s7lck1UN2uP6ly2omRxbprydGfnYAWo5i-zANFSk908OZHWLB8l_pONMKwz6X3tcCOke2WolVQpc4zMlm9tvkkzCQFcnyiqMH_9oSVz_gw-MlDY6BEqpXdzzcKFEUFl8OpguAqiYl18ROUMfQLx2UG25Zj_V2lS4JLFW0RwS7bIOSH4UJY"/>
+<!-- GradCAM Overlay (Simulated) -->
+<div class="absolute inset-0 gradcam-overlay opacity-80 mix-blend-color-burn pointer-events-none"></div>
+<!-- Scanning HUD Elements -->
+<div class="absolute inset-0 border-2 border-primary/20 rounded-xl pointer-events-none"></div>
+<div class="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-primary"></div>
+<div class="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-primary"></div>
+<div class="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-primary"></div>
+<div class="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-primary"></div>
+<!-- Confidence Badge -->
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-surface/90 backdrop-blur-sm border border-outline-variant px-4 py-2 rounded-full flex items-center gap-2 shadow-lg">
+<div class="w-6 h-6 rounded-full border-2 border-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-primary">check</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface">95% Tự tin</span>
+</div>
+<!-- Overlay Controls on hover -->
+<div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity flex gap-2">
+<button class="bg-surface/80 backdrop-blur p-2 rounded-full hover:bg-surface text-on-surface shadow">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</div>
+</div>
+<!-- Diagnosis Summary Card -->
+<div class="bg-surface-container-low rounded-xl p-4 border border-outline-variant">
+<div class="flex justify-between items-start mb-3">
+<div>
+<span class="inline-block px-2 py-1 bg-error-container text-on-error-container rounded-full font-label-sm text-label-sm mb-2">Nặng (Severe)</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface m-0">Bệnh Đạo Ôn</h3>
+<p class="font-body-md text-sm text-on-surface-variant italic">Magnaporthe oryzae</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-4 pt-4 border-t border-outline-variant/50">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block mb-1">Cây trồng</span>
+<span class="font-body-md text-on-surface font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary">grass</span> Lúa
+                            </span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block mb-1">Giai đoạn</span>
+<span class="font-body-md text-on-surface font-medium">Đẻ nhánh</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Panel: Chat Interface (60%) -->
+<div class="w-full lg:w-[60%] flex flex-col bg-surface-bright relative">
+<!-- Chat Messages Area -->
+<div class="flex-1 overflow-y-auto chat-scroll p-container-padding-mobile lg:p-container-padding-desktop flex flex-col gap-6">
+<!-- AI Welcome -->
+<div class="flex gap-4 max-w-[85%]">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0 mt-1 shadow-sm">
+<span class="material-symbols-outlined text-sm">smart_toy</span>
+</div>
+<div class="bg-surface border border-outline-variant rounded-2xl rounded-tl-sm p-4 text-on-surface font-body-md shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+<p>Xin chào! Tôi là VietCropDoctor. Hãy tải lên hình ảnh cây trồng đang gặp vấn đề, tôi sẽ giúp bạn chẩn đoán.</p>
+</div>
+</div>
+<!-- User Action (Image Uploaded) -->
+<div class="flex gap-4 max-w-[85%] self-end flex-row-reverse">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface shrink-0 mt-1 border border-outline-variant">
+<span class="material-symbols-outlined text-sm">person</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl rounded-tr-sm p-3 shadow-sm">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary">image</span>
+<span>DaOon_Lua_ThuaThienHue.jpg</span>
+</div>
+</div>
+</div>
+<!-- AI Diagnosis Detailed -->
+<div class="flex gap-4 max-w-[95%]">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0 mt-1 shadow-sm">
+<span class="material-symbols-outlined text-sm">smart_toy</span>
+</div>
+<div class="bg-surface border-2 border-primary/30 rounded-2xl rounded-tl-sm p-5 text-on-surface font-body-md shadow-[0_4px_20px_rgba(0,107,44,0.08)]">
+<p class="mb-4">Dựa trên hình ảnh phân tích, tôi xác định cây lúa của bạn đang mắc <strong class="text-primary">Bệnh Đạo ôn (Rice Blast)</strong> với độ tin cậy cao (95%).</p>
+<!-- Tabbed Data Structure Simulation -->
+<div class="border border-outline-variant rounded-lg overflow-hidden bg-surface-container-lowest mt-4">
+<div class="flex border-b border-outline-variant bg-surface-container-low">
+<div class="px-4 py-2 font-label-md text-label-md font-bold text-primary border-b-2 border-primary bg-surface">Tổng quan</div>
+<div class="px-4 py-2 font-label-md text-label-md text-on-surface-variant hover:bg-surface cursor-pointer">Triệu chứng</div>
+<div class="px-4 py-2 font-label-md text-label-md text-on-surface-variant hover:bg-surface cursor-pointer">Xử trí</div>
+</div>
+<div class="p-4 space-y-3 font-body-md text-sm">
+<p><strong class="text-on-surface font-semibold">Nguyên nhân:</strong> Nấm <em>Pyricularia oryzae</em> gây ra.</p>
+<p><strong class="text-on-surface font-semibold">Triệu chứng quan sát được:</strong> Vết bệnh điển hình hình thoi (mắt én), rộng ở giữa và nhọn ở hai đầu, mép ngoài màu nâu đỏ, tâm vết bệnh màu xám tro. Các vết bệnh đang có xu hướng liên kết làm khô lá.</p>
+<div class="bg-surface-container p-3 rounded mt-2 border-l-4 border-primary">
+<strong class="text-primary font-semibold block mb-1">Khuyến nghị Xử trí Khẩn cấp:</strong>
+<ul class="list-disc pl-5 space-y-1 text-on-surface-variant">
+<li>Ngừng bón phân đạm (Ure) ngay lập tức.</li>
+<li>Giữ mực nước ruộng ổn định (3-5cm).</li>
+<li>Sử dụng thuốc trừ nấm đặc trị chứa hoạt chất Tricyclazole hoặc Isoprothiolane.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Source Chips -->
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant w-full block mb-1">Nguồn tham khảo:</span>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-high rounded-full font-label-sm text-label-sm text-on-surface border border-outline-variant/50 hover:bg-surface-variant cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-[14px]">book</span>
+                                    Cẩm nang BVTV (Trang 45)
+                                </div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-high rounded-full font-label-sm text-label-sm text-on-surface border border-outline-variant/50 hover:bg-surface-variant cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-[14px]">link</span>
+                                    Cục Trồng Trọt VN
+                                </div>
+</div>
+</div>
+</div>
+<!-- Spacer for input -->
+<div class="h-8"></div>
+</div>
+<!-- Input Area (Fixed Bottom) -->
+<div class="p-4 bg-surface-bright border-t border-outline-variant shrink-0 relative">
+<div class="max-w-3xl mx-auto relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">attach_file</span>
+</div>
+<input class="w-full bg-surface border border-outline-variant text-on-surface font-body-md rounded-full py-3 pl-10 pr-12 focus:ring-2 focus:ring-primary/50 focus:border-primary focus:outline-none shadow-sm transition-all" placeholder="Hỏi thêm về liều lượng thuốc, cách phòng ngừa..." type="text"/>
+<button class="absolute inset-y-1 right-1 w-10 h-10 bg-primary text-on-primary rounded-full flex items-center justify-center hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+<div class="text-center mt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">VietCropDoctor có thể mắc sai lầm. Hãy luôn tham khảo thêm ý kiến kỹ sư nông nghiệp địa phương.</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

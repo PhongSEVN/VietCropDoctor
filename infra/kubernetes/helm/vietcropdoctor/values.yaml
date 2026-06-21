@@ -1,0 +1,130 @@
+# VietCropDoctor Helm values — defaults (suitable for local/CI evaluation)
+# Override per environment with values-dev.yaml or values-prod.yaml
+
+global:
+  registry: ghcr.io/vietcropdoctor
+  imageTag: latest
+  imagePullPolicy: Always
+  namespace: vietcropdoctor
+
+# Secret reference
+# The Secret must exist before helm install. Create it with:
+#   kubectl create secret generic vietcropdoctor-secrets \
+#     --from-literal=CLICKHOUSE_PASSWORD=<pw> ...  -n vietcropdoctor
+secretName: vietcropdoctor-secrets
+
+# Ingress
+ingress:
+  enabled: true
+  className: nginx
+  host: api.vietcropdoctor.vn
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "20m"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "120"
+
+# Per-service configuration
+
+services:
+  vision-ai:
+    enabled: true
+    replicaCount: 1
+    image: vision-ai
+    containerPort: 8001
+    serviceType: ClusterIP
+    resources:
+      requests:
+        cpu: 500m
+        memory: 1Gi
+      limits:
+        cpu: "2"
+        memory: 4Gi
+    hpa:
+      enabled: true
+      minReplicas: 1
+      maxReplicas: 4
+      targetCPUUtilizationPercentage: 70
+    config:
+      MODEL_PATH: "/models/best_model.pth"
+      KAFKA_BOOTSTRAP_SERVERS: "kafka:29092"
+      REDIS_URL: "redis://redis:6379/0"
+      MLFLOW_TRACKING_URI: "http://mlflow:5000"
+      ENSEMBLE_ENABLED: "false"
+      LOG_LEVEL: "INFO"
+    # nodeSelector:
+    #   accelerator: nvidia-gpu
+
+  rag-engine:
+    enabled: true
+    replicaCount: 2
+    image: rag-engine
+    containerPort: 8002
+    serviceType: ClusterIP
+    resources:
+      requests:
+        cpu: 250m
+        memory: 512Mi
+      limits:
+        cpu: "1"
+        memory: 2Gi
+    hpa:
+      enabled: true
+      minReplicas: 2
+      maxReplicas: 10
+      targetCPUUtilizationPercentage: 70
+    config:
+      QDRANT_HOST: "qdrant"
+      QDRANT_PORT: "6333"
+      KAFKA_BOOTSTRAP_SERVERS: "kafka:29092"
+      OLLAMA_BASE_URL: "http://ollama:11434"
+      LLM_BASE_URL: "http://ollama:11434"
+      MLFLOW_TRACKING_URI: "http://mlflow:5000"
+      LOG_LEVEL: "INFO"
+
+  analytics:
+    enabled: true
+    replicaCount: 2
+    image: analytics
+    containerPort: 8004
+    serviceType: ClusterIP
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: 500m
+        memory: 512Mi
+    hpa:
+      enabled: true
+      minReplicas: 2
+      maxReplicas: 10
+      targetCPUUtilizationPercentage: 70
+    config:
+      KAFKA_BOOTSTRAP_SERVERS: "kafka:29092"
+      CLICKHOUSE_HOST: "clickhouse"
+      CLICKHOUSE_PORT: "8123"
+      CLICKHOUSE_DB: "vietcropdoctor"
+      CLICKHOUSE_USER: "admin"
+      LOG_LEVEL: "INFO"
+    secretEnv:
+      - name: CLICKHOUSE_PASSWORD
+        secretKey: CLICKHOUSE_PASSWORD
+
+  gateway:
+    enabled: true
+    replicaCount: 2
+    image: gateway
+    containerPort: 80
+    serviceType: LoadBalancer
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: 500m
+        memory: 512Mi
+    hpa:
+      enabled: true
+      minReplicas: 2
+      maxReplicas: 10
+      targetCPUUtilizationPercentage: 70
+    config: {}

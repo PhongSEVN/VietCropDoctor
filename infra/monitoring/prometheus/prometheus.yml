@@ -1,0 +1,67 @@
+global:
+  scrape_interval:     15s
+  evaluation_interval: 15s
+  external_labels:
+    cluster: vietcropdoctor-dev
+
+rule_files:
+  - /etc/prometheus/alerts/*.yml
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: [alertmanager:9093]
+
+scrape_configs:
+
+  # Application services
+
+  - job_name: vision-ai
+    static_configs:
+      - targets: [vision-ai:8001]
+    metrics_path: /metrics
+
+  - job_name: rag-engine
+    static_configs:
+      - targets: [rag-engine:8002]
+    metrics_path: /metrics
+
+  - job_name: analytics
+    static_configs:
+      - targets: [analytics:8004]
+    metrics_path: /metrics
+
+  - job_name: auth
+    static_configs:
+      - targets: [auth:8005]
+    metrics_path: /metrics
+
+  - job_name: orchestrator
+    static_configs:
+      - targets: [orchestrator:8006]
+    metrics_path: /metrics
+
+  # Infrastructure
+
+  # Kafka metrics via kafka_exporter sidecar (broker, topic offsets, consumer-group lag)
+  - job_name: kafka
+    static_configs:
+      - targets: [kafka-exporter:9308]
+    metrics_path: /metrics
+
+  # Qdrant native Prometheus metrics
+  - job_name: qdrant
+    static_configs:
+      - targets: [qdrant:6333]
+    metrics_path: /metrics
+
+  # Prometheus self-monitoring
+  - job_name: prometheus
+    static_configs:
+      - targets: [localhost:9090]
+
+  # Alertmanager self-monitoring
+  - job_name: alertmanager
+    static_configs:
+      - targets: [alertmanager:9093]
+    metrics_path: /metrics

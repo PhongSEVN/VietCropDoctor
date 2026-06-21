@@ -1,0 +1,101 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gateway
+  namespace: vietcropdoctor
+  labels:
+    app: gateway
+spec:
+  type: LoadBalancer
+  selector:
+    app: gateway
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+      protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth
+  namespace: vietcropdoctor
+  labels:
+    app: auth
+spec:
+  type: ClusterIP
+  selector:
+    app: auth
+  ports:
+    - name: http
+      port: 8005
+      targetPort: 8005
+      protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vision-ai
+  namespace: vietcropdoctor
+  labels:
+    app: vision-ai
+spec:
+  type: ClusterIP
+  selector:
+    app: vision-ai
+  ports:
+    - name: http
+      port: 8001
+      targetPort: 8001
+      protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rag-engine
+  namespace: vietcropdoctor
+  labels:
+    app: rag-engine
+spec:
+  type: ClusterIP
+  selector:
+    app: rag-engine
+  ports:
+    - name: http
+      port: 8002
+      targetPort: 8002
+      protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: orchestrator
+  namespace: vietcropdoctor
+  labels:
+    app: orchestrator
+spec:
+  type: ClusterIP
+  selector:
+    app: orchestrator
+  ports:
+    - name: http
+      port: 8006
+      targetPort: 8006
+      protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: analytics
+  namespace: vietcropdoctor
+  labels:
+    app: analytics
+spec:
+  type: ClusterIP
+  selector:
+    app: analytics
+  ports:
+    - name: http
+      port: 8004
+      targetPort: 8004
+      protocol: TCP

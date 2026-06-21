@@ -1,0 +1,66 @@
+# Production overrides — HA replicas, production images, stricter resources
+global:
+  registry: ghcr.io/vietcropdoctor
+  imageTag: stable
+  imagePullPolicy: Always
+
+ingress:
+  host: api.vietcropdoctor.vn
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "20m"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "120"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+  tls:
+    - secretName: vietcropdoctor-tls
+      hosts:
+        - api.vietcropdoctor.vn
+
+services:
+  vision-ai:
+    replicaCount: 1
+    hpa:
+      enabled: true
+      minReplicas: 1
+      maxReplicas: 4
+    resources:
+      requests:
+        cpu: 500m
+        memory: 1Gi
+      limits:
+        cpu: "2"
+        memory: 4Gi
+
+  rag-engine:
+    replicaCount: 2
+    hpa:
+      enabled: true
+      minReplicas: 2
+      maxReplicas: 10
+    resources:
+      requests:
+        cpu: 500m
+        memory: 1Gi
+      limits:
+        cpu: "2"
+        memory: 4Gi
+
+  analytics:
+    replicaCount: 2
+    hpa:
+      enabled: true
+      minReplicas: 2
+      maxReplicas: 6
+    resources:
+      requests:
+        cpu: 200m
+        memory: 256Mi
+      limits:
+        cpu: "1"
+        memory: 1Gi
+
+  gateway:
+    replicaCount: 3
+    hpa:
+      enabled: true
+      minReplicas: 3
+      maxReplicas: 10

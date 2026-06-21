@@ -1,0 +1,55 @@
+groups:
+  - name: vietcropdoctor.messaging
+    rules:
+
+      - alert: KafkaConsumerLag
+        expr: sum without (partition) (kafka_consumergroup_lag) > 1000
+        for: 5m
+        labels:
+          severity: warning
+          service: kafka
+        annotations:
+          summary: "Kafka consumer lag exceeds 1 000 messages"
+          description: >
+            Consumer group {{ $labels.consumergroup }} on topic {{ $labels.topic }}
+            is {{ $value }} messages behind. The analytics pipeline may be falling behind.
+
+      - alert: KafkaConsumerGroupStalled
+        expr: >
+          kafka_consumergroup_lag_sum > 100
+          and increase(kafka_consumergroup_current_offset_sum[15m]) == 0
+        for: 5m
+        labels:
+          severity: critical
+          service: kafka
+        annotations:
+          summary: "Kafka consumer group {{ $labels.consumergroup }} appears stalled"
+          description: >
+            Consumer group {{ $labels.consumergroup }} on topic {{ $labels.topic }}
+            has a backlog but its committed offset has not advanced for 15 minutes —
+            messages are not being consumed.
+
+  - name: vietcropdoctor.platform
+    rules:
+
+      - alert: ServiceDown
+        expr: up{job=~"vision-ai|rag-engine|analytics"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Service {{ $labels.job }} is down"
+          description: "Prometheus cannot reach {{ $labels.job }}:{{ $labels.instance }}."
+
+      - alert: HighMemoryUsage
+        expr: >
+          process_resident_memory_bytes{job=~"vision-ai|rag-engine"}
+          / 1024 / 1024 / 1024 > 3.5
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "{{ $labels.job }} memory usage > 3.5 GiB"
+          description: >
+            {{ $labels.job }} is using {{ printf "%.1f" $value }} GiB of RAM.
+            Potential memory leak or oversized model.
