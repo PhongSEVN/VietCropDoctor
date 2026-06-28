@@ -1,0 +1,27 @@
+# Model
+arch: mobilenetv3_large
+num_classes: 25
+
+# Training
+epochs: 50
+batch_size: 32
+lr: 0.001
+optimizer: adam          # adam | sgd | adamw
+image_size: 224
+
+# Augmentation (applied to train split only)
+augmentation:
+  - random_flip          # RandomHorizontalFlip + RandomVerticalFlip
+  - random_rotation      # RandomRotation(±15°)
+  - color_jitter         # ColorJitter(brightness, contrast, saturation, hue)
+  - mixup                # alpha=0.2 batch-level mixup
+
+# Early stopping
+early_stopping_patience: 7
+
+# Data / output paths (relative to working directory inside container)
+data_dir: data/training
+output_dir: data/models
+
+# Run metadata
+run_name: mobilenetv3-baseline

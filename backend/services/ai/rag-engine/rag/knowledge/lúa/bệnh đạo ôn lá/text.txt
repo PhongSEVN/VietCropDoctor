@@ -1,0 +1,165 @@
+TÊN BỆNH: Bệnh đạo ôn lá (cháy lá, đạo ôn lá)
+LOẠI CÂY: Lúa (Oryza sativa)
+CLASS ID: rice_Rice_Leaf_Blast
+
+⚠️ PHÂN BIỆT VỚI BỆNH 6: Đạo ôn lá (rice_Rice_Leaf_Blast) và đạo ôn
+cổ bông (rice_Rice_Neck_Blast) do CÙNG một tác nhân (Pyricularia oryzae)
+nhưng xảy ra ở bộ phận khác nhau và giai đoạn sinh trưởng khác nhau:
+— Đạo ôn lá: gây hại chủ yếu giai đoạn mạ → đẻ nhánh → đứng cái;
+  vết bệnh trên phiến lá; nếu không quản lý tốt dẫn đến đạo ôn cổ bông
+— Đạo ôn cổ bông: gây hại giai đoạn trổ bông; thắt cổ bông gây lép
+  hạt; thiệt hại năng suất trực tiếp và tức thì
+
+TRIỆU CHỨNG:
+Bệnh đạo ôn lá gây hại từ giai đoạn mạ đến giai đoạn đứng cái—làm
+đòng, biểu hiện rõ nhất trong giai đoạn đẻ nhánh rộ.
+
+Giai đoạn mạ: Vết bệnh trên mạ lúc đầu có màu hồng hoặc nâu hồng,
+hình thoi nhỏ hoặc hình bầu dục. Sau chuyển màu nâu vàng, khô héo.
+Khi bệnh nặng các vết liên kết lại làm mạ héo khô từng đám, có thể
+chết toàn bộ khóm mạ.
+
+Giai đoạn đẻ nhánh — vết bệnh điển hình (mãn tính): Đây là dạng vết
+bệnh đặc trưng và dễ nhận biết nhất, dùng để chẩn đoán bệnh đạo ôn
+lá:
+— Hình dạng: hình thoi (mắt én) — hai đầu nhọn, rộng ở giữa; dọc
+  theo gân lá
+— Kích thước: 1–1,5 cm x 0,3–0,5 cm (vết điển hình trên giống nhiễm)
+— Màu sắc từ trong ra ngoài: tâm giữa màu xám tro hoặc trắng xám →
+  viền nâu đậm → rìa ngoài nâu nhạt hoặc có quầng vàng hẹp
+— Mặt dưới vết bệnh có lớp mốc xám nhạt khi ẩm độ cao (đài và bào
+  tử nấm)
+
+Vết bệnh cấp tính (acute lesion) — dấu hiệu bệnh đang bùng phát:
+Trên giống nhiễm khi điều kiện thuận lợi (ẩm cao + thừa đạm), vết
+bệnh xuất hiện dạng đốm tròn hoặc bầu dục, màu nâu xanh tái, thấm
+nước (trông như bị nước sôi), mép không rõ ràng. Đây là dạng vết bệnh
+nguy hiểm: lây lan cực nhanh vì sản sinh bào tử nhiều, cần phun thuốc
+ngay lập tức. Vết cấp tính sau vài ngày có thể chuyển thành mãn tính
+khi điều kiện bất lợi hơn cho nấm.
+
+Hậu quả khi bệnh nặng: Nhiều vết bệnh liên kết thành mảng lớn làm lá
+cháy khô từng mảng rồi toàn bộ lá — gọi là "cháy lá đạo ôn". Ruộng
+bị nặng giai đoạn đẻ nhánh sẽ lùn lụi, nhánh hữu hiệu giảm mạnh,
+ảnh hưởng đến cả năng suất vụ đó và tạo nguồn bệnh cho đạo ôn cổ
+bông sau này.
+
+Đạo ôn cổ lá (leaf node blast): Một dạng trung gian ít phổ biến hơn,
+vết bệnh xuất hiện tại cổ lá (đốt phân chia giữa bẹ và phiến lá), màu
+nâu teo thắt, làm lá gãy gục tại cổ lá.
+
+NGUYÊN NHÂN:
+Tác nhân GIỐNG HOÀN TOÀN với đạo ôn cổ bông: nấm Pyricularia oryzae
+Cav. (Magnaporthe oryzae B.C. Couch). Bào tử phân sinh (conidium) hình
+quả lê 3 tế bào phát tán theo gió — đây là con đường lây lan chính
+giữa các ruộng. Nấm tiết ra hai độc tố tan trong nước là piricularin
+và axit picolinic lan ra xung quanh vết bệnh, phá hủy tế bào lá và
+tạo vùng mô chết mở rộng.
+
+Chu kỳ bệnh trên lá rất nhanh: Trong điều kiện ẩm, lạnh, ẩm độ >90%
+và nhiệt độ 18–26°C, chỉ sau 4–6 ngày từ khi bào tử xâm nhiễm đã
+xuất hiện vết bệnh và vết bệnh mới bắt đầu sinh bào tử. Mỗi vết bệnh
+có thể sản sinh hàng nghìn bào tử/ngày trong điều kiện thuận lợi —
+giải thích tại sao bệnh bùng phát rất nhanh.
+
+ĐIỀU KIỆN PHÁT SINH:
+— Nhiệt độ và ẩm độ: 18–26°C kết hợp ẩm độ ≥90%; sương mù buổi
+  sáng; mưa phùn kéo dài; biên độ nhiệt ngày–đêm lớn. Điều kiện này
+  phổ biến ở vụ Đông Xuân miền Bắc, miền Trung (tháng 2–4) và vụ Hè
+  Thu ĐBSCL khi có mưa dầm.
+— Phân đạm: Thừa đạm (N) là yếu tố canh tác nguy hiểm nhất — làm
+  mô lá mềm, tế bào giàu dinh dưỡng, lớp cutin mỏng. Đặc biệt nguy
+  hiểm khi bón đạm muộn (giai đoạn đẻ nhánh rộ → đứng cái) trong
+  thời tiết lạnh ẩm.
+— Giống nhiễm: Bắc Thơm 7, BC15, các giống nếp, một số giống OM cũ.
+  Giống kháng tốt: OM5451, OM6976, Đài Thơm 8 (tùy nòi địa phương).
+— Mật độ sạ: Sạ dày (>200 kg/ha) tạo tiểu khí hậu ẩm ướt trong ruộng,
+  tăng nguy cơ lây lan.
+— Chân ruộng: Ruộng trũng khó thoát nước, đất mới vỡ hoang giàu mùn,
+  đất nhẹ giữ nước kém thường bị nặng hơn.
+— Thời điểm nguy hiểm nhất: Lúa đẻ nhánh rộ (20–35 ngày sau sạ) đến
+  giai đoạn đứng cái (40–50 ngày sau sạ).
+
+PHÒNG TRỊ:
+1. [Canh tác - Ưu tiên 1] Chọn giống kháng đạo ôn phù hợp vùng sản
+  xuất; không trồng giống nhiễm ở vùng thường xuyên bị bệnh nặng.
+  Sử dụng hạt giống sạch bệnh, xử lý hạt trước khi gieo.
+
+2. [Canh tác - Ưu tiên 2] Bón phân cân đối; KHÔNG bón thừa đạm và
+  KHÔNG bón đạm muộn khi thời tiết lạnh ẩm. Tăng kali (K2O) để cứng
+  mô lá. Sạ đúng mật độ (100–120 kg giống/ha; cấy: 20–25 dảnh/m²).
+
+3. [Canh tác - Ưu tiên 3] Vệ sinh đồng ruộng sau thu hoạch: cày vùi
+  hoặc đốt rơm rạ (tùy quy định địa phương). Kiểm soát cỏ dại họ
+  Poaceae là ký chủ phụ của nấm đạo ôn.
+
+4. [Giám sát] Thăm đồng thường xuyên từ giai đoạn mạ đến đẻ nhánh
+  rộ. Phun thuốc ngay khi phát hiện vết bệnh cấp tính đầu tiên hoặc
+  khi có ≥3 vết bệnh/tép lúa; không đợi bệnh lan rộng. Phun vào
+  sáng sớm khi lá còn ẩm sương giúp thuốc bám tốt hơn.
+
+5. [Hóa học] Phun thuốc đặc trị đạo ôn ngay khi chớm phát hiện; phun
+  lần 2 sau 5–7 ngày nếu bệnh chưa dừng. Phun ướt đều từ lá xuống
+  bẹ lá và gốc cây. Lượng nước phun: 300–400 lít/ha. Không pha thuốc
+  trừ bệnh đạo ôn chung với phân bón lá.
+
+THUỐC KHUYẾN NGHỊ:
+1. Hoạt chất: Tricyclazole (FRAC U8 — ức chế tổng hợp melanin đĩa áp)
+   Tên thương mại: Beam 75WP, Trizole 75WP, Tanbim 800WP, BIM USA 750WP
+   Liều lượng: Beam 75WP: 0,3–0,5 kg/ha; pha 10–15 g/bình 16 lít
+   Thời điểm: Phun phòng khi thời tiết thuận lợi (ẩm cao, lạnh); phun
+   trị ngay khi thấy vết bệnh đầu tiên
+   Thời gian cách ly: 14 ngày
+   Lưu ý: Hiệu quả cao nhất khi phun sớm; sau 24 giờ bào tử xâm
+   nhiễm hiệu quả giảm rõ rệt
+
+2. Hoạt chất: Isoprothiolane (FRAC 14 — ức chế phospholipid màng)
+   Tên thương mại: Fuji-One 40EC, Fuan 40EC, Isopro 40EC
+   Liều lượng: 1–1,5 lít/ha; 30–40 ml/bình 16 lít
+   Thời điểm: Phun khi lúa 20–35 ngày tuổi (đẻ nhánh rộ); hiệu lực
+   kéo dài, luân phiên với Tricyclazole
+   Thời gian cách ly: 14 ngày
+   Lưu ý: Vẫn hiệu quả khi nấm đã kháng Tricyclazole
+
+3. Hoạt chất: Propiconazole (Triazole — FRAC 3)
+   Tên thương mại: Tilt 250EC, Bumper 250EC, Vila-Fuji 100SL
+   Liều lượng: Tilt 250EC: 0,5–0,75 lít/ha; pha 15–20 ml/bình 16 lít
+   Thời điểm: Phun phòng hoặc trị sớm giai đoạn đẻ nhánh–đứng cái
+   Thời gian cách ly: 14 ngày
+
+4. Hoạt chất: Azoxystrobin (Strobilurin — FRAC 11)
+   Tên thương mại: Amistar 250SC (Syngenta)
+   Liều lượng: 10–15 ml/bình 16 lít
+   Thời điểm: Phun phòng; phối hợp hoặc luân phiên với Tricyclazole
+   Thời gian cách ly: 14 ngày
+
+5. Hoạt chất: Kasugamycin (kháng sinh nông nghiệp — FRAC 24)
+   Tên thương mại: Kasumin 2L, Kasamin 2SL
+   Liều lượng: 1–1,5 lít/ha; 30–40 ml/bình 16 lít
+   Thời điểm: Luân phiên trong vụ để tránh kháng thuốc Tricyclazole
+   Thời gian cách ly: 7 ngày
+
+⚠️ NGƯỠNG PHUN THUỐC (thực tiễn đồng ruộng ĐBSCL):
+— Phun phòng: Khi thời tiết âm u ≥3 ngày, sương mù buổi sáng, nhiệt
+  độ 18–26°C và ruộng đang giai đoạn đẻ nhánh rộ (nhất là giống
+  nhiễm và bón nhiều đạm)
+— Phun trị: Khi thấy vết bệnh cấp tính đầu tiên HOẶC ≥3 vết bệnh
+  mãn tính/tép lúa HOẶC >1% diện tích lá bị hại
+— KHÔNG CHỜ bệnh lan rộng mới phun — quá muộn, hiệu quả thuốc giảm
+  mạnh
+
+NGUỒN:
+— Chi cục TT&BVTV TP.HCM (chicucttbvtvhcm.gov.vn) — Bệnh đạo ôn:
+  triệu chứng cấp tính, mãn tính; điều kiện phát sinh
+— Sở NN&PTNT Lai Châu (sonnptnt.laichau.gov.vn) — Quy trình phòng
+  trừ bệnh đạo ôn
+— Huyện Kiến Xương, Thái Bình (kienxuong.thaibinh.gov.vn) — Kinh
+  nghiệm phòng trừ đạo ôn lá vụ Đông Xuân
+— An Thịnh Phát (anthinhphatgroup.vn) — Đạo ôn lúa: cơ chế độc tố
+  piricularin, lây lan theo gió
+— Quoc Viet Agri (quocvietagri.com) — Chiến lược phun theo FRAC
+— Genta Thụy Sĩ (gentajsc.com) — Tricyclazole và Isoprothiolane:
+  thời điểm và liều lượng phun
+— Tiểu luận điều tra bệnh đạo ôn tại An Giang (doc.edu.vn) — Số
+  liệu thực địa ĐBSCL
+— Cẩm nang chẩn đoán bệnh cây ở Việt Nam, Burgess et al. 2008

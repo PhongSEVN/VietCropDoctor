@@ -1,0 +1,155 @@
+TÊN BỆNH: Bệnh rỉ sắt nâu mía (brown rust, common rust of sugarcane)
+LOẠI CÂY: Mía (Saccharum officinarum và các giống lai)
+CLASS ID: sugarcane_BrownRust
+
+⚠️ LƯU Ý TÀI LIỆU: Bệnh rỉ sắt nâu mía ít được tài liệu hóa bằng
+tiếng Việt hơn so với các bệnh mía khác. Thông tin trong phần này
+tổng hợp từ kiến thức chung về nấm Puccinia và tài liệu quốc tế về
+P. melanocephala, kết hợp nguồn Việt Nam. Các điểm [cần xác minh]
+nên được tra cứu thêm từ Viện Nghiên cứu Mía đường.
+
+TRIỆU CHỨNG:
+Bệnh rỉ sắt nâu mía gây hại chủ yếu trên lá, đặc biệt nặng trên mía
+từ 2–6 tháng tuổi khi tán lá đã phát triển đầy đủ.
+
+Giai đoạn đầu:
+Trên mặt trên và mặt dưới của phiến lá mía xuất hiện các đốm nhỏ hình
+bầu dục hoặc thuôn dài, màu vàng nhạt đến vàng cam. Các đốm ban đầu
+nằm dọc theo chiều dài phiến lá, rải rác không đều. Kích thước đốm
+khoảng 1–4 mm chiều dài.
+
+Giai đoạn phát triển — ổ bào tử đặc trưng:
+Các đốm vàng dần nổi phồng lên thành ổ bào tử hạ (uredosorus) màu
+nâu đỏ đến nâu sẫm — đây là đặc trưng "rỉ sắt" dễ nhận biết nhất.
+Khi lớp biểu bì bên trên vỡ ra, các ổ bào tử hạ lộ ra, bên trong chứa
+đầy bột mịn màu nâu cam — đây là khối bào tử uredospore. Xung quanh
+mỗi ổ bào tử có quầng vàng nhạt. Ổ bào tử chủ yếu xuất hiện ở mặt
+dưới lá (giống rỉ sắt cà phê) nhưng cũng có thể thấy mặt trên.
+
+Phân biệt rỉ sắt nâu (Puccinia melanocephala) với rỉ sắt cam
+(Puccinia kuehnii):
+— Rỉ sắt nâu: Ổ bào tử màu NÂU ĐỎ đến nâu sẫm; lá bệnh có vệt
+  vàng kéo dài; phổ biến hơn
+— Rỉ sắt cam (orange rust): Ổ bào tử màu CAM TƯƠI sáng; ít phổ biến
+  hơn tại Việt Nam
+
+Giai đoạn muộn:
+Ổ bào tử già chuyển sang màu nâu đen (giai đoạn bào tử đông —
+teliospore). Nhiều ổ bào tử liên kết thành mảng bao phủ phần lớn
+diện tích lá, lá mất khả năng quang hợp, vàng và khô từ đầu lá.
+Cây bị bệnh nặng còi cọc, lóng ngắn, năng suất và hàm lượng đường
+giảm đáng kể.
+
+NGUYÊN NHÂN:
+Tác nhân là nấm Puccinia melanocephala H. Sydow & P. Sydow (bệnh rỉ
+sắt nâu phổ biến — common/brown rust). Thuộc lớp Pucciniomycetes, bộ
+Pucciniales (Uredinales), họ Pucciniaceae. Đây là nấm ký sinh bắt
+buộc (không nuôi cấy được trên môi trường nhân tạo), chỉ phát triển
+trên mô cây sống.
+
+Vòng đời và bào tử:
+Tại vùng nhiệt đới như Việt Nam, P. melanocephala duy trì vòng đời
+chủ yếu ở giai đoạn uredospore (bào tử hạ) — bào tử đơn tế bào, hình
+bầu dục, có gai nhỏ trên bề mặt, màu vàng nâu. Bào tử nhẹ, phát tán
+hiệu quả theo gió hàng chục đến hàng trăm km. Chỉ cần giọt nước và
+nhiệt độ phù hợp là bào tử nảy mầm và xâm nhiễm qua khí khổng trong
+vài giờ. Chu kỳ lây nhiễm tại điều kiện thuận lợi: dưới 14 ngày —
+bệnh có thể bùng phát rất nhanh.
+
+Nguồn bệnh: Tàn dư lá mía bệnh còn trên đồng sau thu hoạch; bào tử
+lưu tồn trên tàn dư; không lây qua hom giống (khác với chồi cỏ và
+khảm lá).
+
+ĐIỀU KIỆN PHÁT SINH:
+— Ẩm độ: Ẩm độ không khí ~98% (gần bão hòa) là điều kiện lý tưởng;
+  màng nước liên tục trên lá ≥9 giờ kích hoạt bào tử nảy mầm và
+  xâm nhiễm. Sương mù ban đêm, mưa nhẹ kéo dài là điều kiện nguy hiểm nhất.
+— Nhiệt độ: Đêm mát (15–20°C) và ngày ấm (20–25°C) — biên độ nhiệt
+  ngày/đêm lớn — là điều kiện tối ưu. Bệnh phát triển kém ở nhiệt độ
+  >32°C.
+— Mùa vụ: Tại Việt Nam, bệnh thường nặng vào cuối mùa mưa đầu mùa
+  khô (tháng 10–12) khi nhiệt độ hạ, sương mù nhiều [cần xác minh
+  theo vùng cụ thể].
+— Giống: Khác biệt lớn giữa các giống; một số giống lai hiện đại có
+  tính kháng tốt; giống cũ nhập nội từ Trung Quốc và Ấn Độ thường
+  nhiễm.
+— Giai đoạn cây: Mía 2–6 tháng tuổi (giai đoạn vươn lóng đến trưởng
+  thành) mẫn cảm nhất.
+— Canh tác: Trồng dày, thiếu thông thoáng, tán lá giao nhau tạo điều
+  kiện ẩm cao trong tán.
+
+PHÒNG TRỊ:
+1. [Giống kháng — Ưu tiên 1] Đây là biện pháp hiệu quả và kinh tế
+  nhất. Nhiều giống mía lai (F1) hiện đại có gen kháng P. melanocephala.
+  Tham khảo danh sách giống kháng từ Viện Nghiên cứu Mía đường và
+  đơn vị cung cấp giống địa phương. Không trồng giống nhiễm ở vùng có
+  lịch sử bệnh nặng.
+
+2. [Canh tác — Ưu tiên 2] Trồng đúng mật độ, không trồng quá dày.
+  Bóc lá già thường xuyên trong giai đoạn vươn lóng để tạo thông
+  thoáng và giảm ẩm độ vi khí hậu trong tán mía.
+
+3. [Canh tác] Vệ sinh đồng ruộng sau thu hoạch; thu gom và tiêu hủy
+  lá mía bệnh (đốt hoặc ủ phân). Bón phân cân đối, bổ sung kali (K)
+  để tăng sức đề kháng lá.
+
+4. [Giám sát] Thăm đồng thường xuyên từ giai đoạn mía 2 tháng tuổi;
+  chú ý kiểm tra mặt dưới lá tầng thấp — nơi ổ bào tử xuất hiện đầu
+  tiên. Phun thuốc ngay khi phát hiện <5% lá bị hại để ngăn bùng phát.
+
+5. [Hóa học] Phun thuốc khi bệnh chớm xuất hiện ở giai đoạn vươn lóng.
+  Phun ướt đều cả hai mặt lá, tập trung mặt dưới. Phun 2 lần cách
+  nhau 10–14 ngày. Kinh tế: cân nhắc ngưỡng bệnh vì chi phí phun trên
+  mía cao; thuốc nội hấp cho hiệu quả tốt hơn thuốc tiếp xúc với nấm
+  ký sinh bắt buộc.
+
+THUỐC KHUYẾN NGHỊ:
+1. Hoạt chất: Propiconazole (Triazole — nội hấp, đặc hiệu Puccinia)
+   Tên thương mại: Tilt 250EC, Bumper 250EC, AZOSTAR GOLD 35SC
+   (kết hợp Azoxystrobin + Propiconazole)
+   Liều lượng: Tilt 250EC: 15–20 ml/bình 16 lít; 0,5–0,75 lít/ha
+   Thời điểm: Phun khi chớm phát hiện ổ bào tử đầu tiên
+   Thời gian cách ly: 14 ngày
+
+2. Hoạt chất: Tebuconazole (Triazole — nội hấp phổ rộng)
+   Tên thương mại: Folicur 250EW, Nativo 750WG
+   (Nativo = Tebuconazole + Trifloxystrobin)
+   Liều lượng: theo hướng dẫn nhà sản xuất
+   Thời điểm: Phun phòng và trị; Nativo đặc biệt hiệu quả với nấm rỉ
+   Thời gian cách ly: 14 ngày
+
+3. Hoạt chất: Hexaconazole (Triazole — nội hấp)
+   Tên thương mại: Anvil 5SC, Atulvil 5SC, Camilo 150SC
+   Liều lượng: 20 ml/bình 16 lít (Anvil 5SC)
+   Thời điểm: Luân phiên với Propiconazole và Tebuconazole
+   Thời gian cách ly: 14 ngày
+
+4. Hoạt chất: Azoxystrobin + Difenoconazole (Strobilurin + Triazole)
+   Tên thương mại: Amistar Top 325SC (Syngenta)
+   Liều lượng: 10–15 ml/bình 16 lít
+   Thời điểm: Phun phòng và trị; hiệu lực kép tốt với rỉ sắt
+   Thời gian cách ly: 14 ngày
+
+5. Hoạt chất: Mancozeb (Dithiocarbamate — tiếp xúc)
+   Tên thương mại: Dithane M-45 80WP, Mancozeb 80WP
+   Liều lượng: 25–30 g/bình 16 lít
+   Thời điểm: Phun phòng; kết hợp với Triazole nội hấp để tăng hiệu
+   quả (tiếp xúc + nội hấp)
+   Thời gian cách ly: 7 ngày
+
+⚠️ LƯU Ý: Thuốc nội hấp nhóm Triazole (Propiconazole, Tebuconazole,
+Hexaconazole) là lựa chọn hàng đầu với nấm rỉ Puccinia vì nấm này
+ký sinh bên trong mô lá, thuốc tiếp xúc đơn thuần kém hiệu quả hơn.
+Luân phiên hoạt chất giữa các lần phun để tránh kháng thuốc.
+
+NGUỒN:
+— Plantix/CABI (plantix.net) — Sugarcane common rust (Puccinia
+  melanocephala): triệu chứng, điều kiện 98% ẩm, chu kỳ <14 ngày
+— Alpha Agrochem (alphaagrochem.com) — Bệnh rỉ sắt: đặc điểm Puccinia,
+  danh sách hoạt chất Hexaconazole, Propiconazole, Tebuconazole
+— AZ Farming (azfarming.vn) — Bệnh rỉ sắt: cơ chế ổ bào tử, phát tán
+  theo gió, biện pháp phòng trừ tổng hợp
+— Sinh học AQ (nguyenlieusinhhoc.com) — 8 bệnh mía Việt Nam
+— Khuyến nông Bà Rịa-Vũng Tàu (knkn.baria-vungtau.gov.vn .gov.vn)
+  — Quản lý IPM bệnh hại mía
+— Cẩm nang chẩn đoán bệnh cây Việt Nam, Burgess et al. 2008

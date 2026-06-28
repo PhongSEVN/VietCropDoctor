@@ -1,0 +1,171 @@
+=================================================================
+  BƯỚC 1 — LIỆT KÊ FILE
+=================================================================
+  [coffee    ] arabica-coffee-manual-for-lao-pdr-fao-2005.pdf   9444 KB
+  [coffee    ] PD-118.pdf                                       1377 KB
+  [coffee    ] PD-41.pdf                                         320 KB
+  [coffee    ] U3071CoffeeManual.pdf                            1865 KB
+  [rice      ] Bacterial blight.pdf                              696 KB
+  [rice      ] Bacterial leaf streak for rice.pdf                604 KB
+  [rice      ] Bakanae for rice.pdf                              527 KB
+  [rice      ] Baterial sheath brown rot.pdf                     512 KB
+  [rice      ] Blast (leaf and collar).pdf                       621 KB
+  [rice      ] Blast (node and neck).pdf                         651 KB
+  [rice      ] Brown spot.pdf                                    725 KB
+  [rice      ] diagnostic-of-common-diseases-of-rice.pdf        1022 KB
+  [rice      ] False smut.pdf                                    459 KB
+  [rice      ] Leaf Scald.pdf                                    463 KB
+  [rice      ] Narrow brown spot.pdf                             544 KB
+  [rice      ] Red stripe.pdf                                    365 KB
+  [rice      ] Rice grassy stunt.pdf                             417 KB
+  [rice      ] Rice stripe virus disease.pdf                     403 KB
+  [rice      ] Sheath blight Rice.pdf                            636 KB
+  [rice      ] Sheath rot rice.pdf                               735 KB
+  [rice      ] Stem rot.pdf                                      391 KB
+  [rice      ] Tungro.pdf                                       1385 KB
+  [sugarcane ] main.pdf                                         2428 KB
+
+  Tổng: 23 file PDF
+  OCR: CÓ (pytesseract)
+
+=================================================================
+  BƯỚC 2+3 — ĐỌC, ĐÁNH GIÁ, TÁCH & LƯU
+=================================================================
+
+[COFFEE] arabica-coffee-manual-for-lao-pdr-fao-2005.pdf
+  Text: 147,303 ký tự
+  Chất lượng: [GOOD] Đủ 4 phần: triệu chứng, nguyên nhân, điều kiện, phòng trị
+  Tách được: 1 bệnh/mục
+    -> fao_coffee_diseases.txt  (8 KB)
+
+[COFFEE] PD-118.pdf
+  Text: 21,507 ký tự
+  Chất lượng: [GOOD] Đủ 4 phần: triệu chứng, nguyên nhân, điều kiện, phòng trị
+  Tách được: 1 bệnh/mục
+    -> coffee_leaf_rust.txt  (2 KB)
+
+[COFFEE] PD-41.pdf
+  Text: 15,246 ký tự
+  Chất lượng: [GOOD] Đủ 4 phần: triệu chứng, nguyên nhân, điều kiện, phòng trị
+  Tách được: 1 bệnh/mục
+    -> cercospora_leaf_spot.txt  (13 KB)
+
+[COFFEE] U3071CoffeeManual.pdf
+  Text: 134,960 ký tự
+  Chất lượng: [GOOD] Đủ 4 phần: triệu chứng, nguyên nhân, điều kiện, phòng trị
+  Tách được: 6 bệnh/mục
+    -> coffee_leaf_rust.txt  (5 KB)
+    -> coffee_berry_disease.txt  (5 KB)
+    -> coffee_wilt_disease.txt  (5 KB)
+    -> brown_eye_spot.txt  (2 KB)
+    -> fusarium_bark_disease.txt  (2 KB)
+    -> root_rot.txt  (1 KB)
+
+[RICE] Bacterial blight.pdf
+  WARN: Không trích được text
+
+[RICE] Bacterial leaf streak for rice.pdf
+  WARN: Không trích được text
+
+[RICE] Bakanae for rice.pdf
+  WARN: Không trích được text
+
+[RICE] Baterial sheath brown rot.pdf
+  WARN: Không trích được text
+
+[RICE] Blast (leaf and collar).pdf
+  WARN: Không trích được text
+
+[RICE] Blast (node and neck).pdf
+  WARN: Không trích được text
+
+[RICE] Brown spot.pdf
+  WARN: Không trích được text
+
+[RICE] diagnostic-of-common-diseases-of-rice.pdf
+  Text: 30,124 ký tự
+  Chất lượng: [GOOD] Đủ 4 phần: triệu chứng, nguyên nhân, điều kiện, phòng trị
+  Tách được: 1 bệnh/mục
+    -> irri_common_rice_diseases.txt  (6 KB)
+
+[RICE] False smut.pdf
+  WARN: Không trích được text
+
+[RICE] Leaf Scald.pdf
+  WARN: Không trích được text
+
+[RICE] Narrow brown spot.pdf
+  WARN: Không trích được text
+
+[RICE] Red stripe.pdf
+  WARN: Không trích được text
+
+[RICE] Rice grassy stunt.pdf
+  WARN: Không trích được text
+
+[RICE] Rice stripe virus disease.pdf
+  WARN: Không trích được text
+
+[RICE] Sheath blight Rice.pdf
+  WARN: Không trích được text
+
+[RICE] Sheath rot rice.pdf
+  WARN: Không trích được text
+
+[RICE] Stem rot.pdf
+  WARN: Không trích được text
+
+[RICE] Tungro.pdf
+  WARN: Không trích được text
+
+[SUGARCANE] main.pdf
+  Text: 15,822 ký tự
+  Chất lượng: [MED ] Thiếu phần: cause
+  Tách được: 4 bệnh/mục
+    -> value_of_the_data.txt  (1 KB)
+    -> data_description.txt  (2 KB)
+    SKIP image_june_the_images_appropriate_for_dataset_were.txt (nội dung rỗng)
+    -> method.txt  (2 KB)
+
+=================================================================
+  BƯỚC 4 — BÁO CÁO TỔNG KẾT
+=================================================================
+  Tổng file đầu vào     : 23
+  Tổng file bệnh đã tạo : 13
+  Bỏ qua                : 18
+
+  File bị bỏ qua (lý do khác):
+    - Bacterial blight.pdf: Không trích được text
+    - Bacterial leaf streak for rice.pdf: Không trích được text
+    - Bakanae for rice.pdf: Không trích được text
+    - Baterial sheath brown rot.pdf: Không trích được text
+    - Blast (leaf and collar).pdf: Không trích được text
+    - Blast (node and neck).pdf: Không trích được text
+    - Brown spot.pdf: Không trích được text
+    - False smut.pdf: Không trích được text
+    - Leaf Scald.pdf: Không trích được text
+    - Narrow brown spot.pdf: Không trích được text
+    - Red stripe.pdf: Không trích được text
+    - Rice grassy stunt.pdf: Không trích được text
+    - Rice stripe virus disease.pdf: Không trích được text
+    - Sheath blight Rice.pdf: Không trích được text
+    - Sheath rot rice.pdf: Không trích được text
+    - Stem rot.pdf: Không trích được text
+    - Tungro.pdf: Không trích được text
+    - image_june_the_images_appropriate_for_dataset_were.txt: Nội dung rỗng sau tách
+
+  File đã tạo:
+    + coffee\fao_coffee_diseases.txt
+    + coffee\coffee_leaf_rust.txt
+    + coffee\cercospora_leaf_spot.txt
+    + coffee\coffee_leaf_rust.txt
+    + coffee\coffee_berry_disease.txt
+    + coffee\coffee_wilt_disease.txt
+    + coffee\brown_eye_spot.txt
+    + coffee\fusarium_bark_disease.txt
+    + coffee\root_rot.txt
+    + rice\irri_common_rice_diseases.txt
+    + sugarcane\value_of_the_data.txt
+    + sugarcane\data_description.txt
+    + sugarcane\method.txt
+

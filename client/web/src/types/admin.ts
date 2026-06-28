@@ -189,6 +189,42 @@ export interface RetrainResult {
   state?: string | null;
 }
 
+export interface KafkaTopic {
+  topic: string;
+  partitions: number;
+  messages: number; // total end offset across partitions
+}
+
+export interface KafkaConsumerGroup {
+  group: string;
+  topic: string;
+  lag: number;
+  committed_offset: number;
+}
+
+export interface KafkaOverview {
+  exporter_up: boolean;
+  brokers: number;
+  topics: KafkaTopic[];
+  consumer_groups: KafkaConsumerGroup[];
+  kafka_ui_url: string;
+}
+
+export interface GpuInfo {
+  uuid: string;
+  name: string;
+  util_pct: number;
+  mem_used_bytes: number;
+  mem_total_bytes: number;
+  temp_c: number;
+  power_w: number;
+}
+
+export interface GpuOverview {
+  available: boolean;
+  gpus: GpuInfo[];
+}
+
 export type ReportType =
   | "user"
   | "expert"

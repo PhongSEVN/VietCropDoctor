@@ -1,0 +1,143 @@
+TÊN BỆNH: Bệnh đốm lá xám ngô (gray leaf spot, GLS)
+LOẠI CÂY: Ngô (Zea mays)
+CLASS ID: corn_Gray_Leaf_Spot
+
+⚠️ LƯU Ý: Bệnh đốm lá xám ngô (Cercospora zeae-maydis) ít được ghi
+nhận và tài liệu hóa riêng biệt tại Việt Nam. Tại các vùng trồng ngô
+miền Bắc và Tây Nguyên, bệnh này có thể bị nhầm và gộp chung với các
+bệnh đốm lá khác (đốm lá lớn NLB, đốm lá nhỏ SLB). [cần xác minh mức
+độ phổ biến tại Việt Nam]
+
+TRIỆU CHỨNG:
+Bệnh đốm lá xám là bệnh nấm lá quan trọng trên ngô tại các vùng nhiệt
+đới và ôn đới, đặc biệt phổ biến ở vùng có độ ẩm cao và điều kiện mưa
+nhiều liên tục.
+
+Vết bệnh đặc trưng — HÌNH CHỮ NHẬT giới hạn bởi gân lá:
+Đây là đặc điểm phân biệt quan trọng nhất của đốm lá xám so với các
+bệnh đốm lá ngô khác:
+— Hình dạng: Hình CHỮ NHẬT hoặc hình THANG dài, hai cạnh dài song
+  song với gân lá — bị giới hạn rõ ràng bởi các gân lá phụ (veinlets);
+  đây là đặc điểm chẩn đoán của Cercospora (khác NLB hình thoi không
+  bị giới hạn bởi gân)
+— Kích thước: Vừa phải, 1–5 cm chiều dài × 2–4 mm chiều rộng; nhỏ hơn
+  NLB (5–25 cm) nhưng lớn hơn đốm lá nhỏ SLB (1–3 cm)
+— Màu sắc đặc trưng: Tâm vết bệnh màu XÁM NHẠT đến xám trắng (đây là
+  nguồn gốc tên "gray leaf spot"); viền vết bệnh màu nâu vàng đến nâu
+  đậm; trong điều kiện ẩm, trên vết bệnh có lớp mốc xám nhạt mịn (bào
+  tử Cercospora)
+— Quầng vàng: Có thể có quầng vàng nhạt xung quanh vết bệnh; mờ hơn
+  so với đốm nâu lúa
+
+Giai đoạn đầu:
+Vết bệnh ban đầu là những đốm nhỏ màu vàng hoặc nâu nhạt, mờ, kích
+thước vài mm; sau đó tăng dần kích thước theo chiều dài giới hạn bởi gân lá.
+
+Giai đoạn nặng:
+Nhiều vết bệnh liên kết thành mảng lớn, phủ kín phần lớn diện tích lá.
+Lá mất khả năng quang hợp, khô cháy từng phần rồi toàn bộ. Bệnh thường
+bắt đầu từ lá già tầng thấp rồi lan nhanh lên lá phía trên khi điều
+kiện thuận lợi (ẩm độ cao liên tục).
+
+⚠️ BẢNG PHÂN BIỆT 3 BỆNH ĐỐM LÁ CHÍNH TRÊN NGÔ:
+| Đặc điểm      | Đốm xám (GLS)      | Đốm lớn (NLB)      | Đốm nhỏ (SLB)     |
+|---------------|--------------------|--------------------|-------------------|
+| Tác nhân      | Cercospora         | Exserohilum        | Bipolaris maydis  |
+|               | zeae-maydis        | turcicum           |                   |
+| Hình dạng vết | CHỮ NHẬT, giới     | THOI DÀI, không    | TRÒN/BẦU DỤC nhỏ |
+|               | hạn bởi gân lá     | giới hạn bởi gân   |                   |
+| Kích thước    | 1–5 cm dài         | 5–25 cm dài        | 0,5–3 cm          |
+| Màu tâm vết   | XÁM NHẠT/trắng xám| Nâu sáng/xám bạc  | Nâu vàng/đỏ nâu  |
+| Quầng vàng    | Nhạt, có thể có    | KHÔNG CÓ           | Có, rõ hơn        |
+| Mốc trên vết  | Xám nhạt mịn       | Đen nhọ (rõ)       | Ít rõ             |
+| Điều kiện     | 25–30°C, ẩm cao    | 18–27°C, ẩm cao   | 25–30°C, ẩm cao   |
+
+NGUYÊN NHÂN:
+Tác nhân là nấm Cercospora zeae-maydis Tehon & Daniels (thuộc lớp
+Dothideomycetes, bộ Mycosphaerellales, họ Mycosphaerellaceae). Đây là
+nấm đặc thù ký sinh trên ngô, không gây bệnh trên cây khác họ Poaceae.
+
+Bào tử phân sinh (conidium): Hình trụ dài như roi, màu không màu đến
+vàng nhạt, nhiều vách ngăn (5–15 ngăn), kích thước 35–200 × 3–6 µm.
+Bào tử phát tán qua gió và nước mưa bắn.
+
+Nguồn bệnh: Sợi nấm và bào tử tồn tại trong tàn dư lá, thân ngô
+trong đất — đây là nguồn bệnh quan trọng nhất và là lý do bệnh nặng
+hơn ở ruộng canh tác ngô liên tục. Nấm KHÔNG lây qua hạt giống.
+
+Chu kỳ lây nhiễm: 14–21 ngày ở giống nhiễm; 21–28 ngày ở giống kháng.
+Trong điều kiện thuận lợi liên tục, bệnh bùng phát nhanh.
+
+ĐIỀU KIỆN PHÁT SINH:
+— Nhiệt độ: 25–30°C là khoảng tối ưu — ấm hơn so với đốm lá lớn NLB
+  (18–27°C); bệnh phát sinh mạnh ở vùng nhiệt đới nóng ẩm
+— Ẩm độ và mưa: Cần độ ẩm cao liên tục, sương mù buổi sáng, mưa nhẹ
+  kéo dài; lá cần ẩm ướt liên tục để bào tử nảy mầm và xâm nhiễm.
+  Thời tiết khô nóng ức chế phát triển bệnh.
+— Mùa vụ: Bệnh nặng nhất vụ Hè Thu và vụ Mùa khi ẩm độ cao liên tục;
+  ít bệnh trong vụ Đông tại miền Bắc khi trời khô.
+— Canh tác: Ruộng ngô liên canh nhiều vụ, không cày vùi tàn dư; mật
+  độ trồng dày; bón ít phân hữu cơ làm đất kém và cây sinh trưởng yếu.
+— Giống: Giống ngô địa phương và một số giống lai mẫn cảm; giống lai
+  hiện đại có tính kháng tốt hơn.
+
+PHÒNG TRỊ:
+1. [Giống kháng — Ưu tiên 1] Chọn giống ngô lai có tính kháng đốm lá
+  xám. Trong điều kiện vùng bệnh nặng, đây là biện pháp quan trọng nhất.
+
+2. [Canh tác — Ưu tiên 2] Cày vùi hoặc thu gom đốt tàn dư lá ngô sau
+  thu hoạch — giảm nguồn bào tử Cercospora trong đất. Luân canh với
+  cây họ đậu, rau màu để phá vỡ chu kỳ bệnh.
+
+3. [Canh tác] Bón phân cân đối; không bón thừa đạm; trồng đúng mật
+  độ để ruộng thông thoáng. Hạn chế tưới phun (sprinkler) làm ướt
+  lá kéo dài — tưới rãnh hoặc nhỏ giọt tốt hơn.
+
+4. [Thời vụ] Tránh gieo muộn vào giai đoạn thời tiết ẩm ướt kéo dài
+  — trồng sớm trong vụ để tránh đỉnh mật số bào tử.
+
+5. [Hóa học] Phun thuốc khi bệnh chớm xuất hiện ở giai đoạn trước
+  trỗ cờ. Ưu tiên thuốc nội hấp (Triazole, Strobilurin) vì Cercospora
+  ký sinh trong mô lá. Phun 2 lần cách nhau 10–14 ngày. Cân nhắc
+  kinh tế (chi phí vs thiệt hại dự kiến) trước khi quyết định phun.
+
+THUỐC KHUYẾN NGHỊ:
+1. Hoạt chất: Azoxystrobin + Propiconazole (Strobilurin + Triazole kép)
+   Tên thương mại: Amistar Top 325SC (Syngenta), AZOSTAR GOLD 35SC
+   Liều lượng: 10–15 ml/bình 16 lít; 0,75–1,0 lít/ha
+   Thời điểm: Phun khi bệnh chớm xuất hiện, trước và sau trỗ cờ
+   Thời gian cách ly: 14 ngày
+   Ưu điểm: Kép tác dụng, hiệu quả cao với Cercospora
+
+2. Hoạt chất: Pyraclostrobin (Strobilurin — FRAC 11)
+   Tên thương mại: Cabrio Team (kết hợp Metiram), Headline SC (BASF)
+   [cần xác minh đăng ký tại Việt Nam]
+   Liều lượng: theo hướng dẫn nhà sản xuất
+   Thời điểm: Phun phòng trước khi bệnh bùng phát
+
+3. Hoạt chất: Propiconazole (Triazole — FRAC 3)
+   Tên thương mại: Tilt 250EC, Tilt 250ND
+   Liều lượng: 15–20 ml/bình 16 lít; 0,5–0,75 lít/ha
+   Thời điểm: Phun trị khi bệnh chớm xuất hiện
+   Thời gian cách ly: 14 ngày
+
+4. Hoạt chất: Tebuconazole + Trifloxystrobin (kép Triazole + Strobilurin)
+   Tên thương mại: Nativo 750WG (Bayer)
+   Liều lượng: theo hướng dẫn nhà sản xuất
+   Thời điểm: Phun phòng hoặc trị sớm; luân phiên với Propiconazole
+
+5. Hoạt chất: Mancozeb (tiếp xúc — phòng trừ kết hợp)
+   Tên thương mại: Dithane M-45 80WP, Fovanthane 80WP
+   Liều lượng: 25–30 g/bình 16 lít
+   Thời điểm: Phun phòng kết hợp với Triazole/Strobilurin nội hấp
+   Thời gian cách ly: 7 ngày
+
+NGUỒN:
+— Plantix/CABI (plantix.net) — Gray leaf spot: Cercospora zeae-maydis,
+  25–30°C, ẩm cao, thuốc Strobilurin + Triazole
+— Chi cục TT&BVTV Ninh Bình (chicucttbvtv.ninhbinh.gov.vn .gov.vn) —
+  Bệnh đốm lá ngô: biện pháp phòng trừ, Tilt 250ND, Anvil 5SC
+— ABA Chemical (abachemical.com) — Đốm lá nhỏ và lớn ngô: phân biệt,
+  thuốc Difenoconazole và Propiconazole
+— DrXanh (drxanh.com) — Đốm lá nhỏ ngô: Difenoconazole, Propiconazole
+— Cẩm nang chẩn đoán bệnh cây Việt Nam, Burgess et al. 2008

@@ -1,0 +1,21 @@
+Cà phê: Bệnh đốm rong
+Cà phê: Bệnh nấm rỉ sắt
+Cà phê: Bệnh phấn trắng
+Cà phê: Bệnh phoma
+Cà phê: Bệnh sâu vẽ bùa
+Lúa: Bệnh đạo ôn cổ bông
+Lúa: Bệnh đạo ôn lá
+Lúa: Bệnh đốm nâu
+Lúa: Bệnh sâu gai hispa
+Lúa: Bệnh vàng lá tungro
+Mía: Bệnh chồi cỏ
+Mía: Bệnh đốm nâu
+Mía: Bệnh khảm lá
+Mía: Bệnh rỉ sắt nâu
+Mía: Bệnh than đen
+Mía: Bệnh thối hom
+Mía: Bệnh vàng lá
+Mía: Lá khô
+Ngô: Bệnh cháy lá lớn
+Ngô: Bệnh đốm lá xám
+Ngô: Bệnh rỉ sắt

@@ -1,0 +1,106 @@
+TÊN BỆNH: Bệnh đốm rong (bệnh tảo đỏ) trên cà phê
+LOẠI CÂY: Cà phê (Coffea robusta, Coffea arabica)
+CLASS ID: cafe_dotm_rong
+
+TRIỆU CHỨNG:
+Bệnh đốm rong gây hại trên nhiều bộ phận của cây cà phê, đặc biệt
+nghiêm trọng ở vườn cà phê giai đoạn kinh doanh (từ năm thứ 4 trở đi).
+
+Trên lá: Vết bệnh xuất hiện đầu tiên là những đốm tròn hoặc hơi tròn,
+kích thước nhỏ từ 3–5 mm, nổi gồ lên trên bề mặt lá do lớp tảo phát
+triển thành lớp nhung mịn màu xanh rêu hoặc xanh vàng. Vết bệnh chủ
+yếu xuất hiện trên mặt trên của lá. Khi bệnh phát triển nặng hơn, vết
+bệnh mở rộng đường kính trên 1 cm, màu chuyển dần sang vàng nâu, ở
+giữa đóng phấn màu vàng cam (đây là bào tử của tảo). Mặt dưới vết bệnh
+có màu nâu nhạt đến sậm do mô lá bị hoại tử. Trên một lá có thể có
+nhiều đốm, khi liên kết lại thành mảng lớn sẽ làm lá bị vàng và rụng
+sớm, ảnh hưởng nghiêm trọng đến quá trình quang hợp.
+
+Trên cành: Vết bệnh màu nâu đỏ nổi gồ lên bề mặt cành, nhìn như một
+lớp nhung mịn. Khi phát triển mạnh, các vết đốm liên kết thành mảng
+loang lổ trên cành. Trên cành non, sự xâm nhiễm tạo nên các vết nứt
+vỏ, dễ nhiễm các nấm bệnh thứ cấp (đặc biệt là Phytophthora).
+
+Trên cuống quả và quả: Trong trường hợp bệnh nặng, tảo còn tấn công
+cả cuống quả, làm giảm dinh dưỡng nuôi trái, trái chậm lớn. Cây bị
+bệnh nặng tổng thể trở nên xơ xác, kém xanh, giảm năng suất rõ rệt.
+
+NGUYÊN NHÂN:
+Tác nhân gây bệnh là tảo xanh ký sinh Cephaleuros virescens Kunze (thuộc
+ngành Chlorophyta, lớp Trentepohliales). Đây không phải nấm mà là một chi
+tảo ký sinh gồm khoảng 14 loài, trong đó C. virescens là loài phổ biến
+nhất. Tảo phát triển sợi (hệ sợi màu xanh xếp sát nhau) len lỏi giữa
+lớp biểu bì và lớp cutin của lá và cành, hút dinh dưỡng từ tế bào ký
+chủ, làm giảm khả năng quang hợp. Bào tử di động (zoospore) của tảo
+được phát tán qua nước mưa, nước tưới, gió và côn trùng sang cây khác
+hoặc bộ phận khác trên cùng cây. Bệnh lây lan nhanh trong điều kiện
+vườn ẩm ướt.
+
+ĐIỀU KIỆN PHÁT SINH:
+— Thời tiết: Bệnh phát triển mạnh trong mùa mưa (tháng 5–10 ở Tây
+Nguyên), khi độ ẩm không khí cao liên tục và có mưa xen kẽ nắng. Nhiệt
+độ cao kết hợp ẩm độ cao là điều kiện lý tưởng nhất.
+— Vườn cây: Vườn rậm rạp, không thông thoáng, thiếu ánh sáng, hệ thống
+thoát nước kém tạo môi trường lý tưởng cho tảo phát triển.
+— Dinh dưỡng: Cây thiếu dinh dưỡng, bón phân không cân đối làm cây có
+sức đề kháng yếu, dễ bị tảo tấn công.
+— Giai đoạn sinh trưởng: Vườn cà phê kinh doanh (≥4 tuổi) bị hại nặng
+hơn vườn kiến thiết cơ bản. Bệnh gây hại chủ yếu trên lá già và lá
+bánh tẻ.
+— Mật độ canh tác: Trồng dày, thiếu tỉa cành tạo tán làm tán cây giao
+nhau, tăng ẩm độ vi khí hậu trong vườn.
+
+PHÒNG TRỊ:
+1. [Canh tác - Ưu tiên 1] Trồng cà phê với mật độ hợp lý; tỉa cành tạo
+tán định kỳ ít nhất 2 lần/năm (sau thu hoạch và trước mùa mưa) để vườn
+thông thoáng, giảm ẩm độ tán cây.
+
+2. [Canh tác - Ưu tiên 2] Bón phân đầy đủ và cân đối NPK và vi lượng
+(Zn, Bo, Mg); tăng cường phân hữu cơ để nâng cao sức đề kháng cây. Tránh
+để cây thiếu dinh dưỡng, đặc biệt trong mùa mưa.
+
+3. [Canh tác - Ưu tiên 3] Cải thiện thoát nước vườn; không để đọng nước
+gốc. Vệ sinh vườn sau thu hoạch, thu gom tàn dư cành lá bệnh đem tiêu
+hủy để giảm nguồn bào tử lưu tồn.
+
+4. [Sinh học] Sử dụng chế phẩm Nano đồng (Copper nano) hoặc dung dịch
+đồng hữu cơ phun phòng định kỳ đầu mùa mưa; đây là lựa chọn thân thiện
+môi trường với hiệu lực ức chế tảo tốt.
+
+5. [Hóa học] Khi bệnh xuất hiện trên >30% tán cây, tiến hành phun thuốc
+hóa học. Phun 2–3 lần cách nhau 15 ngày. Thời điểm phun phòng thích hợp:
+tháng 6–8. Ưu tiên sử dụng thuốc gốc đồng và luân phiên hoạt chất để
+tránh kháng thuốc.
+
+THUỐC KHUYẾN NGHỊ:
+1. Hoạt chất: Copper Hydroxide (Đồng hydroxit)
+   Tên thương mại: Champion 77WP, Kocide 46.1WG
+   Liều lượng: Champion 77WP pha 20–25 g/bình 16 lít; phun ướt đều tán lá
+   Thời điểm: Phun phòng đầu mùa mưa (tháng 5–6) và khi phát hiện bệnh
+   Thời gian cách ly: 7 ngày [cần xác minh theo nhãn thuốc]
+
+2. Hoạt chất: Copper Oxychloride (Đồng oxyclorua)
+   Tên thương mại: COC 85WP, Copper-zinc 85WP, Bordeaux
+   Liều lượng: 20–30 g/bình 16 lít
+   Thời điểm: Phun phòng hoặc khi bệnh xuất hiện; lặp lại sau 15 ngày
+   Thời gian cách ly: 7–14 ngày [cần xác minh theo nhãn thuốc]
+
+3. Hoạt chất: Mancozeb + Copper (hỗn hợp)
+   Tên thương mại: Copperion 77WP
+   Liều lượng: theo hướng dẫn nhà sản xuất
+   Thời điểm: Phun trị khi bệnh đã xuất hiện, phun 2–3 lần cách 15 ngày
+   Thời gian cách ly: [cần xác minh theo nhãn thuốc]
+
+4. Hoạt chất: Difenoconazole + Azoxystrobin (hỗn hợp strobilurin + triazole)
+   Tên thương mại: Amistar Top 325SC, Score 250ND
+   Liều lượng: 10–15 ml/bình 16 lít
+   Thời điểm: Phun khi bệnh nặng không đáp ứng thuốc gốc đồng
+   Thời gian cách ly: 14 ngày [cần xác minh]
+
+NGUỒN:
+— Chi cục TT&BVTV Lâm Đồng (ttbvtv.lamdong.gov.vn) — Sâu bệnh hại cây cà phê
+— Bác Sĩ Cây Xanh (bacsicayxanh.vn) — Bệnh tảo đỏ trên cây cà phê
+— Prime Coffea (primecoffea.com) — Canh tác 12: Sâu bệnh hại cà phê
+— Sở KHCN Bến Tre (dost-bentre.gov.vn) — Bệnh đốm rong Cephaleuros virescens
+— Phân bón Việt Nam (phanbonvietnam.com) — TOP 4 thuốc trừ tảo đỏ ở cafe
+— Cẩm nang chẩn đoán bệnh cây ở Việt Nam, Burgess et al. 2008 (coa.ctu.edu.vn)

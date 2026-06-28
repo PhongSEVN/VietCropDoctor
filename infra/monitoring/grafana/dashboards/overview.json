@@ -2,14 +2,46 @@
   "__inputs": [],
   "__elements": {},
   "__requires": [
-    { "type": "grafana",    "id": "grafana",    "name": "Grafana",     "version": "10.4.0" },
-    { "type": "datasource", "id": "prometheus", "name": "Prometheus",  "version": "1.0.0"  },
-    { "type": "panel",      "id": "barchart",   "name": "Bar chart",   "version": ""       },
-    { "type": "panel",      "id": "gauge",      "name": "Gauge",       "version": ""       },
-    { "type": "panel",      "id": "stat",       "name": "Stat",        "version": ""       },
-    { "type": "panel",      "id": "timeseries", "name": "Time series", "version": ""       }
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "10.4.0"
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "barchart",
+      "name": "Bar chart",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "gauge",
+      "name": "Gauge",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "stat",
+      "name": "Stat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
+    }
   ],
-  "annotations": { "list": [] },
+  "annotations": {
+    "list": []
+  },
   "description": "VietCropDoctor — inference, RAG, Kafka and WebSocket overview",
   "editable": true,
   "fiscalYearStartMonth": 0,
@@ -18,34 +50,63 @@
   "links": [],
   "refresh": "30s",
   "schemaVersion": 39,
-  "tags": ["vietcropdoctor", "monitoring"],
-  "templating": { "list": [] },
-  "time": { "from": "now-6h", "to": "now" },
+  "tags": [
+    "vietcropdoctor",
+    "monitoring"
+  ],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
   "timepicker": {},
   "timezone": "browser",
   "title": "VietCropDoctor Overview",
   "uid": "vcd-overview",
   "version": 1,
-
   "panels": [
-
     {
       "id": 1,
       "type": "timeseries",
       "title": "Request Rate per Service (req/s)",
-      "gridPos": { "x": 0, "y": 0, "w": 12, "h": 8 },
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
       "options": {
-        "tooltip": { "mode": "multi", "sort": "desc" },
-        "legend": { "displayMode": "list", "placement": "bottom", "calcs": ["mean", "max"] }
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        },
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "calcs": [
+            "mean",
+            "max"
+          ]
+        }
       },
       "fieldConfig": {
         "defaults": {
-          "color": { "mode": "palette-classic" },
+          "color": {
+            "mode": "palette-classic"
+          },
           "unit": "reqps",
           "custom": {
-            "drawStyle": "line", "lineWidth": 2, "fillOpacity": 8,
-            "showPoints": "never", "spanNulls": true,
+            "drawStyle": "line",
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "showPoints": "never",
+            "spanNulls": true,
             "lineInterpolation": "smooth"
           }
         },
@@ -53,31 +114,56 @@
       },
       "targets": [
         {
-          "datasource": { "type": "prometheus", "uid": "prometheus" },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
           "expr": "sum(rate(http_requests_total[5m])) by (job)",
           "legendFormat": "{{ job }}",
           "refId": "A"
         }
       ]
     },
-
     {
       "id": 2,
       "type": "timeseries",
       "title": "Latency P50 / P95 / P99 per Service",
-      "gridPos": { "x": 12, "y": 0, "w": 12, "h": 8 },
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "gridPos": {
+        "x": 12,
+        "y": 0,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
       "options": {
-        "tooltip": { "mode": "multi", "sort": "desc" },
-        "legend": { "displayMode": "list", "placement": "bottom", "calcs": ["mean", "max"] }
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        },
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "calcs": [
+            "mean",
+            "max"
+          ]
+        }
       },
       "fieldConfig": {
         "defaults": {
-          "color": { "mode": "palette-classic" },
+          "color": {
+            "mode": "palette-classic"
+          },
           "unit": "s",
           "custom": {
-            "drawStyle": "line", "lineWidth": 2, "fillOpacity": 0,
-            "showPoints": "never", "spanNulls": true,
+            "drawStyle": "line",
+            "lineWidth": 2,
+            "fillOpacity": 0,
+            "showPoints": "never",
+            "spanNulls": true,
             "lineInterpolation": "smooth"
           }
         },
@@ -85,50 +171,86 @@
       },
       "targets": [
         {
-          "datasource": { "type": "prometheus", "uid": "prometheus" },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
           "expr": "histogram_quantile(0.50, sum(rate(http_request_duration_seconds_bucket[5m])) by (le, job))",
           "legendFormat": "p50 {{ job }}",
           "refId": "A"
         },
         {
-          "datasource": { "type": "prometheus", "uid": "prometheus" },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
           "expr": "histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[5m])) by (le, job))",
           "legendFormat": "p95 {{ job }}",
           "refId": "B"
         },
         {
-          "datasource": { "type": "prometheus", "uid": "prometheus" },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
           "expr": "histogram_quantile(0.99, sum(rate(http_request_duration_seconds_bucket[5m])) by (le, job))",
           "legendFormat": "p99 {{ job }}",
           "refId": "C"
         }
       ]
     },
-
     {
       "id": 3,
       "type": "timeseries",
       "title": "Error Rate per Service (5xx / req)",
-      "gridPos": { "x": 0, "y": 8, "w": 12, "h": 8 },
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "gridPos": {
+        "x": 0,
+        "y": 8,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
       "options": {
-        "tooltip": { "mode": "multi", "sort": "desc" },
-        "legend": { "displayMode": "list", "placement": "bottom" }
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        },
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
       },
       "fieldConfig": {
         "defaults": {
-          "color": { "mode": "palette-classic" },
+          "color": {
+            "mode": "palette-classic"
+          },
           "unit": "percentunit",
           "custom": {
-            "drawStyle": "line", "lineWidth": 2, "fillOpacity": 15,
-            "showPoints": "never", "spanNulls": true
+            "drawStyle": "line",
+            "lineWidth": 2,
+            "fillOpacity": 15,
+            "showPoints": "never",
+            "spanNulls": true
           },
           "thresholds": {
             "mode": "absolute",
             "steps": [
-              { "color": "green", "value": null },
-              { "color": "yellow", "value": 0.01 },
-              { "color": "red",    "value": 0.05 }
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 0.01
+              },
+              {
+                "color": "red",
+                "value": 0.05
+              }
             ]
           }
         },
@@ -136,78 +258,65 @@
       },
       "targets": [
         {
-          "datasource": { "type": "prometheus", "uid": "prometheus" },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
           "expr": "sum(rate(http_requests_total{status=~\"5..\"}[5m])) by (job) / sum(rate(http_requests_total[5m])) by (job)",
           "legendFormat": "{{ job }}",
           "refId": "A"
         }
       ]
     },
-
-    {
-      "id": 4,
-      "type": "stat",
-      "title": "Active WebSocket Connections",
-      "gridPos": { "x": 12, "y": 8, "w": 6, "h": 8 },
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
-      "options": {
-        "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
-        "orientation": "auto",
-        "textMode": "auto",
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "auto"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": { "mode": "thresholds" },
-          "unit": "short",
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              { "color": "green",  "value": null },
-              { "color": "yellow", "value": 50   },
-              { "color": "red",    "value": 200  }
-            ]
-          },
-          "mappings": []
-        },
-        "overrides": []
-      },
-      "targets": [
-        {
-          "datasource": { "type": "prometheus", "uid": "prometheus" },
-          "expr": "websocket_connections_active",
-          "legendFormat": "connections",
-          "refId": "A"
-        }
-      ]
-    },
-
     {
       "id": 5,
       "type": "gauge",
       "title": "Model Confidence Distribution",
-      "gridPos": { "x": 18, "y": 8, "w": 6, "h": 8 },
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "gridPos": {
+        "x": 18,
+        "y": 8,
+        "w": 6,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
       "options": {
-        "reduceOptions": { "calcs": ["mean"], "fields": "", "values": false },
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
         "orientation": "auto",
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
       "fieldConfig": {
         "defaults": {
-          "color": { "mode": "thresholds" },
+          "color": {
+            "mode": "thresholds"
+          },
           "unit": "percentunit",
           "min": 0,
           "max": 1,
           "thresholds": {
             "mode": "absolute",
             "steps": [
-              { "color": "red",    "value": null },
-              { "color": "yellow", "value": 0.5  },
-              { "color": "green",  "value": 0.8  }
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 0.5
+              },
+              {
+                "color": "green",
+                "value": 0.8
+              }
             ]
           },
           "mappings": []
@@ -216,20 +325,30 @@
       },
       "targets": [
         {
-          "datasource": { "type": "prometheus", "uid": "prometheus" },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
           "expr": "avg(model_confidence_last)",
           "legendFormat": "avg confidence",
           "refId": "A"
         }
       ]
     },
-
     {
       "id": 6,
       "type": "barchart",
-      "title": "Predictions by Disease — Last 24 h",
-      "gridPos": { "x": 0, "y": 16, "w": 12, "h": 9 },
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "title": "Predictions by Disease (tổng tích lũy)",
+      "gridPos": {
+        "x": 0,
+        "y": 16,
+        "w": 12,
+        "h": 9
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
       "options": {
         "orientation": "horizontal",
         "xTickLabelRotation": 0,
@@ -238,12 +357,20 @@
         "groupWidth": 0.7,
         "barWidth": 0.97,
         "stacking": "none",
-        "tooltip": { "mode": "single", "sort": "none" },
-        "legend": { "displayMode": "list", "placement": "bottom" }
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
       },
       "fieldConfig": {
         "defaults": {
-          "color": { "mode": "palette-classic" },
+          "color": {
+            "mode": "palette-classic"
+          },
           "unit": "short",
           "custom": {
             "axisCenteredZero": false,
@@ -252,42 +379,75 @@
             "axisPlacement": "auto",
             "fillOpacity": 80,
             "gradientMode": "none",
-            "hideFrom": { "legend": false, "tooltip": false, "viz": false },
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
             "lineWidth": 1,
-            "scaleDistribution": { "type": "linear" },
-            "thresholdsStyle": { "mode": "off" }
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
           }
         },
         "overrides": []
       },
       "targets": [
         {
-          "datasource": { "type": "prometheus", "uid": "prometheus" },
-          "expr": "sort_desc(sum(increase(predictions_total[24h])) by (disease))",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "sort_desc(sum(predictions_total) by (disease))",
           "legendFormat": "{{ disease }}",
           "refId": "A",
           "instant": true
         }
       ]
     },
-
     {
       "id": 7,
       "type": "timeseries",
       "title": "RAG Pipeline Stage Latencies P95 (embed / retrieve / rerank / llm)",
-      "gridPos": { "x": 12, "y": 16, "w": 12, "h": 9 },
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "gridPos": {
+        "x": 12,
+        "y": 16,
+        "w": 12,
+        "h": 9
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
       "options": {
-        "tooltip": { "mode": "multi", "sort": "desc" },
-        "legend": { "displayMode": "list", "placement": "bottom", "calcs": ["mean", "max"] }
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        },
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "calcs": [
+            "mean",
+            "max"
+          ]
+        }
       },
       "fieldConfig": {
         "defaults": {
-          "color": { "mode": "palette-classic" },
+          "color": {
+            "mode": "palette-classic"
+          },
           "unit": "s",
           "custom": {
-            "drawStyle": "line", "lineWidth": 2, "fillOpacity": 10,
-            "showPoints": "never", "spanNulls": true,
+            "drawStyle": "line",
+            "lineWidth": 2,
+            "fillOpacity": 10,
+            "showPoints": "never",
+            "spanNulls": true,
             "lineInterpolation": "smooth"
           }
         },
@@ -295,58 +455,24 @@
       },
       "targets": [
         {
-          "datasource": { "type": "prometheus", "uid": "prometheus" },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
           "expr": "histogram_quantile(0.95, sum(rate(rag_latency_seconds_bucket[5m])) by (le, stage))",
           "legendFormat": "p95 {{ stage }}",
           "refId": "A"
         },
         {
-          "datasource": { "type": "prometheus", "uid": "prometheus" },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
           "expr": "histogram_quantile(0.50, sum(rate(rag_latency_seconds_bucket[5m])) by (le, stage))",
           "legendFormat": "p50 {{ stage }}",
           "refId": "B"
         }
       ]
-    },
-
-    {
-      "id": 8,
-      "type": "timeseries",
-      "title": "Kafka Consumer Lag per Topic",
-      "gridPos": { "x": 0, "y": 25, "w": 24, "h": 8 },
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
-      "options": {
-        "tooltip": { "mode": "multi", "sort": "desc" },
-        "legend": { "displayMode": "list", "placement": "bottom", "calcs": ["mean", "max", "last"] }
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": { "mode": "palette-classic" },
-          "unit": "short",
-          "custom": {
-            "drawStyle": "line", "lineWidth": 2, "fillOpacity": 12,
-            "showPoints": "never", "spanNulls": true
-          },
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              { "color": "green",  "value": null  },
-              { "color": "yellow", "value": 100   },
-              { "color": "red",    "value": 1000  }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "targets": [
-        {
-          "datasource": { "type": "prometheus", "uid": "prometheus" },
-          "expr": "kafka_consumer_lag",
-          "legendFormat": "{{ topic }} / {{ group }}",
-          "refId": "A"
-        }
-      ]
     }
-
   ]
 }

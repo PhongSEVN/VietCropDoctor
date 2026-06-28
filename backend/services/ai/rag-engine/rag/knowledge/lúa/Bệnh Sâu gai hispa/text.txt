@@ -1,0 +1,137 @@
+TÊN BỆNH: Sâu gai (bọ gai) hại lúa — Rice Hispa
+LOẠI CÂY: Lúa (Oryza sativa)
+CLASS ID: rice_sau_gai_hispa
+
+⚠️ LƯU Ý PHÂN LOẠI: Đây là thiệt hại do côn trùng gây ra, KHÔNG
+phải bệnh do nấm/vi khuẩn/virus. Tác nhân là bọ cánh cứng trưởng
+thành và ấu trùng của chúng, không phải mầm bệnh lây nhiễm.
+
+TRIỆU CHỨNG:
+Sâu gai hispa gây ra 2 kiểu tổn thương lá đặc trưng và dễ nhận biết,
+do 2 giai đoạn phát triển khác nhau gây ra:
+
+KIỂU 1 — Do con trưởng thành (bọ gai) gây ra:
+Con trưởng thành dùng miệng cạp (gặm) ăn lớp mô xanh ở mặt trên của
+phiến lá, để lại lớp biểu bì trong suốt bên dưới. Kết quả là trên
+mặt trên của lá lúa xuất hiện các sọc trắng bạc chạy song song với
+gân lá, có hình dạng dài hẹp và thẳng. Nhiều con gây hại đồng thời
+tạo ra dải trắng bạc rộng. Đây là triệu chứng dễ nhận nhất từ xa khi
+thăm đồng.
+
+KIỂU 2 — Do ấu trùng (sâu non) gây ra:
+Trứng được đẻ gần chóp lá non, ghim vào mặt dưới lá. Sau khi nở, ấu
+trùng đục ngay vào bên trong phiến lá (giữa 2 lớp biểu bì), ăn lớp
+tế bào mô mềm chứa diệp lục chạy dọc theo gân lá. Tạo thành đường
+hầm màu trắng bất thường giống như "túi" hoặc "bọng" trắng phồng dưới
+lớp biểu bì, hình dạng không đều và không thẳng (khác với sâu vẽ bùa
+cây có múi chạy đường ngoằn ngoèo). Ấu trùng sống và hóa nhộng ngay
+bên trong đường đục này. Vết hại bắt đầu từ chóp lá (nơi đẻ trứng)
+lan dần xuống dưới. Một đời sâu non có thể phá hoại đến 123,4 mm²
+diện tích lá.
+
+Hậu quả khi mật số cao:
+Khi bọ gai xuất hiện với mật số cao, lá lúa bị vàng khô từng mảng do
+mất diệp lục, cây sinh trưởng kém, cây lùn, héo và trong trường hợp
+nặng có thể chết. Ruộng trông xơ xác, lá trắng bạc trên diện rộng.
+Giai đoạn lúa đẻ nhánh — làm đòng bị hại nặng nhất ảnh hưởng đến
+số nhánh hữu hiệu và năng suất sau này.
+
+⚠️ Phân biệt với bệnh nấm và côn trùng khác:
+— Sọc trắng thẳng song song gân lá → do bọ gai trưởng thành (khác
+  với vết đạo ôn lá hình thoi có viền nâu)
+— Túi/bọng trắng phồng trong lá → do ấu trùng sâu gai đục lá (khác
+  với đường hầm ngoằn ngoèo của sâu vẽ bùa cây có múi)
+— Tìm thấy con bọ gai màu xanh đen có gai trên cơ thể trên lá →
+  xác nhận chẩn đoán
+
+NGUYÊN NHÂN:
+Tác nhân là bọ gai lúa Dicladispa armigera (Olivier, 1790) (đồng danh:
+Hispa armigera), thuộc họ Chrysomelidae (bộ Coleoptera — cánh cứng).
+Đây là côn trùng miệng nhai, không phải chích hút.
+
+Đặc điểm hình thái:
+— Con trưởng thành: Kích thước 5–6 mm, hình vuông hơi tròn, màu xanh
+  dương đen óng ánh ánh kim. Toàn thân (ngực, cánh) phủ nhiều gai
+  nhọn đặc trưng — đây là nguồn gốc tên "bọ gai". Sống 1–2 tháng;
+  một con cái đẻ 50–60 trứng.
+— Trứng: Rất nhỏ, hình bầu dục, màu trắng; ủ 4–7 ngày.
+— Ấu trùng: Màu trắng sữa hơi vàng, thân dẹt; 4 tuổi, phát triển
+  10–15 ngày trong đường đục.
+— Nhộng: Nhộng trần, dẹt, màu nâu; hóa nhộng trong đường đục của
+  ấu trùng; 5–7 ngày.
+— Vòng đời hoàn chỉnh: 18–26 ngày tùy điều kiện nhiệt độ.
+
+Phân bố tại Việt Nam: Ghi nhận ở nhiều vùng trồng lúa, phổ biến hơn
+ở miền Bắc và miền Trung. Ký chủ ngoài lúa: lúa mì, mía, cỏ Digitaria,
+Echinochloa, Leersia — đây là nguồn dự trữ quần thể sâu giữa các vụ.
+
+ĐIỀU KIỆN PHÁT SINH:
+— Thời tiết: Phát sinh mạnh trong điều kiện nóng ẩm, ÍT MƯA (trái
+  với đạo ôn ưa mưa nhiều). Mưa lớn thường làm giảm mật số sâu gai
+  vì rửa trôi trứng và ấu trùng non. Ẩm độ không khí cao, nhiệt độ
+  25–35°C là điều kiện thuận lợi.
+— Giai đoạn lúa: Cả thành trùng và ấu trùng thích gây hại giai đoạn
+  lúa sinh trưởng mạnh (đẻ nhánh rộ — đứng cái). Khi lúa đã trổ đồng
+  hoặc còn ở giai đoạn mạ non, sâu gai ít gây hại hơn.
+— Canh tác: Ruộng bón nhiều phân đạm (lúa xanh tốt um), cỏ dại nhiều
+  xung quanh bờ, mật độ sạ dày tạo tiểu khí hậu ẩm là điều kiện
+  thuận lợi cho bọ gai phát sinh và đẻ trứng.
+— Mùa vụ: Tại miền Bắc Việt Nam, sâu gai thường bùng phát vào vụ Mùa
+  (tháng 6–9); tại ĐBSCL ít phổ biến hơn.
+
+PHÒNG TRỊ:
+1. [Canh tác - Ưu tiên 1] Vệ sinh đồng ruộng kỹ: diệt cỏ dại (đặc
+  biệt cỏ họ Poaceae) trong và xung quanh bờ ruộng — đây là ký chủ
+  phụ và nơi ẩn náu của bọ gai giữa các vụ. Dọn sạch tàn dư lúa
+  vụ trước.
+
+2. [Canh tác - Ưu tiên 2] Trồng sớm trong vụ để tránh đỉnh mật số
+  sâu gai. Điều chỉnh mật độ sạ hợp lý (không quá dày). Không bón
+  quá nhiều đạm giai đoạn đẻ nhánh làm lúa xanh um tạo môi trường
+  hấp dẫn cho bọ gai đẻ trứng.
+
+3. [Canh tác] Cắt bỏ đầu lá bị nhiễm trứng và ấu trùng (phần chóp
+  lá trắng) khi mật độ còn thấp để giảm nguồn sâu; thu gom và tiêu
+  hủy.
+
+4. [Sinh học] Bảo vệ thiên địch tự nhiên: các loài ong ký sinh nhỏ
+  (họ Chalcidoidea) tấn công trứng và ấu trùng sâu gai; nhện bắt mồi
+  và bọ xít ăn thịt tấn công thành trùng. Không phun thuốc phổ rộng
+  khi mật số còn thấp.
+
+5. [Hóa học] Phun thuốc khi mật số đạt ngưỡng gây hại kinh tế (≥2
+  con trưởng thành/tép lúa hoặc >20% lá bị hại). Phun ướt đều cả
+  hai mặt lá, chú ý phun vào buổi sáng sớm khi bọ gai hoạt động.
+  Ưu tiên thuốc nội hấp thấm sâu để tiêu diệt cả ấu trùng bên trong
+  đường đục.
+
+THUỐC KHUYẾN NGHỊ:
+1. Hoạt chất: Abamectin (avermectin — sinh học, nội hấp thấm sâu)
+   Tên thương mại: Vibamec 1.8EC, 3.6EC; Abatimec 3.6EC; ABA MKA 3.6EC
+   Liều lượng: Vibamec 1.8EC: 10–15 ml/bình 16 lít; phun ướt đều
+   hai mặt lá
+   Thời điểm: Phun khi phát hiện triệu chứng sọc trắng hoặc túi trắng
+   đầu tiên; lặp lại sau 7–10 ngày nếu mật số còn cao
+   Thời gian cách ly: 7 ngày
+   Ưu điểm: Nội hấp thấm vào mô lá, tiêu diệt cả ấu trùng trong đường
+   đục; an toàn với thiên địch hơn các nhóm hóa học khác
+
+2. Hoạt chất: Imidacloprid (Neonicotinoid — nội hấp toàn thân)
+   Tên thương mại: Confidor 100SL, Admire 200OD
+   Liều lượng: Confidor 100SL: 10 ml/bình 16 lít
+   Thời điểm: Phun khi phát hiện bọ gai trưởng thành với mật số cao
+   Thời gian cách ly: 21 ngày
+
+3. Hoạt chất: Chlorpyrifos (Organophosphate — tiếp xúc + vị độc)
+   Tên thương mại: Pyrinex 20EC, Chlorpyrifos 20EC
+   Liều lượng: 20–25 ml/bình 16 lít; phun ướt đều tán lúa
+   Thời điểm: Phun khi mật số cao, cần tiêu diệt nhanh thành trùng
+   trên mặt lá
+   Thời gian cách ly: 21 ngày
+   Lưu ý: Độc với thiên địch, chỉ dùng khi thực sự cần thiết
+
+4. Hoạt chất: Fipronil (Phenylpyrazole — nội hấp + tiếp xúc)
+   Tên thương mại: Regent 800WG, 5SC
+   Liều lượng: Regent 800WG: 150 g/ha; pha 5 g/bình 16 lít
+   Thời điểm: Rải hạt hoặc phun khi sâu gai bùng phát mạnh
+   Thời gian cách ly: 21 ngày [cần xác minh

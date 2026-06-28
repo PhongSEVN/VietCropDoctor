@@ -1,0 +1,138 @@
+TÊN BỆNH: Bệnh chồi cỏ mía (sugarcane grassy shoot disease)
+LOẠI CÂY: Mía (Saccharum officinarum)
+CLASS ID: sugarcane_Grassy_shoot
+
+⚠️ PHÂN LOẠI TÁC NHÂN: Phytoplasma — không phải nấm, vi khuẩn hay
+virus thông thường. Phytoplasma là vi sinh vật ký sinh bắt buộc trong
+mạch libe cây, không có vách tế bào, KHÔNG NUÔI CẤY được trên môi
+trường nhân tạo, KHÔNG CÓ THUỐC ĐẶC TRỊ hiện nay.
+
+TRIỆU CHỨNG:
+Bệnh chồi cỏ mía là bệnh phytoplasma nguy hiểm, gây thiệt hại nghiêm
+trọng tại các vùng trồng mía lớn của Việt Nam, đặc biệt là Nghệ An,
+Thanh Hóa, Tây Ninh và các tỉnh miền Trung.
+
+Triệu chứng đặc trưng nhất — "giống bụi cỏ":
+Cây mía bị bệnh đẻ rất nhiều chồi nhỏ mọc rậm rạp từ gốc và các đốt
+thân tạo thành bụi trông giống như bụi cỏ — đây là nguồn gốc tên
+bệnh. Các chồi bệnh thường nhỏ, lùn, mọc nhiều nhánh cao lêu nghêu
+ở gốc không có khả năng phát triển thành thân mía bình thường.
+
+Triệu chứng trên lá:
+Lá mới ra có màu xanh nhạt, dần chuyển sang vàng nhạt. Phiến lá hẹp
+hơn và mỏng hơn bình thường, cổ lá xít lại gần nhau. Trên bề mặt lá
+có thể xuất hiện các vết bẩn không đều màu. Lá non ra nhiều nhưng
+ngắn và không phát triển đầy đủ.
+
+Triệu chứng trên thân:
+Cây bị lùn rõ rệt, các lóng thân ngắn hơn bình thường, thân nhỏ và
+yếu. Cây không tích lũy đường được, hàm lượng đường trong thân giảm
+mạnh. Sự phát triển sớm và liên tục của chồi phụ làm cây trông rậm
+rạp như bụi cỏ. Trong một bụi mía bệnh vẫn có thể có 1–2 thân cho thu
+hoạch nhưng năng suất và chữ đường giảm 10–100%.
+
+Tiến triển và thiệt hại kinh tế:
+Khi phát hiện bệnh trên ruộng mía đang trồng, toàn bộ bụi chung quanh
+có nguy cơ lây nhiễm cao qua môi giới. Tại Nghệ An, dịch chồi cỏ
+từng gây hại gần 10.000 ha (cao điểm 7.500 ha năm 2010), làm năng
+suất giảm từ 59 xuống còn 53 tấn/ha; một số ruộng mất trắng.
+
+⚠️ Phân biệt với bệnh trắng lá mía (cùng do phytoplasma):
+Bệnh trắng lá mía (white leaf disease) — lá mất diệp lục hoàn toàn
+trắng bạch; chồi cỏ — lá vàng nhạt, không trắng hoàn toàn nhưng đẻ
+nhiều chồi nhỏ. Trong thực tế có thể xuất hiện triệu chứng hỗn hợp.
+
+NGUYÊN NHÂN:
+Tác nhân là Phytoplasma — vi sinh vật ký sinh bắt buộc thuộc lớp
+Mollicutes, sống trong mạch libe (phloem) của cây mía, không có vách
+tế bào. Phytoplasma gây bệnh chồi cỏ mía tại Việt Nam được xác định
+thuộc nhóm phân loại 16SrXII (Stolbur group) thông qua phân tích
+nested-PCR rDNA 16S (nghiên cứu tại ĐH Thái Nguyên, 2012–2013).
+
+Phytoplasma can thiệp vào hormone thực vật (đặc biệt cytokinin) kích
+thích đẻ nhánh bất thường và ức chế kéo dài lóng → tạo ra kiểu hình
+"chồi cỏ" đặc trưng.
+
+Môi giới truyền bệnh:
+— Rệp Rhopalosiphum maydis (rệp ngô)
+— Melanaphis sacchari (rệp mía)
+— Melanaphis idiosacchari
+— Dao cắt và dụng cụ làm vườn bị nhiễm (lây cơ học qua nhựa cây)
+Phytoplasma lưu tồn trong gốc mía, hom giống nhiễm bệnh. KHÔNG lây
+qua đất hay cây đã chết, CHỈ truyền qua cây sống (qua môi giới côn
+trùng hoặc hom giống nhiễm). Bệnh có quá trình tích lũy nguồn bệnh
+theo thời gian.
+
+ĐIỀU KIỆN PHÁT SINH:
+— Thời tiết: Nóng ẩm kéo dài là điều kiện thuận lợi; bệnh phát sinh
+  mạnh tháng 3 và tháng 11 tại miền Trung Việt Nam.
+— Nguồn bệnh: Hom giống nhiễm bệnh là nguyên nhân chính phát tán
+  bệnh ra vùng mới. Nguồn bệnh từ cây mía gốc (ratoon) bị nhiễm từ
+  vụ trước.
+— Môi giới: Mật số rệp (môi giới) cao trong ruộng và khu vực lân cận.
+— Giống nhiễm: Một số giống mía phổ biến đặc biệt mẫn cảm; vùng
+  trồng thuần một giống dễ bùng phát thành dịch.
+— Canh tác: Sử dụng hom giống không kiểm dịch, không xử lý nhiệt;
+  canh tác mía liên tục nhiều vụ mà không luân canh.
+
+PHÒNG TRỊ:
+⚠️ KHÔNG CÓ THUỐC ĐẶC TRỊ PHYTOPLASMA. Toàn bộ chiến lược dựa vào
+phòng ngừa và tiêu hủy nguồn bệnh.
+
+1. [Giống - Ưu tiên 1] Sử dụng hom giống sạch bệnh có nguồn gốc rõ
+  ràng, được kiểm dịch thực vật. Ưu tiên giống kháng bệnh: K88-200,
+  MY 5514, K84-200, ROC 16, Uthong 3 [cần xác minh tính kháng hiện
+  tại theo vùng]. Không lấy hom giống từ ruộng nghi ngờ bệnh.
+
+2. [Xử lý hom giống] Xử lý nhiệt hom giống trước khi trồng: nhúng
+  hom trong nước nóng 52°C trong 30 phút hoặc 50°C trong 2 giờ để
+  tiêu diệt phytoplasma trong mô hom. Đây là biện pháp hiệu quả nhất
+  để tạo giống sạch bệnh.
+
+3. [Canh tác - Ưu tiên cao] Nhổ bỏ và tiêu hủy NGAY các bụi mía có
+  triệu chứng chồi cỏ (không để lại gốc). Rắc vôi vào hốc sau khi
+  nhổ. Nếu tỷ lệ bệnh >30% diện tích, cày vùi toàn bộ và luân canh
+  cây trồng khác 1–2 vụ trước khi trồng mía lại.
+
+4. [Kiểm soát môi giới] Kiểm soát rệp mía (môi giới) bằng thuốc trừ
+  rệp khi mật số cao. Diệt cỏ dại xung quanh bờ (ký chủ phụ của rệp
+  và phytoplasma).
+
+5. [Khử trùng dụng cụ] Nhúng dao chặt, dao cắt hom vào dung dịch
+  thuốc tẩy hoặc cồn 70° giữa các lần cắt để tránh lây cơ học qua
+  nhựa cây.
+
+THUỐC KHUYẾN NGHỊ (trừ rệp môi giới — không trị phytoplasma):
+1. Hoạt chất: Imidacloprid (Neonicotinoid — nội hấp)
+   Tên thương mại: Confidor 100SL, Admire 200OD
+   Liều lượng: 10 ml/bình 16 lít; phun ướt đều toàn bộ cây
+   Thời điểm: Phun khi phát hiện rệp mía trên ruộng; phun phòng đầu
+   vụ nếu vùng có lịch sử bệnh
+   Thời gian cách ly: 21 ngày
+
+2. Hoạt chất: Thiamethoxam (Neonicotinoid)
+   Tên thương mại: Actara 25WG
+   Liều lượng: 3–5 g/bình 16 lít
+   Thời điểm: Phun phòng và trị rệp giai đoạn mía còn non
+   Thời gian cách ly: 14 ngày
+
+3. Hoạt chất: Dimethoate (Organophosphate — nội hấp + tiếp xúc)
+   Tên thương mại: Bi-58 40EC, Dimethoate 40EC
+   Liều lượng: 20–25 ml/bình 16 lít
+   Thời điểm: Phun khi mật số rệp cao, cần tiêu diệt nhanh
+   Thời gian cách ly: 21 ngày [cần xác minh]
+
+NGUỒN:
+— Báo Nghệ An (baonghean.vn) — Bệnh chồi cỏ mía: 10.000 ha bị hại,
+  tác nhân phytoplasma, lây qua cây sống
+— Đài PT-TH Nghệ An (truyenhinhnghean.vn) — Triệu chứng thực địa,
+  dịch 7.500 ha năm 2010, năng suất giảm
+— Sinh học AQ (nguyenlieusinhhoc.com) — 8 bệnh mía Việt Nam: chồi
+  cỏ/trắng lá do phytoplasma
+— Khuyến nông Bà Rịa-Vũng Tàu (knkn.baria-vungtau.gov.vn .gov.vn)
+  — Quản lý bệnh hại mía, mô tả triệu chứng và môi giới rệp
+— AGOIN (agoin.com.vn) — 5 loại hình triệu chứng phytoplasma mía;
+  danh sách giống kháng
+— Tạp chí KH&CN ĐH Thái Nguyên (jst.tnu.edu.vn) — Xác nhận
+  phytoplasma nhóm 16SrXII gây chồi cỏ mía tại Nghệ An (2012–2013)
+— Cẩm nang chẩn đoán bệnh cây Việt Nam, Burgess et al. 2008

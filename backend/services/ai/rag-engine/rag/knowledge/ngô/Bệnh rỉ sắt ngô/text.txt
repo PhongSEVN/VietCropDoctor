@@ -1,0 +1,153 @@
+TÊN BỆNH: Bệnh rỉ sắt ngô (common rust, gỉ sắt bắp)
+LOẠI CÂY: Ngô/Bắp (Zea mays)
+CLASS ID: corn_Common_Rust
+
+TRIỆU CHỨNG:
+Bệnh rỉ sắt ngô phổ biến khắp các vùng trồng ngô tại Việt Nam, gây
+hại trong suốt quá trình sinh trưởng, chủ yếu trên lá.
+
+Giai đoạn đầu:
+Xuất hiện các chấm nhỏ màu vàng nhạt hoặc trắng nhạt trên cả 2 mặt
+lá ngô. Các chấm này ban đầu rất nhỏ (1–2 mm), phân bố rải rác. Xung
+quanh chấm bệnh có vành màu vàng — đây là đặc điểm phân biệt với vết
+đốm lá khác.
+
+Giai đoạn phát triển — ổ bào tử hạ:
+Các chấm lớn dần thành ổ bào tử hạ (uredosorus) hình tròn hoặc hơi
+dài (2–4 mm), NỔI PHỒNG lên trên bề mặt lá, phá vỡ biểu bì lá. Bên
+trong chứa đầy bào tử hạ (uredospore) dạng bột màu NÂU CAM đến CAM
+ĐỎ — giống màu gỉ sắt rõ ràng. Ổ bào tử xuất hiện ở CẢ HAI MẶT LÁ
+(khác với rỉ sắt cà phê chủ yếu mặt dưới lá); thường nhiều hơn ở mặt
+dưới. Các ổ bào tử tập hợp thành từng đám dày đặc trên phiến lá.
+
+Giai đoạn muộn — bào tử đông:
+Ổ bào tử hạ chuyển dần sang màu NÂU ĐEN như gỉ sắt thật sự khi hình
+thành bào tử đông (teliospore). Khi bệnh nặng, nhiều ổ bào tử dày đặc
+làm lá bị khô cháy, rách. Bệnh có thể lan sang cả thân, bẹ lá và áo
+bắp (lá bao bắp) khi mật độ bào tử cao.
+
+Thiệt hại kinh tế:
+Lá mất khả năng quang hợp, năng suất giảm, hạt ngô nhỏ vỏ nhăn khi
+bệnh nặng giai đoạn cây chưa chín. Tác hại nhất khi bệnh xuất hiện
+từ giai đoạn cây còn nhỏ (<7 lá) và lan mạnh đến lá đòng.
+
+⚠️ Phân biệt rỉ sắt ngô với các bệnh đốm lá ngô:
+| Đặc điểm      | Rỉ sắt ngô          | Đốm lá NLB (Exserohilum) |
+|---------------|---------------------|--------------------------|
+| Hình dạng vết | ỔỔ NỔI PHỒNG tròn  | Phẳng, hình thoi dài     |
+| Màu đặc trưng | NÂU CAM/CAM ĐỎ bột | Xám bạc/nâu sáng         |
+| Bào tử        | BỘT cam rõ, thấy   | Mốc đen mịn khi ẩm       |
+|               | bằng mắt thường     |                          |
+| Vành quanh vết| Vàng rõ             | Không có                 |
+| Vị trí        | Cả 2 mặt lá        | Chủ yếu mặt trên         |
+
+NGUYÊN NHÂN:
+Tại Việt Nam, 3 loài Puccinia gây bệnh rỉ sắt trên ngô:
+
+1. Puccinia sorghi Schw. (Common rust — rỉ sắt thường):
+Phổ biến ở miền Bắc Việt Nam. Nấm DỊ CHỦ — hoàn thành vòng đời đầy
+đủ trên 2 ký chủ: ngô (giai đoạn bào tử hạ + đông) và chua me đất
+(Oxalis spp.) (giai đoạn bào tử xuân + giống). Vòng đời đầy đủ 5 loại
+bào tử. Tại vùng nhiệt đới không có mùa đông lạnh, nấm có thể duy trì
+chủ yếu bằng bào tử hạ trên ngô liên tục.
+
+2. Puccinia polysora Underw. (Southern corn rust):
+Phổ biến ở ĐBSCL và các vùng nhiệt đới thấp, ấm quanh năm. Chỉ cần
+ký chủ ngô (không cần ký chủ phụ). Phát triển mạnh ở nhiệt độ cao
+hơn P. sorghi. Ổ bào tử nhỏ hơn và dày đặc hơn P. sorghi.
+
+3. Puccinia purpurea:
+Ít phổ biến hơn tại Việt Nam, chủ yếu gây hại ở lúa miến.
+
+Đặc điểm bào tử hạ P. sorghi: Hình elip/bầu dục, có gai nhỏ trên bề
+mặt, màu vàng nâu, kích thước 25–40 × 18–25 µm. Nảy mầm tốt ở 14–32°C,
+tối ưu 17–18°C, cần ẩm độ bão hòa và màng nước trên lá.
+
+Phương thức lây lan: Bào tử hạ phát tán theo gió là chủ yếu — có thể
+bay rất xa. KHÔNG lây qua hạt giống (P. sorghi). Bào tử hạ tồn tại
+trên tàn dư lá bệnh và trên hạt ngô nhiều tháng.
+
+ĐIỀU KIỆN PHÁT SINH:
+— Nhiệt độ: P. sorghi phát triển ở 14–32°C, tối ưu 17–18°C (mát hơn)
+  — phổ biến vụ đông miền Bắc. P. polysora phát triển ở nhiệt độ cao
+  hơn (20–30°C) — phổ biến ĐBSCL và vụ hè.
+— Ẩm độ: Ẩm độ >80%; màng nước trên lá liên tục để bào tử nảy mầm;
+  sương mù, mưa nhẹ là điều kiện lây nhiễm lý tưởng.
+— Mùa vụ: Tại miền Bắc, bệnh nặng nhất vụ đông (tháng 10–12) và vụ
+  xuân; tại ĐBSCL và miền Nam bệnh nặng mùa mưa.
+— Giống: Giống ngô địa phương thường nhiễm nặng hơn; giống lai hiện
+  đại nhiều có gen kháng tốt hơn.
+— Canh tác: Ruộng dày thiếu thông thoáng; thiếu phân kali làm cây
+  yếu; không vệ sinh tàn dư vụ trước.
+
+PHÒNG TRỊ:
+1. [Giống kháng — Ưu tiên 1] Chọn giống ngô lai có gen kháng rỉ sắt.
+  Nhiều giống lai hiện đại tại Việt Nam có tính kháng P. sorghi và P.
+  polysora khá tốt. Đây là biện pháp hiệu quả và kinh tế nhất.
+
+2. [Canh tác — Ưu tiên 2] Vệ sinh đồng ruộng sau thu hoạch: thu gom
+  và tiêu hủy lá ngô bệnh; cày vùi sớm tàn dư. Luân canh với lúa,
+  đậu để giảm nguồn nấm. Phòng trừ cỏ dại họ Poaceae và chua me đất
+  (ký chủ phụ của P. sorghi) quanh ruộng.
+
+3. [Canh tác] Trồng đúng mật độ (không dày); bón phân đủ kali (K) để
+  cây cứng và tăng sức đề kháng. Thường xuyên ngắt tỉa lá già, lá
+  bệnh tạo thông thoáng.
+
+4. [Xử lý hạt giống] Xử lý hạt bằng Iprodione (Rovral 2 g/10 kg hạt)
+  trước khi gieo để giảm nguồn bệnh trên hạt.
+
+5. [Hóa học] Phun thuốc khi bệnh chớm xuất hiện (ổ bào tử hạ đầu
+  tiên trên lá). Phun ướt đều cả hai mặt lá. Phun 2 lần cách nhau
+  7–10 ngày. Ưu tiên thuốc nội hấp (Triazole) với nấm ký sinh bắt
+  buộc trong mô lá.
+
+THUỐC KHUYẾN NGHỊ:
+1. Hoạt chất: Propiconazole (Triazole — nội hấp đặc hiệu Puccinia)
+   Tên thương mại: Tilt 250EC (Syngenta), Tilt 250ND, Bumper 250EC
+   Liều lượng: Tilt 250EC: 0,5–0,75 lít/ha; pha 15–20 ml/bình 16 lít;
+   nồng độ phun 0,1%
+   Thời điểm: Phun khi phát hiện ổ bào tử đầu tiên; phun phòng trước
+   mùa bệnh ở vùng thường xuyên bị nặng
+   Thời gian cách ly: 14 ngày
+
+2. Hoạt chất: Hexaconazole (Triazole — nội hấp phổ rộng)
+   Tên thương mại: Anvil 5SC, Atulvil 5SC
+   Liều lượng: Anvil 5SC: 0,75–1,0 lít/ha; nồng độ 0,1%; 20–25 ml/
+   bình 16 lít
+   Thời điểm: Phun phòng hoặc trị sớm; luân phiên với Propiconazole
+   Thời gian cách ly: 14 ngày
+
+3. Hoạt chất: Tebuconazole (Triazole — nội hấp)
+   Tên thương mại: Folicur 250EW, Nativo 750WG (+ Trifloxystrobin)
+   Liều lượng: theo hướng dẫn nhà sản xuất
+   Thời điểm: Phun trị; Nativo đặc biệt hiệu quả với nấm rỉ sắt
+   Thời gian cách ly: 14 ngày
+
+4. Hoạt chất: Azoxystrobin + Propiconazole (Strobilurin + Triazole)
+   Tên thương mại: Amistar Top 325SC (Syngenta)
+   Liều lượng: 10–15 ml/bình 16 lít
+   Thời điểm: Phun phòng và trị; kép tác dụng bảo vệ + nội hấp
+   Thời gian cách ly: 14 ngày
+
+5. Hoạt chất: Iprodione (Dicarboximide — xử lý hạt giống)
+   Tên thương mại: Rovral 50WP
+   Liều lượng: 2 g/10 kg hạt giống (xử lý hạt trước khi gieo)
+   Thời điểm: Xử lý hạt giống trước khi gieo — không phải phun lá
+   Thời gian cách ly: [không áp dụng cho xử lý hạt]
+
+NGUỒN:
+— Việt Nam Nông nghiệp Sạch (vietnamnongnghiepsach.com) — Bệnh rỉ sắt
+  ngô: 3 loài Puccinia; P. sorghi miền Bắc, P. polysora ĐBSCL; ổ bào
+  tử vành vàng
+— Nông nghiệp Bắc Trung Nam (nongnghiepbactrungnam.vn) — Bệnh gỉ sắt
+  ngô: Puccinia sorghi; biện pháp phòng trừ; Tilt 250ND, Anvil 5SC
+— Việt Thắng Hà Nội (vietthanghanoi.vn) — P. maydis dị chủ, vòng đời
+  5 bào tử; 14–32°C, tối ưu 17–18°C
+— VNFarm (vnfarm.com.vn) — P. sorghi Schw.: bào tử hạ + đông; thiệt
+  hại cụ thể
+— N2 Agro (n2agro.vn) — Triệu chứng theo tiến triển cam → nâu sẫm;
+  điều kiện 20–30°C; ruộng dày
+— Alpha Agrochem (alphaagrochem.com) — Hoạt chất Hexaconazole,
+  Propiconazole, Tebuconazole trị rỉ sắt
+— Cẩm nang chẩn đoán bệnh cây Việt Nam, Burgess et al. 2008

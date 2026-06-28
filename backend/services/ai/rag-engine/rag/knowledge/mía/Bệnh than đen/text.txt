@@ -1,0 +1,155 @@
+TÊN BỆNH: Bệnh than đen mía (smut, sugarcane smut, than xoắn đọt)
+LOẠI CÂY: Mía (Saccharum officinarum và các giống lai)
+CLASS ID: sugarcane_smut
+
+TRIỆU CHỨNG:
+Bệnh than đen mía có triệu chứng đặc trưng và dễ nhận biết nhất trong
+tất cả các bệnh mía — "ROI ĐEN" mọc từ đỉnh sinh trưởng của cây bệnh.
+
+Triệu chứng giai đoạn sớm (trước khi xuất hiện roi):
+Cây mía bị nhiễm sẽ đẻ nhiều nhánh con mọc từ gốc — bụi mía trông
+giống như bụi sả hoặc bụi cỏ vì các nhánh nhỏ mọc dày đặc quanh gốc.
+Các cây nhánh nhỏ không thể vươn lóng được, thân còi cọc, đốt ngắn,
+lá hẹp và ngắn hơn bình thường. Cây mất khả năng tích lũy đường và
+phát triển lóng bình thường. Giai đoạn này dễ nhầm với chồi cỏ (cũng
+đẻ nhiều nhánh nhỏ) — nhưng ở chồi cỏ không có roi đen.
+
+Triệu chứng đặc trưng — ROI ĐEN (whip/sorus):
+Từ đỉnh sinh trưởng (điểm phát triển) của mỗi thân mía bệnh mọc ra
+một cấu trúc hình roi cong, dài từ 25 cm đến 150 cm (thậm chí 2–3 m
+tùy giống), trông như đuôi roi màu đen. Cấu trúc này được bao bọc
+bởi một màng mỏng màu trắng bạc lúc đầu, sau chuyển đen dần. Bên
+trong chứa đầy khối bào tử nấm (teliospore) dạng bột màu đen — đây
+là nguồn lây lan chính.
+
+Khi roi già và vỡ màng:
+Khi màng bọc bên ngoài của roi vỡ ra, các bột phấn đen lộ ra, tung
+vào không khí theo gió, phát tán bào tử trên diện rộng. Đây là giai
+đoạn nguy hiểm nhất — bào tử có thể bay hàng km và lây sang toàn bộ
+ruộng mía lân cận. Cây bệnh tiếp tục tàn lụi và chết sau khi roi đã
+vỡ.
+
+⚠️ Phân biệt với bệnh chồi cỏ (phytoplasma):
+| Đặc điểm     | Than đen          | Chồi cỏ            |
+|--------------|-------------------|--------------------|
+| Tác nhân     | Nấm Sporisorium   | Phytoplasma        |
+| Triệu chứng  | ROI ĐEN từ đỉnh  | Không có roi       |
+| nhánh phụ   | Đẻ nhiều, giống   | Đẻ nhiều, giống    |
+|              | bụi sả            | bụi cỏ (lá vàng)  |
+| Lá           | Hẹp, ngắn, xanh  | Hẹp, vàng nhạt    |
+| Lây qua      | Gió (bào tử) +   | Hom giống + rệp   |
+|              | hom giống         | môi giới           |
+
+NGUYÊN NHÂN:
+Tác nhân là nấm Sporisorium scitamineum (Syd.) M. Piepenbr., M. Stoll
+& Oberw. (tên cũ: Ustilago scitaminea Sydow). Thuộc lớp Ustilaginomycetes,
+bộ Ustilaginales. Đây là nấm than (smut fungus) ký sinh trong mô phân
+sinh của mía. Teliospore (bào tử đông) là dạng bào tử chính — hình
+cầu, màu nâu đen, có bề mặt có gai, kích thước 5–9 µm. Đặc điểm quan
+trọng: teliospore CỰC KỲ BỀN trong môi trường — có thể tồn tại trong
+điều kiện nóng khô trên 6 tháng; chịu được nhiều điều kiện khắc nghiệt.
+
+Chu kỳ xâm nhiễm:
+Teliospore nảy mầm và xâm nhiễm vào chồi mía tại điểm phát triển khi
+hom giống nảy mầm. Một khi đã xâm nhiễm, nấm lan qua mô phân sinh và
+tồn tại trong toàn bộ hệ thống sinh trưởng của cây. Cây bệnh không
+biểu hiện triệu chứng ngay — thời gian ủ bệnh từ vài tuần đến vài
+tháng trước khi roi đen xuất hiện.
+
+Nguồn lây lan:
+— Hom giống nhiễm bệnh: nguồn bệnh lây sang vùng mới quan trọng nhất
+— Bào tử theo gió: nguồn bệnh lây trong ruộng và giữa các ruộng lân
+  cận — nguy hiểm đặc biệt khi roi già vỡ màng
+— Đất: nấm có thể tồn tại trong đất nhiều tháng
+
+ĐIỀU KIỆN PHÁT SINH:
+— Nhiệt độ: 15–27°C là dải tối ưu; mát mẻ hơn so với bệnh chồi cỏ
+  (25–35°C).
+— Mùa vụ tại Việt Nam: Bệnh phát sinh mạnh tháng 4–6 và tháng 9–11;
+  trùng với giai đoạn mía đang vươn lóng mạnh và điều kiện độ ẩm
+  biến động.
+— Giống mẫn cảm: Một số giống mía nhập nội và giống cũ nhiễm nặng;
+  giống lai có gen kháng than đen đã được phát triển.
+— Canh tác mía gốc (ratoon): Mía để gốc từ vụ trước có nguồn bào tử
+  tích lũy cao hơn mía trồng mới.
+— Ẩm độ đất: Ẩm độ đất vừa phải khi cấy hom (không quá khô cũng không
+  quá ướt) tạo điều kiện thuận lợi nhất cho bào tử nảy mầm.
+
+PHÒNG TRỊ:
+⚠️ NGUYÊN TẮC: Không có thuốc diệt nấm hiệu quả sau khi cây đã bị
+nhiễm (nấm tồn tại bên trong mô phân sinh). Toàn bộ chiến lược tập
+trung vào PHÒNG NGỪA và TIÊU HỦY nguồn bệnh.
+
+1. [Hom giống sạch — Ưu tiên 1] Chỉ sử dụng hom giống từ vườn đã
+  được kiểm tra, không có cây bệnh. Không lấy hom từ ruộng có triệu
+  chứng than đen.
+
+2. [Xử lý nhiệt hom giống — Ưu tiên 1] Đây là biện pháp quan trọng
+  và hiệu quả nhất để tiêu diệt nấm trong hom:
+  — Phương pháp 1: Ngâm hom trong nước lạnh chảy 48 giờ, sau đó
+    ngâm nước nóng 50°C trong 150–180 phút
+  — Phương pháp 2 (nhanh hơn): Ngâm hom trong nước nóng 52°C trong
+    30 phút
+  Lưu ý: Nhiệt độ và thời gian phải chính xác — quá nóng hoặc quá
+  lâu sẽ làm chết hom; quá thấp hoặc quá ngắn không tiêu diệt được
+  nấm.
+
+3. [Tiêu hủy cây bệnh] Khi phát hiện cây có roi đen, PHẢI nhổ bỏ
+  và tiêu hủy NGAY (đốt hoặc chôn sâu) TRƯỚC KHI roi vỡ màng để
+  tránh bào tử phát tán. Đây là biện pháp then chốt nhất để ngăn
+  lây lan trong ruộng. Rắc vôi vào hốc sau khi nhổ.
+
+4. [Cày phá gốc] Đối với ruộng bị nhiễm nặng (>20% cây bệnh): cày
+  phá toàn bộ sau khi phun thuốc diệt nấm hoặc thu hoạch. Nhổ sạch
+  các mầm gốc mía cũ (mía rài) trước khi trồng vụ mới.
+
+5. [Giống kháng] Trồng giống có tính kháng than đen đã được công nhận;
+  luân canh vài vụ với cây trồng khác (lạc, đậu, ngô) để giảm nguồn
+  bệnh trong đất trước khi trồng mía trở lại.
+
+THUỐC KHUYẾN NGHỊ:
+⚠️ Thuốc hóa học có vai trò hạn chế với bệnh than đen — không phun
+được sau khi cây đã biểu hiện triệu chứng. Thuốc chủ yếu dùng để:
+(a) xử lý hom giống trước khi trồng, (b) phun phòng giai đoạn đầu.
+
+1. Hoạt chất: Carbendazim (Benzimidazole — nội hấp, ức chế phân bào
+   nấm)
+   Tên thương mại: Bavistin 50SC, Carbenda 50SC
+   Liều lượng xử lý hom: Ngâm hom trong dung dịch Carbendazim 0,1–
+   0,2% (1–2 g/lít nước) trong 15–30 phút trước khi trồng
+   Liều lượng phun: 20–25 ml/bình 16 lít khi cây còn non
+   Thời gian cách ly: 7 ngày
+
+2. Hoạt chất: Trifloxystrobin + Tebuconazole (kép — Strobilurin +
+   Triazole)
+   Tên thương mại: Nativo 750WG (Bayer)
+   Liều lượng: theo hướng dẫn nhà sản xuất
+   Thời điểm: Phun phòng giai đoạn mía 1–2 tháng tuổi tại vùng có
+   lịch sử bệnh nặng
+   Thời gian cách ly: 14 ngày [cần xác minh]
+
+3. Hoạt chất: Propiconazole (Triazole — nội hấp)
+   Tên thương mại: Tilt 250EC
+   Liều lượng: 15–20 ml/bình 16 lít; ngâm hom hoặc phun phòng
+   Thời điểm: Xử lý hom hoặc phun phòng giai đoạn sớm
+   Thời gian cách ly: 14 ngày
+
+4. Chế phẩm sinh học: Phy FusaCo (nấm đối kháng Trichoderma +
+   Chaetomium)
+   Liều lượng: 250 ml/400–600 lít nước; phun định kỳ 5–7 ngày/lần
+   Thời điểm: Phun phòng giai đoạn mía non và gốc cây
+
+NGUỒN:
+— Báo Phú Yên (baophuyen.vn) — Trừ bệnh than trên cây mía: triệu
+  chứng thực địa, roi 2–3m, bột đen phát tán
+— ABA Chemical (abachemical.com) — Phòng và trừ bệnh than ở mía:
+  xử lý hom nước nóng, thuốc Carbendazim
+— Sinh học AQ (nguyenlieusinhhoc.com) — Bệnh than đen mía: tác nhân,
+  điều kiện phát sinh, phòng trừ
+— Mía đường Cao Bằng (miaduongcaobang.vn) — Bệnh than hại mía: triệu
+  chứng và biện pháp tiêu hủy
+— Khuyến nông Bà Rịa-Vũng Tàu (knkn.baria-vungtau.gov.vn .gov.vn) —
+  Sporisorium scitamineum; teliospore tồn tại >6 tháng; roi 25–150 cm
+— Cẩm nang cây trồng (camnangcaytrong.com) — Xử lý hom nước nóng từ
+  Sổ tay IPM Cty Đường Biên Hòa
+— Cẩm nang chẩn đoán bệnh cây Việt Nam, Burgess et al. 2008

@@ -1,0 +1,114 @@
+TÊN BỆNH: Lá khô mía (dried leaves / leaf scorch)
+LOẠI CÂY: Mía (Saccharum officinarum và các giống lai)
+CLASS ID: sugarcane_Dried_Leaves
+
+⚠️ LƯU Ý PHÂN LOẠI QUAN TRỌNG:
+Class "sugarcane_Dried_Leaves" trong dataset ảnh quốc tế (Sugarcane
+Leaf Dataset, Thite et al. 2024 — nguồn từ Ấn Độ/Thái Lan) là một
+class riêng biệt, đại diện cho 2 trường hợp có thể xảy ra:
+
+TRƯỜNG HỢP 1 — LÁ GIÀ KHÔ TỰ NHIÊN (không phải bệnh):
+Lá mía già tàn lụi theo chu kỳ sinh trưởng tự nhiên — đây là hiện
+tượng sinh lý bình thường, không phải bệnh. Lá già ở tầng thấp khô
+dần từ đầu lá xuống, chuyển màu vàng nâu rồi nâu đen. Không kèm triệu
+chứng bệnh lý (không có vết đốm đặc trưng, không có bột bào tử, không
+có mùi bệnh). Phổ biến khi mía đạt 5–8 tháng tuổi trở lên.
+
+TRƯỜNG HỢP 2 — BỆNH CHÁY LÁ (Leaf Scorch — do nấm Stagonospora sacchari):
+Bệnh cháy lá mía do nấm Stagonospora sacchari Lo & Ling gây ra. Triệu
+chứng rõ ràng hơn lá già tàn lụi — có vệt sọc đặc trưng. Tại Việt Nam
+bệnh này ít được ghi nhận riêng biệt mà thường được phân loại chung
+với bệnh đốm lá. [cần xác minh mức độ phổ biến tại Việt Nam]
+
+TRIỆU CHỨNG:
+
+Lá già khô tự nhiên (trường hợp 1):
+— Lá mía già ở tầng thấp (các tầng lá số 1–5 từ dưới lên) tự nhiên
+  khô dần theo tuổi cây
+— Lá chuyển từ xanh → vàng nhạt → vàng nâu → nâu đen toàn bộ
+— Cả phiến lá, gân lá, bẹ lá đều khô đều nhau
+— Không có triệu chứng bệnh lý: không vết đốm tròn/bầu dục, không có
+  ổ bào tử, không mùi bệnh
+— Quá trình diễn ra từ từ, đầu lá khô trước rồi lan dọc phiến lá
+
+Bệnh cháy lá (Stagonospora sacchari — trường hợp 2):
+— Xuất hiện các vệt sọc hẹp song song với gân lá, màu đỏ nâu đến nâu
+  đậm xen kẽ màu nhạt hơn
+— Vệt sọc kéo dài dọc theo chiều dài phiến lá; các vệt có xu hướng
+  hợp lại thành mảng lớn
+— Trong điều kiện khô hạn, vệt hình thành nhanh; nhiều vệt hợp lại
+  làm cả phiến lá có màu nâu cháy đặc trưng (scorched appearance)
+— Phổ biến vào mùa xuân và thu (giao mùa); giảm vào mùa đông (nhiệt
+  độ thấp)
+— Bệnh KHÔNG lây qua đất, hạt giống, dụng cụ canh tác; chỉ lây qua
+  gió và nước mưa (bào tử không khí)
+
+NGUYÊN NHÂN:
+
+Lá già khô tự nhiên: Không có tác nhân bệnh lý — đây là quá trình
+lão hóa tế bào bình thường (senescence). Lá già mất khả năng quang
+hợp hiệu quả, chất dinh dưỡng được tái hấp thu về phần xanh, lá khô.
+
+Bệnh cháy lá (Stagonospora sacchari):
+Tác nhân là nấm Stagonospora sacchari Lo & Ling (thuộc lớp
+Dothideomycetes). Nấm tạo đài và bào tử trên vệt bệnh; bào tử phát
+tán theo gió và nước mưa. Bệnh phát sinh mạnh sau mưa lớn hoặc khi
+tưới nhiều; giảm nhiệt độ và thời tiết khô hạn thúc đẩy hình thành
+vệt nhanh hơn. Nấm ký sinh trên lá tầng thấp, không ảnh hưởng sâu
+đến năng suất nếu chỉ gây hại lá già.
+
+ĐIỀU KIỆN PHÁT SINH:
+
+Lá già khô tự nhiên:
+— Mía đạt 5–8 tháng tuổi trở lên, tự nhiên lá tầng thấp tàn lụi
+— Nhiều hơn trong điều kiện khô hạn, thiếu nước tưới
+— Không phải điều kiện bệnh lý
+
+Bệnh cháy lá Stagonospora:
+— Phát sinh mạnh sau mưa lớn hoặc tưới nhiều nước
+— Mùa giao tiếp (xuân-thu) khi nhiệt độ và ẩm độ biến động
+— Ruộng mía bón thừa phân, mật độ cao thiếu thông thoáng
+
+PHÒNG TRỊ:
+
+Lá già khô tự nhiên:
+— Bóc lá khô định kỳ (leaf stripping) để tạo thông thoáng, giảm ẩm
+  độ vi khí hậu trong tán, giảm nguồn bệnh nấm thứ cấp
+— Đây là biện pháp canh tác thường quy, không cần thuốc
+
+Bệnh cháy lá Stagonospora:
+1. Trồng giống kháng hoặc ít nhiễm bệnh cháy lá — biện pháp hiệu quả
+  và kinh tế nhất (không cần thuốc)
+2. Vệ sinh đồng ruộng: thu gom và tiêu hủy lá bệnh, giảm nguồn bào tử
+3. Bón phân cân đối, không thừa đạm; tránh tưới quá nhiều
+4. Thuốc hóa học: [cần xác minh đăng ký trên mía tại Việt Nam] Một số
+   thuốc gốc Mancozeb, Chlorothalonil có thể hiệu quả với Stagonospora
+   nhưng hiếm khi cần thiết vì bệnh ít gây thiệt hại kinh tế đáng kể
+
+THUỐC KHUYẾN NGHỊ:
+⚠️ Lá già khô tự nhiên KHÔNG CẦN THUỐC — đây là sinh lý bình thường.
+Bệnh cháy lá Stagonospora thường không gây thiệt hại kinh tế đáng kể
+nên hiếm khi cần phun thuốc. Ưu tiên biện pháp canh tác.
+
+Nếu bệnh cháy lá nặng bất thường:
+1. Hoạt chất: Mancozeb (tiếp xúc phổ rộng)
+   Tên thương mại: Dithane M-45 80WP
+   Liều lượng: 25–30 g/bình 16 lít
+   Thời điểm: Phun khi bệnh bắt đầu xuất hiện, trước mùa mưa nhiều
+   [cần xác minh đăng ký trên mía VN]
+
+2. Hoạt chất: Propiconazole (Triazole — nội hấp)
+   Tên thương mại: Tilt 250EC
+   Liều lượng: 15–20 ml/bình 16 lít
+   Thời điểm: Phun trị khi bệnh nặng [cần xác minh đăng ký trên mía VN]
+
+NGUỒN:
+— Plantix/CABI (plantix.net) — Sugarcane leaf scorch (Stagonospora
+  sacchari): triệu chứng vệt sọc cháy, lây qua gió/mưa, giống kháng
+— Sugarcane Leaf Dataset Paper (Thite et al., 2024 — NCBI PMC) — xác
+  nhận "dried leaves" là class riêng biệt trong dataset 11 class mía
+— Wikipedia tiếng Anh — Leptosphaeria sacchari (ring spot): bệnh đốm
+  vòng mía, ít gây thiệt hại kinh tế
+— Sinh học AQ (nguyenlieusinhhoc.com) — Bệnh mía Việt Nam
+— Khuyến nông Bà Rịa-Vũng Tàu (knkn.baria-vungtau.gov.vn) — IPM mía
+— Cẩm nang chẩn đoán bệnh cây Việt Nam, Burgess et al. 2008

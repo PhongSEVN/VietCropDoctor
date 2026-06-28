@@ -18,6 +18,7 @@ export default defineConfig(({ mode }) => {
   // Per-service overrides — set in .env.local when running without full gateway stack
   const authUrl     = env.VITE_AUTH_URL     || apiUrl;
   const predictUrl  = env.VITE_PREDICT_URL  || apiUrl;
+  const orchestratorUrl = env.VITE_ORCHESTRATOR_URL || apiUrl;
   const ragUrl      = env.VITE_RAG_URL      || apiUrl;
   const analyticsUrl = env.VITE_ANALYTICS_URL || apiUrl;
 
@@ -32,6 +33,7 @@ export default defineConfig(({ mode }) => {
       proxy: {
         "/auth":          { target: authUrl,    changeOrigin: true },
         "/predict":       { target: predictUrl, changeOrigin: true },
+        "/orchestrate":   { target: orchestratorUrl, changeOrigin: true },
         "/query":         { target: ragUrl,     changeOrigin: true },
         "/chat":          { target: ragUrl,     changeOrigin: true, bypass: spaNavFallback },
         "/chat-history":  { target: ragUrl,     changeOrigin: true },

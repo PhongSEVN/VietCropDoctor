@@ -1,0 +1,132 @@
+TÊN BỆNH: Bệnh đốm nâu mía (brown leaf spot, Cercospora leaf spot)
+LOẠI CÂY: Mía (Saccharum officinarum)
+CLASS ID: sugarcane_Brown_Spot
+
+TRIỆU CHỨNG:
+Bệnh đốm nâu mía là bệnh nấm lá phổ biến, gây hại chủ yếu trên lá
+mía từ giai đoạn cây con đến cây trưởng thành. Bệnh đặc biệt nặng
+trong giai đoạn giữa và cuối mùa mưa.
+
+Giai đoạn đầu (chớm bệnh):
+Xuất hiện các chấm nhỏ như đầu kim màu nâu đỏ hoặc đỏ tím trên cả
+hai mặt lá mía, thường bắt đầu từ lá bánh tẻ và lá già ở tầng dưới.
+Các chấm này thường rải rác trên phiến lá, không tập trung.
+
+Giai đoạn phát triển — vết bệnh đặc trưng:
+Các chấm phát triển thành vết đốm hình bầu dục hoặc hình thoi thuôn
+dài theo chiều dọc phiến lá. Vết bệnh điển hình có màu nâu đỏ đến
+nâu sẫm ở trung tâm, xung quanh có quầng vàng nhạt hoặc nâu nhạt.
+Kích thước vết bệnh từ 2–10 mm chiều dài. Trên mặt dưới lá của vết
+bệnh già có thể thấy lớp bột mịn màu xám (đài và bào tử của nấm
+Cercospora longipes).
+
+Giai đoạn nặng:
+Nhiều vết bệnh liên kết lại thành mảng lớn, làm lá chuyển vàng từng
+phần rồi khô cháy từ đầu lá trở xuống. Lá già ở tầng thấp bị hại
+nặng nhất, khô rụng sớm. Khi bệnh lan lên các lá tầng trên, mía
+mất khả năng quang hợp đáng kể, thân còi cọc, hàm lượng đường giảm.
+Bệnh nặng giai đoạn vươn lóng làm lóng ngắn và mỏng, giảm năng suất.
+
+Trên bẹ lá: Đốm nâu cũng xuất hiện trên bẹ lá, tương tự như trên
+phiến lá nhưng thường nhỏ và ít hơn.
+
+ Phân biệt với bệnh đốm vàng mía (yellow spot — Mycovellosiella
+koepkei): Bệnh đốm vàng cho vết bệnh màu vàng tươi hình bầu dục, ít
+viền nâu hơn. Đốm nâu Cercospora có màu nâu đỏ đặc trưng, vết bệnh
+có viền màu vàng rõ hơn và trên mặt dưới lá có lớp bào tử xám khi ẩm.
+
+NGUYÊN NHÂN:
+Tác nhân chính là nấm Cercospora longipes Butler (thuộc lớp
+Dothideomycetes, bộ Mycosphaerellales, họ Mycosphaerellaceae). Đây là
+nấm hoại dưỡng — có thể sống trên tàn dư cây bệnh sau khi cây chết —
+khác với nấm ký sinh bắt buộc. Nấm tạo đài phân sinh (conidiophore)
+màu nâu đậm mọc thành bó qua khí khổng mặt dưới lá; bào tử phân sinh
+(conidium) hình trụ dài nhiều vách ngăn, màu vàng nhạt đến không màu,
+phát tán theo gió và nước mưa bắn.
+
+Cercospora longipes sản xuất độc tố cercosporin (perylenequinone),
+được hoạt hóa bởi ánh sáng, tạo ra gốc oxy tự do (ROS) phá hủy tế
+bào lá — đây là cơ chế gây bệnh chính của chi Cercospora.
+
+Nấm tồn tại chủ yếu trên tàn dư lá bệnh còn lại trên đồng. Bào tử
+phát tán theo gió và nước mưa bắn tung là con đường lây lan chính.
+
+ĐIỀU KIỆN PHÁT SINH:
+— Thời tiết: Nóng ẩm, nhiều mưa; đặc biệt phát sinh mạnh giữa và
+  cuối mùa mưa (tháng 7–10 tại các tỉnh miền Nam và Tây Ninh; tháng
+  6–9 tại miền Trung). Nhiệt độ 25–32°C và ẩm độ cao là tối ưu.
+— Dinh dưỡng: Thiếu kali (K) làm lá mỏng và yếu; bón thừa đạm (N)
+  kích thích mô lá non mềm dễ nhiễm bệnh. Tương tự đốm nâu lúa, kali
+  đóng vai trò then chốt trong sức đề kháng lá.
+— Canh tác: Trồng dày thiếu thông thoáng, tán lá giao nhau tạo vi
+  khí hậu ẩm ướt. Vệ sinh đồng ruộng kém (lá khô còn trên đồng cung
+  cấp nguồn bào tử liên tục).
+— Giống: Một số giống mía phổ biến nhiễm nặng; giống kháng tốt hạn
+  chế được thiệt hại đáng kể.
+— Giai đoạn: Mía giai đoạn vươn lóng (3–7 tháng tuổi) bị hại nặng
+  nhất vì tán lá dày và lá già nhiều.
+
+PHÒNG TRỊ:
+1. [Canh tác - Ưu tiên 1] Bón phân cân đối, đặc biệt bổ sung đầy đủ
+  kali (K2O) theo tỷ lệ N:K cân đối. Tăng cường bón phân hữu cơ cải
+  thiện sức đề kháng cây. Tránh bón thừa đạm giai đoạn vươn lóng.
+
+2. [Canh tác - Ưu tiên 2] Trồng đúng mật độ khuyến cáo; không trồng
+  quá dày. Bóc lá già thường xuyên trong giai đoạn vươn lóng để tạo
+  thông thoáng và giảm nguồn bệnh tàn dư.
+
+3. [Canh tác - Ưu tiên 3] Vệ sinh đồng ruộng sau thu hoạch: thu gom
+  và đốt lá khô, lá bệnh. Luân canh 1 vụ với cây trồng khác nếu bệnh
+  phát sinh nặng liên tục nhiều vụ.
+
+4. [Giống] Chọn giống kháng hoặc ít nhiễm đốm nâu. Tham khảo danh
+  sách giống khuyến cáo từ Viện Nghiên cứu Mía đường và đơn vị thu
+  mua nguyên liệu địa phương.
+
+5. [Hóa học] Phun thuốc khi bệnh chớm xuất hiện rải rác (<10% lá bị
+  hại) ở giai đoạn vươn lóng. Phun ướt đều cả hai mặt lá (chú ý mặt
+  dưới lá nơi bào tử tập trung). Phun 2 lần cách nhau 10–14 ngày.
+
+THUỐC KHUYẾN NGHỊ:
+1. Hoạt chất: Mancozeb (Dithiocarbamate — tiếp xúc phổ rộng, kháng
+   nhiều nấm Cercospora hiệu quả)
+   Tên thương mại: Dithane M-45 80WP, Mancozeb 80WP, Dipomate 80WP
+   Liều lượng: 25–30 g/bình 16 lít; 1,5–2 kg/ha
+   Thời điểm: Phun phòng đầu mùa mưa và khi bệnh chớm xuất hiện
+   Thời gian cách ly: 7 ngày
+
+2. Hoạt chất: Propiconazole (Triazole — nội hấp, đặc trị Cercospora)
+   Tên thương mại: Tilt 250EC, Bumper 250EC
+   Liều lượng: Tilt 250EC: 15–20 ml/bình 16 lít; 0,5–0,75 lít/ha
+   Thời điểm: Phun trị khi bệnh xuất hiện; hiệu quả nhanh
+   Thời gian cách ly: 14 ngày
+
+3. Hoạt chất: Azoxystrobin + Difenoconazole (Strobilurin + Triazole)
+   Tên thương mại: Amistar Top 325SC (Syngenta)
+   Liều lượng: 10–15 ml/bình 16 lít
+   Thời điểm: Phun phòng và trị; kép tác dụng bảo vệ + nội hấp
+   Thời gian cách ly: 14 ngày
+
+4. Hoạt chất: Tebuconazole (Triazole — nội hấp)
+   Tên thương mại: Folicur 250EW (Bayer), Nativo 750WG (kết hợp
+   Trifloxystrobin)
+   Liều lượng: theo hướng dẫn nhà sản xuất
+   Thời điểm: Luân phiên với Mancozeb và Propiconazole
+   Thời gian cách ly: 14 ngày
+
+5. Hoạt chất: Carbendazim (Benzimidazole — nội hấp)
+   Tên thương mại: Bavistin 50SC, Carbenda 50SC
+   Liều lượng: 20–25 ml/bình 16 lít
+   Thời điểm: Phun trị khi bệnh đã lan rộng; luân phiên với Triazole
+   Thời gian cách ly: 7 ngày
+
+NGUỒN:
+— ECOMCO (ecomco.vn) — Bệnh đốm nâu mía: tác nhân Cercospora longipes,
+  điều kiện phát sinh, triệu chứng theo giai đoạn
+— Sinh học AQ (nguyenlieusinhhoc.com) — 8 bệnh mía Việt Nam
+— Khuyến nông Bà Rịa-Vũng Tàu (knkn.baria-vungtau.gov.vn .gov.vn)
+  — Quản lý bệnh hại mía
+— BMC Group (bmcgroup.com.vn) — Bệnh đốm nâu/đốm đen Cercospora spp.
+  trên cây trồng: danh sách hoạt chất
+— CABI Compendium — Cercospora longipes (brown leaf spot of sugarcane)
+— Cẩm nang chẩn đoán bệnh cây Việt Nam, Burgess et al. 2008

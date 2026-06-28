@@ -1,0 +1,140 @@
+TÊN BỆNH: Bệnh vàng lá mía (yellow leaf disease, hội chứng vàng lá mía)
+LOẠI CÂY: Mía (Saccharum officinarum và các giống lai)
+CLASS ID: sugarcane_Yellow_Leaf
+
+⚠️ LƯU Ý PHÂN LOẠI TÁC NHÂN: Hội chứng vàng lá mía (Sugarcane Yellow
+Leaf Syndrome — SCYLS) tại Việt Nam và trên thế giới do 2 tác nhân
+sinh học gây ra, có thể riêng lẻ hoặc kết hợp:
+(1) SCYLV — Sugarcane Yellow Leaf Virus (Polerovirus, Solemoviridae):
+    lây truyền qua rệp mía (Melanaphis sacchari, Rhopalosiphum maidis)
+    theo kiểu liên tục (persistent/circulative)
+(2) Phytoplasma nhóm 16SrXII (Stolbur group): đã được xác nhận tại
+    Nghệ An, Việt Nam (nghiên cứu nested-PCR, 2012–2013); lây qua rầy
+    môi giới và hom giống nhiễm
+Tại Việt Nam, phytoplasma đóng vai trò đáng kể hơn SCYLV trong các
+ca bệnh tại Nghệ An.
+
+TRIỆU CHỨNG:
+Đặc điểm nhận biết đặc trưng nhất — GÂN LÁ VÀNG, THỊT LÁ XANH:
+
+Triệu chứng điển hình (dễ nhận):
+Gân chính (midrib) của lá mía chuyển màu vàng tươi hoặc vàng cam,
+trong khi phần thịt lá (phiến lá) hai bên gân vẫn giữ màu xanh. Đây
+là triệu chứng ngược lại với thiếu dinh dưỡng thông thường (thiếu đạm
+thường vàng toàn bộ lá, thiếu vi lượng vàng giữa gân). Triệu chứng
+bắt đầu từ gân lá dưới (mặt dưới) và lan dần lên mặt trên.
+
+Tiến triển:
+Vàng gân lan dần từ lá già lên lá bánh tẻ. Gân lá chuyển từ vàng tươi
+→ vàng cam → nâu → hoại tử khô từ ngọn xuống. Cây bị nhiễm nặng: lá
+toàn bộ chuyển vàng, cây còi cọc, lóng ngắn, giảm tốc độ sinh trưởng
+rõ rệt. Trong một số trường hợp gân lá có thể có màu hồng hoặc đỏ
+trước khi chuyển vàng (đặc biệt với SCYLV chủng nhất định).
+
+Triệu chứng toàn cây:
+Cây nhiễm nặng sinh trưởng chậm, thân còi, số lóng ít. Hàm lượng
+sucrose trong thân giảm đáng kể. Năng suất mía và chữ đường (CCS)
+đều giảm. Thiệt hại được báo cáo 10–50% sản lượng mía tươi và 14%
+sản lượng đường.
+
+Triệu chứng không điển hình ở giai đoạn sớm:
+Cây nhiễm có thể không biểu hiện triệu chứng rõ ràng trong giai đoạn
+đầu — gây khó phát hiện và dễ lây lan qua hom giống. Báo cáo từ Thái
+Lan ghi nhận 30% giảm năng suất ở cây mía không biểu hiện triệu chứng
+(asymptomatic).
+
+⚠️ Bảng phân biệt vàng lá mía với các nguyên nhân khác:
+| Nguyên nhân      | Đặc điểm vàng lá          | Ghi chú            |
+|------------------|---------------------------|--------------------|
+| SCYLV/phytoplasma| GÂN vàng, thịt lá xanh   | Từ lá già lên      |
+| Thiếu N (đạm)    | Vàng TOÀN BỘ lá già      | Từ gốc cây lên     |
+| Thiếu Zn/Mn      | Vàng GIỮA gân, gân xanh  | Lá non bị trước    |
+| Khảm (SCMV)      | Khảm loang lổ xanh-vàng  | Bất quy tắc        |
+| Chồi cỏ          | Vàng toàn bộ lá non hẹp  | Đẻ nhiều chồi nhỏ |
+
+NGUYÊN NHÂN:
+Hai tác nhân chính tại Việt Nam:
+
+1. SCYLV (Sugarcane Yellow Leaf Virus):
+Thuộc chi Polerovirus, họ Solemoviridae (trước đây: Luteoviridae).
+ssRNA dương, hạt virion hình cầu đường kính 24–29 nm, giới hạn trong
+phloem (mạch libe) của cây. Lây truyền qua rệp theo kiểu liên tục —
+khác hoàn toàn với SCMV (lây truyền không liên tục). Rệp cần thời
+gian tiếp cận thức ăn (acquisition) 30 phút đến vài giờ để thu nhận
+virus; sau đó cần thời gian ủ trong cơ thể 12–24 giờ trước khi truyền
+được; một khi đã thu nhận virus, rệp truyền bệnh suốt đời. Môi giới
+chính: Melanaphis sacchari (rệp mía), Rhopalosiphum maidis (rệp ngô),
+R. rufiabdominalis, Ceratovacuna lanigera.
+
+2. Phytoplasma nhóm 16SrXII:
+Đã xác nhận tại Nghệ An, Việt Nam. Cơ chế lây truyền tương tự bệnh
+chồi cỏ (phytoplasma nhóm khác). Lây qua hom giống nhiễm và rầy môi
+giới.
+
+ĐIỀU KIỆN PHÁT SINH:
+— Nguồn bệnh chính: Hom giống nhiễm bệnh — con đường lây sang vùng
+  mới quan trọng nhất; cây mía bệnh trong ruộng là nguồn bệnh thứ cấp
+— Môi giới: Mật số rệp mía (Melanaphis sacchari) và rệp ngô
+  (Rhopalosiphum maidis) cao trong và xung quanh ruộng
+— Điều kiện thuận lợi cho rệp: Khô hạn, ít mưa, nhiệt độ ấm (rệp
+  phát triển mạnh)
+— Giống nhiễm: Nhiều giống mía phổ biến tại Việt Nam nhiễm bệnh; giống
+  lai có tính kháng tốt hơn
+— Canh tác: Sử dụng hom giống không kiểm tra bệnh; canh tác mía gốc
+  nhiều vụ liên tiếp tích lũy nguồn bệnh
+
+PHÒNG TRỊ:
+⚠️ KHÔNG CÓ THUỐC ĐẶC TRỊ virus SCYLV hay phytoplasma. Toàn bộ
+chiến lược dựa vào PHÒNG NGỪA — kiểm soát nguồn bệnh và môi giới.
+
+1. [Giống sạch — Ưu tiên 1] Chỉ sử dụng hom giống từ ruộng sạch bệnh
+  được kiểm tra bằng PCR hoặc kiểm tra trực quan kỹ lưỡng. Chọn giống
+  có tính kháng/chịu bệnh tốt.
+
+2. [Xử lý hom giống] Xử lý nhiệt hom giống (52°C/30 phút hoặc 50°C/
+  2 giờ) để tiêu diệt cả virus và phytoplasma trong mô hom trước khi
+  trồng.
+
+3. [Tiêu hủy cây bệnh] Nhổ bỏ và tiêu hủy sớm các cây có triệu chứng
+  vàng gân lá để giảm nguồn bệnh trong ruộng. Nếu tỷ lệ bệnh cao,
+  cân nhắc cày vùi toàn bộ và luân canh.
+
+4. [Kiểm soát rệp môi giới] Kiểm soát rệp mía trong ruộng và bảo vệ
+  thiên địch rệp (bọ rùa, ong ký sinh Aphidius sp., nấm Beauveria
+  bassiana). Với SCYLV lây liên tục, kiểm soát rệp có hiệu quả hơn
+  so với SCMV (lây không liên tục).
+
+5. [Vệ sinh canh tác] Vệ sinh đồng ruộng, diệt cỏ dại ký chủ rệp.
+  Luân canh cây trồng để giảm tích lũy rệp mía trong vùng.
+
+THUỐC KHUYẾN NGHỊ (trừ RỆP môi giới):
+1. Hoạt chất: Imidacloprid (Neonicotinoid — nội hấp, trừ rệp hiệu quả)
+   Tên thương mại: Confidor 100SL, Admire 200OD
+   Liều lượng: 10 ml/bình 16 lít; xử lý gốc đầu vụ
+   Thời điểm: Phun phòng khi mật số rệp bắt đầu tăng; xử lý đất đầu vụ
+   Thời gian cách ly: 21 ngày
+
+2. Hoạt chất: Thiamethoxam (Neonicotinoid thế hệ 2)
+   Tên thương mại: Actara 25WG
+   Liều lượng: 3–5 g/bình 16 lít
+   Thời điểm: Phun khi rệp xuất hiện mật số cao
+   Thời gian cách ly: 14 ngày
+
+3. Hoạt chất: Dimethoate (Organophosphate — nội hấp + tiếp xúc)
+   Tên thương mại: Bi-58 40EC
+   Liều lượng: 20–25 ml/bình 16 lít
+   Thời điểm: Phun trị khi mật số rệp cao, kết hợp với Neonicotinoid
+   (luân phiên)
+   Thời gian cách ly: 21 ngày
+
+NGUỒN:
+— Tạp chí KH&CN ĐH Thái Nguyên (jst.tnu.edu.vn) — Phát hiện
+  phytoplasma 16SrXII hội chứng vàng lá mía Nghệ An (2012–2013)
+— Sinh học AQ (nguyenlieusinhhoc.com) — Bệnh vàng lá mía phytoplasma
+— Khuyến nông Bà Rịa-Vũng Tàu (knkn.baria-vungtau.gov.vn .gov.vn) —
+  Quản lý IPM bệnh hại mía
+— AGOIN (agoin.com.vn) — Bệnh trắng lá/vàng lá phytoplasma; giống
+  kháng
+— NCBI/PMC — SCYLV Polerovirus: triệu chứng gân lá vàng, thiệt hại
+  10–50%, rệp Melanaphis sacchari là môi giới chính
+— Cẩm nang chẩn đoán bệnh cây Việt Nam, Burgess et al. 2008

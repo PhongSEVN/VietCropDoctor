@@ -23,12 +23,12 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "prometheus" },
-          "expr": "histogram_quantile(0.95, sum(rate(rag_latency_seconds_bucket{stage=\"retrieval\"}[5m])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(rag_latency_seconds_bucket{stage=\"retrieve\"}[5m])) by (le))",
           "legendFormat": "Qdrant P95"
         },
         {
           "datasource": { "type": "prometheus", "uid": "prometheus" },
-          "expr": "histogram_quantile(0.50, sum(rate(rag_latency_seconds_bucket{stage=\"retrieval\"}[5m])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(rag_latency_seconds_bucket{stage=\"retrieve\"}[5m])) by (le))",
           "legendFormat": "Qdrant P50"
         }
       ],
@@ -87,7 +87,7 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "prometheus" },
-          "expr": "avg(rag_context_docs_retrieved)",
+          "expr": "sum(rate(chunks_retrieved_sum[5m])) / sum(rate(chunks_retrieved_count[5m]))",
           "legendFormat": "Avg docs retrieved"
         }
       ],

@@ -1,0 +1,39 @@
+# Deep Learning
+# CUDA 12.4 (RTX 3050):
+#   pip install torch==2.5.1+cu124 torchvision==0.20.1+cu124 --index-url https://download.pytorch.org/whl/cu124
+# CPU only:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+torch>=2.5.0
+torchvision>=0.20.0
+
+# Computer Vision
+timm>=1.0.0
+Pillow>=10.0.0
+numpy>=1.24.0           # ndarray ops in ensemble + uncertainty
+
+# Ensemble members
+transformers>=4.40.0    # ViTModel backbone for the ViT ensemble member
+ultralytics>=8.3.0      # YOLOv8-cls ensemble member (.pt checkpoints)
+
+# API
+fastapi>=0.110.0
+uvicorn[standard]>=0.27.0
+python-multipart>=0.0.9
+pydantic>=2.0.0
+python-dotenv>=1.0.0
+
+# Observability
+prometheus-fastapi-instrumentator>=6.1.0
+
+# Messaging
+aiokafka>=0.10.0
+
+# Object storage
+minio>=7.2.0
+
+# Model registry / hot-swap
+# mlflow client: pull promoted weights into cv/results on /admin/reload-model.
+mlflow>=2.10.0
+
+# Shared package
+-e ../shared

@@ -1,0 +1,595 @@
+version: "3.9"
+name: vietcropdoctor-dev
+
+
+#  VietCropDoctor — Local Development Stack
+#
+#  Ports at a glance:
+#    8000  gateway (Nginx)
+#    8001  vision-ai
+#    8002  rag-engine
+#    8080  kafka-ui
+#    9092  kafka (host access)
+#    6333  qdrant  HTTP | 6334 gRPC
+#    6379  redis
+#    11434 ollama
+#    5000  mlflow
+#    8004  analytics
+#    8090  airflow webserver
+#    9090  prometheus
+#    3001  grafana
+#    8123  clickhouse HTTP | 9000 TCP
+#
+#  Quick start:
+#    make up              → scripts/dev-start.sh (waits for health checks)
+#    docker compose up -d → starts everything immediately (no wait)
+#
+#  Selective starts:
+#    docker compose up -d zookeeper kafka qdrant redis   # infra only
+#    docker compose up -d vision-ai rag-engine           # app services
+
+
+networks:
+  vcd-net:
+    driver: bridge
+
+volumes:
+  redis_data:
+  clickhouse_data:
+  postgres_data:
+
+# Infrastructure
+
+services:
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    container_name: vcd-zookeeper
+    restart: unless-stopped
+    networks: [vcd-net]
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+      ZOOKEEPER_LOG4J_ROOT_LOGLEVEL: WARN
+    healthcheck:
+      test: ["CMD", "cub", "zk-ready", "localhost:2181", "30"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  kafka:
+    image: confluentinc/cp-kafka:7.5.0
+    container_name: vcd-kafka
+    restart: unless-stopped
+    networks: [vcd-net]
+    depends_on:
+      zookeeper:
+        condition: service_healthy
+    ports:
+      - "9092:9092"        # PLAINTEXT_HOST — accessible from localhost
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+
+      # Two listeners:
+      #   PLAINTEXT      → kafka:29092    (inter-container, used by app services)
+      #   PLAINTEXT_HOST → localhost:9092 (host-side tools: kafkacat, ksqlDB, …)
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:29092,PLAINTEXT_HOST://0.0.0.0:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"   # topics created via init script
+      KAFKA_LOG_RETENTION_HOURS: 168
+      KAFKA_LOG4J_ROOT_LOGLEVEL: WARN
+    healthcheck:
+      test: ["CMD", "kafka-broker-api-versions", "--bootstrap-server", "localhost:9092"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 30s
+
+  kafka-init:
+    image: confluentinc/cp-kafka:7.5.0
+    container_name: vcd-kafka-init
+    networks: [vcd-net]
+    depends_on:
+      kafka:
+        condition: service_healthy
+    entrypoint: ["/bin/sh", "-c"]
+    command: |
+      "
+      kafka-topics --bootstrap-server kafka:29092 --create --if-not-exists --topic disease.detected  --partitions 3 --replication-factor 1
+      kafka-topics --bootstrap-server kafka:29092 --create --if-not-exists --topic chat.requested    --partitions 3 --replication-factor 1
+      echo 'Kafka topics created.'
+      "
+    restart: "no"
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    container_name: vcd-kafka-ui
+    restart: unless-stopped
+    networks: [vcd-net]
+    depends_on:
+      kafka:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      KAFKA_CLUSTERS_0_NAME: vietcropdoctor-local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:29092
+      KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
+      DYNAMIC_CONFIG_ENABLED: "true"
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: vcd-qdrant
+    restart: unless-stopped
+    networks: [vcd-net]
+    ports:
+      - "6333:6333"   # HTTP / REST
+      - "6334:6334"   # gRPC
+    volumes:
+      - ./data/qdrant:/qdrant/storage
+    environment:
+      QDRANT__SERVICE__HTTP_PORT: 6333
+      QDRANT__SERVICE__GRPC_PORT: 6334
+      QDRANT__LOG_LEVEL: INFO
+
+  minio:
+    image: minio/minio:latest
+    container_name: vcd-minio
+    restart: unless-stopped
+    networks: [vcd-net]
+    ports:
+      - "9001:9001"   # Console UI
+      - "9002:9000"   # S3 API
+    volumes:
+      - ./data/minio:/data
+    environment:
+      MINIO_ROOT_USER:     ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin}
+    command: server /data --console-address ":9001"
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: vcd-postgres
+    restart: unless-stopped
+    networks: [vcd-net]
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER:     vcdauth
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-secret}
+      POSTGRES_DB:       vcd_auth
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "vcdauth", "-d", "vcd_auth"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
+
+  redis:
+    image: redis:7-alpine
+    container_name: vcd-redis
+    restart: unless-stopped
+    networks: [vcd-net]
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: ["redis-server", "--appendonly", "yes", "--loglevel", "warning"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: vcd-ollama
+    restart: unless-stopped
+    networks: [vcd-net]
+    ports:
+      - "11434:11434"
+    volumes:
+      - ./data/ollama:/root/.ollama
+    # ── GPU passthrough (NVIDIA) ─────────────────────────────────────────────
+    # Requires nvidia-container-runtime. Remove this block on CPU-only hosts.
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+# Application services
+
+  auth:
+    build:
+      context: .
+      dockerfile: services/core/auth/Dockerfile
+    image: vcd-auth:dev
+    container_name: vcd-auth
+    restart: unless-stopped
+    networks: [vcd-net]
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "8005:8005"
+    volumes:
+      - ./services/core/auth:/service
+      - ./services/shared:/shared:ro
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8005", "--reload"]
+    environment:
+      POSTGRES_DSN:   ${POSTGRES_DSN:-postgresql://vcdauth:secret@postgres:5432/vcd_auth}
+      REDIS_URL:      ${REDIS_URL:-redis://redis:6379/1}
+      JWT_SECRET:     ${JWT_SECRET:-change-me-in-production-use-64-char-random}
+      LOG_LEVEL:      ${LOG_LEVEL:-INFO}
+    env_file:
+      - path: .env
+        required: false
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8005/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+  vision-ai:
+    build:
+      context: .
+      dockerfile: services/ai/vision-ai/Dockerfile
+    image: vcd-vision-ai:dev
+    container_name: vcd-vision-ai
+    restart: unless-stopped
+    networks: [vcd-net]
+    depends_on:
+      kafka:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "8001:8001"
+    volumes:
+      # Mount source for live reload (packages already installed in image)
+      - ./services/ai/vision-ai:/service
+      - ./services/shared:/shared:ro
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8001", "--reload"]
+    environment:
+      MODEL_PATH:              ${MODEL_PATH:-/service/cv/results/mobilenetv3/models/best_model.pth}
+      KAFKA_BOOTSTRAP_SERVERS: ${KAFKA_BOOTSTRAP_SERVERS:-kafka:29092}
+      REDIS_URL:               ${REDIS_URL:-redis://redis:6379/0}
+      MLFLOW_TRACKING_URI:     ${MLFLOW_TRACKING_URI:-http://mlflow:5000}
+      LOG_LEVEL:               ${LOG_LEVEL:-INFO}
+      MINIO_ENDPOINT:          ${MINIO_ENDPOINT:-minio:9000}
+      MINIO_ACCESS_KEY:        ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_SECRET_KEY:        ${MINIO_ROOT_PASSWORD:-minioadmin}
+      MINIO_BUCKET_UPLOADS:    ${MINIO_BUCKET_UPLOADS:-vcd-uploads}
+      MINIO_STORE_UPLOADS:     ${MINIO_STORE_UPLOADS:-false}
+    env_file:
+      - path: .env
+        required: false
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8001/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  rag-engine:
+    build:
+      context: .
+      dockerfile: services/ai/rag-engine/Dockerfile
+    image: vcd-rag-engine:dev
+    container_name: vcd-rag-engine
+    restart: unless-stopped
+    networks: [vcd-net]
+    depends_on:
+      qdrant:
+        condition: service_started
+      kafka:
+        condition: service_healthy
+      ollama:
+        condition: service_started
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./services/ai/rag-engine:/service
+      - ./services/shared:/shared:ro
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8002", "--reload"]
+    environment:
+      QDRANT_HOST: ${QDRANT_HOST:-qdrant}
+      QDRANT_PORT: ${QDRANT_PORT:-6333}
+      KAFKA_BOOTSTRAP_SERVERS: ${KAFKA_BOOTSTRAP_SERVERS:-kafka:29092}
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://ollama:11434}
+      LLM_BASE_URL: ${OLLAMA_BASE_URL:-http://ollama:11434}
+      LLM_MODEL: ${LLM_MODEL:-qwen2.5:3b}
+      MLFLOW_TRACKING_URI: ${MLFLOW_TRACKING_URI:-http://mlflow:5000}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+    env_file:
+      - path: .env
+        required: false
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8002/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 45s
+
+  clickhouse:
+    image: clickhouse/clickhouse-server:24.3
+    container_name: vcd-clickhouse
+    restart: unless-stopped
+    networks: [vcd-net]
+    ports:
+      - "8123:8123"   # HTTP interface (clickhouse-connect)
+      - "9000:9000"   # Native TCP interface
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+    environment:
+      CLICKHOUSE_DB:       vietcropdoctor
+      CLICKHOUSE_USER:     admin
+      CLICKHOUSE_PASSWORD: secret
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8123/ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.11.0
+    container_name: vcd-mlflow
+    restart: unless-stopped
+    networks: [vcd-net]
+    ports:
+      - "5000:5000"
+    command: >
+      mlflow server
+      --backend-store-uri sqlite:///data/mlflow/mlflow.db
+      --default-artifact-root /data/mlflow/artifacts
+      --host 0.0.0.0
+    volumes:
+      - ./data/mlflow:/data/mlflow
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5000/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  mlops:
+    build:
+      context: ./services/platform/mlops
+      dockerfile: Dockerfile
+    image: vcd-mlops:dev
+    container_name: vcd-mlops
+    networks: [vcd-net]
+    restart: "no"
+    depends_on:
+      mlflow:
+        condition: service_healthy
+    working_dir: /workspace
+    volumes:
+      - ./services/platform/mlops:/workspace
+      - ./data/training:/data/training
+      - ./data/models:/data/models
+      - ./data/mlflow:/data/mlflow
+    environment:
+      MLFLOW_TRACKING_URI: ${MLFLOW_TRACKING_URI:-http://mlflow:5000}
+    env_file:
+      - path: .env
+        required: false
+    # mlops is a run-once container; override CMD via: docker compose run --rm mlops <cmd>
+    profiles: ["training"]
+
+  analytics:
+    build:
+      context: .
+      dockerfile: services/platform/analytics/Dockerfile
+    image: vcd-analytics:dev
+    container_name: vcd-analytics
+    restart: unless-stopped
+    networks: [vcd-net]
+    depends_on:
+      kafka:
+        condition: service_healthy
+      clickhouse:
+        condition: service_healthy
+    ports:
+      - "8004:8004"
+    volumes:
+      - ./services/platform/analytics:/service
+      - ./services/shared:/shared:ro
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8004", "--reload"]
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: ${KAFKA_BOOTSTRAP_SERVERS:-kafka:29092}
+      CLICKHOUSE_HOST:     ${CLICKHOUSE_HOST:-clickhouse}
+      CLICKHOUSE_PORT:     ${CLICKHOUSE_PORT:-8123}
+      CLICKHOUSE_DB:       ${CLICKHOUSE_DB:-vietcropdoctor}
+      CLICKHOUSE_USER:     ${CLICKHOUSE_USER:-admin}
+      CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD:-secret}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+    env_file:
+      - path: .env
+        required: false
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8004/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  airflow:
+    image: apache/airflow:2.9.0
+    container_name: vcd-airflow
+    restart: unless-stopped
+    networks: [vcd-net]
+    depends_on:
+      mlflow:
+        condition: service_healthy
+    ports:
+      - "8090:8080"
+    volumes:
+      - ./services/platform/mlops/airflow/dags:/opt/airflow/dags
+      - ./services/platform/mlops:/opt/mlops
+      - ./data/airflow:/data/airflow
+      - ./data/models:/data/models
+    environment:
+      AIRFLOW__CORE__EXECUTOR: SequentialExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: sqlite:////data/airflow/airflow.db
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__WEBSERVER__SECRET_KEY: ${AIRFLOW_SECRET_KEY:-vietcropdoctor-local-secret}
+      MLFLOW_TRACKING_URI: ${MLFLOW_TRACKING_URI:-http://mlflow:5000}
+      CLICKHOUSE_HOST:     ${CLICKHOUSE_HOST:-clickhouse}
+      CLICKHOUSE_PORT:     ${CLICKHOUSE_PORT:-8123}
+      CLICKHOUSE_DB:       ${CLICKHOUSE_DB:-vietcropdoctor}
+      CLICKHOUSE_USER:     ${CLICKHOUSE_USER:-admin}
+      CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD:-secret}
+    env_file:
+      - path: .env
+        required: false
+    command: standalone
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 20s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+  prometheus:
+    image: prom/prometheus:v2.51.0
+    container_name: vcd-prometheus
+    restart: unless-stopped
+    networks: [vcd-net]
+    ports:
+      - "9090:9090"
+    volumes:
+      - ../infra/monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ../infra/monitoring/prometheus/rules:/etc/prometheus/rules:ro
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --storage.tsdb.retention.time=15d
+      - --web.enable-lifecycle
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:9090/-/healthy"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  grafana:
+    image: grafana/grafana:10.4.0
+    container_name: vcd-grafana
+    restart: unless-stopped
+    networks: [vcd-net]
+    depends_on:
+      prometheus:
+        condition: service_healthy
+    ports:
+      - "3001:3000"
+    volumes:
+      - ../infra/monitoring/grafana/dashboards:/var/lib/grafana/dashboards:ro
+      - ../infra/monitoring/grafana/provisioning:/etc/grafana/provisioning:ro
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GF_ADMIN_PASSWORD:-admin}
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+      GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH: /var/lib/grafana/dashboards/overview.json
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/api/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+  orchestrator:
+    build:
+      context: .
+      dockerfile: services/ai/orchestrator/Dockerfile
+    image: vcd-orchestrator:dev
+    container_name: vcd-orchestrator
+    restart: unless-stopped
+    networks: [vcd-net]
+    depends_on:
+      vision-ai:
+        condition: service_healthy
+      rag-engine:
+        condition: service_healthy
+      ollama:
+        condition: service_started
+    ports:
+      - "8006:8006"
+    volumes:
+      - ./services/ai/orchestrator:/service
+      - ./services/shared:/shared:ro
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8006", "--reload"]
+    environment:
+      VISION_AI_URL:       ${VISION_AI_URL:-http://vision-ai:8001}
+      RAG_ENGINE_URL:      ${RAG_ENGINE_URL:-http://rag-engine:8002}
+      OLLAMA_BASE_URL:     ${OLLAMA_BASE_URL:-http://ollama:11434}
+      REASONING_MODEL:     ${REASONING_MODEL:-qwen2.5:3b}
+      JWT_SECRET:          ${JWT_SECRET:-change-me-in-production-use-64-char-random}
+      LOG_LEVEL:           ${LOG_LEVEL:-INFO}
+    env_file:
+      - path: .env
+        required: false
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8006/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  gateway:
+    build:
+      context: ./services/gateway
+      dockerfile: Dockerfile
+    image: vcd-gateway:dev
+    container_name: vcd-gateway
+    restart: unless-stopped
+    networks: [vcd-net]
+    depends_on:
+      vision-ai:
+        condition: service_healthy
+      rag-engine:
+        condition: service_healthy
+      auth:
+        condition: service_healthy
+      orchestrator:
+        condition: service_healthy
+    ports:
+      - "8000:80"
+    volumes:
+      # Hot-reload nginx configs without rebuilding the image
+      - ./services/gateway/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./services/gateway/conf.d:/etc/nginx/conf.d:ro
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s

@@ -145,6 +145,25 @@ services:
     ports:
       - "9308:9308"   # Prometheus metrics endpoint (/metrics)
 
+  # Exposes GPU metrics for Prometheus by wrapping nvidia-smi: utilization, VRAM,
+  # temperature, power. Needs NVIDIA GPU passthrough (nvidia-container-runtime).
+  gpu-exporter:
+    image: utkuozdemir/nvidia_gpu_exporter:1.2.0
+    container_name: vcd-gpu-exporter
+    restart: unless-stopped
+    networks: [vcd-net]
+    ports:
+      - "9835:9835"   # Prometheus metrics endpoint (/metrics)
+    # GPU passthrough — remove this block on CPU-only hosts (the rest of the stack
+    # runs fine without it; only GPU panels will show "No Data").
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
   qdrant:
     image: qdrant/qdrant:latest
     container_name: vcd-qdrant
@@ -269,6 +288,8 @@ services:
       AIRFLOW_URL:         ${AIRFLOW_URL:-http://airflow:8080}
       AIRFLOW_USERNAME:    ${AIRFLOW_USERNAME:-admin}
       AIRFLOW_PASSWORD:    ${AIRFLOW_PASSWORD:-}
+      PROMETHEUS_URL:      ${PROMETHEUS_URL:-http://prometheus:9090}
+      KAFKA_UI_URL:        ${KAFKA_UI_URL:-http://localhost:8080}
     env_file:
       - path: .env
         required: false
@@ -474,6 +495,11 @@ services:
       CLICKHOUSE_DB:       ${CLICKHOUSE_DB:-vietcropdoctor}
       CLICKHOUSE_USER:     ${CLICKHOUSE_USER:-admin}
       CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD:-secret}
+      # Retrain loop: feedback threshold → publish retrain.requested → trigger Airflow.
+      RETRAIN_FEEDBACK_THRESHOLD: ${RETRAIN_FEEDBACK_THRESHOLD:-50}
+      AIRFLOW_URL:        ${AIRFLOW_URL:-http://airflow:8080}
+      AIRFLOW_USERNAME:   ${AIRFLOW_USERNAME:-admin}
+      AIRFLOW_PASSWORD:   ${AIRFLOW_PASSWORD:-}
       LOG_LEVEL: ${LOG_LEVEL:-INFO}
     env_file:
       - path: .env
@@ -596,6 +622,9 @@ services:
       GF_SECURITY_ADMIN_PASSWORD: ${GF_ADMIN_PASSWORD:-admin}
       GF_AUTH_ANONYMOUS_ENABLED: "true"
       GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+      # Allow embedding dashboards inside the Admin Console iframe (dev, same host).
+      GF_SECURITY_ALLOW_EMBEDDING: "true"
+      GF_SECURITY_COOKIE_SAMESITE: "none"
       GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH: /var/lib/grafana/dashboards/overview.json
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://localhost:3000/api/health"]

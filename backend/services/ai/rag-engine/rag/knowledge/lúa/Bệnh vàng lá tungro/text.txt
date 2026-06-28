@@ -1,0 +1,172 @@
+TÊN BỆNH: Bệnh vàng lá tungro (bệnh tungro, vàng cam lá lúa)
+LOẠI CÂY: Lúa (Oryza sativa)
+CLASS ID: rice_vang_la_tungro
+
+⚠️ LƯU Ý PHÂN LOẠI QUAN TRỌNG:
+Bệnh tungro là một trong nhiều nguyên nhân gây vàng lá lúa. Cần phân
+biệt rõ với:
+— Bệnh vàng lùn (RGSV) — do rầy NÂU truyền
+— Bệnh lùn xoắn lá (RRSV) — do rầy nâu truyền  
+— Bệnh tungro (RTBV+RTSV) — do rầy XANH truyền ← class này
+— Thiếu dinh dưỡng (Zn, N) — không có môi giới côn trùng
+— Ngộ độc phèn/hữu cơ — không lây lan
+
+TRIỆU CHỨNG:
+Bệnh tungro gây ra tổ hợp triệu chứng đặc trưng giúp phân biệt với
+các bệnh vàng lá khác trên lúa. Triệu chứng xuất hiện sau 10–20 ngày
+kể từ khi cây bị rầy xanh chích nhiễm virus.
+
+Triệu chứng trên lá — đặc trưng nhất:
+Lá lúa bắt đầu chuyển màu từ xanh → xanh nhạt → vàng → vàng cam
+→ vàng khô, theo hướng từ chóp lá lan dần xuống bẹ lá (hướng ngược
+lại với thiếu đạm — thiếu đạm vàng từ lá già ở gốc lên). Màu VÀNG
+CAM hoặc VÀNG DẦU là đặc trưng nổi bật nhất của bệnh tungro, giúp
+phân biệt với vàng lùn (màu vàng chanh hơn). Lá bị bệnh thường hẹp
+hơn bình thường, đầu lá cuộn lại hoặc xoắn nhẹ, đặc biệt ở lá non.
+
+Triệu chứng trên cây:
+Cây lúa bị lùn rõ rệt — chiều cao chỉ còn 1/2 đến 2/3 so với cây
+khỏe. Số nhánh đẻ giảm mạnh, cây đẻ nhánh kém. Rễ phát triển kém,
+có thể thối đen rễ trong trường hợp nặng. Lá bệnh thường xòe ngang
+thay vì mọc thẳng đứng.
+
+Triệu chứng trên ruộng:
+Xuất hiện từng ổ dạng vệt hoặc mảng không đều — phân bố theo hướng
+di chuyển của rầy xanh từ ngoài vào trong. Các cây bệnh xen lẫn cây
+khỏe (không đồng đều khắp ruộng như thiếu phân). Chiều cao cây trong
+ruộng không đồng đều, có những điểm bị vàng cam nổi bật.
+
+Giai đoạn sinh trưởng ảnh hưởng:
+Cây nhiễm bệnh giai đoạn mạ — đẻ nhánh (trước 40 ngày tuổi) bị hại
+nặng nhất: không trổ được hoặc trổ trễ, bông lép hoàn toàn, mất
+trắng. Cây nhiễm sau giai đoạn đứng cái: thiệt hại nhẹ hơn, năng
+suất giảm 20–50%.
+
+⚠️ BẢNG PHÂN BIỆT 3 BỆNH VÀNG LÁ DO VIRUS TRÊN LÚA:
+| Đặc điểm      | Tungro          | Vàng lùn         | Lùn xoắn lá     |
+|---------------|-----------------|------------------|-----------------|
+| Tác nhân      | RTBV + RTSV     | RGSV             | RRSV            |
+| Môi giới      | Rầy XANH        | Rầy NÂU          | Rầy NÂU         |
+|               | (Nephotettix)   | (Nilaparvata)    | (Nilaparvata)   |
+| Màu lá        | Vàng CAM rõ     | Vàng chanh→cam   | Xanh đậm, lá   |
+|               |                 |                  | xoắn mép       |
+| Hướng vàng    | Từ chóp xuống   | Từ gốc lên       | Không đồng đều  |
+| Lùn cây       | Lùn rõ          | Lùn rõ           | Lùn + xoắn lá  |
+| Đốm rỉ trên lá| Không           | Không            | Có đốm rỉ      |
+
+NGUYÊN NHÂN:
+Bệnh tungro không phải do một virus đơn lẻ mà do sự PHỐI HỢP của
+hai loại virus:
+
+1. RTSV — Rice tungro spherical virus (virus tungro hình cầu): Thuộc
+họ Sequiviridae; có thể truyền bệnh độc lập qua rầy xanh nhưng gây
+triệu chứng nhẹ.
+
+2. RTBV — Rice tungro bacilliform virus (virus tungro hình nhộng/que):
+Thuộc họ Caulimoviridae; gây triệu chứng nặng nhưng CHỈ có thể được
+rầy xanh truyền khi CÓ MẶT RTSV — đây là quan hệ ký sinh lệ thuộc
+(helper virus). Trường hợp nhiễm đồng thời cả 2 virus gây triệu chứng
+nặng nhất.
+
+Môi giới truyền bệnh — RẦY XANH ĐẦU VÀNG (đầu đen):
+Nephotettix virescens (Distant) — rầy xanh đầu vàng: môi giới chính
+Nephotettix nigropictus — rầy xanh đầu đen: môi giới phụ
+Rầy xanh chích hút nhựa cây lúa bệnh, virus vào trong cơ thể rầy;
+thời gian ủ virus trong rầy 7–10 ngày. Sau khi có khả năng truyền
+bệnh, rầy chích vào cây khỏe và truyền virus. Một con rầy xanh mang
+virus có thể truyền bệnh cho nhiều cây. Rầy có thể tái nhiễm virus
+nhưng KHÔNG truyền qua trứng (không truyền qua thế hệ).
+
+Nguồn bệnh: Cây lúa bệnh trong ruộng, lúa chét sau thu hoạch, cỏ dại
+ký chủ phụ của rầy xanh (cỏ Poaceae).
+
+ĐIỀU KIỆN PHÁT SINH:
+— Mật số rầy xanh: Yếu tố quyết định nhất. Rầy xanh di cư cánh dài
+  từ nơi khác đến là nguồn lây bệnh ban đầu nguy hiểm nhất.
+— Thời tiết: Âm u, mưa nhiều, ẩm độ cao tạo điều kiện cho rầy phát
+  triển và di chuyển. Vụ Hè Thu ĐBSCL và vụ Mùa miền Bắc dễ bùng phát.
+— Giống nhiễm: Hầu hết giống lúa phổ biến đều nhiễm hoặc nhiễm vừa;
+  ít giống có gen kháng tungro bền vững.
+— Canh tác: Gieo sạ liên tục không nghỉ vụ tạo nguồn thức ăn liên
+  tục cho rầy; sạ dày tạo tiểu khí hậu thuận lợi cho rầy.
+— Giai đoạn nguy hiểm: Mạ đến đẻ nhánh (lúa dưới 40 ngày tuổi) là
+  giai đoạn mẫn cảm nhất.
+
+PHÒNG TRỊ:
+⚠️ NGUYÊN TẮC CĂN BẢN: Bệnh tungro do VIRUS — KHÔNG CÓ THUỐC ĐẶC
+TRỊ. Cây đã nhiễm bệnh KHÔNG THỂ chữa khỏi. Toàn bộ chiến lược tập
+trung vào PHÒNG NGỪA thông qua kiểm soát môi giới rầy xanh.
+
+1. [Canh tác - Ưu tiên 1] Chọn giống kháng rầy xanh và kháng tungro:
+  các giống có gen kháng rầy hoặc kháng virus đã được IRRI/Viện lúa
+  ĐBSCL khuyến cáo. Thăm hỏi Chi cục TT&BVTV địa phương để có danh
+  sách giống kháng phù hợp từng vùng.
+
+2. [Canh tác - Ưu tiên 2] Né rầy: xuống giống đồng loạt theo khuyến
+  cáo của địa phương (cùng thời điểm với vùng lân cận) để tránh lúa
+  non luôn có mặt trên đồng khi rầy cánh dài di cư. Áp dụng lịch
+  xuống giống né rầy "3 đợt/năm" tại ĐBSCL.
+
+3. [Canh tác - Ưu tiên 3] Vệ sinh đồng ruộng: cày vùi lúa chét và
+  tàn dư ngay sau thu hoạch để loại nguồn bệnh. Diệt cỏ dại ký chủ
+  rầy xanh trên bờ và xung quanh ruộng.
+
+4. [Giám sát — CỰC KỲ QUAN TRỌNG] Thăm đồng thường xuyên từ giai
+  đoạn mạ, đặc biệt chú ý phát hiện rầy xanh cánh dài mới di cư đến.
+  Ngưỡng phun thuốc phòng: ≥1 con rầy xanh cánh dài/m² ở giai đoạn
+  mạ đến đẻ nhánh, hoặc ≥7–10 con rầy/tép khi phát hiện tập trung.
+  Nhổ bỏ và chôn vùi ngay các bụi lúa có triệu chứng tungro để tránh
+  rầy tiếp tục hút và truyền sang cây khỏe.
+
+5. [Hóa học — PHÒNG, không trị bệnh] Phun thuốc trừ RẦY XANH để ngăn
+  chặn lây truyền virus, không phải để trị bệnh. Phun ngay khi phát
+  hiện rầy xanh cánh dài xuất hiện ở giai đoạn lúa non. Nếu ruộng
+  bệnh quá nặng (>30% cây bệnh), cần cày vùi toàn bộ, phun thuốc
+  trừ rầy trước khi cày để tránh rầy phát tán sang ruộng khác.
+
+THUỐC KHUYẾN NGHỊ (TRỪ RẦY XANH — môi giới truyền bệnh):
+1. Hoạt chất: Imidacloprid (Neonicotinoid — nội hấp toàn thân)
+   Tên thương mại: Confidor 100SL, Admire 200OD, Vua Imida
+   Liều lượng: Confidor 100SL: 10 ml/bình 16 lít; hoặc xử lý hạt
+   giống trước khi gieo (ngâm hạt trong dung dịch 0,1%)
+   Thời điểm: Phun ngay khi phát hiện rầy xanh cánh dài ở giai đoạn
+   mạ — đẻ nhánh; xử lý hạt giống để bảo vệ 20–25 ngày đầu
+   Thời gian cách ly: 21 ngày
+
+2. Hoạt chất: Thiamethoxam (Neonicotinoid thế hệ 2)
+   Tên thương mại: Actara 25WG, Cruiser 350FS (xử lý hạt)
+   Liều lượng: Actara 25WG: 3–5 g/bình 16 lít
+   Thời điểm: Phun phòng rầy giai đoạn mạ đến đẻ nhánh rộ
+   Thời gian cách ly: 14 ngày
+
+3. Hoạt chất: Buprofezin (ức chế lột xác côn trùng chích hút)
+   Tên thương mại: Suparep 300WP, Applaud 25WP
+   Liều lượng: Suparep 300WP: theo hướng dẫn nhà sản xuất
+   Thời điểm: Phun khi có rầy non giai đoạn đẻ nhánh — đứng cái
+   Thời gian cách ly: 14 ngày [cần xác minh]
+
+4. Hoạt chất: Pymetrozine (ức chế bú mút chích hút)
+   Tên thương mại: Chess 50WG, Tosi 30WG
+   Liều lượng: Chess 50WG: 150–200 g/ha; pha 5–7 g/bình 16 lít
+   Thời điểm: Luân phiên với Neonicotinoid để tránh kháng thuốc rầy
+   Thời gian cách ly: 14 ngày
+
+5. Hoạt chất: Dinotefuran (Neonicotinoid thế hệ 3)
+   Tên thương mại: Trùm chích hút, Oshin 20WP, Talent 20WP
+   Liều lượng: 5–7 g/bình 16 lít
+   Thời điểm: Phun phòng và trị rầy kháng Imidacloprid
+   Thời gian cách ly: 7 ngày [cần xác minh]
+
+NGUỒN:
+— Bình Điền (binhdien.com) — Bệnh Tungro virus trên lúa: RTBV+RTSV,
+  rầy xanh Nephotettix, cơ chế truyền bệnh
+— Trường TC Nông nghiệp Thái Bình (tcnnthaibinh.edu.vn) — Bệnh virus
+  hại lúa: bảng phân loại đầy đủ RGSV/RRSV/RTBV+RTSV
+— Việt Thắng Hà Nội (vietthanghanoi.vn) — Ngưỡng phun rầy, quy trình
+  xử lý ruộng bệnh
+— Sinh học châu Á (sinhhocchaua.com) — So sánh triệu chứng vàng lùn
+  vs lùn xoắn lá vs tungro
+— AgriDrone (agridrone.vn) — Phân biệt đa nguyên nhân vàng lá lúa
+— Cẩm nang chẩn đoán bệnh cây ở Việt Nam, Burgess et al. 2008
+— Khoahoc.tv — Dịch bệnh vàng lùn ĐBSCL 2005–2009: dữ liệu IRRI,
+  xét nghiệm RTBV/RTSV từ mẫu thực tế

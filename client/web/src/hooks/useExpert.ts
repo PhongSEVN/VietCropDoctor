@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-import { applyCaseFilters, getExpertCase, getExpertQueue } from "@/lib/expert-api";
+import { applyCaseFilters, getAllDiagnoses, getExpertCase, getExpertQueue } from "@/lib/expert-api";
 import { getCropName } from "@/lib/api";
-import type { ExpertCase, ExpertCaseFilters } from "@/types/expert";
+import type { DiagnosisItem, ExpertCase, ExpertCaseFilters } from "@/types/expert";
 
 const DEFAULT_FILTERS: ExpertCaseFilters = {
   search: "",
@@ -57,6 +57,38 @@ export function useExpertQueue(): UseExpertQueue {
   }, [allCases]);
 
   return { cases, allCases, crops, loading, error, filters, setFilters, refetch };
+}
+
+interface UseAllDiagnoses {
+  diagnoses: DiagnosisItem[];
+  loading: boolean;
+  error: string | null;
+  pendingOnly: boolean;
+  setPendingOnly: (v: boolean) => void;
+  refetch: () => void;
+}
+
+/** Load EVERY image diagnosis (incl. images the user never gave feedback on). */
+export function useAllDiagnoses(): UseAllDiagnoses {
+  const [diagnoses, setDiagnoses] = useState<DiagnosisItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [pendingOnly, setPendingOnly] = useState(false);
+
+  const refetch = useCallback(() => {
+    setLoading(true);
+    setError(null);
+    getAllDiagnoses(pendingOnly)
+      .then(setDiagnoses)
+      .catch((e) => setError(e instanceof Error ? e.message : "Không tải được danh sách ảnh"))
+      .finally(() => setLoading(false));
+  }, [pendingOnly]);
+
+  useEffect(() => {
+    refetch();
+  }, [refetch]);
+
+  return { diagnoses, loading, error, pendingOnly, setPendingOnly, refetch };
 }
 
 interface UseExpertCase {

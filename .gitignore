@@ -71,7 +71,6 @@ mlruns/
 mlartifacts/
 
 # Docker runtime
-backend/
 /qdrant/
 backend/data/ollama/
 backend/data/minio/
@@ -157,3 +156,9 @@ project template
 report template
 Report.docx
 *.md
+2 Phiếu theo dõi HPTN GVHD.docx
+260624_Phong_Report.docx
+report.pdf
+Report.docx
+/image
+/testCPUGPU

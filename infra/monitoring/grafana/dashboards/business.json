@@ -24,11 +24,11 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "prometheus" },
-          "expr": "sum(increase(predictions_total[24h]))",
-          "legendFormat": "Chẩn đoán hôm nay"
+          "expr": "sum(predictions_total)",
+          "legendFormat": "Tổng chẩn đoán"
         }
       ],
-      "title": "Chẩn đoán hôm nay",
+      "title": "Số chẩn đoán (tổng tích lũy)",
       "type": "stat"
     },
     {
@@ -43,11 +43,11 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "prometheus" },
-          "expr": "sum(increase(rag_queries_total[24h]))",
-          "legendFormat": "Câu hỏi hôm nay"
+          "expr": "sum(rag_queries_total)",
+          "legendFormat": "Tổng câu hỏi RAG"
         }
       ],
-      "title": "Câu hỏi RAG hôm nay",
+      "title": "Câu hỏi RAG (tổng tích lũy)",
       "type": "stat"
     },
     {
@@ -61,7 +61,7 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "prometheus" },
-          "expr": "topk(10, sum by (disease) (increase(predictions_total[7d])))",
+          "expr": "topk(10, round(sum by (disease) (increase(predictions_total[7d]))))",
           "legendFormat": "{{ disease }}"
         }
       ],
@@ -79,7 +79,7 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "prometheus" },
-          "expr": "sum(rate(predictions_total[1h])) by (crop_type)",
+          "expr": "sum(predictions_total) by (crop_type)",
           "legendFormat": "{{ crop_type }}"
         }
       ],

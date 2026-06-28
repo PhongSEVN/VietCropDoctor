@@ -1,0 +1,146 @@
+TÊN BỆNH: Bệnh đốm nâu lúa (brown spot, tiêm lửa, đốm vừng)
+LOẠI CÂY: Lúa (Oryza sativa)
+CLASS ID: rice_Rice_Brown_Spot
+
+TRIỆU CHỨNG:
+Bệnh đốm nâu gây hại trên lúa từ giai đoạn mạ đến khi trổ chín,
+phổ biến nhất tại vụ Hè Thu ĐBSCL và vùng đất phèn, đất nghèo dinh
+dưỡng. Bệnh gây hại chủ yếu trên lá và hạt, ảnh hưởng trực tiếp đến
+chất lượng gạo và tỷ lệ nảy mầm.
+
+Trên lá (triệu chứng điển hình):
+Giai đoạn đầu: Xuất hiện các chấm nâu nhạt rất nhỏ như đầu mũi kim
+trên cả hai mặt lá, phân bố rải rác hoặc tập trung ở lá già.
+Giai đoạn phát triển: Vết bệnh mở rộng thành đốm tròn hoặc bầu dục,
+màu nâu đậm đến nâu đỏ gạch ở tâm, xung quanh có quầng vàng nhạt
+đặc trưng — đây là đặc điểm quan trọng để phân biệt với đạo ôn lá.
+Kích thước vết bệnh: 0,5–1 cm đường kính (lớn hơn và tròn hơn so
+với vết đạo ôn lá hình thoi). Bề mặt vết bệnh đôi khi có lớp mốc
+đen mịn khi ẩm độ cao (đài và bào tử nấm).
+Giai đoạn nặng: Nhiều vết liên kết thành mảng lớn, lá cháy khô từng
+mảng hoặc toàn bộ — ruộng lúa trông xơ xác, lá già vàng cháy từ
+dưới lên. Cây thiếu dinh dưỡng làm trầm trọng thêm triệu chứng.
+
+Trên bẹ lá và thân: Vết đốm nâu tương tự trên lá nhưng màu nâu sẫm
+hơn, có thể làm cây yếu và dễ đổ ngã.
+
+Trên cổ bông và gié: Đốm nâu đen xuất hiện tại cổ bông và cổ gié,
+làm giảm vận chuyển dinh dưỡng, hạt lép lửng, tương tự triệu chứng
+lem lép hạt — phân biệt với đạo ôn cổ bông ở chỗ vết bệnh không thắt
+teo hoàn toàn.
+
+Trên hạt (quan trọng): Vỏ trấu có đốm nâu đen không đều, hạt lép
+hoặc lửng, tỷ lệ gạo vỡ cao khi xay xát. Nấm ký sinh cả bên trong
+hạt, hạt giống nhiễm bệnh là nguồn lây quan trọng sang vụ sau. Đây
+cũng là một trong các nguyên nhân gây bệnh lem lép hạt mà nông dân
+thường gặp.
+
+⚠️ PHÂN BIỆT VỚI ĐẠO ÔN LÁ (quan trọng cho RAG):
+| Đặc điểm         | Đốm nâu           | Đạo ôn lá          |
+|------------------|-------------------|--------------------|
+| Hình dạng vết    | Tròn / bầu dục    | Hình thoi (mắt én) |
+| Màu tâm vết      | Nâu đậm / đỏ gạch| Xám trắng          |
+| Quầng ngoài      | Vàng rõ           | Vàng nhạt hoặc nâu|
+| Điều kiện phát   | Thiếu dinh dưỡng, | Ẩm cao, lạnh,      |
+| sinh chủ yếu     | đất phèn, nóng ẩm | thừa đạm           |
+| Vị trí lá        | Cả 2 mặt lá       | Chủ yếu mặt trên  |
+
+NGUYÊN NHÂN:
+Tác nhân chính là nấm Cochliobolus miyabeanus (Ito & Kurib.) Drechsl.
+(tên cũ: Helminthosporium oryzae Breda de Haan; dạng vô tính/anamorph:
+Bipolaris oryzae (Breda de Haan) Shoemaker). Thuộc lớp Dothideomycetes,
+bộ Pleosporales. Nấm tạo bào tử phân sinh (conidium) hình thoi dài,
+đa bào, màu vàng nâu nhạt, phát tán theo gió. Ngoài ra một số tài
+liệu ghi nhận Curvularia lunata cũng gây triệu chứng tương tự (vết
+hình sọc ngắn, nâu tím). Nấm tồn tại trên hạt giống bị nhiễm (có
+thể sống đến 4 năm trong hạt), trên rơm rạ chôn trong đất (đến 2
+năm), và trên cỏ dại họ Poaceae. Hạt giống nhiễm bệnh là nguồn bệnh
+sơ cấp quan trọng nhất.
+
+ĐIỀU KIỆN PHÁT SINH:
+— Dinh dưỡng — YẾU TỐ SỐ 1: Đây là điểm khác biệt quan trọng nhất
+  của đốm nâu so với đạo ôn. Bệnh đốm nâu đặc biệt nặng khi:
+  + Thiếu kali (K): làm vách tế bào mỏng yếu
+  + Thiếu silic (Si): giảm sức đề kháng cơ học
+  + Đất nhiễm phèn, nhiễm mặn: rễ hấp thu dinh dưỡng kém
+  + Đất ngộ độc hữu cơ (rơm rạ chưa phân hủy): rễ bị tổn thương
+  + Thiếu vi lượng Zn, Mn, Fe
+— Thời tiết: Nóng ẩm (nhiệt độ 25–35°C), mưa nắng xen kẽ, nhiều mây
+  che, ẩm độ cao nhưng không cần liên tục như đạo ôn. Bệnh nặng vụ
+  Hè Thu hơn Đông Xuân (nóng hơn, đất phèn dâng cao).
+— Mùa vụ: Giai đoạn tượng đòng đến trổ chín là nguy hiểm nhất; cũng
+  gây hại ở giai đoạn mạ khi trời lạnh đột ngột (sốc nhiệt).
+— Canh tác: Sạ dày, thiếu thông thoáng; canh tác liên tục không luân
+  canh; không xử lý rơm rạ vụ trước.
+
+PHÒNG TRỊ:
+1. [Canh tác - Ưu tiên 1 — CẢI THIỆN ĐẤT] Cải tạo đất phèn bằng
+  bón vôi (500–1000 kg/ha) trước khi gieo để nâng pH; bón lân (super
+  lân hoặc lân nung chảy) cải thiện độ phì. Xử lý ngộ độc hữu cơ
+  bằng cách làm đất kỹ, phơi ải, bổ sung vi sinh phân giải rơm rạ.
+
+2. [Canh tác - Ưu tiên 2 — BÓN PHÂN] Bổ sung kali (K2O) đầy đủ theo
+  tỷ lệ cân đối với đạm; bổ sung phân silic (silica) và vi lượng Zn,
+  Mn đặc biệt trên đất phèn ĐBSCL. Không để cây thiếu đạm nhưng cũng
+  không bón quá thừa.
+
+3. [Canh tác - Ưu tiên 3] Sử dụng hạt giống sạch bệnh; xử lý hạt
+  giống bằng thuốc gốc Mancozeb hoặc Carbendazim trước khi ngâm ủ.
+  Vệ sinh đồng ruộng sau thu hoạch, xử lý rơm rạ.
+
+4. [Canh tác] Quản lý nước hợp lý: cung cấp đủ nước cho ruộng, tránh
+  để ruộng khô hạn gây stress cây; cải thiện hệ thống thoát nước.
+
+5. [Hóa học] Phun thuốc khi phát hiện vết bệnh xuất hiện rải rác trên
+  lá (đừng chờ bệnh nặng). Phun ướt đều cả hai mặt lá vào sáng sớm
+  hoặc chiều mát. Phun 2 lần cách nhau 7–10 ngày.
+
+THUỐC KHUYẾN NGHỊ:
+1. Hoạt chất: Mancozeb (Dithiocarbamate — tiếp xúc phổ rộng)
+   Tên thương mại: Dithane M-45 80WP, Mancozeb 80WP, Manozeb 80WP
+   Liều lượng: 1–1,5 kg/ha; 25–30 g/bình 16 lít
+   Thời điểm: Phun phòng hoặc trị sớm; xử lý hạt giống trước khi gieo
+   Thời gian cách ly: 7 ngày
+
+2. Hoạt chất: Propiconazole + Tebuconazole (Triazole kép)
+   Tên thương mại: Farader 225EW (ABA Chemical), Bumper 250EC
+   Liều lượng: Farader 225EW: 0,5–0,75 lít/ha; pha 20 ml/bình 16 lít
+   Thời điểm: Phun trị khi bệnh xuất hiện giai đoạn đẻ nhánh–làm đòng
+   Thời gian cách ly: 14 ngày
+
+3. Hoạt chất: Iprodione (Dicarboximide — tiếp xúc + nội hấp cục bộ)
+   Tên thương mại: Rovral 50WP, Rophane 50WP
+   Liều lượng: 1–1,5 kg/ha; 25–30 g/bình 16 lít
+   Thời điểm: Phun trị khi bệnh trên hạt/cổ bông giai đoạn trổ
+   Thời gian cách ly: 14 ngày
+
+4. Hoạt chất: Hexaconazole (Triazole — FRAC 3)
+   Tên thương mại: Camilo 150SC, Anvil 5SC, Atulvil 5SC
+   Liều lượng: Camilo 150SC: 0,5–0,75 lít/ha; 20 ml/bình 16 lít
+   Thời điểm: Phun giai đoạn làm đòng để bảo vệ lá đòng và cổ bông
+   Thời gian cách ly: 14 ngày
+   Ghi chú: Camilo 150SC còn phòng được khô vằn, vàng lá chín sớm
+
+5. Hoạt chất: Propiconazole (Triazole đơn)
+   Tên thương mại: Tilt 250EC, Help 400SC [cần xác minh hoạt chất]
+   Liều lượng: Tilt 250EC: 0,5 lít/ha; 15–20 ml/bình 16 lít
+   Thời điểm: Phun trị sớm khi phát hiện vết bệnh đầu tiên
+   Thời gian cách ly: 14 ngày
+
+⚠️ LƯU Ý QUAN TRỌNG ĐỐI VỚI ĐỐM NÂU: Nếu chỉ phun thuốc mà không
+cải thiện dinh dưỡng đất và quản lý nước, bệnh sẽ tái phát vụ sau.
+Biện pháp CĂN BẢN nhất là cải tạo đất phèn, bổ sung kali và silic.
+Thuốc hóa học chỉ là giải pháp tạm thời.
+
+NGUỒN:
+— ABA Chemical (abachemical.com) — Bệnh đốm nâu trên lúa: điều kiện
+  phát sinh, bảng so sánh đốm nâu vs đạo ôn lá
+— Sinh học châu Á (sinhhocchaua.com) — Cochliobolus miyabeanus = 
+  Helminthosporium oryzae = Bipolaris oryzae; điều kiện ĐBSCL
+— Đức Thành (ducthanhco.vn) — Triệu chứng đầy đủ trên lá, bẹ, cổ
+  bông, hạt; giải pháp Upper 400SC
+— Tanixa (tanixa.com) — Bệnh đốm nâu: bón lân xử lý phèn, xử lý hạt
+— King Bio (kingbio.vn) — Thuốc đặc trị đốm nâu liều lượng và thời điểm
+— ADC Agrotech (adcagrotech.com) — Phòng trị bệnh đốm nâu: Camilo
+  150SC giai đoạn làm đòng
+— Cẩm nang chẩn đoán bệnh cây ở Việt Nam, Burgess et al. 2008

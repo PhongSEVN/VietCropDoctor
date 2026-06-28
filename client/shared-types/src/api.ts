@@ -104,6 +104,56 @@ export interface QueryResponse {
   session_id?: string;
 }
 
+// Orchestrator (multi-agent diagnosis pipeline)
+
+export interface VisionResult {
+  disease: string;
+  confidence: number;
+  severity: "healthy" | "mild" | "moderate" | "severe";
+  severity_score: number;
+  severity_advice: string;
+  top3: PredictionItem[];
+  uncertainty_score?: number | null;
+  ensemble_used: boolean;
+  explanation: string;
+  agreement_score: number;
+  model_count: number;
+  image_url?: string | null;
+  is_in_distribution: boolean;
+  ood_message?: string | null;
+  ood_score?: number | null;
+}
+
+export interface RetrievalResult {
+  answer: string;
+  sources: string[];
+  chunks_used: number;
+}
+
+export interface Recommendation {
+  immediate_actions: string[];
+  preventive_measures: string[];
+  treatment_options: string[];
+  monitoring_advice: string;
+  urgency: "low" | "medium" | "high" | "critical";
+}
+
+export interface OrchestrationResponse {
+  session_id?: string | null;
+  vision: VisionResult;
+  knowledge?: RetrievalResult | null;
+  recommendation?: Recommendation | null;
+  reasoning_summary: string;
+  latency_ms: Record<string, number>;
+}
+
+// A diagnosis result enriched with the orchestrator's recommendation.
+// Shape-compatible with PredictResult so existing UI keeps working.
+export interface DiagnoseResult extends PredictResult {
+  recommendation?: Recommendation | null;
+  reasoning_summary?: string;
+}
+
 // Feedback
 
 export interface FeedbackRequest {

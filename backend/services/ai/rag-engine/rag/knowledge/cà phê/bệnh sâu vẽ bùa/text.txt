@@ -1,0 +1,150 @@
+TÊN BỆNH: Sâu vẽ bùa (sâu đục lá) trên cà phê
+LOẠI CÂY: Cà phê (Coffea arabica, Coffea robusta)
+CLASS ID: cafe_sau_ve_bua
+
+⚠️ Lưu ý phân loại: Trong dataset ảnh bệnh cà phê quốc tế, class
+này ứng với sâu đục lá cà phê Leucoptera coffeella (Guérin-Méneville,
+1842), họ Lyonetiidae, bộ Lepidoptera — khác với sâu vẽ bùa cây có múi
+Phyllocnistis citrella (họ Gracillariidae). Tại Việt Nam, cả hai loài
+đều tạo triệu chứng đường hầm ngoằn ngoèo trên lá non nên dễ nhầm lẫn
+trong tài liệu tiếng Việt. [cần xác minh: Leucoptera coffeella đã được
+ghi nhận chính thức tại Tây Nguyên chưa hay chỉ có loài tương tự]
+
+TRIỆU CHỨNG:
+Đây là loại sâu hại gây tổn thương đặc trưng và dễ nhận biết nhất trên
+lá cà phê non. Gây hại chủ yếu ở vườn cà phê kiến thiết cơ bản và
+vườn cà phê kinh doanh vào các đợt ra lộc mới.
+
+Trên lá non: Triệu chứng đặc trưng là các đường hầm ngoằn ngoèo màu
+trắng bạc hoặc trắng ngà, phình lên và lóng lánh dưới lớp biểu bì lá.
+Đường hầm hình thành do ấu trùng (sâu non) đục ăn lớp tế bào nhu mô
+diệp lục giữa hai lớp biểu bì, tạo thành "đường vẽ bùa" — các lằn
+đục KHÔNG bao giờ cắt nhau. Phía sau đường đục là đường phân thải như
+sợi chỉ đen nhỏ, có thể nhìn thấy qua biểu bì mỏng. Đường hầm ngày
+càng rộng và dài theo sự phát triển của ấu trùng.
+
+Giai đoạn hóa nhộng: Khi đẫy sức, ấu trùng đục ra đến mép lá, nhả tơ
+cuộn mép lá lại để tạo kén hóa nhộng. Mép lá bị cuộn là dấu hiệu rõ
+ràng thứ hai của sâu vẽ bùa — phân biệt với bệnh do nấm không có hiện
+tượng cuộn mép lá theo kiểu này.
+
+Hậu quả trên lá: Lá bị tấn công nặng biến dạng, nhăn nhúm, cong queo,
+thu nhỏ kích thước. Diện tích quang hợp giảm mạnh (có thể đến 50% khi
+nhiều đường hầm chồng gần nhau). Lá non bị hại nặng rụng sớm, chồi
+non ngừng phát triển, cây sinh trưởng chậm.
+
+Tác hại thứ cấp quan trọng: Vết thương cơ học do đường đục là cửa vào
+thuận lợi cho vi khuẩn và nấm bệnh thứ cấp (đặc biệt vi khuẩn gây
+bệnh loét, nấm Colletotrichum) xâm nhập. Cây bị sâu vẽ bùa liên tục
+qua nhiều đợt lá sẽ suy kiệt dần, ra hoa ít, năng suất giảm mạnh.
+
+Trên cây vườn ươm và cà phê kiến thiết: Cây non bị hại đặc biệt
+nghiêm trọng; tất cả lá non ra đến đâu bị đục đến đó, cây không thể
+tích lũy dinh dưỡng, chậm lớn, có thể chết nếu sâu phát sinh liên tục
+nhiều lứa.
+
+NGUYÊN NHÂN:
+Tác nhân gây hại là sâu non (ấu trùng) của loài bướm nhỏ Leucoptera
+coffeella (Guérin-Méneville, 1842) [cần xác minh tại VN] thuộc họ
+Lyonetiidae, bộ Lepidoptera (cánh vảy). Con trưởng thành là bướm
+(ngài) nhỏ, cánh rộng khoảng 4–5 mm, màu trắng bạc, có viền vàng
+nhạt, hoạt động chủ yếu lúc chập tối và ban đêm. Trưởng thành cái đẻ
+70–80 trứng rải rác ở mặt dưới lá non, sát gân lá chính. Trứng rất
+nhỏ (khó nhìn bằng mắt thường), hình bầu dục dẹt, trong mờ. Ấu trùng
+mới nở dài ~1 mm, dẹt mỏng, màu vàng nhạt hơi xanh, ngay lập tức đục
+xuyên biểu bì lá để vào ăn phần nhu mô bên trong. Vòng đời hoàn
+chỉnh (trứng → ấu trùng → nhộng → trưởng thành) kéo dài 20–30 ngày
+tùy nhiệt độ, cho phép nhiều thế hệ trong một năm.
+
+ĐIỀU KIỆN PHÁT SINH:
+— Nguồn thức ăn: Sâu CHỈ gây hại trên lá non và chồi non. Do đó bệnh
+bùng phát mạnh vào các đợt cây ra lộc mới (thường sau bón thúc đạm
+hoặc tưới nước kích thích). Vườn ra lộc rải rác liên tục cung cấp
+nguồn thức ăn liên tục cho nhiều lứa sâu.
+— Nhiệt độ và mùa vụ: Sâu phát sinh quanh năm tại Tây Nguyên; gây
+hại nặng nhất tháng 3–10, đỉnh cao thường tháng 7–9 (mùa mưa, cây
+ra lộc mạnh). Sâu ưa điều kiện ẩm độ cao và lá non mọng nước.
+— Vườn cây: Vườn bón thừa đạm ra lộc liên tục, tán cây rậm rạp, ít
+thiên địch (do lạm dụng thuốc hóa học diệt cả thiên địch tự nhiên).
+Vườn ươm và cà phê kiến thiết năm 1–3 dễ bị nặng nhất.
+— Thiên địch tự nhiên: Nhiều loài ong ký sinh (họ Chalcidoidea, họ
+Ichneumonidae) và kiến vàng (Oecophylla smaragdina) là thiên địch
+quan trọng kiểm soát quần thể sâu. Vườn bảo tồn được thiên địch
+thường không bùng phát thành dịch.
+
+PHÒNG TRỊ:
+1. [Canh tác - Ưu tiên 1] Điều tiết bón phân đạm hợp lý, tránh bón
+thừa đạm làm cây ra lộc liên tục. Bón phân tập trung để lộc ra đồng
+loạt, thu hẹp thời gian cây có lá non — hạn chế nguồn thức ăn sâu.
+Tỉa cành tạo tán thông thoáng.
+
+2. [Canh tác - Ưu tiên 2] Thu gom và tiêu hủy lá non bị hại nặng
+(có nhiều đường hầm và nhộng) để cắt đứt vòng đời. Không phun thuốc
+hóa học phổ rộng khi không cần thiết để bảo tồn thiên địch tự nhiên.
+
+3. [Sinh học - Ưu tiên cao] Bảo vệ và nhân nuôi thiên địch tự nhiên:
+kiến vàng (Oecophylla smaragdina) và ong ký sinh (Ageniaspis sp.,
+Cirrospilus sp.) có thể tiêu diệt đến 60–70% ấu trùng trong điều kiện
+thuận lợi. Không phun thuốc khi mật độ sâu còn dưới ngưỡng kinh tế
+(<10% lá non bị hại).
+
+4. [Sinh học - Hóa học nhẹ] Sử dụng chế phẩm sinh học: Bacillus
+thuringiensis var. kurstaki (Bt) phun khi lá non vừa nhú; nấm xanh
+Metarhizium anisopliae hoặc nấm trắng Beauveria bassiana phun phòng
+định kỳ. Dầu khoáng SK99 hoặc DC-Tron Plus pha nồng độ 0,25–0,5% phun
+khi cây nhú chồi non có tác dụng vật lý ngăn trưởng thành đẻ trứng.
+
+5. [Hóa học] Chỉ dùng khi mật độ cao (>25% lá non bị hại). Phun
+thuốc nội hấp thấm sâu vào buổi chiều tối khi trưởng thành hoạt
+động. Luân phiên hoạt chất để tránh kháng thuốc. Ngưỡng phòng trừ:
+phun khi chồi non dài 3–4 cm có dấu hiệu bị đục.
+
+THUỐC KHUYẾN NGHỊ:
+1. Hoạt chất: Abamectin (avermectin — sinh học, nội hấp thấm sâu)
+   Tên thương mại: Vibamec 1.8EC, 3.6EC; Abatimec 3.6EC; Tungatin 3.6EC
+   Liều lượng: Vibamec 1.8EC: 10–15 ml/bình 16 lít; phun ướt đều cả
+   hai mặt lá non
+   Thời điểm: Phun khi chồi non nhú 3–4 cm; phun lại sau 7–10 ngày
+   nếu mật độ còn cao
+   Thời gian cách ly: 7 ngày [cần xác minh theo nhãn]
+
+2. Hoạt chất: Imidacloprid (Neonicotinoid — nội hấp toàn thân)
+   Tên thương mại: Confidor 100SL (Bayer), Admire 200OD
+   Liều lượng: Confidor 100SL: 10 ml/bình 16 lít
+   Thời điểm: Phun phòng trước đợt ra lộc; hiệu lực kéo dài 15 ngày
+   Thời gian cách ly: 21 ngày [cần xác minh]
+
+3. Hoạt chất: Chlorantraniliprole + Abamectin (kép)
+   Tên thương mại: Voliam Targo 063SC (Syngenta)
+   Liều lượng: theo hướng dẫn nhà sản xuất
+   Thời điểm: Phun khi mật độ cao, cần hiệu lực nhanh và kéo dài
+   Thời gian cách ly: 14 ngày [cần xác minh]
+
+4. Hoạt chất: Cypermethrin (Pyrethroid — tiếp xúc, vị độc)
+   Tên thương mại: Viserin 4.5EC, Polytrin P440EC
+   Liều lượng: Viserin 4.5EC: 20 ml/bình 16 lít; phun buổi chiều tối
+   Thời điểm: Phun khi phát hiện nhiều bướm trưởng thành hoạt động
+   Thời gian cách ly: 7 ngày [cần xác minh]
+
+5. Hoạt chất: Azadirachtin (thảo mộc từ hạt neem — xua đuổi và ức chế)
+   Tên thương mại: Neemaza 0.3EC, Chaien 0.5EC [cần xác minh đăng ký VN]
+   Liều lượng: 20–30 ml/bình 16 lít
+   Thời điểm: Phun phòng định kỳ khi cây chuẩn bị ra lộc mới; thân
+   thiện môi trường, bảo tồn thiên địch
+   Thời gian cách ly: 3 ngày [cần xác minh]
+
+NGUỒN:
+— Cẩm nang cây trồng (camnangcaytrong.com) — Sâu vẽ bùa: vòng đời,
+  triệu chứng, biện pháp phòng trừ và danh sách hoạt chất thuốc
+— Nông nghiệp AVN (nongnghiepavn.com) — Tìm hiểu về sâu vẽ bùa gây
+  hại cây trồng
+— Nông nghiệp SOFA (nongnghiepsofa.com) — Phòng trừ sâu vẽ bùa toàn
+  diện: Bt, Metarhizium, Beauveria, ong ký sinh Ageniaspis
+— Tin Cậy (tincay.com) — Phòng ngừa sâu vẽ bùa; ngưỡng phun thuốc 10%
+  lá bị hại; thiên địch kiến vàng
+— Chi cục TT&BVTV Lâm Đồng (ttbvtv.lamdong.gov.vn) — Sâu bệnh hại
+  cây cà phê [tổng hợp]
+— Prime Coffea (primecoffea.com) — Quản lý sâu bệnh hại cà phê IPM
+  tại Tây Nguyên
+— Cẩm nang chẩn đoán bệnh cây ở Việt Nam, Burgess et al. 2008
+  (coa.ctu.edu.vn)

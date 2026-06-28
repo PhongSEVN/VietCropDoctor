@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import MainLayout from "@/components/MainLayout";
 import FeedbackWidget from "@/components/FeedbackWidget";
 import Markdown from "@/components/Markdown";
-import { predictImage, chatWithDisease, initChatSession, type PredictResult, type Citation } from "@/lib/api";
+import { predictImage, chatWithDisease, initChatSession, type DiagnoseResult, type Citation, type Recommendation } from "@/lib/api";
 import Citations from "@/components/Citations";
 import { getCropName, getDiseaseName } from "@/lib/disease-labels";
 
@@ -25,19 +25,73 @@ function toPercent(val: number): number {
   return val > 1 ? Math.round(val) : Math.round(val * 100);
 }
 
+const URGENCY_LABEL: Record<string, string> = {
+  low: "Thấp",
+  medium: "Trung bình",
+  high: "Cao",
+  critical: "Khẩn cấp",
+};
+
+const URGENCY_COLORS: Record<string, string> = {
+  low: "bg-[#dcfce3] text-[#166534]",
+  medium: "bg-[#fef08a] text-[#854d0e]",
+  high: "bg-error-container text-on-error-container",
+  critical: "bg-error-container text-on-error-container",
+};
+
+// Renders the Orchestrator-generated treatment recommendation (immediate
+// actions, treatment, prevention, monitoring) inside the "Xử trí" tab.
+function RecommendationView({ rec }: { rec: Recommendation }) {
+  const sections: Array<{ title: string; icon: string; items: string[] }> = [
+    { title: "Hành động ngay", icon: "priority_high", items: rec.immediate_actions },
+    { title: "Điều trị", icon: "medication", items: rec.treatment_options },
+    { title: "Phòng ngừa", icon: "shield", items: rec.preventive_measures },
+  ];
+  return (
+    <div className="mt-3 space-y-3">
+      <div className="flex items-center gap-2">
+        <span className="text-xs font-semibold text-on-surface-variant">Mức độ ưu tiên:</span>
+        <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-semibold ${URGENCY_COLORS[rec.urgency] ?? URGENCY_COLORS.medium}`}>
+          {URGENCY_LABEL[rec.urgency] ?? rec.urgency}
+        </span>
+      </div>
+      {sections.filter((s) => s.items.length > 0).map((s) => (
+        <div key={s.title}>
+          <p className="font-semibold text-on-surface flex items-center gap-1 mb-1">
+            <span className="material-symbols-outlined text-[16px] text-primary">{s.icon}</span>
+            {s.title}
+          </p>
+          <ul className="list-disc list-inside space-y-1 text-on-surface-variant">
+            {s.items.map((it, i) => <li key={i}>{it}</li>)}
+          </ul>
+        </div>
+      ))}
+      {rec.monitoring_advice && (
+        <div className="bg-surface-container p-3 rounded border-l-4 border-outline">
+          <p className="font-semibold text-on-surface flex items-center gap-1 mb-1">
+            <span className="material-symbols-outlined text-[16px] text-primary">visibility</span>
+            Theo dõi
+          </p>
+          <p className="text-on-surface-variant">{rec.monitoring_advice}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
 interface ChatMsg {
   role: "ai" | "user";
   content?: string;
   image?: string;
   fileName?: string;
-  result?: PredictResult;
+  result?: DiagnoseResult;
   sources?: Citation[];
 }
 
 type DiagPhase =
   | { type: "idle" }
   | { type: "predicting"; imageUrl: string; fileName: string }
-  | { type: "done"; result: PredictResult; imageUrl: string; fileName: string }
+  | { type: "done"; result: DiagnoseResult; imageUrl: string; fileName: string }
   | { type: "error"; message: string };
 
 export default function DiagnosePage() {
@@ -189,9 +243,9 @@ export default function DiagnosePage() {
             {result && result.is_in_distribution !== false && (
               <div className="bg-surface-container-low rounded-xl p-4 border border-outline-variant">
                 <div className="mb-3">
-                  <span className={`inline-block px-2 py-1 rounded-full text-xs font-semibold mb-2 ${SEVERITY_COLORS[result.severity] ?? SEVERITY_COLORS.moderate}`}>
+                  {/* <span className={`inline-block px-2 py-1 rounded-full text-xs font-semibold mb-2 ${SEVERITY_COLORS[result.severity] ?? SEVERITY_COLORS.moderate}`}>
                     {SEVERITY_LABEL[result.severity] ?? result.severity}
-                  </span>
+                  </span> */}
                   <h3 className="text-2xl font-semibold text-on-surface">{getDiseaseName(result.disease)}</h3>
                   <p className="text-sm text-on-surface-variant italic">{result.disease}</p>
                 </div>
@@ -339,6 +393,9 @@ export default function DiagnosePage() {
                                 <div className="bg-surface-container p-3 rounded border-l-4 border-primary">
                                   <p className="text-on-surface">{msg.result.severity_advice}</p>
                                 </div>
+                                {msg.result.recommendation && (
+                                  <RecommendationView rec={msg.result.recommendation} />
+                                )}
                                 <p className="text-xs text-on-surface-variant italic">
                                   Hỏi thêm về liều lượng thuốc, cách phòng ngừa bên dưới ↓
                                 </p>

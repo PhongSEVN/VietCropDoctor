@@ -1,0 +1,144 @@
+TÊN BỆNH: Bệnh đốm lá lớn ngô (northern leaf blight, bệnh cháy lá lớn)
+LOẠI CÂY: Ngô (Zea mays)
+CLASS ID: corn_Northern_Leaf_Blight
+
+TRIỆU CHỨNG:
+Bệnh đốm lá lớn là bệnh nấm phổ biến nhất trên ngô tại Việt Nam,
+xuất hiện khắp các vùng trồng ngô từ đồng bằng đến miền núi.
+
+Vị trí gây hại: Chủ yếu trên phiến lá; đôi khi trên bẹ lá, lá bao
+bắp. Bệnh thường xuất hiện ở lá già sát gốc trước rồi lan dần lên
+lá trên — khác với đốm lá nhỏ (Bipolaris) thường bắt đầu từ lá giữa.
+
+Vết bệnh đặc trưng (điển hình nhất của bệnh này):
+— Hình dạng: Hình THOI hoặc HỎA THỪ DÀI, hai đầu nhọn, dọc theo
+  chiều dài phiến lá — đây là đặc điểm quan trọng nhất để phân biệt
+  với đốm lá nhỏ (vết tròn/bầu dục nhỏ hơn)
+— Kích thước LỚN: 1,5 – 25 cm chiều dài × 0,3 – 4 cm chiều rộng;
+  đây là kích thước lớn nhất trong các bệnh đốm lá ngô
+— Màu sắc: Tâm vết bệnh màu nâu sáng hoặc xám bạc (gần trắng);
+  xung quanh viền màu nâu tối hoặc nâu đỏ; KHÔNG CÓ quầng vàng
+  (khác với đốm nâu lúa có quầng vàng rõ)
+— Bào tử mốc đen: Khi trời ẩm ướt, trên bề mặt vết bệnh xuất hiện
+  lớp mốc màu đen xám — đây là đài và bào tử của nấm Exserohilum;
+  dễ nhìn thấy bằng mắt thường
+
+Giai đoạn nặng:
+Nhiều vết bệnh liên kết nối tiếp nhau thành các mảng dài, làm lá
+khô táp, rách tươm đặc biệt ở đoạn chóp lá. Lá mất màu, héo khô và
+giòn. Khi bệnh lan lên lá đòng và lá bao bắp: quang hợp giảm mạnh,
+hạt ngô không đầy đủ, năng suất giảm 20–50% tùy mức độ.
+
+⚠️ PHÂN BIỆT 2 BỆNH ĐỐM LÁ NGỌN QUAN TRỌNG:
+| Đặc điểm        | Đốm lá LỚN (NLB)    | Đốm lá NHỎ (SLB)     |
+|-----------------|---------------------|-----------------------|
+| Tác nhân        | Exserohilum turcicum| Bipolaris maydis      |
+| Kích thước vết  | LỚN: 5–25 cm        | NHỎ: 1–3 cm          |
+| Hình dạng vết   | Thoi dài, 2 đầu nhọn| Bầu dục/elip nhỏ    |
+| Màu tâm vết     | Nâu sáng/xám bạc   | Nâu vàng đến đỏ nâu  |
+| Quầng vàng      | Không có             | Có thể có             |
+| Mốc đen         | Có khi ẩm            | Có thể có             |
+| Lá tấn công đầu | Lá già sát gốc      | Lá giữa               |
+
+NGUYÊN NHÂN:
+Tác nhân là nấm Exserohilum turcicum (Pass.) Leonard & Suggs (tên cũ:
+Helminthosporium turcicum Pass.; giai đoạn hữu tính: Setosphaeria
+turcica). Thuộc họ Pleosporaceae, lớp Dothideomycetes (giai đoạn vô
+tính trong lớp Nấm Bất Toàn Deuteromycetes).
+
+Bào tử phân sinh (conidium): Hình thoi, tương đối thẳng, ít khi cong,
+màu vàng nâu, kích thước 45–152 × 15–25 µm, có 2–9 vách ngăn ngang.
+Kích thước bào tử lớn là đặc điểm nhận biết giúp phân biệt với Bipolaris
+maydis (bào tử hơi cong hơn, khoảng 5–8 ngăn).
+
+Nguồn bệnh: Bào tử phân sinh tồn tại trên hạt giống, tàn dư cây bệnh
+trong đất (lá, thân, bẹ lá không cày vùi); sợi nấm trong tàn dư cây
+bệnh là nguồn lây nhiễm chính vụ sau. Cỏ dại họ Hòa thảo (Gramineae)
+cũng là ký chủ phụ.
+
+Phương thức lây lan: Bào tử phát tán theo gió là chủ yếu; cũng lây
+qua nước mưa bắn tung. Nấm xâm nhập qua khí khổng hoặc trực tiếp qua
+biểu bì lá.
+
+ĐIỀU KIỆN PHÁT SINH:
+— Nhiệt độ: 18–27°C là khoảng tối ưu; đặc biệt phát sinh mạnh khi
+  nhiệt độ ban đêm mát (18–22°C) và ban ngày ấm hơn — điều kiện đặc
+  trưng của vụ ngô đông miền Bắc Việt Nam.
+— Ẩm độ: Ẩm độ không khí cao >80%, mưa nhiều, sương mù buổi sáng
+  kích thích bào tử nảy mầm và xâm nhiễm qua khí khổng.
+— Mùa vụ: Bệnh nặng nhất vụ Đông (tháng 9–12) tại miền Bắc; vụ Hè
+  Thu tại miền Trung và Tây Nguyên khi mưa nhiều.
+— Đất và canh tác: Đất xấu, chặt, nghèo dinh dưỡng; không vệ sinh
+  tàn dư vụ trước; trồng mật độ dày; bón ít phân; ruộng thường xuyên
+  ngập úng tạo điều kiện cây sinh trưởng yếu, dễ nhiễm bệnh.
+— Giống: Giống ngô địa phương (không cải tiến) nhiễm nặng hơn giống
+  lai.
+
+PHÒNG TRỊ:
+1. [Giống kháng — Ưu tiên 1] Chọn giống ngô lai có tính kháng bệnh
+  đốm lá lớn. Các giống lai hiện đại thường có độ kháng tốt hơn
+  giống địa phương. Tham khảo danh sách giống khuyến cáo của Cục
+  Trồng trọt và Viện Cây lương thực & thực phẩm.
+
+2. [Canh tác — Ưu tiên 2] Vệ sinh đồng ruộng sau thu hoạch: cày vùi
+  hoặc thu gom đốt tàn dư cây bệnh. Luân canh với cây trồng khác
+  (không phải ngô) để giảm nguồn nấm trong đất.
+
+3. [Canh tác] Bón phân cân đối và đầy đủ; không để ngô thiếu dinh
+  dưỡng; đặc biệt đảm bảo đủ đạm và kali. Tưới tiêu hợp lý, tránh
+  ngập úng. Trồng đúng mật độ (không sạ dày).
+
+4. [Vệ sinh] Thường xuyên ngắt tỉa lá già, lá bệnh để tạo thông
+  thoáng, giảm ẩm độ vi khí hậu trong tán ngô và giảm nguồn bào tử.
+
+5. [Hóa học] Phun thuốc khi bệnh chớm xuất hiện (<10% diện tích lá
+  bị hại). Phun ướt đều cả hai mặt lá. Phun 2 lần cách nhau 7–10
+  ngày. Không phun khi thời tiết quá nóng hoặc giữa trưa.
+
+THUỐC KHUYẾN NGHỊ:
+1. Hoạt chất: Propiconazole (Triazole — nội hấp đặc hiệu nấm Helminthosporium/Exserohilum)
+   Tên thương mại: Tilt 250EC, Tilt 250ND, Bumper 250EC
+   Liều lượng: Tilt 250EC: 0,5–0,75 lít/ha; pha 15–20 ml/bình 16 lít
+   Thời điểm: Phun khi bệnh chớm xuất hiện; phun phòng trước mùa mưa
+   nếu vùng có lịch sử bệnh nặng
+   Thời gian cách ly: 14 ngày
+
+2. Hoạt chất: Hexaconazole (Triazole — nội hấp phổ rộng)
+   Tên thương mại: Anvil 5SC, Atulvil 5SC
+   Liều lượng: Anvil 5SC: 0,75–1,0 lít/ha; 20–25 ml/bình 16 lít
+   Thời điểm: Phun phòng hoặc trị sớm; luân phiên với Propiconazole
+   Thời gian cách ly: 14 ngày
+
+3. Hoạt chất: Mancozeb (Dithiocarbamate — tiếp xúc phổ rộng)
+   Tên thương mại: Dithane M-45 80WP, Mancozeb 80WP
+   Liều lượng: 25–30 g/bình 16 lít; 1,5–2 kg/ha
+   Thời điểm: Phun phòng đầu mùa mưa; kết hợp với Triazole nội hấp
+   để tăng hiệu quả
+   Thời gian cách ly: 7 ngày
+
+4. Hoạt chất: Azoxystrobin + Difenoconazole (Strobilurin + Triazole kép)
+   Tên thương mại: Amistar Top 325SC (Syngenta)
+   Liều lượng: 10–15 ml/bình 16 lít
+   Thời điểm: Phun phòng hoặc trị sớm; hiệu lực kép bảo vệ + nội hấp
+   Thời gian cách ly: 14 ngày
+
+5. Hoạt chất: Tebuconazole (Triazole — nội hấp)
+   Tên thương mại: Folicur 250EW, Nativo 750WG (kết hợp Trifloxystrobin)
+   Liều lượng: theo hướng dẫn nhà sản xuất
+   Thời điểm: Luân phiên với Propiconazole để tránh kháng thuốc
+   Thời gian cách ly: 14 ngày
+
+NGUỒN:
+— ABA Chemical (abachemical.com) — Bệnh đốm lá lớn ngô: Exserohilum
+  turcicum, bào tử 45–152 µm, triệu chứng theo giai đoạn
+— Cẩm nang cây trồng (camnangcaytrong.com) — Kích thước vết bệnh
+  (16–25 × 2–4 mm), mốc đen khi ẩm
+— Tiền Nông (tiennong.com) — Vết bệnh 0,3–3 × 0,5 cm đến 20 cm;
+  thuốc Tilt 250ND và Anvil 5SC
+— Nông nghiệp AVN (nongnghiepavn.com) — Bệnh đốm lá lớn vụ đông
+  miền Bắc; điều kiện đất xấu, mưa úng
+— Việt Thắng Hà Nội (vietthanghanoi.vn) — Bệnh đốm lá lớn ngô: tổng
+  hợp biện pháp phòng trừ
+— Phân bón Việt Nam (phanbonvietnam.com) — Top 5 bệnh ngô; phân biệt
+  đốm lá lớn vs nhỏ
+— Cẩm nang chẩn đoán bệnh cây Việt Nam, Burgess et al. 2008

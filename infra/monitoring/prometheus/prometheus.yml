@@ -49,6 +49,12 @@ scrape_configs:
       - targets: [kafka-exporter:9308]
     metrics_path: /metrics
 
+  # GPU metrics via nvidia_gpu_exporter (utilization, VRAM, temperature, power)
+  - job_name: gpu
+    static_configs:
+      - targets: [gpu-exporter:9835]
+    metrics_path: /metrics
+
   # Qdrant native Prometheus metrics
   - job_name: qdrant
     static_configs:

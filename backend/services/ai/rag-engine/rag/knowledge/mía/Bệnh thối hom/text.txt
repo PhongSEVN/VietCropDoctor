@@ -1,0 +1,134 @@
+TÊN BỆNH: Bệnh thối hom mía (sett rot, pineapple disease, bệnh mía dứa)
+LOẠI CÂY: Mía (Saccharum officinarum và các giống lai)
+CLASS ID: sugarcane_Sett_Rot
+
+TRIỆU CHỨNG:
+Bệnh thối hom mía có tên dân gian là "bệnh mía dứa" vì mùi thơm đặc
+trưng giống mùi dứa chín tỏa ra từ hom mía bị bệnh — đây là đặc điểm
+nhận biết quan trọng nhất.
+
+Triệu chứng trên hom giống (giai đoạn đầu tiên):
+Sau khi chặt hom và trước khi mọc mầm, bệnh bắt đầu tại các đầu cắt
+của hom. Vết hồng nhạt xuất hiện ở đầu cắt, sau đó nhanh chóng chuyển
+màu đen tối. Phía trên vết đen mọc ra lớp nấm đen như than — đây là
+sợi nấm và bào tử của Ceratocystis paradoxa lộ ra ngoài. Hom bị nhiễm
+có mùi thơm như mùi dứa (do nấm tạo ra acetaldehyde và ethyl acetate —
+các hợp chất bay hơi gây mùi).
+
+Tiến triển trên hom:
+Thối lan dần từ đầu cắt vào trong ruột hom, làm chết mầm ngủ (mắt
+mía) — hom không nảy mầm được hoặc nảy mầm yếu ớt rồi chết. Ruột hom
+chuyển màu đỏ tím đến nâu đen, cấu trúc mô bị phá hủy. Giai đoạn
+nặng, toàn bộ hom thối đen, chỉ còn xơ.
+
+Triệu chứng trên cây mía trưởng thành:
+Cây nhiễm bệnh do nấm xâm nhập qua vết thương cơ giới (vết cắn của
+chuột, vết đục của sâu đục thân, vết thương khi thu hoạch). Bên trong
+thân cây mía, ruột chuyển đỏ rồi đen thối — khi chẻ dọc thân sẽ thấy
+ruột có màu đỏ đến nâu đen xen kẽ các vết trắng ngắn. Có mùi thơm
+dứa nhẹ ở giai đoạn đầu, sau đó mùi nặng và hôi hơn.
+Cây bị bệnh nặng: thân còi cọc, biến dạng, bên trong thối khô hình
+thành các vết nứt rộng. Chữ đường giảm mạnh do mô bị phá hủy.
+
+⚠️ Phân biệt với bệnh thối đỏ (Colletotrichum falcatum):
+— Thối hom (Ceratocystis): thối ĐEN ruột, mùi DỨA đặc trưng, lớp nấm
+  đen ở đầu cắt hom
+— Thối đỏ (Colletotrichum): ruột đỏ tươi xen trắng, KHÔNG có mùi dứa,
+  xâm nhập chủ yếu qua vết sâu đục thân
+
+NGUYÊN NHÂN:
+Tác nhân là nấm Ceratocystis paradoxa (De Seynes) C. Moreau (tên cũ:
+Ceratostomella paradoxa; đồng danh Thielaviopsis paradoxa). Thuộc lớp
+Sordariomycetes, bộ Microascales. Nấm có phổ ký chủ rộng — ngoài mía
+còn gây bệnh trên dứa (pineapple black rot), chuối tiêu, dừa, cọ và
+nhiều cây trồng nhiệt đới khác. Nấm tạo 2 loại bào tử: chlamydospore
+(bào tử hậu hình thùng, màu đen — tồn tại lâu trong đất) và bào tử
+phân sinh (endoconidia trong suốt).
+
+Cơ chế xâm nhiễm:
+Nấm KHÔNG xâm nhập được qua biểu bì lành — CHỈ xâm nhập qua vết
+thương. Các nguồn vết thương chính: (1) đầu cắt của hom giống là cửa
+vào rộng nhất và nguy hiểm nhất; (2) vết cắn của chuột trên thân mía;
+(3) vết đục của sâu đục thân; (4) vết nứt, vết thương do canh tác.
+Nấm lan nhanh trong ruột hom/thân mía theo mô libe và tủy.
+
+Nấm tồn tại trong đất, tàn dư cây bệnh, hom giống nhiễm bệnh. Nhiệt
+độ tối ưu 21–22°C; phát triển được từ 15–35°C.
+
+ĐIỀU KIỆN PHÁT SINH:
+— Nhiệt độ: Mát mẻ hơn so với nhiều bệnh mía khác — tối ưu 21–22°C;
+  phát sinh mạnh vào đầu vụ trồng khi đất chưa ấm hoặc khi nhiệt độ
+  biến động lớn.
+— Độ ẩm đất: Đất quá ẩm ướt sau mưa lớn hoặc tưới nhiều làm hom nảy
+  mầm chậm, kéo dài thời gian đầu cắt tiếp xúc với nấm trong đất.
+— Tốc độ nảy mầm của giống: Giống mía nảy mầm chậm dễ bị bệnh nặng
+  hơn (thời gian dài tiếp xúc đất nhiễm); giống nảy mầm nhanh ít bị hơn.
+— Canh tác liên tục: Ruộng trồng mía nhiều năm tích lũy nguồn nấm
+  trong đất ngày càng cao.
+— Chất lượng hom: Hom già, hom bị tổn thương nhiều khi chặt, dao chặt
+  bẩn làm tăng nguy cơ nhiễm.
+— Mùa vụ: Phát sinh chủ yếu giai đoạn mới trồng (1–4 tuần đầu) và
+  khi sắp thu hoạch (nấm xâm nhập qua vết cắn chuột/sâu đục thân).
+
+PHÒNG TRỊ:
+1. [Hom giống sạch — Ưu tiên 1] Chọn hom giống từ ruộng không có bệnh,
+  hom tươi, không bị tổn thương nhiều. Hom bánh tẻ (8–10 tháng tuổi)
+  nảy mầm nhanh hơn hom già, ít bị bệnh hơn.
+
+2. [Xử lý hóa học hom giống — Ưu tiên 1] Ngâm hom trong dung dịch
+  thuốc trước khi trồng để tiêu diệt nấm trên đầu cắt:
+  — Carbendazim 0,1–0,2%: ngâm 15–30 phút
+  — Thiram (TMTD) 0,2%: ngâm 15–30 phút [cần xác minh đăng ký VN]
+  — Mancozeb 0,2–0,3%: ngâm 20–30 phút
+
+3. [Canh tác — Ưu tiên cao] Trồng hom ngay sau khi chặt (không để
+  hom lâu sau khi cắt — đầu cắt khô làm giảm xâm nhập nấm). Tránh
+  trồng khi đất quá ướt sau mưa lớn. Dùng vôi bột hoặc than củi phủ
+  lên đầu cắt hom trước khi trồng [cần xác minh hiệu quả].
+
+4. [Kiểm soát côn trùng và chuột] Phòng trừ sâu đục thân và chuột để
+  hạn chế vết thương trên thân cây — giảm cửa vào của nấm ở giai đoạn
+  cây trưởng thành.
+
+5. [Canh tác] Luân canh 1–2 vụ với cây trồng khác (không phải mía,
+  dứa hoặc chuối) để giảm nguồn nấm trong đất. Vệ sinh đồng ruộng kỹ
+  sau thu hoạch, cày vùi tàn dư.
+
+THUỐC KHUYẾN NGHỊ:
+1. Hoạt chất: Carbendazim (Benzimidazole — nội hấp, đặc hiệu nấm)
+   Tên thương mại: Bavistin 50SC, Carbenda 50SC, Baventin 50SC
+   Liều lượng xử lý hom: Pha 1–2 g/lít nước; ngâm hom 15–30 phút
+   trước khi trồng; để ráo rồi trồng ngay
+   Liều lượng phun: 20–25 ml/bình 16 lít khi phun phòng giai đoạn sớm
+   Thời gian cách ly: 7 ngày
+
+2. Hoạt chất: Mancozeb (Dithiocarbamate — tiếp xúc phổ rộng)
+   Tên thương mại: Dithane M-45 80WP
+   Liều lượng xử lý hom: Pha 2–3 g/lít nước; ngâm hom 20–30 phút
+   Thời gian cách ly: 7 ngày
+
+3. Hoạt chất: Propiconazole (Triazole — nội hấp phổ rộng)
+   Tên thương mại: Tilt 250EC
+   Liều lượng xử lý hom/phun: 15–20 ml/bình 16 lít
+   Thời điểm: Phun phòng đất quanh hốc trồng; ngâm hom trước khi trồng
+   Thời gian cách ly: 14 ngày
+
+4. Chế phẩm sinh học: Trichoderma viride / T. harzianum
+   Tên thương mại: Nhiều chế phẩm Trichoderma thương mại tại VN
+   Liều lượng: Trộn với phân hữu cơ bón lót xuống hốc trước khi trồng
+   hom; hoặc pha nước phun/tưới đất quanh gốc
+   Ưu điểm: Trichoderma đối kháng Ceratocystis trong đất, an toàn môi
+   trường, không có thời gian cách ly
+
+NGUỒN:
+— Nông nghiệp Nghĩa Anh (nongnghiepnghianh.vn) — Bệnh thối đen ruột
+  mía: tác nhân, triệu chứng mùi dứa, xâm nhiễm qua vết thương
+— Sinh học AQ (nguyenlieusinhhoc.com) — Bệnh mía dứa Ceratocystis
+  paradoxa: 15–35°C, tối ưu 21–22°C; xâm nhiễm chuột/sâu đục thân
+— Khuyến nông Bà Rịa-Vũng Tàu (knkn.baria-vungtau.gov.vn .gov.vn)
+  — Quản lý bệnh hại mía tổng hợp
+— Sở KH&CN Bến Tre (dost-bentre.gov.vn .gov.vn) — Phòng trừ sâu đục
+  thân và bệnh thối đỏ mía; cơ chế xâm nhiễm qua vết đục thân
+— Cẩm nang cây trồng (camnangcaytrong.com) — Sổ tay IPM Cty Đường
+  Biên Hòa: xử lý hom nước nóng và ngâm thuốc
+— Cẩm nang chẩn đoán bệnh cây Việt Nam, Burgess et al. 2008

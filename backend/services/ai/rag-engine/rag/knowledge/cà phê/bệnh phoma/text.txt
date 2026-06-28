@@ -1,0 +1,133 @@
+TÊN BỆNH: Bệnh Phoma (bệnh khô cành, thối thân do nấm Phoma) hay còn gọi là bệnh thán thư trên cà phê
+LOẠI CÂY: Cà phê (Coffea arabica, Coffea robusta)
+CLASS ID: cafe_phoma
+
+TRIỆU CHỨNG:
+Bệnh Phoma trên cà phê được nhận diện trong các dataset phân loại ảnh
+quốc tế là bệnh do nấm Phoma costarricensis Echandi (hay Phoma tarda
+Stewart) gây ra trên cành, thân và lá cà phê. Tại Việt Nam, bệnh này
+thường được ghi nhận và gộp chung dưới tên "bệnh khô cành khô quả" cùng
+với thán thư do Colletotrichum, hoặc nhóm bệnh die-back (chết ngược).
+
+Trên lá: Xuất hiện các vết đốm tròn hoặc không đều, màu nâu vàng đến
+nâu sẫm, viền không rõ ràng. Vết bệnh thường bắt đầu từ mép lá hoặc
+đầu lá rồi lan vào. Trên vết bệnh già có thể thấy các chấm đen nhỏ li
+ti — đây là các pycnidia (túi bào tử phân sinh) của nấm Phoma, là đặc
+điểm quan trọng để phân biệt với bệnh thán thư Colletotrichum (không
+có pycnidia rõ trên lá).
+
+Trên cành non và thân: Vết bệnh ban đầu là những đốm nâu sũng nước
+trên vỏ cành, sau lan rộng bao quanh cành, làm vỏ cành teo lại và
+chuyển nâu đen. Mô bên trong cành bị thối từng đoạn. Cành nhiễm
+bệnh bị "chết ngược" (die-back): phần đầu cành chết khô trước, sau
+lan dần vào thân chính. Đây là triệu chứng đặc trưng nhất của bệnh
+Phoma — khác với thán thư Colletotrichum (vết lõm hình bầu dục trên
+quả là đặc trưng hơn).
+
+Trên quả: Vết bệnh màu nâu xám, không lõm sâu như thán thư. Quả bị
+nhiễm nặng chuyển đen và khô trên cây hoặc rụng sớm. Trên vết bệnh
+già có thể quan sát thấy pycnidia màu đen li ti [cần xác minh tại
+Việt Nam].
+
+Giai đoạn nặng: Cây bị bệnh toàn thân có cành trơ, lá rụng từng
+mảng, năng suất giảm mạnh. Vườn cà phê bị bệnh lan rộng có thể mất
+trắng 30–75% sản lượng.
+
+⚠️ Phân biệt với bệnh thán thư (Colletotrichum): Phoma có pycnidia
+đen trên vết bệnh; vết bệnh trên cành ít lõm hơn; chủ yếu chết
+ngược từ đầu cành vào trong. Colletotrichum có acervuli với gai cứng
+(setae); vết bệnh trên quả lõm sâu hình đĩa; bào tử màu hồng cam.
+
+NGUYÊN NHÂN:
+Tác nhân gây bệnh là nấm Phoma costarricensis Echandi hoặc Phoma tarda
+Stewart (thuộc lớp Dothideomycetes, bộ Pleosporales, họ
+Didymellaceae). Nấm tạo pycnidia (túi bào tử phân sinh hình cầu màu
+đen, đường kính 100–300 µm) trên mô bệnh; bên trong chứa hàng nghìn
+bào tử phân sinh (pycnidiospore) hình trụ, đơn bào, không màu. Bào
+tử phát tán theo nước mưa bắn tung, qua vết thương cơ học trên cành
+và lá, hoặc qua côn trùng. Nấm tồn tại trên tàn dư cây bệnh, trong
+đất và trên hạt giống bị nhiễm. Bệnh là dạng nội ký sinh — nấm xâm
+nhập vào mô cây và phát triển bên trong.
+
+ĐIỀU KIỆN PHÁT SINH:
+— Nhiệt độ: Nấm phát triển ở 15–28°C; tối ưu khoảng 22–25°C — điều
+kiện điển hình của vùng Tây Nguyên cuối mùa mưa.
+— Ẩm độ và mưa: Mưa nhiều và liên tục, độ ẩm >80%, đặc biệt mưa
+chiều tối tạo điều kiện bào tử phát tán và xâm nhiễm qua vết thương.
+— Mùa vụ: Tại Tây Nguyên, bệnh phát triển từ đầu mùa mưa (tháng 5–6)
+và đạt đỉnh cao vào tháng 9–10. Bệnh có thể tồn tại và lây lan sang
+mùa khô thông qua mô bệnh còn lại trên cây.
+— Vườn cây: Vườn già cỗi (>15 năm), bón thừa đạm, rong rêu bám nhiều,
+thiếu chăm sóc là điều kiện thuận lợi nhất. Vườn có cành chết nhiều
+cung cấp nguồn bệnh liên tục.
+— Vết thương: Vết thương cơ học do côn trùng đục, do thu hoạch, do
+sương muối (đặc biệt vùng cao Lâm Đồng) là cửa vào chính của nấm.
+— Giống: Cà phê Arabica nhạy cảm hơn Robusta do lá mỏng hơn và thường
+trồng ở vùng có biên độ nhiệt lớn.
+
+PHÒNG TRỊ:
+1. [Canh tác - Ưu tiên 1] Cắt tỉa và tiêu hủy ngay các cành bị bệnh
+(cắt sâu vào phần gỗ lành 5–10 cm dưới vết bệnh); đốt hoặc chôn lấp
+để tiêu diệt nguồn bào tử. Không để tàn dư cành bệnh trong vườn.
+
+2. [Canh tác - Ưu tiên 2] Bón phân cân đối NPK, hạn chế thừa đạm. Bổ
+sung kali và silic để cứng cành, tăng sức đề kháng. Bón vôi điều chỉnh
+pH đất 5,5–6,5 để hạn chế nấm đất.
+
+3. [Canh tác - Ưu tiên 3] Vệ sinh vườn thường xuyên, loại bỏ cỏ dại,
+tạo thông thoáng tán cây. Hạn chế tạo vết thương trên cành khi canh
+tác. Khử trùng dụng cụ cắt tỉa bằng cồn hoặc thuốc gốc đồng trước
+khi dùng cho cây khác.
+
+4. [Sinh học] Sử dụng chế phẩm Trichoderma + Chaetomium bón gốc định
+kỳ (2–3 lần/năm) để ức chế nấm Phoma trong đất và trên tàn dư bệnh.
+
+5. [Hóa học] Phun thuốc khi phát hiện bệnh chớm xuất hiện; quét thuốc
+gốc đồng lên vết cắt tỉa để bảo vệ vết thương. Phun phòng 2–3 lần
+trong mùa mưa, mỗi lần cách nhau 15 ngày.
+
+THUỐC KHUYẾN NGHỊ:
+1. Hoạt chất: Carbendazim (Benzimidazole — nội hấp)
+   Tên thương mại: Bavistin 50SC, Carbenda 50SC, Arin 25SC
+   Liều lượng: Bavistin 50SC: 20–25 ml/bình 16 lít
+   Thời điểm: Phun khi chớm phát hiện bệnh; quét lên vết cắt tỉa
+   Thời gian cách ly: 7 ngày [cần xác minh theo nhãn]
+
+2. Hoạt chất: Copper Hydroxide (gốc đồng — tiếp xúc, bảo vệ)
+   Tên thương mại: Champion 77WP, Kocide 46.1WG
+   Liều lượng: 20–25 g/bình 16 lít; pha đặc hơn 1% để quét vết thương
+   Thời điểm: Phun phòng trước mùa mưa và sau tỉa cành; quét bảo vệ
+   vết cắt ngay sau khi tỉa
+   Thời gian cách ly: 7 ngày [cần xác minh]
+
+3. Hoạt chất: Difenoconazole (Triazole — nội hấp phổ rộng)
+   Tên thương mại: Score 250ND (Syngenta)
+   Liều lượng: 8–10 ml/bình 16 lít
+   Thời điểm: Phun trị khi bệnh đã xuất hiện trên nhiều cành
+   Thời gian cách ly: 14 ngày
+
+4. Hoạt chất: Azoxystrobin + Difenoconazole (kép)
+   Tên thương mại: Amistar Top 325SC (Syngenta)
+   Liều lượng: 10 ml/bình 16 lít
+   Thời điểm: Phun 2–3 lần đầu mùa mưa (tháng 5–7) để phòng bệnh
+   Thời gian cách ly: 14 ngày
+
+5. Hoạt chất: Propiconazole + Tebuconazole (kép Triazole)
+   Tên thương mại: Nativo 750WG (Bayer)
+   Liều lượng: 5–7 g/bình 16 lít
+   Thời điểm: Luân phiên với Carbendazim để tránh kháng thuốc
+   Thời gian cách ly: 14 ngày [cần xác minh]
+
+NGUỒN:
+— Chi cục TT&BVTV Lâm Đồng (ttbvtv.lamdong.gov.vn) — Biện pháp phòng
+  trừ bệnh thán thư cà phê (Colletotrichum) — có đề cập Phoma như bệnh
+  liên quan
+— ECOMCO (ecomco.vn) — Bệnh thán thư cà phê: Phoma spp. được nêu là
+  bệnh cần phân biệt với thán thư
+— Giá Cà Phê (giacaphe.com) — Bệnh khô cành khô quả: dữ liệu Viện
+  Nghiên cứu Cà phê Đắk Lắk
+— Dân tộc và Phát triển / VietnamNet — Phòng trừ bệnh khô cành cà phê
+— Cẩm nang chẩn đoán bệnh cây ở Việt Nam, Burgess et al. 2008
+  (coa.ctu.edu.vn)
+— [cần xác minh] Tài liệu WASI/Viện Nghiên cứu Cà phê Đắk Lắk về
+  bệnh khô cành do Phoma

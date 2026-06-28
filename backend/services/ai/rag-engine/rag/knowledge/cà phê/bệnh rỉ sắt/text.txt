@@ -1,0 +1,121 @@
+TÊN BỆNH: Bệnh nấm rỉ sắt trên cà phê (bệnh gỉ sắt, bệnh rỉ lá)
+LOẠI CÂY: Cà phê (Coffea arabica, Coffea robusta, Coffea liberica)
+CLASS ID: cafe_ri_sat
+
+TRIỆU CHỨNG:
+Bệnh rỉ sắt gây hại chủ yếu trên lá cà phê, là bệnh nguy hiểm nhất
+tại các vùng trồng cà phê Tây Nguyên (Đắk Lắk, Lâm Đồng, Gia Lai).
+
+Giai đoạn đầu: Trên mặt dưới của lá xuất hiện những đốm nhỏ màu vàng
+nhạt, đường kính 2–3 mm, hơi trong mờ. Đây là dấu hiệu đặc trưng
+dễ nhận biết nhất để phân biệt với bệnh đốm rong (bệnh đốm rong xuất
+hiện mặt trên lá, bệnh rỉ sắt chủ yếu mặt dưới lá).
+
+Giai đoạn phát triển: Các đốm vàng lan rộng dần, đường kính tăng lên
+5–15 mm, trên bề mặt đốm bệnh xuất hiện lớp bột phấn màu vàng cam
+đến da cam — đây chính là khối bào tử uredospore của nấm Hemileia
+vastatrix. Quan sát mặt trên lá tương ứng với vết bệnh thấy màu vàng
+nhạt lan rộng. Nhiều đốm có thể liên kết thành mảng lớn phủ phần lớn
+diện tích lá.
+
+Giai đoạn nặng: Lá bị nhiễm bệnh dần chuyển vàng toàn bộ rồi rụng
+hàng loạt. Cây mất lá nghiêm trọng, cành trơ trụi, không có khả năng
+quang hợp. Cây suy kiệt, quả nhỏ, ít hạt, năng suất giảm mạnh. Trong
+điều kiện bùng phát dịch (mùa mưa Tây Nguyên tháng 5–10), toàn bộ
+vườn có thể rụng lá trong vài tuần nếu không can thiệp kịp thời.
+
+Lưu ý phân biệt: Khác với bệnh đốm nâu (vết bệnh nổi gồ cả hai mặt
+lá, màu nâu), bệnh rỉ sắt có đặc điểm vết bệnh phẳng, bột phấn vàng
+chỉ ở mặt dưới lá.
+
+NGUYÊN NHÂN:
+Tác nhân là nấm Hemileia vastatrix Berkeley & Broome (thuộc lớp
+Pucciniomycetes, bộ Pucciniales). Đây là nấm ký sinh bắt buộc —
+chỉ sống và sinh sản trên cây cà phê, không tồn tại trong đất. Nấm
+có tới 45 loài phụ (race) khác nhau, trong đó tại Việt Nam phổ biến
+nhất là dòng B và dòng Br. Bào tử uredospore (bào tử hạ) là dạng
+lây lan chính: nhẹ, có thể bay xa theo gió hàng km; cũng lây lan qua
+giọt nước mưa bắn tung, qua dụng cụ canh tác và quần áo người lao
+động. Bào tử nảy mầm nhanh ở 24°C chỉ sau 2–4 giờ tiếp xúc với
+bề mặt lá ẩm ướt. Thời gian ủ bệnh rất ngắn: 6–12 giờ sau khi bào
+tử xâm nhập qua khí khổng mặt dưới lá. Tại Việt Nam, bệnh rỉ sắt
+trên cà phê Arabica được ghi nhận lần đầu năm 1890.
+
+ĐIỀU KIỆN PHÁT SINH:
+— Nhiệt độ: 21–25°C là ngưỡng tối ưu cho nấm phát triển. Tại Tây
+Nguyên, điều kiện này đặc biệt thuận lợi trong mùa mưa.
+— Độ ẩm: Độ ẩm không khí >80–90% và mưa kéo dài kích thích bào tử
+nảy mầm và xâm nhiễm. Bào tử cần màng nước trên bề mặt lá để nảy mầm.
+— Mùa vụ: Tây Nguyên bùng phát mạnh tháng 5–10 (mùa mưa); miền Bắc
+bùng phát tháng 9–10. Bệnh chớm xuất hiện cuối mùa khô (tháng 3–4)
+rồi bùng phát theo mưa.
+— Giống cây: Cà phê chè (Arabica) nhiễm nặng nhất; tiếp đến cà phê
+mít (Liberica); cà phê vối (Robusta) nhiễm nhẹ hơn. Tất cả giống cà
+phê tại Việt Nam đều bị nhiễm.
+— Canh tác: Vườn rậm rạp thiếu thông thoáng, bón thừa đạm (N) làm
+lá non mềm yếu dễ nhiễm, thiếu vi lượng Bo/Zn/Mn làm suy giảm sức
+đề kháng.
+— Giai đoạn sinh trưởng: Lá non, đọt non, giai đoạn ra hoa và trái
+non là thời điểm dễ nhiễm nhất.
+
+PHÒNG TRỊ:
+1. [Canh tác - Ưu tiên 1] Chọn giống kháng hoặc ít nhiễm (ưu tiên các
+giống Robusta TRS, TR4, TR9 cho vùng Tây Nguyên). Tỉa cành tạo tán
+thông thoáng, giảm ẩm độ vi khí hậu trong tán lá.
+
+2. [Canh tác - Ưu tiên 2] Bón phân cân đối NPK, hạn chế thừa đạm.
+Bổ sung vi lượng Bo, Zn, Mn để tăng sức đề kháng. Tăng cường phân hữu
+cơ và chế phẩm cải tạo đất.
+
+3. [Canh tác - Ưu tiên 3] Vệ sinh vườn thường xuyên, thu gom lá rụng
+bệnh đem tiêu hủy để giảm nguồn bào tử tích lũy trên mặt đất và tán cây.
+
+4. [Sinh học] Sử dụng chế phẩm vi nấm đối kháng chứa Trichoderma
+harzianum và Chaetomium sp. phun phòng đầu mùa mưa; ức chế sự nảy
+mầm bào tử Hemileia vastatrix trên bề mặt lá.
+
+5. [Hóa học] Phun thuốc khi bệnh chớm xuất hiện. Phun ướt đều cả hai
+mặt lá. Phun phòng định kỳ 10–15 ngày/lần trong mùa mưa, đặc biệt
+vào các đợt cây ra đọt non, lá non, ra hoa và trái non. Luân phiên
+hoạt chất giữa các lần phun để tránh kháng thuốc.
+
+THUỐC KHUYẾN NGHỊ:
+1. Hoạt chất: Hexaconazole (nhóm Triazole — nội hấp)
+   Tên thương mại: Atulvil 5SC, Hexalazole 300SC, Anvil 5SC
+   Liều lượng: Atulvil 5SC: 30–40 ml/bình 16 lít; Hexalazole 300SC:
+   240–250 ml/phuy 200 lít
+   Thời điểm: Phun khi chớm phát hiện bệnh; phun phòng tháng 5–8
+   Thời gian cách ly: 14 ngày [cần xác minh theo nhãn]
+
+2. Hoạt chất: Epoxiconazole (nhóm Triazole thế hệ mới)
+   Tên thương mại: Opus 75EC (BASF)
+   Liều lượng: theo hướng dẫn nhà sản xuất
+   Thời điểm: Phun phòng hoặc khi bệnh chớm xuất hiện
+   Thời gian cách ly: [cần xác minh theo nhãn]
+
+3. Hoạt chất: Tebuconazole + Trifloxystrobin (Triazole + Strobilurin)
+   Tên thương mại: Nativo 750WG (Bayer)
+   Liều lượng: 5–7 g/bình 16 lít
+   Thời điểm: Phun khi bệnh xuất hiện hoặc phòng trước mùa mưa
+   Thời gian cách ly: 14 ngày [cần xác minh theo nhãn]
+
+4. Hoạt chất: Azoxystrobin + Difenoconazole
+   Tên thương mại: Amistar Top 325SC (Syngenta)
+   Liều lượng: 10–15 ml/bình 16 lít
+   Thời điểm: Phun trị khi bệnh nặng, lặp lại sau 14 ngày
+   Thời gian cách ly: 14 ngày
+
+5. Hoạt chất: Propiconazole (nhóm Triazole)
+   Tên thương mại: Tilt 250EC, Vila-Fuji 100SL
+   Liều lượng: Vila-Fuji 100SL: 30–40 ml/16 lít
+   Thời điểm: Phun định kỳ phòng bệnh mùa mưa
+   Thời gian cách ly: 14 ngày [cần xác minh]
+
+NGUỒN:
+— Chi cục TT&BVTV Lâm Đồng (ttbvtv.lamdong.gov.vn) — Phòng trừ bệnh rỉ sắt hại cà phê
+— Prime Coffea (primecoffea.com) — Tổng quan về bệnh gỉ sắt Hemileia vastatrix
+— Nông nghiệp SOFA (nongnghiepsofa.com) — Bệnh rỉ sắt cà phê: nguyên nhân, triệu chứng, phòng trừ
+— Sundrone (sundrone.vn) — Nhận biết và phòng trừ bệnh rỉ sắt cà phê
+— Thafaco (thafaco.vn) — Bệnh rỉ sắt tại vùng Tây Nguyên
+— Thuốc BVTV Tuấn Cúc (shop.thuocbvtv.com) — Danh sách thuốc trị rỉ sắt cà phê
+— Cẩm nang chẩn đoán bệnh cây ở Việt Nam, Burgess et al. 2008 (coa.ctu.edu.vn)

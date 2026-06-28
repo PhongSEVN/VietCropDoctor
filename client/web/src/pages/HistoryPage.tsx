@@ -19,6 +19,29 @@ function formatDate(iso: string): string {
   }
 }
 
+// Per-session "last seen expert reply" timestamps, stored client-side so the
+// "Phản hồi mới" badge clears once the farmer opens the conversation.
+const EXPERT_SEEN_KEY = "vcd:expertReplySeen";
+
+function getSeenMap(): Record<string, string> {
+  try {
+    return JSON.parse(localStorage.getItem(EXPERT_SEEN_KEY) ?? "{}");
+  } catch {
+    return {};
+  }
+}
+
+function markExpertReplySeen(sessionId: string, at: string): void {
+  const map = getSeenMap();
+  localStorage.setItem(EXPERT_SEEN_KEY, JSON.stringify({ ...map, [sessionId]: at }));
+}
+
+function hasUnseenExpertReply(s: ChatSession, seen: Record<string, string>): boolean {
+  if (!s.has_expert_reply || !s.expert_reply_at) return false;
+  const seenAt = seen[s.session_id];
+  return !seenAt || s.expert_reply_at > seenAt;
+}
+
 function getSeverityFromClass(cls: string): string {
   const lower = cls.toLowerCase();
   if (lower.includes("healthy")) return "healthy";
@@ -31,6 +54,7 @@ export default function HistoryPage() {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [deletingId, setDeletingId] = useState<string | null>(null);
+  const [seen, setSeen] = useState<Record<string, string>>(() => getSeenMap());
 
   useEffect(() => {
     getChatSessions().then((data) => {
@@ -38,6 +62,15 @@ export default function HistoryPage() {
       setLoading(false);
     }).catch(() => setLoading(false));
   }, []);
+
+  function openSession(s: ChatSession): void {
+    if (s.has_expert_reply && s.expert_reply_at) {
+      markExpertReplySeen(s.session_id, s.expert_reply_at);
+      setSeen((prev) => ({ ...prev, [s.session_id]: s.expert_reply_at! }));
+    }
+    const disease = s.disease ?? "";
+    navigate(`/chat?session_id=${s.session_id}${disease ? `&disease=${encodeURIComponent(disease)}` : ""}`);
+  }
 
   async function handleDeleteSession(e: MouseEvent, sessionId: string) {
     e.stopPropagation();
@@ -115,11 +148,12 @@ export default function HistoryPage() {
             {filtered.map((s) => {
               const disease = s.disease ?? "";
               const severity = getSeverityFromClass(disease);
+              const unseenReply = hasUnseenExpertReply(s, seen);
               return (
                 <div
                   key={s.session_id}
-                  onClick={() => navigate(`/chat?session_id=${s.session_id}${disease ? `&disease=${encodeURIComponent(disease)}` : ""}`)}
-                  className="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300 flex flex-col group cursor-pointer"
+                  onClick={() => openSession(s)}
+                  className={`bg-surface-container-lowest rounded-xl border overflow-hidden hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300 flex flex-col group cursor-pointer ${unseenReply ? "border-[#166534] ring-1 ring-[#166534]/30" : "border-outline-variant"}`}
                 >
                   {/* Image area */}
                   <div className="relative h-48 w-full bg-surface-variant overflow-hidden">
@@ -139,6 +173,13 @@ export default function HistoryPage() {
                       <span className="material-symbols-outlined text-primary text-[14px]">chat_bubble</span>
                       <span className="text-xs font-semibold text-on-surface">{s.message_count}</span>
                     </div>
+                    {/* New expert-reply badge */}
+                    {unseenReply && (
+                      <div className="absolute top-3 left-3 bg-[#166534] text-white rounded-full px-3 py-1 flex items-center gap-1 shadow-sm animate-pulse">
+                        <span className="material-symbols-outlined text-[14px] icon-fill">verified</span>
+                        <span className="text-xs font-semibold">Phản hồi mới</span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Content */}

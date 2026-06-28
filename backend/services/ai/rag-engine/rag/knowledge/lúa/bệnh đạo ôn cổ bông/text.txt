@@ -1,0 +1,158 @@
+TÊN BỆNH: Bệnh đạo ôn cổ bông (thối cổ bông, cháy cổ bông)
+LOẠI CÂY: Lúa (Oryza sativa)
+CLASS ID: rice_Rice_Neck_Blast
+
+TRIỆU CHỨNG:
+Bệnh đạo ôn cổ bông là dạng nguy hiểm và gây thiệt hại kinh tế nặng
+nề nhất trong tất cả các dạng bệnh đạo ôn trên lúa, vì xảy ra đúng
+giai đoạn trổ bông — thời điểm quyết định năng suất. Một ruộng bị
+đạo ôn cổ bông nặng có thể mất trắng hoàn toàn.
+
+Triệu chứng trên cổ bông: Vết bệnh xuất hiện ngay tại đốt cổ bông —
+đoạn thân ngay dưới bông lúa. Lúc đầu là một chấm nhỏ màu xám đen
+hoặc nâu xám, sau lan rộng dần bao quanh cổ bông thành vết thắt
+màu nâu xám đến nâu đen, làm mô cổ bông bị thối và teo tắt. Vết bệnh
+khiến dòng vận chuyển nước và dinh dưỡng từ thân lên bông bị gián đoạn
+hoàn toàn.
+
+Hậu quả trực tiếp:
+— Nếu bệnh xuất hiện sớm khi lúa vừa trổ bông: toàn bộ bông lúa lép
+  trắng, bông đứng thẳng (vì không có hạt), ruộng trông như "bạch
+  tuộc" — gọi là hiện tượng bông bạc.
+— Nếu bệnh xuất hiện muộn hơn (lúa đã vào chắc một phần): hạt lép
+  lửng một phần, hạt chắc ít, trọng lượng 1000 hạt giảm mạnh, năng
+  suất giảm 30–80% tùy mức độ.
+— Cổ bông bị thối có thể gãy gục, bông rủ xuống — phân biệt với gãy
+  thân do sâu đục thân (gãy thân chứ không phải cổ bông).
+
+Triệu chứng trên cổ gié và hạt: Tương tự cổ bông nhưng quy mô nhỏ
+hơn — từng nhánh gié bị thối và gié lép từng phần. Trên hạt có thể
+xuất hiện vết nâu xám nhỏ; hạt bị nhiễm nặng bị lép hoặc biến màu,
+ảnh hưởng chất lượng gạo.
+
+Phân biệt với bệnh khác:
+— Khô vằn (Rhizoctonia solani): vết bệnh trên bẹ lá hình thoi màu nâu
+  xám xen trắng; không gây lép hạt trực tiếp từ cổ bông.
+— Lem lép hạt (nhiều nguyên nhân): hạt đen hoặc nâu nhưng cổ bông
+  không bị thắt thối.
+— Bạc lá (Xanthomonas oryzae): cháy từ mép lá, lá kéo chỉ có mủ vi
+  khuẩn.
+
+NGUYÊN NHÂN:
+Tác nhân là nấm Pyricularia oryzae Cav. (tên đồng nghĩa: Pyricularia
+grisea Sacc.; giai đoạn hữu tính: Magnaporthe oryzae B.C. Couch).
+Nấm thuộc lớp Sordariomycetes, bộ Magnaporthales. Đây là nấm bệnh
+quan trọng nhất trên lúa toàn thế giới, gây thiệt hại hàng tỷ USD
+mỗi năm. Nấm có hơn 300 nòi sinh lý (race) khác nhau về khả năng
+gây bệnh trên các giống lúa có gen kháng khác nhau — đây là lý do
+bệnh khó quản lý lâu dài bằng giống kháng đơn gene.
+
+Cơ chế xâm nhiễm: Bào tử phân sinh (conidium) hình quả lê 3 tế bào,
+không màu, phát tán theo gió và nước; nảy mầm tạo đĩa áp (appressorium)
+màu đen giàu melanin bám chắc vào bề mặt lá/cổ bông; tạo áp lực
+cơ học cực cao (~8 MPa) để đâm xuyên cutin và biểu bì. Trong mô cây,
+sợi nấm phát triển thành bào tử phân sinh mới, hoàn thành vòng lây
+nhiễm trong 4–5 ngày ở điều kiện thuận lợi.
+
+Nguồn bệnh: Tàn dư rơm rạ vụ trước, lúa chét, cỏ dại họ Poaceae,
+hạt giống nhiễm bệnh.
+
+ĐIỀU KIỆN PHÁT SINH:
+— Nhiệt độ: Nấm phát triển tối ưu 25–28°C; bào tử nảy mầm và xâm
+  nhiễm thuận lợi ở 18–26°C. Vụ Đông Xuân miền Bắc và miền Trung
+  (trời lạnh, sương mù) đặc biệt thuận lợi. Vụ Hè Thu ĐBSCL bùng
+  phát khi có mưa dầm ẩm độ cao kéo dài.
+— Ẩm độ: Ẩm độ không khí >90% liên tục, sương mù buổi sáng, mưa
+  phùn kéo dài là điều kiện lý tưởng. Bào tử cần màng nước trên bề
+  mặt lá/cổ bông ≥6–8 giờ để nảy mầm và xâm nhiễm.
+— Phân bón: Bón thừa đạm (N) làm mô lúa mềm yếu, lớp cutin mỏng —
+  nấm dễ xâm nhập. Đây là yếu tố canh tác quan trọng nhất ảnh hưởng
+  đến mức độ bệnh.
+— Giống nhiễm: Nhiều giống lúa thương mại phổ biến tại Việt Nam (IR50404,
+  OM576...) nhiễm từ trung bình đến nặng với một số nòi phổ biến.
+— Mùa vụ đặc biệt nguy hiểm: Vụ Đông Xuân miền Bắc (tháng 2–4); vụ
+  Đông Xuân ĐBSCL (tháng 1–3); giai đoạn đặc biệt nguy hiểm là 7–10
+  ngày trước và sau khi lúa trổ bông.
+
+PHÒNG TRỊ:
+1. [Canh tác - Ưu tiên 1] Chọn giống kháng đạo ôn phù hợp vùng canh
+  tác: OM5451, OM6976, Đài Thơm 8, Nàng Hoa 9... (tham khảo khuyến
+  cáo từng địa phương). Không trồng giống nhiễm khi vùng có tiền sử
+  bệnh nặng.
+
+2. [Canh tác - Ưu tiên 2] Bón phân cân đối NPK, tuyệt đối không bón
+  thừa đạm — đặc biệt không bón đạm muộn khi thời tiết lạnh ẩm. Tăng
+  kali (K) để cứng cây và tăng sức đề kháng. Chia nhỏ lần bón, bón
+  đúng giai đoạn.
+
+3. [Canh tác - Ưu tiên 3] Gieo sạ đúng mật độ khuyến cáo (không sạ
+  dày). Quản lý nước hợp lý (tưới tiêu theo ngưỡng, không để ruộng khô
+  hạn xen ướt đột ngột). Vệ sinh đồng ruộng sau thu hoạch: cắt rơm
+  rạ, cày vùi để tiêu diệt nguồn bệnh.
+
+4. [Giống kháng + xử lý hạt giống] Ngâm hạt giống trong dung dịch
+  thuốc gốc Tricyclazole hoặc Carbendazim trước khi gieo để loại trừ
+  nguồn bệnh trên hạt.
+
+5. [Hóa học] ⚠️ THỜI ĐIỂM PHUN CỰC KỲ QUAN TRỌNG với đạo ôn cổ
+  bông: Phun PHÒNG 5–7 ngày TRƯỚC khi lúa trổ và phun lần 2 ngay khi
+  lúa vừa trổ (3–5 ngày sau trổ). Khi bệnh đã xuất hiện trên cổ bông
+  thì phun thuốc hiệu quả rất thấp vì mô đã bị phá hủy. Phun ướt đều
+  từ bông xuống bẹ lá, sử dụng lượng nước thuốc đủ (300–400 lít/ha).
+  Luân phiên hoạt chất giữa các lần phun theo nhóm FRAC để tránh
+  kháng thuốc.
+
+THUỐC KHUYẾN NGHỊ:
+1. Hoạt chất: Tricyclazole (nhóm Benzothiazole — FRAC U8)
+   Cơ chế: ức chế tổng hợp melanin của đĩa áp nấm, ngăn xâm nhập
+   Tên thương mại: Beam 75WP, Trizole 75WP, Tanbim 800WP, BIM USA 750WP
+   Liều lượng: Beam 75WP: 0,3–0,5 kg/ha; pha ~10–15 g/bình 16 lít
+   Thời điểm: Phun phòng trước trổ 5–7 ngày và khi trổ 5–10%
+   Thời gian cách ly: 14 ngày
+
+2. Hoạt chất: Isoprothiolane (nhóm Dithiolane — FRAC 14)
+   Cơ chế: ức chế tổng hợp phospholipid màng tế bào nấm; cũng giúp
+   lúa cứng cây
+   Tên thương mại: Fuji-One 40EC, Isopro 40EC, Fuan 40EC
+   Liều lượng: Fuji-One 40EC: 1–1,5 lít/ha; pha 30–40 ml/bình 16 lít
+   Thời điểm: Phun giai đoạn đứng cái—làm đòng và trước trổ
+   Thời gian cách ly: 14 ngày
+
+3. Hoạt chất: Azoxystrobin (nhóm Strobilurin/QoI — FRAC 11)
+   Tên thương mại: Amistar 250SC (Syngenta), Azosin 250SC
+   Liều lượng: 10–15 ml/bình 16 lít
+   Thời điểm: Phun phòng hoặc trị sớm; luân phiên với Tricyclazole
+   Thời gian cách ly: 14 ngày
+
+4. Hoạt chất: Tricyclazole + Hexaconazole (kép)
+   Tên thương mại: các sản phẩm hỗn hợp tại VN [cần xác minh tên cụ thể]
+   Ưu điểm: kép tác dụng đặc trị đạo ôn + phòng lem lép hạt
+   Thời điểm: trước trổ và khi trổ
+
+5. Hoạt chất: Kasugamycin (kháng sinh nông nghiệp — FRAC 24)
+   Tên thương mại: Kasumin 2L (Hokko), Kasamin 2SL
+   Liều lượng: 1–1,5 lít/ha; 30–40 ml/bình 16 lít
+   Thời điểm: Luân phiên với Tricyclazole trong vụ, đặc biệt khi có
+   nguy cơ kháng thuốc cao
+   Thời gian cách ly: 7 ngày
+
+⚠️ KHUYẾN CÁO LUÂN PHIÊN FRAC: Không dùng cùng nhóm FRAC liên
+tục trong một vụ. Ví dụ: lần 1 dùng Tricyclazole (FRAC U8) → lần 2
+dùng Isoprothiolane (FRAC 14) hoặc Azoxystrobin (FRAC 11).
+
+NGUỒN:
+— Chi cục TT&BVTV TP.HCM (chicucttbvtvhcm.gov.vn) — Bệnh đạo ôn:
+  có dễ phòng trừ?
+— Chi cục TT&BVTV Ninh Bình (chicucttbvtv.ninhbinh.gov.vn) — Bệnh
+  đạo ôn trên lúa và biện pháp phòng trừ
+— Sở NN&PTNT Lai Châu (sonnptnt.laichau.gov.vn) — Quy trình phòng
+  trừ bệnh đạo ôn
+— Nichino Việt Nam (nichino.com.vn) — Giải pháp phòng trừ bệnh đạo
+  ôn hại lúa
+— iCrop (icrop.vn) — Bệnh đạo ôn trên lúa
+— Quoc Viet Agri (quocvietagri.com) — Quản lý bệnh đạo ôn cổ bông
+  vụ Hè Thu: phác đồ phun 2 lần
+— Daoonlua.com — Isoprothiolane: tượng đài trị đạo ôn và chiến lược
+  luân phiên FRAC
+— Cẩm nang chẩn đoán bệnh cây ở Việt Nam, Burgess et al. 2008
+  (coa.ctu.edu.vn)

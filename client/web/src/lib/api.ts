@@ -4,12 +4,15 @@ import type {
   ChatResponse,
   Citation,
   CropDistributionItem,
+  DiagnoseResult,
   FeedbackItem,
   FeedbackRequest,
   FeedbackResponse,
   HealthStatus,
+  OrchestrationResponse,
   PredictResult,
   QueryResponse,
+  Recommendation,
   RetrievedChunk,
   SeverityBreakdownItem,
   SourceLink,
@@ -30,11 +33,13 @@ export type {
   ChatResponse,
   Citation,
   CropDistributionItem,
+  DiagnoseResult,
   FeedbackItem,
   FeedbackRequest,
   FeedbackResponse,
   HealthStatus,
   PredictResult,
+  Recommendation,
   SeverityBreakdownItem,
   TrendResponse,
 };
@@ -44,15 +49,44 @@ const BASE_URL = DOMAIN;
 
 // API calls
 
-export async function predictImage(file: File): Promise<PredictResult> {
+// Run the full multi-agent diagnosis pipeline through the Orchestrator
+// (vision → RAG context → reasoning LLM → recommendation). The Orchestrator is
+// the single entry point for diagnosis, matching the system architecture.
+// The response is flattened into a PredictResult-compatible shape (so existing
+// UI keeps working) and enriched with the generated recommendation.
+export async function predictImage(file: File): Promise<DiagnoseResult> {
   const form = new FormData();
   form.append("image", file);
-  const res = await fetch(`${BASE_URL}/predict`, { method: "POST", headers: authHeaders(), body: form });
+  const res = await fetch(`${BASE_URL}/orchestrate`, { method: "POST", headers: authHeaders(), body: form });
   if (!res.ok) {
     const err = await res.json().catch(() => ({}));
     throw new Error(err.detail ?? "Prediction failed");
   }
-  return res.json();
+  const data: OrchestrationResponse = await res.json();
+  return mapOrchestrationToResult(data);
+}
+
+function mapOrchestrationToResult(data: OrchestrationResponse): DiagnoseResult {
+  const v = data.vision;
+  return {
+    disease: v.disease,
+    confidence: v.confidence,
+    top3: v.top3,
+    explanation: v.explanation,
+    severity: v.severity,
+    severity_score: v.severity_score,
+    severity_advice: v.severity_advice,
+    agreement_score: v.agreement_score,
+    ensemble_used: v.ensemble_used,
+    model_count: v.model_count,
+    uncertainty_score: v.uncertainty_score,
+    image_url: v.image_url,
+    is_in_distribution: v.is_in_distribution,
+    ood_message: v.ood_message,
+    ood_score: v.ood_score,
+    recommendation: data.recommendation ?? null,
+    reasoning_summary: data.reasoning_summary,
+  };
 }
 
 export async function chatWithDisease(
@@ -317,6 +351,10 @@ export async function getChatHistory(limit = 50): Promise<ChatMessageItem[]> {
   }
 }
 
+/** Marker question used by the backend for an expert reply injected into a farmer's
+ * chat (see backend expert_routes.py). Such rows render as an "expert" bubble. */
+export const EXPERT_REPLY_MARKER = "__EXPERT_REPLY__";
+
 export interface ChatSession {
   session_id: string;
   disease: string | null;
@@ -324,25 +362,38 @@ export interface ChatSession {
   last_at: string;
   message_count: number;
   image_url?: string | null;
+  has_expert_reply: boolean;
+  expert_reply_at: string | null;
 }
 
 export async function getChatSessions(): Promise<ChatSession[]> {
   const messages = await getChatHistory(200);
   const map = new Map<string, ChatSession>();
   for (const m of [...messages].reverse()) {
+    const isExpertReply = m.question === EXPERT_REPLY_MARKER;
     if (!map.has(m.session_id)) {
       map.set(m.session_id, {
         session_id: m.session_id,
         disease: m.disease,
-        first_question: m.question,
+        // An expert reply must never become the session's headline question.
+        first_question: isExpertReply ? "" : m.question,
         last_at: m.created_at,
         message_count: 0,
         image_url: m.image_url ?? null,
+        has_expert_reply: false,
+        expert_reply_at: null,
       });
     }
     const s = map.get(m.session_id)!;
     s.message_count += 1;
     if (m.created_at > s.last_at) s.last_at = m.created_at;
+    if (!s.first_question && !isExpertReply) s.first_question = m.question;
+    if (isExpertReply) {
+      s.has_expert_reply = true;
+      if (!s.expert_reply_at || m.created_at > s.expert_reply_at) {
+        s.expert_reply_at = m.created_at;
+      }
+    }
   }
   return [...map.values()].sort((a, b) => b.last_at.localeCompare(a.last_at));
 }

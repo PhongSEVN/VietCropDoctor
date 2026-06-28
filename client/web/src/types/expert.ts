@@ -120,3 +120,21 @@ export interface OnlineExpert {
   active_cases: number;
   online: boolean;
 }
+
+/**
+ * A single image diagnosis from chat history — includes diagnoses the user never
+ * gave feedback on. `feedback_id` is set only once a case row exists; otherwise the
+ * expert must "promote" it (creating the case) before responding.
+ */
+export interface DiagnosisItem {
+  chat_id: string;
+  user_id: string;
+  user_name?: string | null;
+  image_url?: string | null;
+  disease?: string | null; // AI-predicted
+  created_at: string;
+  has_feedback: boolean;
+  feedback_id?: string | null;
+  status: ExpertCaseStatus | "new";
+  is_irrelevant: boolean;
+}

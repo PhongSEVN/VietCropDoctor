@@ -2,7 +2,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import MainLayout from "@/components/MainLayout";
 import Markdown from "@/components/Markdown";
-import { chatWithDisease, getSessionMessages, getHistoryEntry, type Citation } from "@/lib/api";
+import { chatWithDisease, getSessionMessages, getHistoryEntry, EXPERT_REPLY_MARKER, type Citation } from "@/lib/api";
 import Citations from "@/components/Citations";
 import { formatDiseaseName, getCropName, getDiseaseName } from "@/lib/disease-labels";
 import { useAuth } from "@/lib/auth";
@@ -12,6 +12,7 @@ interface Message {
   role: "user" | "assistant";
   content: string;
   sources?: Citation[];
+  variant?: "expert";
 }
 
 const SEVERITY_COLORS: Record<string, string> = {
@@ -54,10 +55,16 @@ function ChatUI() {
         );
         if (realMsgs.length > 0) {
           setMessages(
-            realMsgs.flatMap((m) => [
-              { role: "user" as const,      content: m.question },
-              { role: "assistant" as const, content: m.answer   },
-            ])
+            realMsgs.flatMap((m): Message[] => {
+              // Expert replies are single, attribution-tagged bubbles — no user side.
+              if (m.question === EXPERT_REPLY_MARKER) {
+                return [{ role: "assistant", content: m.answer, variant: "expert" }];
+              }
+              return [
+                { role: "user",      content: m.question },
+                { role: "assistant", content: m.answer   },
+              ];
+            })
           );
         } else if (disease) {
           setMessages([{ role: "assistant", content: _welcomeMsg(disease) }]);
@@ -170,7 +177,22 @@ function ChatUI() {
 
               {!historyLoading && messages.map((msg, i) => (
                 <div key={i}>
-                  {msg.role === "assistant" && (
+                  {msg.role === "assistant" && msg.variant === "expert" && (
+                    <div className="flex gap-4 max-w-[85%]">
+                      <div className="w-8 h-8 rounded-full bg-[#166534] flex items-center justify-center text-white shrink-0 mt-1 shadow-sm">
+                        <span className="material-symbols-outlined text-sm">agriculture</span>
+                      </div>
+                      <div className="bg-[#dcfce3] border border-[#166534]/30 rounded-2xl rounded-tl-sm p-4 text-on-surface shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+                        <div className="flex items-center gap-1 mb-2 text-xs font-bold text-[#166534]">
+                          <span className="material-symbols-outlined text-[14px] icon-fill">verified</span>
+                          Phản hồi từ chuyên gia
+                        </div>
+                        <MessageContent content={msg.content} />
+                      </div>
+                    </div>
+                  )}
+
+                  {msg.role === "assistant" && msg.variant !== "expert" && (
                     <div className="flex gap-4 max-w-[85%]">
                       <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0 mt-1 shadow-sm">
                         <span className="material-symbols-outlined text-sm">smart_toy</span>

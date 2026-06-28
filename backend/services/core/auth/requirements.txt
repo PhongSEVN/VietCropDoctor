@@ -1,0 +1,28 @@
+# Database
+asyncpg>=0.29.0
+
+# Auth / crypto
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+bcrypt<4.0.0
+
+# Cache / token store
+redis[asyncio]>=5.0.0
+
+# API
+fastapi>=0.110.0
+uvicorn[standard]>=0.27.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+pydantic[email]>=2.0.0
+python-dotenv>=1.0.0
+
+# Observability
+prometheus-fastapi-instrumentator>=6.1.0
+
+# Storage
+minio>=7.0.0
+python-multipart>=0.0.9
+
+# Shared package
+-e ../shared

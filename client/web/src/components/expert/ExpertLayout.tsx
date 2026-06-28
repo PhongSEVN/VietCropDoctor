@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 
 import { useAuth } from "@/lib/auth";
 
-export type ExpertTab = "overview" | "queue" | "stats" | "experts";
+export type ExpertTab = "overview" | "queue" | "diagnoses" | "stats" | "experts";
 
 const NAV: { id: ExpertTab; label: string; icon: string }[] = [
   { id: "overview", label: "Tổng quan", icon: "dashboard" },
   { id: "queue", label: "Hàng đợi xử lý", icon: "inbox" },
+  { id: "diagnoses", label: "Tất cả ảnh", icon: "photo_library" },
   { id: "stats", label: "Thống kê", icon: "analytics" },
   { id: "experts", label: "Chuyên gia", icon: "groups" },
 ];

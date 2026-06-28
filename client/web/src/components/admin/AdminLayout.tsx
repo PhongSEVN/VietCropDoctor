@@ -11,6 +11,7 @@ export type AdminSection =
   | "analytics"
   | "trends"
   | "monitoring"
+  | "kafka"
   | "audit"
   | "notifications"
   | "reports";
@@ -31,6 +32,7 @@ const NAV: NavItem[] = [
   { id: "analytics", label: "Analytics", icon: "monitoring" },
   { id: "trends", label: "Xu hướng", icon: "trending_up" },
   { id: "monitoring", label: "Giám sát hệ thống", icon: "monitor_heart" },
+  { id: "kafka", label: "Kafka", icon: "swap_horiz" },
   { id: "audit", label: "Audit logs", icon: "history" },
   { id: "notifications", label: "Thông báo", icon: "campaign" },
   { id: "reports", label: "Báo cáo", icon: "summarize" },

@@ -20,6 +20,8 @@ import type {
   ConfidenceBucket,
   CreateUserDto,
   ExpertProfile,
+  GpuOverview,
+  KafkaOverview,
   ModelRun,
   NotificationDraft,
   RetrainResult,
@@ -193,26 +195,34 @@ export function removeExpert(id: string): Promise<{ ok: boolean }> {
 // Analytics / KPIs
 
 /**
- * TODO(backend): GET /api/admin/kpis → AdminKpis. Aggregates PostgreSQL (user counts)
- * + ClickHouse (DAU/WAU/MAU, feedback, images, ai analyses, expert responses).
+ * GET /api/admin/kpis (auth service, Postgres) → AdminKpis. The AI-analyses count
+ * lives in the ClickHouse OLAP store (analytics service), not Postgres, so it is
+ * filled here from /analytics/summary.total_count. Best-effort: a failing summary
+ * leaves the Postgres-derived KPIs intact.
  */
-export function getAdminKpis(): Promise<AdminKpis> {
-  return get<AdminKpis>("/api/admin/kpis");
+export async function getAdminKpis(): Promise<AdminKpis> {
+  const kpis = await get<AdminKpis>("/api/admin/kpis");
+  try {
+    const summary = await get<{ total_count: number }>("/analytics/summary");
+    return { ...kpis, total_ai_analyses: summary.total_count };
+  } catch {
+    return kpis;
+  }
 }
 
-/** TODO(backend): GET /api/admin/analytics/user-growth?days= → UserGrowthPoint[] (ClickHouse). */
+/** GET /api/admin/analytics/user-growth?days= → UserGrowthPoint[] (auth service, Postgres). */
 export function getUserGrowth(days = 30): Promise<UserGrowthPoint[]> {
   return get<UserGrowthPoint[]>(`/api/admin/analytics/user-growth?days=${days}`);
 }
 
-/** TODO(backend): GET /api/admin/analytics/confidence-distribution → ConfidenceBucket[]. */
+/** GET /analytics/confidence-distribution → ConfidenceBucket[] (analytics service, ClickHouse). */
 export function getConfidenceDistribution(): Promise<ConfidenceBucket[]> {
-  return get<ConfidenceBucket[]>("/api/admin/analytics/confidence-distribution");
+  return get<ConfidenceBucket[]>("/analytics/confidence-distribution");
 }
 
-/** TODO(backend): GET /api/admin/analytics/regions → RegionCount[] (needs region capture at upload). */
+/** GET /analytics/regions → RegionCount[] (analytics service). Empty until region is captured at upload. */
 export function getRegionDistribution(): Promise<RegionCount[]> {
-  return get<RegionCount[]>("/api/admin/analytics/regions");
+  return get<RegionCount[]>("/analytics/regions");
 }
 
 // Model / Retrain
@@ -230,6 +240,16 @@ export function reloadServingModel(): Promise<Record<string, unknown>> {
 /** Trigger the Airflow retrain DAG. POST /api/admin/retrain { model? }. */
 export function triggerRetrain(model?: string): Promise<RetrainResult> {
   return send<RetrainResult>("/api/admin/retrain", "POST", { model: model ?? null });
+}
+
+/** Kafka health (brokers, topics, consumer lag) from kafka_exporter. GET /api/admin/kafka. */
+export function getKafkaOverview(): Promise<KafkaOverview> {
+  return get<KafkaOverview>("/api/admin/kafka");
+}
+
+/** GPU stats (utilization, VRAM, temp, power) from nvidia_gpu_exporter. GET /api/admin/gpu. */
+export function getGpuOverview(): Promise<GpuOverview> {
+  return get<GpuOverview>("/api/admin/gpu");
 }
 
 // System monitoring
@@ -327,6 +347,32 @@ export function sendNotification(draft: NotificationDraft): Promise<{ sent: numb
  */
 export function reportDownloadUrl(type: ReportType, format: ReportFormat): string {
   return `${BASE_URL}/api/admin/reports/${type}?format=${format}`;
+}
+
+/**
+ * Download a report through an authenticated fetch (sends the Bearer token, which a
+ * plain <a>/window.open cannot) and saves the returned file. The backend streams CSV
+ * (UTF-8 BOM) for every format; Excel opens it natively.
+ */
+export async function downloadReport(type: ReportType, format: ReportFormat): Promise<void> {
+  const res = await fetch(reportDownloadUrl(type, format), { headers: authHeaders() });
+  if (!res.ok) {
+    let detail = `Tải báo cáo thất bại (${res.status})`;
+    if ((res.headers.get("content-type") ?? "").includes("application/json")) {
+      const err = (await res.json().catch(() => ({}))) as { detail?: string };
+      if (err.detail) detail = err.detail;
+    }
+    throw new Error(detail);
+  }
+  const blob = await res.blob();
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `${type}_report.csv`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
 }
 
 // CSV export (client-side, no backend needed)

@@ -13,6 +13,7 @@
 //                   users' feedback (the current GET /feedback is per-user only).
 
 import type {
+  DiagnosisItem,
   ExpertCase,
   ExpertCaseFilters,
   ExpertResponseInput,
@@ -88,6 +89,27 @@ export function getExpertQueue(limit = 200): Promise<ExpertCase[]> {
  */
 export function getExpertCase(id: string): Promise<ExpertCase> {
   return expertGet<ExpertCase>(`/api/expert/cases/${id}`);
+}
+
+// All diagnoses (incl. images with no user feedback)
+
+/**
+ * List every image diagnosis from chat history — including ones the user never
+ * gave feedback on. Backend: GET /api/expert/diagnoses?pending_only=&limit=
+ */
+export function getAllDiagnoses(pendingOnly = false, limit = 300): Promise<DiagnosisItem[]> {
+  return expertGet<DiagnosisItem[]>(
+    `/api/expert/diagnoses?pending_only=${pendingOnly}&limit=${limit}`,
+  );
+}
+
+/**
+ * Turn a feedback-less diagnosis into a reviewable case (idempotent). Returns the
+ * (existing or newly created) ExpertCase so the expert can respond / verify / retrain.
+ * Backend: POST /api/expert/diagnoses/{chat_id}/promote → ExpertCase.
+ */
+export function promoteDiagnosis(chatId: string): Promise<ExpertCase> {
+  return expertSend<ExpertCase>(`/api/expert/diagnoses/${chatId}/promote`, "POST", {});
 }
 
 // Mutations

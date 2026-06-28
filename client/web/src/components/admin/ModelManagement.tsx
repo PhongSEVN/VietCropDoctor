@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from "react";
 import { EmptyState, ErrorState, LoadingState } from "@/components/expert/states";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { AIRFLOW_URL, MLFLOW_URL } from "@/constants/domain";
 import { getModelRuns, logAudit, reloadServingModel, triggerRetrain } from "@/lib/admin-api";
 import type { ModelRun } from "@/types/admin";
 
@@ -73,6 +74,33 @@ export function ModelManagement() {
 
   return (
     <div className="space-y-5">
+      {/* Theo dõi tiến trình train — mở UI gốc ở tab mới */}
+      <Card className="border-outline-variant bg-surface-container-lowest">
+        <CardContent className="py-3 flex flex-wrap items-center gap-2">
+          <span className="text-sm text-on-surface-variant mr-1">Theo dõi tiến trình train:</span>
+          <a
+            href={`${AIRFLOW_URL}/dags/retrain_classifier/grid`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-outline-variant px-3 py-1.5 text-sm text-on-surface hover:bg-surface-container-high transition-colors"
+          >
+            <span className="material-symbols-outlined text-[18px] text-primary">account_tree</span>
+            Airflow — tiến trình 6 bước &amp; log
+            <span className="material-symbols-outlined text-[14px] text-on-surface-variant">open_in_new</span>
+          </a>
+          <a
+            href={MLFLOW_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-outline-variant px-3 py-1.5 text-sm text-on-surface hover:bg-surface-container-high transition-colors"
+          >
+            <span className="material-symbols-outlined text-[18px] text-primary">monitoring</span>
+            MLflow — metric &amp; so sánh run
+            <span className="material-symbols-outlined text-[14px] text-on-surface-variant">open_in_new</span>
+          </a>
+        </CardContent>
+      </Card>
+
       {/* Actions */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <Card className="border-outline-variant bg-surface-container-lowest">

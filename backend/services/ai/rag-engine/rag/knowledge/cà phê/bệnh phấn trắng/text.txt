@@ -1,0 +1,133 @@
+TÊN BỆNH: Bệnh phấn trắng trên cà phê
+LOẠI CÂY: Cà phê (chủ yếu Coffea arabica; ít phổ biến hơn trên Coffea robusta)
+CLASS ID: cafe_phan_trang
+
+TRIỆU CHỨNG:
+Bệnh phấn trắng là bệnh ngoại ký sinh, đặc trưng bởi lớp bột phấn
+trắng mịn bao phủ bề mặt lá và các bộ phận non của cây. Bệnh gây hại
+rõ rệt nhất trên cà phê Arabica trồng ở độ cao lớn (600–1500m) nơi
+biên độ nhiệt ngày đêm cao và có sương mù vào ban đêm.
+
+Trên lá non và chồi non: Đây là bộ phận bị hại nặng nhất. Lớp phấn
+trắng mịn như bột xuất hiện đầu tiên trên mặt trên của lá non và đầu
+chồi đang phát triển. Ban đầu là những mảng nhỏ li ti, sau lan rộng
+dần bao phủ toàn bộ bề mặt lá. Lá non bị biến dạng, xoăn lại, mép
+lá cong lên hoặc xuống, phiến lá nhăn nhúm. Chồi non bị bệnh nặng sẽ
+không phát triển được, teo lại và khô đen.
+
+Trên lá già: Lớp phấn trắng có thể xuất hiện nhưng ít nặng hơn. Mặt
+dưới lá tương ứng với vết bệnh bị mô lá hoại tử, chuyển vàng hoặc
+nâu. Lá bị bệnh nặng khô héo và rụng sớm.
+
+Trên hoa và quả non: Khi bệnh bùng phát vào giai đoạn ra hoa (tháng
+11–2 đối với Arabica tại Lâm Đồng), chùm hoa bị phủ bột trắng, hoa
+héo và rụng sớm trước khi đậu quả, ảnh hưởng trực tiếp đến năng suất
+vụ thu hoạch. Quả non cũng có thể bị nhiễm trong điều kiện bệnh nặng.
+
+Triệu chứng nặng: Khi bệnh phát triển mạnh, lớp phấn chuyển từ trắng
+sang vàng nhạt rồi nâu xám (giai đoạn tạo quả thể kín — cleistothecia
+màu đen). Cây bị bệnh liên tục sinh trưởng kém, ít chồi mới, cành
+thưa, năng suất giảm dần qua các vụ.
+
+⚠️ Lưu ý phân biệt: Bệnh phấn trắng (lớp phấn trắng khô, nổi trên bề
+mặt lá, dễ lau) khác với bệnh sương mai giả (lớp mốc xám ở mặt dưới
+lá, kết hợp đốm vàng mặt trên) và bệnh nấm hồng (lớp phấn màu hồng
+trên cành và cuống quả).
+
+NGUYÊN NHÂN:
+Tác nhân gây bệnh là nấm Oidium coffeae Noack (dạng vô tính — anamorph)
+thuộc bộ Erysiphales, lớp Ascomycota. Dạng hữu tính (teleomorph) được
+xác định là Erysiphe sp. [cần xác minh loài cụ thể tại Việt Nam]. Đây
+là nấm ký sinh chuyên tính ngoại ký sinh (ectoparasite): sợi nấm
+bám dày đặc trên bề mặt biểu bì lá và cành non, tạo các vòi hút
+(haustoria) đâm sâu vào tế bào biểu bì để hút chất dinh dưỡng mà
+không giết chết tế bào ngay lập tức. Bào tử phân sinh (conidium) hình
+trứng hoặc bầu dục, đơn bào, không màu, phát tán theo gió. Đây là đặc
+điểm khiến bệnh lây lan cực nhanh trong điều kiện có gió khô. Nấm tồn
+tại trên tàn dư cây bệnh ở dạng quả thể kín (cleistothecia) qua mùa
+khô.
+
+ĐIỀU KIỆN PHÁT SINH:
+— Nhiệt độ: Nấm phát triển tối ưu ở 20–24°C — điều kiện điển hình của
+vùng trồng cà phê Arabica tại cao nguyên Lâm Đồng (Đà Lạt, Cầu Đất,
+Di Linh). Đây là điểm khác biệt so với đa số bệnh cà phê khác ưa nhiệt
+độ cao hơn.
+— Ẩm độ và thời tiết: Bệnh cần ẩm độ không khí cao (>80%) nhưng đặc
+biệt là điều kiện sương mù ban đêm và ban sáng, biên độ nhiệt lớn
+ngày/đêm. Khác với hầu hết nấm bệnh cà phê, phấn trắng KHÔNG cần
+màng nước trên lá để bào tử nảy mầm — chỉ cần độ ẩm tương đối cao.
+— Mùa vụ: Bệnh phát sinh chủ yếu vào cuối mùa khô đầu mùa mưa (tháng
+3–5) và mùa ra hoa tháng 11–1; cũng bùng phát vào các đợt thời tiết
+chuyển giao.
+— Vườn cây: Vườn trồng dày, thiếu thông thoáng tạo điều kiện ẩm độ
+vi khí hậu thuận lợi. Cây thiếu kali và vi lượng dễ nhiễm bệnh hơn.
+— Giai đoạn sinh trưởng: Lá non, chồi non, hoa và quả non là giai đoạn
+mẫn cảm nhất. Cây trong vườn ươm và cây kiến thiết cơ bản dễ nhiễm
+nặng hơn.
+
+PHÒNG TRỊ:
+1. [Canh tác - Ưu tiên 1] Tỉa cành tạo tán thông thoáng; điều chỉnh
+cây che bóng hợp lý để tránh ẩm độ vi khí hậu quá cao trong tán cây.
+Không trồng quá dày.
+
+2. [Canh tác - Ưu tiên 2] Bón phân cân đối, tăng cường kali (K) để
+cứng cành lá, tránh bón thừa đạm làm lá non mềm yếu dễ nhiễm bệnh.
+Bổ sung vi lượng Zn, B định kỳ.
+
+3. [Canh tác - Ưu tiên 3] Thu gom và tiêu hủy các lá, chồi, cành bị
+bệnh; làm sạch tàn dư vườn sau thu hoạch để giảm nguồn bào tử tích
+lũy trên quả thể kín (cleistothecia) qua mùa khô.
+
+4. [Sinh học] Tăng cường chế phẩm vi sinh Trichoderma bón gốc để cải
+thiện hệ sinh thái đất và sức đề kháng tổng thể của cây trước các
+mầm bệnh nấm.
+
+5. [Hóa học] Phun thuốc ngay khi phát hiện bệnh chớm xuất hiện; phun
+ướt đều cả hai mặt lá. Phun phòng trước các đợt ra lộc non và trước
+mùa ra hoa. Phun 2–3 lần cách nhau 10–14 ngày.
+
+THUỐC KHUYẾN NGHỊ:
+1. Hoạt chất: Hexaconazole (nhóm Triazole — nội hấp phổ rộng)
+   Tên thương mại: Anvil 5SC, Vivil 5SC, Atulvil 5SC
+   Liều lượng: Anvil 5SC: 10–15 ml/bình 16 lít; phun ướt đều tán
+   Thời điểm: Phun phòng trước đợt ra lộc và trước mùa ra hoa; phun
+   trị khi phát hiện bệnh
+   Thời gian cách ly: 14 ngày [cần xác minh theo nhãn thuốc]
+
+2. Hoạt chất: Azoxystrobin (nhóm Strobilurin — nội hấp, lưu dẫn)
+   Tên thương mại: Amistar 250SC (Syngenta)
+   Liều lượng: 8–10 ml/bình 16 lít
+   Thời điểm: Phun trị khi bệnh xuất hiện hoặc phòng trước đợt lộc
+   Thời gian cách ly: 14 ngày
+
+3. Hoạt chất: Difenoconazole + Azoxystrobin (kết hợp)
+   Tên thương mại: Amistar Top 325SC (Syngenta)
+   Liều lượng: 10 ml/bình 16 lít
+   Thời điểm: Phun khi bệnh nặng, cần tác dụng kép phòng và trị
+   Thời gian cách ly: 14 ngày
+
+4. Hoạt chất: Sulfur (lưu huỳnh — tiếp xúc, hiệu quả với nấm
+   Erysiphales)
+   Tên thương mại: Kumulus 80DF, Map Super 300EC [cần xác minh
+   đăng ký trên cà phê]
+   Liều lượng: Kumulus 80DF: 30–40 g/bình 16 lít
+   Thời điểm: Phun phòng định kỳ; không phun khi nhiệt độ >35°C
+   (nguy cơ cháy lá)
+   Thời gian cách ly: 7 ngày [cần xác minh]
+
+5. Hoạt chất: Tebuconazole (nhóm Triazole)
+   Tên thương mại: Folicur 250EW (Bayer), Tilt 250EC
+   Liều lượng: 10 ml/bình 16 lít
+   Thời điểm: Luân phiên với Strobilurin để tránh kháng thuốc
+   Thời gian cách ly: 14 ngày [cần xác minh]
+
+NGUỒN:
+— BMC Group (bmcgroup.com.vn) — Bệnh phấn trắng: nguyên nhân, triệu chứng,
+  cách phòng trừ
+— Cẩm nang cây trồng (camnangcaytrong.com) — Phấn trắng Erysiphe sp.
+— Sinh Học AQ (nguyenlieusinhhoc.com) — Thuốc trị nấm cà phê (phấn trắng
+  được liệt kê là một trong các loại nấm hại cà phê)
+— Hoa Cúc Xanh (hoacucxanh.com) — Bệnh phấn trắng trên cây trồng
+— Cẩm nang chẩn đoán bệnh cây ở Việt Nam, Burgess et al. 2008
+  (coa.ctu.edu.vn)
+— [cần xác minh] Tài liệu kỹ thuật canh tác cà phê Arabica Lâm Đồng/WASI

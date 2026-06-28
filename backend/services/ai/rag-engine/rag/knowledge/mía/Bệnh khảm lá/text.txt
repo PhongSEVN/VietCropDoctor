@@ -1,0 +1,145 @@
+TÊN BỆNH: Bệnh khảm lá mía (mosaic disease, viral disease)
+LOẠI CÂY: Mía (Saccharum officinarum)
+CLASS ID: sugarcane_Viral_Disease
+
+⚠️ LƯU Ý: Trong dataset quốc tế, class "sugarcane_Viral_Disease" thường
+chỉ bệnh khảm lá mía do SCMV — bệnh virus phổ biến và quan trọng nhất
+trên mía. Không phải bệnh chồi cỏ (phytoplasma) hay trắng lá (phytoplasma).
+
+TRIỆU CHỨNG:
+Bệnh khảm lá mía là bệnh virus phổ biến nhất trên mía toàn thế giới
+và tại Việt Nam, gây thiệt hại tại các vùng trồng mía tập trung (Tây
+Ninh, Nghệ An, Thanh Hóa, Bình Dương, Đồng Nai).
+
+Triệu chứng đặc trưng trên lá — KHẢM MÀU:
+Triệu chứng điển hình và dễ nhận nhất là các mảng màu loang lổ xen
+kẽ bất quy tắc trên phiến lá, không tuân theo gân lá:
+— Các vân màu xanh lục đậm, xanh nhạt và vàng nhạt xen kẽ nhau, dài
+  ngắn không đều, tạo thành hoa văn khảm đặc trưng
+— Vân màu xanh đậm tương ứng với mô lá còn diệp lục; vân vàng nhạt
+  tương ứng với mô lá mất diệp lục cục bộ
+— Triệu chứng rõ nhất trên lá non và lá bánh tẻ mới ra
+
+⚠️ Phân biệt với thiếu dinh dưỡng:
+Thiếu kẽm (Zn), Mn → vàng giữa gân lá đều đặn theo quy luật; khảm
+virus → loang lổ bất quy tắc, không theo gân lá.
+
+Triệu chứng theo mức độ nhiễm:
+— Nhiễm nhẹ: Lá chỉ có vài vân vàng nhạt khi còn nhỏ; sau đó có thể
+  "hồi phục" bề ngoài khi thời tiết nóng. Bệnh vẫn tiềm ẩn trong cây.
+— Nhiễm trung bình: Hoa văn khảm xanh-vàng rõ trên nhiều lá; cây sinh
+  trưởng chậm, lóng hơi ngắn.
+— Nhiễm nặng: Toàn bộ lá có vân khảm rõ; lá chuyển vàng toàn bộ; xuất
+  hiện vệt đỏ hoặc vết hoại tử dọc theo phiến lá ở giai đoạn cây già;
+  thân có thể có điểm lốm đốm màu. Cây còi cọc nghiêm trọng, lóng ngắn,
+  hàm lượng sucrose giảm mạnh, năng suất giảm 20–50%.
+
+Triệu chứng đặc biệt ở giai đoạn cây già (nhiễm sớm):
+Ở những cây nhiễm bệnh từ nhỏ và đến giai đoạn gần trưởng thành, có
+thể xuất hiện các vệt đỏ một phần hoặc hoại tử dọc phiến lá, trông
+khác biệt hẳn so với khảm vàng-xanh thông thường.
+
+NGUYÊN NHÂN:
+Tác nhân chính là Sugarcane Mosaic Virus (SCMV) — thuộc chi Potyvirus,
+họ Potyviridae. Ngoài ra có thể do Sorghum mosaic virus (SrMV) và Maize
+dwarf mosaic virus (MDMV) gây ra triệu chứng tương tự nhưng ít phổ
+biến hơn tại Việt Nam. SCMV có 4 loại huyết thanh và nhiều chủng, có
+phổ ký chủ rộng trong họ Poaceae: mía, ngô, lúa miến, cỏ Johnson...
+
+Cơ chế truyền bệnh — KHÔNG LIÊN TỤC (non-persistent):
+Đây là đặc điểm quan trọng nhất để hiểu cơ chế lây lan và chiến lược
+phòng trừ. Rệp (aphid) thu nhận virus chỉ sau 30–60 giây chích hút
+cây bệnh; truyền sang cây khỏe trong 30–60 giây chích hút tiếp theo;
+rệp MẤT khả năng truyền virus sau 30–60 phút. Vì truyền rất nhanh và
+không cần thời gian ủ bệnh dài trong rệp, thuốc trừ rệp không thực
+sự hiệu quả để ngăn chặn lây lan (rệp kịp truyền bệnh trước khi chết).
+
+Môi giới truyền bệnh — rệp (aphids):
+— Rhopalosiphum maydis (rệp ngô/rệp cờ ngô): môi giới chính, hiệu
+  quả truyền bệnh cao nhất tại Việt Nam
+— Rhopalosiphum padi (rệp lúa mì)
+— Longiunguis sacchari (rệp mía)
+— Toxoptera graminum (rệp ngũ cốc)
+— Hysteroneura setariae
+
+Con đường lây truyền khác:
+— Hom giống nhiễm bệnh: nguồn bệnh quan trọng nhất phát tán sang vùng
+  mới; virus tồn tại trong mô cây giống
+— CÚP lưỡi cắt, dao chặt: lây cơ học qua nhựa cây (ít phổ biến hơn)
+— KHÔNG lây qua đất; KHÔNG lây qua hạt giống (mía không trồng từ hạt
+  thương mại)
+
+ĐIỀU KIỆN PHÁT SINH:
+— Môi giới rệp: Mùa khô nóng tạo điều kiện rệp phát triển nhanh và
+  di chuyển nhiều — paradoxically bệnh khảm LAN NHANH HƠN vào mùa
+  khô do rệp nhiều và di chuyển mạnh; ẩm độ thấp → rệp có cánh nhiều
+  → phát tán xa hơn.
+— Ký chủ phụ: Cỏ Johnson (Sorghum halepense), ngô, lúa miến và các
+  cỏ dại họ Poaceae gần ruộng là nguồn bệnh và nơi trú ngụ của rệp.
+— Hom giống: Sử dụng hom giống lấy từ ruộng không kiểm tra bệnh là
+  nguyên nhân phát tán bệnh sang vùng mới chính.
+— Mùa vụ: Tại Việt Nam bệnh phát sinh quanh năm; thường nặng hơn đầu
+  và giữa vụ khi cây đang ra lá non nhiều.
+
+PHÒNG TRỊ:
+⚠️ KHÔNG CÓ THUỐC ĐẶC TRỊ VIRUS. Phun thuốc trừ rệp KHÔNG HIỆU QUẢ
+ngăn chặn lây lan (do truyền không liên tục quá nhanh). Chiến lược
+hoàn toàn dựa vào phòng ngừa.
+
+1. [Giống - Ưu tiên 1 — QUAN TRỌNG NHẤT] Sử dụng hom giống sạch bệnh
+  có nguồn gốc rõ ràng, được kiểm tra virus bằng ELISA hoặc trực quan.
+  Chọn giống kháng SCMV: nhiều giống mía lai hiện đại có tính kháng
+  tốt hơn giống cũ — tham khảo Viện Nghiên cứu Mía đường và đơn vị
+  thu mua nguyên liệu địa phương.
+
+2. [Xử lý hom giống] Xử lý hom giống trong nước nóng 52°C/30 phút
+  hoặc 50°C/2 giờ để bất hoạt virus trong mô hom trước khi trồng.
+
+3. [Canh tác - Ưu tiên cao] Nhổ bỏ và tiêu hủy NGAY các cây có triệu
+  chứng khảm — đừng để lại làm nguồn bệnh. Diệt cỏ dại ký chủ phụ
+  (cỏ Johnson, ngô hoang) xung quanh ruộng. Không trồng mía cạnh
+  ruộng ngô hoặc lúa miến.
+
+4. [Canh tác] Không lấy hom giống từ ruộng không rõ nguồn gốc hoặc
+  có cây nghi ngờ bệnh. Khử trùng dao cắt hom bằng cồn 70° hoặc
+  thuốc tẩy giữa các lần cắt.
+
+5. [Kiểm soát rệp — phòng gián tiếp] Dù phun thuốc không ngăn được
+  lây lan virus, kiểm soát rệp giúp giảm áp lực mầm bệnh tổng thể.
+  Ưu tiên biện pháp sinh học: bảo vệ thiên địch rệp (bọ rùa, ong ký
+  sinh Aphidius sp., nấm Beauveria bassiana, nấm Metarhizium).
+
+THUỐC KHUYẾN NGHỊ (trừ RỆP môi giới, không trị virus):
+1. Hoạt chất: Imidacloprid (Neonicotinoid — nội hấp phổ rộng trừ rệp)
+   Tên thương mại: Confidor 100SL, Admire 200OD
+   Liều lượng: 10 ml/bình 16 lít; hoặc xử lý hom/gốc mía đầu vụ
+   Thời điểm: Phun khi phát hiện rệp mật số cao trên ruộng; xử lý
+   phòng ngừa đầu vụ
+   Thời gian cách ly: 21 ngày
+   Lưu ý: Phun thuốc trừ rệp không ngăn được lây lan SCMV do truyền
+   không liên tục; chỉ có giá trị giảm mật số rệp tổng thể
+
+2. Hoạt chất: Thiamethoxam (Neonicotinoid thế hệ 2)
+   Tên thương mại: Actara 25WG
+   Liều lượng: 3–5 g/bình 16 lít
+   Thời điểm: Phun phòng khi rệp bắt đầu xuất hiện giai đoạn mía non
+
+3. Hoạt chất: Dầu khoáng (mineral oil — vật lý, bảo vệ bề mặt lá)
+   Tên thương mại: SK99EC, DC-Tron Plus
+   Liều lượng: 0,25–0,5%
+   Thời điểm: Phun đều lên lá tạo màng dầu ngăn rệp hạ cánh và chích
+   — giảm hiệu quả truyền bệnh không liên tục
+   Lưu ý: Dầu khoáng có cơ chế vật lý ngăn rệp tiếp xúc lá → ít nhiều
+   giảm tốc độ lây lan virus, an toàn môi trường
+
+NGUỒN:
+— ECOMCO (ecomco.vn) — Bệnh khảm lá mía SCMV: cơ chế truyền không
+  liên tục, phân biệt thiếu dinh dưỡng, quy trình giống sạch bệnh
+— Nông nghiệp Nghĩa Anh (nongnghiepnghianh.vn) — Triệu chứng theo
+  giai đoạn, 5 loài rệp vectơ SCMV/SrMV
+— Sinh học AQ (nguyenlieusinhhoc.com) — 8 bệnh mía Việt Nam
+— Khuyến nông Bà Rịa-Vũng Tàu (knkn.baria-vungtau.gov.vn) — IPM
+  bệnh khảm mía
+— Luận án tiến sĩ Vũ Triệu Mân et al. (123docz.net) — SCMV tại Việt
+  Nam, rệp Rhopalosiphum maydis, kit ELISA phát hiện bệnh
+— Cẩm nang chẩn đoán bệnh cây Việt Nam, Burgess et al. 2008

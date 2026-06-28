@@ -2,10 +2,17 @@
   "__inputs": [],
   "__elements": {},
   "__requires": [
-    { "type": "datasource", "id": "prometheus", "name": "Prometheus", "version": "1.0.0" }
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    }
   ],
-  "annotations": { "list": [] },
-  "description": "CPU, RAM, Kafka consumer lag across all VietCropDoctor services",
+  "annotations": {
+    "list": []
+  },
+  "description": "CPU, RAM, GPU, Kafka consumer lag across all VietCropDoctor services",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
@@ -13,16 +20,31 @@
   "links": [],
   "panels": [
     {
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
       "fieldConfig": {
-        "defaults": { "unit": "percentunit", "min": 0, "max": 1 },
+        "defaults": {
+          "unit": "percentunit",
+          "min": 0,
+          "max": 1
+        },
         "overrides": []
       },
-      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
       "id": 1,
       "targets": [
         {
-          "datasource": { "type": "prometheus", "uid": "prometheus" },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
           "expr": "rate(process_cpu_seconds_total[1m])",
           "legendFormat": "{{ job }}"
         }
@@ -31,16 +53,29 @@
       "type": "timeseries"
     },
     {
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
       "fieldConfig": {
-        "defaults": { "unit": "bytes" },
+        "defaults": {
+          "unit": "bytes"
+        },
         "overrides": []
       },
-      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
       "id": 2,
       "targets": [
         {
-          "datasource": { "type": "prometheus", "uid": "prometheus" },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
           "expr": "process_resident_memory_bytes",
           "legendFormat": "{{ job }}"
         }
@@ -49,46 +84,187 @@
       "type": "timeseries"
     },
     {
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "description": "Consumer-group lag per topic (messages behind). From kafka_exporter.",
       "fieldConfig": {
-        "defaults": { "unit": "short" },
+        "defaults": {
+          "unit": "short",
+          "min": 0
+        },
         "overrides": []
       },
-      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 8 },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 8
+      },
       "id": 3,
       "targets": [
         {
-          "datasource": { "type": "prometheus", "uid": "prometheus" },
-          "expr": "kafka_consumer_lag",
-          "legendFormat": "{{ topic }} / {{ group }}"
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "sum(kafka_consumergroup_lag) by (consumergroup, topic)",
+          "legendFormat": "{{ consumergroup }} · {{ topic }}"
         }
       ],
       "title": "Kafka Consumer Lag",
       "type": "timeseries"
     },
     {
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
       "fieldConfig": {
-        "defaults": { "unit": "short", "mappings": [{"type": "value", "options": {"0": {"text": "DOWN", "color": "red"}, "1": {"text": "UP", "color": "green"}}}] },
+        "defaults": {
+          "unit": "short",
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red"
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green"
+                }
+              }
+            }
+          ]
+        },
         "overrides": []
       },
-      "gridPos": { "h": 4, "w": 24, "x": 0, "y": 16 },
+      "gridPos": {
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 16
+      },
       "id": 4,
       "targets": [
         {
-          "datasource": { "type": "prometheus", "uid": "prometheus" },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
           "expr": "up{job=~\"vision-ai|rag-engine|analytics|auth|orchestrator\"}",
           "legendFormat": "{{ job }}"
         }
       ],
       "title": "Service Health",
       "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "description": "GPU compute utilization (nvidia-smi). Requires gpu-exporter.",
+      "fieldConfig": {
+        "defaults": { "unit": "percent", "min": 0, "max": 100 },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 20 },
+      "id": 5,
+      "targets": [
+        {
+          "datasource": { "type": "prometheus", "uid": "prometheus" },
+          "expr": "nvidia_smi_utilization_gpu_ratio * 100",
+          "legendFormat": "GPU util %"
+        }
+      ],
+      "title": "GPU Utilization",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "description": "GPU memory (VRAM) used vs total.",
+      "fieldConfig": {
+        "defaults": { "unit": "bytes", "min": 0 },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 20 },
+      "id": 6,
+      "targets": [
+        {
+          "datasource": { "type": "prometheus", "uid": "prometheus" },
+          "expr": "nvidia_smi_memory_used_bytes",
+          "legendFormat": "VRAM đã dùng"
+        },
+        {
+          "datasource": { "type": "prometheus", "uid": "prometheus" },
+          "expr": "nvidia_smi_memory_total_bytes",
+          "legendFormat": "VRAM tổng"
+        }
+      ],
+      "title": "GPU Memory",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "celsius",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "value": null, "color": "green" },
+              { "value": 70, "color": "yellow" },
+              { "value": 85, "color": "red" }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 4, "w": 12, "x": 0, "y": 28 },
+      "id": 7,
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"] }, "colorMode": "value", "graphMode": "area" },
+      "targets": [
+        {
+          "datasource": { "type": "prometheus", "uid": "prometheus" },
+          "expr": "nvidia_smi_temperature_gpu",
+          "legendFormat": "Nhiệt độ"
+        }
+      ],
+      "title": "GPU Temperature",
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "fieldConfig": {
+        "defaults": { "unit": "watt" },
+        "overrides": []
+      },
+      "gridPos": { "h": 4, "w": 12, "x": 12, "y": 28 },
+      "id": 8,
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"] }, "colorMode": "value", "graphMode": "area" },
+      "targets": [
+        {
+          "datasource": { "type": "prometheus", "uid": "prometheus" },
+          "expr": "nvidia_smi_power_draw_watts",
+          "legendFormat": "Công suất"
+        }
+      ],
+      "title": "GPU Power Draw",
+      "type": "stat"
     }
   ],
   "refresh": "30s",
   "schemaVersion": 38,
-  "tags": ["system", "infra", "kafka"],
-  "time": { "from": "now-1h", "to": "now" },
+  "tags": [
+    "system",
+    "infra",
+    "kafka"
+  ],
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
   "timepicker": {},
   "timezone": "Asia/Ho_Chi_Minh",
   "title": "System",

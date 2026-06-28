@@ -8,6 +8,8 @@ import { ModelManagement } from "@/components/admin/ModelManagement";
 import { AdminAnalytics } from "@/components/admin/AdminAnalytics";
 import { TrendAnalysis } from "@/components/admin/TrendAnalysis";
 import { SystemMonitoring } from "@/components/admin/SystemMonitoring";
+import { GrafanaPanels } from "@/components/admin/GrafanaPanels";
+import { KafkaMonitoring } from "@/components/admin/KafkaMonitoring";
 import { AuditLogs } from "@/components/admin/AuditLogs";
 import { NotificationCenter } from "@/components/admin/NotificationCenter";
 import { Reports } from "@/components/admin/Reports";
@@ -22,6 +24,7 @@ const SECTION_META: Record<AdminSection, { title: string; subtitle: string }> = 
   analytics:     { title: "Analytics", subtitle: "Phân tích dữ liệu từ ClickHouse" },
   trends:        { title: "Phân tích xu hướng", subtitle: "Cây trồng, bệnh, khu vực, dự báo" },
   monitoring:    { title: "Giám sát hệ thống", subtitle: "Trạng thái dịch vụ và tài nguyên" },
+  kafka:         { title: "Kafka", subtitle: "Broker, topic, consumer group & lag" },
   audit:         { title: "Audit logs", subtitle: "Mọi thao tác quản trị được ghi vết" },
   notifications: { title: "Trung tâm thông báo", subtitle: "Gửi thông báo toàn hệ thống/nhóm" },
   reports:       { title: "Báo cáo", subtitle: "Export CSV / Excel / PDF" },
@@ -47,7 +50,13 @@ export default function AdminDashboardPage() {
         {section === "models" && <ModelManagement />}
         {section === "analytics" && <AdminAnalytics />}
         {section === "trends" && <TrendAnalysis />}
-        {section === "monitoring" && <SystemMonitoring />}
+        {section === "monitoring" && (
+          <div className="space-y-5">
+            <SystemMonitoring />
+            <GrafanaPanels />
+          </div>
+        )}
+        {section === "kafka" && <KafkaMonitoring />}
         {section === "audit" && <AuditLogs />}
         {section === "notifications" && <NotificationCenter />}
         {section === "reports" && <Reports />}

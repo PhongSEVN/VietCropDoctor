@@ -1,0 +1,11 @@
+[core]
+    remote = local_storage
+
+[remote "local_storage"]
+    url = /data/dvc-storage
+
+# ── S3 remote (uncomment and configure to use cloud storage) ──────────────────
+# [remote "s3"]
+#     url = s3://vietcropdoctor-datasets/dvc
+#     endpointurl = https://s3.amazonaws.com   # change for MinIO/other endpoints
+#     profile = default                        # AWS CLI profile
