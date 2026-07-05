@@ -23,3 +23,11 @@ chunks_retrieved = Histogram(
     "Number of chunks returned per query after reranking",
     buckets=[1, 2, 3, 5, 8],
 )
+
+# Pre-register label children so the series exist (as 0) from process start.
+# Without this, labelled metrics only appear after the first request, and
+# Grafana panels show "No data" instead of a flat zero after every restart.
+for _stage in ("embed", "retrieve", "rerank", "llm"):
+    rag_latency.labels(stage=_stage)
+for _crop in ("lua", "cafe", "mia", "ngo", "all"):
+    rag_queries_total.labels(crop=_crop)

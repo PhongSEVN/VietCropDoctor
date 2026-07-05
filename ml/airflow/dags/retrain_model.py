@@ -91,8 +91,6 @@ def _get_latest_run_id(client, model_name: str) -> str | None:
 
 def check_data_drift(**context) -> None:
     """Compare last-week confidence vs baseline; skip if no drift detected."""
-    import clickhouse_connect
-
     if not _BASELINE_PATH.exists():
         logger.warning("Baseline not found — proceeding with retraining")
         return
@@ -100,6 +98,11 @@ def check_data_drift(**context) -> None:
     baseline_conf = float(json.loads(_BASELINE_PATH.read_text()).get("avg_confidence", 1.0))
 
     try:
+        # Import inside the guard: a missing client library degrades to
+        # "proceed with retraining" (same as an unreachable ClickHouse)
+        # instead of failing the whole DAG at its first task.
+        import clickhouse_connect
+
         client = clickhouse_connect.get_client(
             host=_CLICKHOUSE_HOST, port=_CLICKHOUSE_PORT,
             database=_CLICKHOUSE_DB, username=_CLICKHOUSE_USER, password=_CLICKHOUSE_PASS,

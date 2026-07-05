@@ -2,10 +2,10 @@
   "__inputs": [],
   "__elements": {},
   "__requires": [
-    { "type": "datasource", "id": "prometheus", "name": "Prometheus", "version": "1.0.0" }
+    { "type": "datasource", "id": "grafana-clickhouse-datasource", "name": "ClickHouse", "version": "4.0.0" }
   ],
   "annotations": { "list": [] },
-  "description": "Business metrics: số chẩn đoán, bệnh phổ biến, người dùng hoạt động",
+  "description": "Business metrics từ ClickHouse (OLAP): số chẩn đoán, bệnh phổ biến, phân bố theo cây trồng. Dữ liệu tích lũy bền vững qua restart — khác Prometheus counter.",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
@@ -13,45 +13,73 @@
   "links": [],
   "panels": [
     {
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "datasource": { "type": "grafana-clickhouse-datasource", "uid": "clickhouse" },
       "fieldConfig": {
         "defaults": { "unit": "short" },
         "overrides": []
       },
       "gridPos": { "h": 4, "w": 6, "x": 0, "y": 0 },
       "id": 1,
-      "options": { "reduceOptions": { "calcs": ["lastNotNull"] }, "orientation": "auto", "textMode": "auto", "colorMode": "value", "graphMode": "area" },
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"] }, "orientation": "auto", "textMode": "auto", "colorMode": "value", "graphMode": "none" },
       "targets": [
         {
-          "datasource": { "type": "prometheus", "uid": "prometheus" },
-          "expr": "sum(predictions_total)",
-          "legendFormat": "Tổng chẩn đoán"
+          "datasource": { "type": "grafana-clickhouse-datasource", "uid": "clickhouse" },
+          "editorType": "sql",
+          "format": 1,
+          "queryType": "table",
+          "rawSql": "SELECT toUInt64(count()) AS \"Tổng chẩn đoán\" FROM predictions",
+          "refId": "A"
         }
       ],
       "title": "Số chẩn đoán (tổng tích lũy)",
       "type": "stat"
     },
     {
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "datasource": { "type": "grafana-clickhouse-datasource", "uid": "clickhouse" },
       "fieldConfig": {
         "defaults": { "unit": "short" },
         "overrides": []
       },
       "gridPos": { "h": 4, "w": 6, "x": 6, "y": 0 },
       "id": 2,
-      "options": { "reduceOptions": { "calcs": ["lastNotNull"] }, "orientation": "auto", "textMode": "auto", "colorMode": "value", "graphMode": "area" },
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"] }, "orientation": "auto", "textMode": "auto", "colorMode": "value", "graphMode": "none" },
       "targets": [
         {
-          "datasource": { "type": "prometheus", "uid": "prometheus" },
-          "expr": "sum(rag_queries_total)",
-          "legendFormat": "Tổng câu hỏi RAG"
+          "datasource": { "type": "grafana-clickhouse-datasource", "uid": "clickhouse" },
+          "editorType": "sql",
+          "format": 1,
+          "queryType": "table",
+          "rawSql": "SELECT toUInt64(count()) AS \"Tổng câu hỏi RAG\" FROM chat_events",
+          "refId": "A"
         }
       ],
       "title": "Câu hỏi RAG (tổng tích lũy)",
       "type": "stat"
     },
     {
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "datasource": { "type": "grafana-clickhouse-datasource", "uid": "clickhouse" },
+      "fieldConfig": {
+        "defaults": { "unit": "short" },
+        "overrides": []
+      },
+      "gridPos": { "h": 4, "w": 6, "x": 12, "y": 0 },
+      "id": 5,
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"] }, "orientation": "auto", "textMode": "auto", "colorMode": "value", "graphMode": "none" },
+      "targets": [
+        {
+          "datasource": { "type": "grafana-clickhouse-datasource", "uid": "clickhouse" },
+          "editorType": "sql",
+          "format": 1,
+          "queryType": "table",
+          "rawSql": "SELECT round(avg(confidence) * 100, 1) AS \"Confidence TB (%)\" FROM predictions WHERE $__timeFilter(timestamp)",
+          "refId": "A"
+        }
+      ],
+      "title": "Confidence trung bình (theo khoảng)",
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "grafana-clickhouse-datasource", "uid": "clickhouse" },
       "fieldConfig": {
         "defaults": { "unit": "short" },
         "overrides": []
@@ -60,40 +88,46 @@
       "id": 3,
       "targets": [
         {
-          "datasource": { "type": "prometheus", "uid": "prometheus" },
-          "expr": "topk(10, round(sum by (disease) (increase(predictions_total[7d]))))",
-          "legendFormat": "{{ disease }}"
+          "datasource": { "type": "grafana-clickhouse-datasource", "uid": "clickhouse" },
+          "editorType": "sql",
+          "format": 1,
+          "queryType": "table",
+          "rawSql": "SELECT disease, toUInt64(count()) AS \"Số ca\" FROM predictions WHERE $__timeFilter(timestamp) GROUP BY disease ORDER BY count() DESC LIMIT 10",
+          "refId": "A"
         }
       ],
-      "title": "Top 10 bệnh phổ biến (7 ngày)",
+      "title": "Top 10 bệnh phổ biến (theo khoảng thời gian)",
       "type": "piechart"
     },
     {
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "datasource": { "type": "grafana-clickhouse-datasource", "uid": "clickhouse" },
       "fieldConfig": {
-        "defaults": { "unit": "short" },
+        "defaults": { "unit": "short", "custom": { "drawStyle": "bars", "fillOpacity": 60, "stacking": { "mode": "normal" } } },
         "overrides": []
       },
       "gridPos": { "h": 8, "w": 12, "x": 12, "y": 4 },
       "id": 4,
       "targets": [
         {
-          "datasource": { "type": "prometheus", "uid": "prometheus" },
-          "expr": "sum(predictions_total) by (crop_type)",
-          "legendFormat": "{{ crop_type }}"
+          "datasource": { "type": "grafana-clickhouse-datasource", "uid": "clickhouse" },
+          "editorType": "sql",
+          "format": 0,
+          "queryType": "timeseries",
+          "rawSql": "SELECT toStartOfDay(timestamp) AS time, crop, toUInt64(count()) AS \"Số chẩn đoán\" FROM predictions WHERE $__timeFilter(timestamp) GROUP BY time, crop ORDER BY time",
+          "refId": "A"
         }
       ],
-      "title": "Tỷ lệ chẩn đoán theo cây trồng",
+      "title": "Chẩn đoán theo ngày (phân theo cây trồng)",
       "type": "timeseries"
     }
   ],
   "refresh": "5m",
   "schemaVersion": 38,
   "tags": ["business", "kpi"],
-  "time": { "from": "now-24h", "to": "now" },
+  "time": { "from": "now-30d", "to": "now" },
   "timepicker": {},
   "timezone": "Asia/Ho_Chi_Minh",
   "title": "Business",
   "uid": "business",
-  "version": 1
+  "version": 2
 }

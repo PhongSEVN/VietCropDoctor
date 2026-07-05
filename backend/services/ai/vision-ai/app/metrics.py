@@ -28,3 +28,10 @@ model_confidence = Gauge(
     "Confidence of the most recent prediction for each disease class",
     ["disease"],
 )
+
+# Pre-register ensemble model series so the per-model rate panel shows a flat 0
+# after a restart instead of "No data" (labelled children only exist after the
+# first .labels() call). model_confidence is intentionally NOT primed: a fake 0
+# would drag down avg(model_confidence_last) in dashboards.
+for _model in ("efficientnet", "mobilenetv3", "resnet50", "yolo", "vit"):
+    ensemble_predictions_total.labels(model=_model)

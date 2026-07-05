@@ -141,7 +141,6 @@ temp/
 
 # temp
 
-architecture/mo_ta_service_vietcrop.docx
 backend/services/ai/rag-engine/qdrant_storage
 
 backend/services/ai/vision-ai/cv/results
@@ -150,15 +149,13 @@ ml/rag/RAG Eval/rag_eval_explanation.md
 ml/rag/RAGAS/ragas-faithfulness/data/bm25_index.pkl
 ml/rag/RAGAS/ragas-full/data/bm25_index.pkl
 *results
-ml/training/classification/EXPERIMENT_LOG.md
 note
 project template
 report template
 Report.docx
-*.md
 2 Phiếu theo dõi HPTN GVHD.docx
 260624_Phong_Report.docx
-report.pdf
-Report.docx
+Report.pdf
+24_NguyenVanPhong_BaoCao.docx
+Slide.pptx
 /image
-/testCPUGPU

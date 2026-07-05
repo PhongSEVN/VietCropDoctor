@@ -17,6 +17,7 @@ const RANGES = [
   { value: "now-6h", label: "6 giờ" },
   { value: "now-24h", label: "24 giờ" },
   { value: "now-7d", label: "7 ngày" },
+  { value: "now-30d", label: "30 ngày" },
 ] as const;
 
 type DashboardUid = (typeof DASHBOARDS)[number]["uid"];

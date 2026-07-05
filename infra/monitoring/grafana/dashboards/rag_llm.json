@@ -23,12 +23,12 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "prometheus" },
-          "expr": "histogram_quantile(0.95, sum(rate(rag_latency_seconds_bucket{stage=\"retrieve\"}[5m])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(rag_latency_seconds_bucket{stage=\"retrieve\"}[$__rate_interval])) by (le))",
           "legendFormat": "Qdrant P95"
         },
         {
           "datasource": { "type": "prometheus", "uid": "prometheus" },
-          "expr": "histogram_quantile(0.50, sum(rate(rag_latency_seconds_bucket{stage=\"retrieve\"}[5m])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(rag_latency_seconds_bucket{stage=\"retrieve\"}[$__rate_interval])) by (le))",
           "legendFormat": "Qdrant P50"
         }
       ],
@@ -46,12 +46,12 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "prometheus" },
-          "expr": "histogram_quantile(0.95, sum(rate(rag_latency_seconds_bucket{stage=\"llm\"}[5m])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(rag_latency_seconds_bucket{stage=\"llm\"}[$__rate_interval])) by (le))",
           "legendFormat": "Ollama P95"
         },
         {
           "datasource": { "type": "prometheus", "uid": "prometheus" },
-          "expr": "histogram_quantile(0.50, sum(rate(rag_latency_seconds_bucket{stage=\"llm\"}[5m])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(rag_latency_seconds_bucket{stage=\"llm\"}[$__rate_interval])) by (le))",
           "legendFormat": "Ollama P50"
         }
       ],
@@ -69,11 +69,11 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "prometheus" },
-          "expr": "sum(rate(rag_queries_total[5m])) by (search_type)",
-          "legendFormat": "{{ search_type }}"
+          "expr": "sum(rate(rag_queries_total[$__rate_interval])) by (crop)",
+          "legendFormat": "{{ crop }}"
         }
       ],
-      "title": "RAG Query Rate (dense vs hybrid BM25)",
+      "title": "RAG Query Rate (theo cây trồng)",
       "type": "timeseries"
     },
     {
@@ -87,7 +87,7 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "prometheus" },
-          "expr": "sum(rate(chunks_retrieved_sum[5m])) / sum(rate(chunks_retrieved_count[5m]))",
+          "expr": "sum(rate(chunks_retrieved_sum[$__rate_interval])) / sum(rate(chunks_retrieved_count[$__rate_interval]))",
           "legendFormat": "Avg docs retrieved"
         }
       ],

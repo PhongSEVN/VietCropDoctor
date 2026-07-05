@@ -375,6 +375,11 @@ async def kpis(admin: dict = Depends(require_admin), pool: asyncpg.Pool = Depend
     total_feedback = await pool.fetchval("SELECT count(*) FROM feedback")
     total_images = await pool.fetchval("SELECT count(*) FROM feedback WHERE image_url IS NOT NULL")
     total_expert_responses = await pool.fetchval("SELECT count(*) FROM expert_responses")
+    # Every RAG/LLM answer turn is an AI inference event; expert-reply rows are
+    # injected (not AI) and excluded. Diagnoses (with image) are counted too.
+    total_ai_analyses = await pool.fetchval(
+        "SELECT count(*) FROM chat_messages WHERE question <> '__EXPERT_REPLY__'"
+    )
 
     retention = (wau / mau) if mau else None
     churn = (1 - retention) if retention is not None else None
@@ -391,8 +396,7 @@ async def kpis(admin: dict = Depends(require_admin), pool: asyncpg.Pool = Depend
         churn_rate=round(churn, 4) if churn is not None else None,
         total_feedback=int(total_feedback or 0),
         total_images=int(total_images or 0),
-        # TODO(ClickHouse): AI analyses count lives in analytics OLAP (predictions).
-        total_ai_analyses=0,
+        total_ai_analyses=int(total_ai_analyses or 0),
         total_expert_responses=int(total_expert_responses or 0),
     )
 

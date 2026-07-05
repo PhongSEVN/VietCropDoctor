@@ -15,6 +15,12 @@
       "version": "1.0.0"
     },
     {
+      "type": "datasource",
+      "id": "grafana-clickhouse-datasource",
+      "name": "ClickHouse",
+      "version": "4.0.0"
+    },
+    {
       "type": "panel",
       "id": "barchart",
       "name": "Bar chart",
@@ -118,7 +124,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "sum(rate(http_requests_total[5m])) by (job)",
+          "expr": "sum(rate(http_requests_total[$__rate_interval])) by (job)",
           "legendFormat": "{{ job }}",
           "refId": "A"
         }
@@ -175,7 +181,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "histogram_quantile(0.50, sum(rate(http_request_duration_seconds_bucket[5m])) by (le, job))",
+          "expr": "histogram_quantile(0.50, sum(rate(http_request_duration_seconds_bucket[$__rate_interval])) by (le, job))",
           "legendFormat": "p50 {{ job }}",
           "refId": "A"
         },
@@ -184,7 +190,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[5m])) by (le, job))",
+          "expr": "histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[$__rate_interval])) by (le, job))",
           "legendFormat": "p95 {{ job }}",
           "refId": "B"
         },
@@ -193,7 +199,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "histogram_quantile(0.99, sum(rate(http_request_duration_seconds_bucket[5m])) by (le, job))",
+          "expr": "histogram_quantile(0.99, sum(rate(http_request_duration_seconds_bucket[$__rate_interval])) by (le, job))",
           "legendFormat": "p99 {{ job }}",
           "refId": "C"
         }
@@ -262,7 +268,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "sum(rate(http_requests_total{status=~\"5..\"}[5m])) by (job) / sum(rate(http_requests_total[5m])) by (job)",
+          "expr": "(sum(rate(http_requests_total{status=~\"5..\"}[$__rate_interval])) by (job) or sum(rate(http_requests_total[$__rate_interval])) by (job) * 0) / sum(rate(http_requests_total[$__rate_interval])) by (job)",
           "legendFormat": "{{ job }}",
           "refId": "A"
         }
@@ -279,8 +285,8 @@
         "h": 8
       },
       "datasource": {
-        "type": "prometheus",
-        "uid": "prometheus"
+        "type": "grafana-clickhouse-datasource",
+        "uid": "clickhouse"
       },
       "options": {
         "reduceOptions": {
@@ -326,11 +332,13 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "prometheus"
+            "type": "grafana-clickhouse-datasource",
+            "uid": "clickhouse"
           },
-          "expr": "avg(model_confidence_last)",
-          "legendFormat": "avg confidence",
+          "editorType": "sql",
+          "format": 1,
+          "queryType": "table",
+          "rawSql": "SELECT round(avg(confidence), 4) AS \"avg confidence\" FROM predictions WHERE $__timeFilter(timestamp)",
           "refId": "A"
         }
       ]
@@ -346,8 +354,8 @@
         "h": 9
       },
       "datasource": {
-        "type": "prometheus",
-        "uid": "prometheus"
+        "type": "grafana-clickhouse-datasource",
+        "uid": "clickhouse"
       },
       "options": {
         "orientation": "horizontal",
@@ -398,13 +406,14 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "prometheus"
+            "type": "grafana-clickhouse-datasource",
+            "uid": "clickhouse"
           },
-          "expr": "sort_desc(sum(predictions_total) by (disease))",
-          "legendFormat": "{{ disease }}",
-          "refId": "A",
-          "instant": true
+          "editorType": "sql",
+          "format": 1,
+          "queryType": "table",
+          "rawSql": "SELECT disease, toUInt64(count()) AS \"Số ca\" FROM predictions GROUP BY disease ORDER BY count() DESC LIMIT 15",
+          "refId": "A"
         }
       ]
     },
@@ -459,7 +468,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "histogram_quantile(0.95, sum(rate(rag_latency_seconds_bucket[5m])) by (le, stage))",
+          "expr": "histogram_quantile(0.95, sum(rate(rag_latency_seconds_bucket[$__rate_interval])) by (le, stage))",
           "legendFormat": "p95 {{ stage }}",
           "refId": "A"
         },
@@ -468,7 +477,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "histogram_quantile(0.50, sum(rate(rag_latency_seconds_bucket[5m])) by (le, stage))",
+          "expr": "histogram_quantile(0.50, sum(rate(rag_latency_seconds_bucket[$__rate_interval])) by (le, stage))",
           "legendFormat": "p50 {{ stage }}",
           "refId": "B"
         }

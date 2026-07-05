@@ -538,8 +538,11 @@ services:
       # Allow the admin dashboard to trigger DAGs via REST (basic auth)
       AIRFLOW__API__AUTH_BACKENDS: "airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session"
       AIRFLOW__WEBSERVER__SECRET_KEY: ${AIRFLOW_SECRET_KEY:-vietcropdoctor-local-secret}
-      # etl_images DAG needs minio + kafka-python clients (not in the base image)
-      _PIP_ADDITIONAL_REQUIREMENTS: "minio==7.2.7 kafka-python==2.0.2 Pillow>=10.0.0"
+      # etl_images DAG needs minio + kafka-python clients; retrain_classifier
+      # additionally needs the MLflow tracking client (skinny build is enough)
+      # and clickhouse-connect for the drift check. Training itself (torch) runs
+      # on the host GPU, not in this container.
+      _PIP_ADDITIONAL_REQUIREMENTS: "minio==7.2.7 kafka-python==2.0.2 Pillow>=10.0.0 mlflow-skinny==2.11.0 clickhouse-connect>=0.7.0"
       MLFLOW_TRACKING_URI: ${MLFLOW_TRACKING_URI:-http://mlflow:5000}
       MINIO_ENDPOINT:        ${MINIO_ENDPOINT:-minio:9000}
       MINIO_ROOT_USER:       ${MINIO_ROOT_USER:-minioadmin}
@@ -612,6 +615,8 @@ services:
     depends_on:
       prometheus:
         condition: service_healthy
+      clickhouse:
+        condition: service_healthy
     ports:
       - "3001:3000"
     volumes:
@@ -620,6 +625,13 @@ services:
       - ./infra/monitoring/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards:ro
     environment:
       GF_SECURITY_ADMIN_PASSWORD: ${GF_ADMIN_PASSWORD:-admin}
+      # ClickHouse datasource: business dashboard reads OLAP data (survives service
+      # restarts, unlike in-process Prometheus counters). Creds are consumed by
+      # datasources/clickhouse.yaml via env interpolation.
+      GF_INSTALL_PLUGINS: grafana-clickhouse-datasource
+      CLICKHOUSE_USER:     ${CLICKHOUSE_USER:-admin}
+      CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD:-secret}
+      CLICKHOUSE_DB:       ${CLICKHOUSE_DB:-vietcropdoctor}
       GF_AUTH_ANONYMOUS_ENABLED: "true"
       GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
       # Allow embedding dashboards inside the Admin Console iframe (dev, same host).
