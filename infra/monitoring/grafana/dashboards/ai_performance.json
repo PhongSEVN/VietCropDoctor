@@ -34,6 +34,7 @@
         }
       ],
       "title": "Prediction Latency",
+      "description": "Độ trễ chẩn đoán ảnh: thời gian xử lý một lượt /predict (P50 = trung vị, P95 = 95% request nhanh hơn mức này).",
       "type": "timeseries"
     },
     {
@@ -70,6 +71,7 @@
         }
       ],
       "title": "Vision-AI Request Rate by Status",
+      "description": "Tần suất request theo mã trạng thái: số request /predict mỗi giây, tách theo mã HTTP trả về (2xx thành công, 4xx/5xx lỗi).",
       "type": "timeseries"
     },
     {
@@ -88,6 +90,7 @@
         }
       ],
       "title": "Ensemble Model Prediction Rate",
+      "description": "Tần suất dự đoán từng model trong ensemble: số lượt dự đoán mỗi giây của từng model thành phần (EfficientNet, MobileNetV3, ResNet50, YOLOv11, ViT).",
       "type": "timeseries"
     }
   ],

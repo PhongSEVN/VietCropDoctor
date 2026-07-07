@@ -33,6 +33,7 @@
         }
       ],
       "title": "Qdrant Query Latency",
+      "description": "Độ trễ truy vấn Qdrant (vector DB): thời gian tìm kiếm ngữ nghĩa khi trả lời câu hỏi (P50/P95). Chỉ ghi nhận cho lượt \"Hỏi thêm\" gọi trực tiếp /query — KHÔNG bao gồm bước truy hồi ngữ cảnh mà Orchestrator gọi cho mỗi lần chẩn đoán ảnh (đường retrieve-only), nên số liệu thường rất ít so với lượng truy vấn Qdrant thực tế.",
       "type": "timeseries"
     },
     {
@@ -56,6 +57,7 @@
         }
       ],
       "title": "Ollama Generation Latency",
+      "description": "Độ trễ sinh câu trả lời của Ollama: thời gian LLM (Qwen 2.5) sinh câu trả lời cho lượt \"Hỏi thêm\" trong RAG Engine. Không bao gồm lệnh gọi Ollama riêng của Orchestrator để sinh khuyến nghị điều trị sau mỗi lần chẩn đoán — lệnh gọi đó hiện chưa được đo bằng Prometheus.",
       "type": "timeseries"
     },
     {
@@ -74,6 +76,7 @@
         }
       ],
       "title": "RAG Query Rate (theo cây trồng)",
+      "description": "Tần suất câu hỏi RAG mỗi giây, chia theo loại cây trồng đang được hỏi (lúa, cà phê, mía, ngô).",
       "type": "timeseries"
     },
     {
@@ -92,6 +95,7 @@
         }
       ],
       "title": "Avg Context Documents Retrieved",
+      "description": "Số tài liệu ngữ cảnh trung bình được truy hồi: số đoạn tài liệu (chunk) trung bình mà hệ thống lấy từ Qdrant làm ngữ cảnh cho mỗi câu hỏi, sau khi rerank.",
       "type": "timeseries"
     }
   ],

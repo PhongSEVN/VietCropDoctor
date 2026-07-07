@@ -26,11 +26,25 @@ from passlib.context import CryptContext
 # Configuration
 
 
+def require_env(name: str) -> str:
+    """Read a required secret from the environment; fail fast if missing.
+
+    No hardcoded fallback: every service used to default to the same public
+    string when this var was unset, which meant anyone could forge a valid
+    token simply by not configuring it. Missing config must be a startup
+    crash, not a silent shared secret.
+    """
+    value = os.getenv(name)
+    if not value:
+        raise RuntimeError(f"{name} environment variable must be set — see .env.example")
+    return value
+
+
 class JWTConfig:
-    SECRET_KEY: str = os.getenv("JWT_SECRET", "change-me-in-production-use-64-char-random")
+    SECRET_KEY: str = require_env("JWT_SECRET")
     ALGORITHM: str = "HS256"
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "52560000"))  # 100 years
-    REFRESH_TOKEN_EXPIRE_DAYS: int = int(os.getenv("REFRESH_TOKEN_EXPIRE_DAYS", "36500"))          # 100 years
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "1440"))  # 24h
+    REFRESH_TOKEN_EXPIRE_DAYS: int = int(os.getenv("REFRESH_TOKEN_EXPIRE_DAYS", "30"))         # 30 days
 
 
 _cfg = JWTConfig()

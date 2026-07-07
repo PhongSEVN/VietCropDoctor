@@ -193,7 +193,11 @@ async def _on_feedback_submitted(msg: dict) -> None:
     await _feedback_buf.add(row)
 
     _feedback_seen += 1
-    if _producer and RETRAIN_FEEDBACK_THRESHOLD > 0 and _feedback_seen % RETRAIN_FEEDBACK_THRESHOLD == 0:
+    if (
+        _producer and _producer.connected
+        and RETRAIN_FEEDBACK_THRESHOLD > 0
+        and _feedback_seen % RETRAIN_FEEDBACK_THRESHOLD == 0
+    ):
         try:
             await _producer.publish(
                 topic=TOPIC_RETRAIN_REQUESTED,
@@ -244,19 +248,26 @@ async def _on_retrain_requested(msg: dict) -> None:
 
 # Lifecycle
 
-_consumers:    list[KafkaConsumer]  = []
+_consumers:    list[tuple[str, KafkaConsumer]] = []
 _tasks:        list[asyncio.Task]   = []
+
+
+def kafka_status() -> dict:
+    """Live Kafka connectivity, exposed via /health so a dead producer/consumer
+    is visible to monitoring instead of only surfacing as a WARNING log line."""
+    return {
+        "producer_connected": bool(_producer and _producer.connected),
+        "consumers": {topic: c.connected for topic, c in _consumers},
+    }
 
 
 async def start() -> None:
     global _producer
     # Producer used to emit retrain.requested when the feedback threshold is hit.
-    try:
-        _producer = KafkaProducer(bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS, service="analytics")
-        await _producer.start()
-    except Exception as exc:
-        logger.warning("Failed to start analytics producer (retrain trigger disabled): %s", exc)
-        _producer = None
+    # Connects in the background — self-heals via retry/backoff instead of
+    # giving up forever if Kafka isn't reachable yet at startup.
+    _producer = KafkaProducer(bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS, service="analytics")
+    _tasks.append(asyncio.create_task(_producer.start(), name="kafka-producer-connect"))
 
     topic_map: list[tuple[str, str, Callable[[dict], Awaitable[None]]]] = [
         (TOPIC_DISEASE_DETECTED,  "analytics-disease-group",  _on_disease_detected),
@@ -266,18 +277,15 @@ async def start() -> None:
     ]
 
     for topic, group_id, handler in topic_map:
-        try:
-            consumer = KafkaConsumer(
-                bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS,
-                topics=[topic],
-                group_id=group_id,
-            )
-            consumer.subscribe(handler)
-            _consumers.append(consumer)
-            _tasks.append(asyncio.create_task(consumer.start(), name=f"consumer:{topic}"))
-            logger.info("Consumer started for topic=%s", topic)
-        except Exception as exc:
-            logger.warning("Failed to start consumer for %s: %s", topic, exc)
+        consumer = KafkaConsumer(
+            bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS,
+            topics=[topic],
+            group_id=group_id,
+        )
+        consumer.subscribe(handler)
+        _consumers.append((topic, consumer))
+        _tasks.append(asyncio.create_task(consumer.start(), name=f"consumer:{topic}"))
+        logger.info("Consumer starting for topic=%s", topic)
 
     # Timer flush tasks — one per buffer
     for buf in _ALL_BUFFERS:
@@ -285,6 +293,9 @@ async def start() -> None:
 
 
 async def stop() -> None:
+    for _, consumer in _consumers:
+        await consumer.stop()
+
     for task in _tasks:
         task.cancel()
     await asyncio.gather(*_tasks, return_exceptions=True)

@@ -73,13 +73,12 @@ async def register(body: RegisterRequest, pool: asyncpg.Pool = Depends(get_pool)
     row = await pool.fetchrow(
         """
         INSERT INTO users (username, email, password_hash, role)
-        VALUES ($1, $2, $3, $4)
+        VALUES ($1, $2, $3, 'farmer')
         RETURNING id
         """,
         body.username,
         body.email,
         hash_password(body.password),
-        body.role,
     )
     return RegisterResponse(user_id=str(row["id"]))
 

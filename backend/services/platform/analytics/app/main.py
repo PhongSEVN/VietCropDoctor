@@ -61,7 +61,7 @@ Instrumentator().instrument(app).expose(app, endpoint="/metrics")
 
 @app.get("/health", tags=["system"])
 async def health():
-    return {"status": "ok", "service": "analytics"}
+    return {"status": "ok", "service": "analytics", "kafka": consumer.kafka_status()}
 
 
 if __name__ == "__main__":

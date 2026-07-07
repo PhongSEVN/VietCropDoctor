@@ -4,6 +4,8 @@ Vision-AI service configuration — CV model paths and constants.
 import os
 from pathlib import Path
 
+from vcd_shared.auth import require_env
+
 # Paths are relative to the service root (services/vision-ai/)
 _SERVICE_ROOT = Path(__file__).parent.parent
 
@@ -94,5 +96,5 @@ CORS_ORIGINS = [
     "http://localhost:5173",
 ]
 
-JWT_SECRET    = os.getenv("JWT_SECRET", "change-me-in-production-use-64-char-random")
+JWT_SECRET    = require_env("JWT_SECRET")
 JWT_ALGORITHM = "HS256"

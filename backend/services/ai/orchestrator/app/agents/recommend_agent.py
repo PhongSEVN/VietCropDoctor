@@ -28,8 +28,13 @@ _URGENCY_MAP = {
 
 
 def _extract_list(text: str, marker: str) -> list[str]:
-    """Extract bullet points following a section marker."""
-    pattern = rf"{re.escape(marker)}[:\s]*\n((?:[-•*]\s*.+\n?)+)"
+    """Extract bullet points following a section marker.
+
+    The reasoning prompt asks the LLM for markdown-bold markers
+    (`**Hành động ngay**:`), so the marker itself may be wrapped in `**` —
+    match that optionally rather than requiring the bare marker text.
+    """
+    pattern = rf"\*{{0,2}}\s*{re.escape(marker)}\s*\*{{0,2}}[:\s]*\n((?:[-•*]\s*.+\n?)+)"
     match = re.search(pattern, text, re.IGNORECASE)
     if not match:
         return []
@@ -52,7 +57,7 @@ class RecommendationAgent(BaseAgent):
         preventive = _extract_list(reasoning_output, "Phòng ngừa")
         treatment  = _extract_list(reasoning_output, "Điều trị")
         monitoring = ""
-        m = re.search(r"Theo dõi[:\s]*(.+?)(?:\n|$)", reasoning_output, re.IGNORECASE)
+        m = re.search(r"\*{0,2}\s*Theo dõi\s*\*{0,2}[:\s]*(.+?)(?:\n|$)", reasoning_output, re.IGNORECASE)
         if m:
             monitoring = m.group(1).strip()
 

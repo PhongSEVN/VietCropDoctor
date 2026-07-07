@@ -72,7 +72,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const res = await fetch("/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, email, password, role: "farmer" }),
+      body: JSON.stringify({ username, email, password }),
     });
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));

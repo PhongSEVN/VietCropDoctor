@@ -13,10 +13,6 @@ class Settings(BaseSettings):
     reasoning_temperature: float = 0.2
     reasoning_timeout_seconds: int = 60
 
-    # Auth
-    jwt_secret: str = "change-me-in-production-use-64-char-random"
-    jwt_algorithm: str = "HS256"
-
     log_level: str = "INFO"
 
     model_config = {"env_file": ".env", "extra": "ignore"}

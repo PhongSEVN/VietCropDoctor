@@ -32,6 +32,7 @@
         }
       ],
       "title": "Số chẩn đoán (tổng tích lũy)",
+      "description": "Tổng số lượt chẩn đoán TỪ TRƯỚC ĐẾN NAY, không lọc theo khoảng thời gian đang chọn (cố ý — đây là chỉ số tổng tích lũy, không phải chỉ số theo khoảng).",
       "type": "stat"
     },
     {
@@ -54,6 +55,7 @@
         }
       ],
       "title": "Câu hỏi RAG (tổng tích lũy)",
+      "description": "Tổng số câu hỏi RAG TỪ TRƯỚC ĐẾN NAY, không lọc theo khoảng thời gian đang chọn (cố ý — đây là chỉ số tổng tích lũy, không phải chỉ số theo khoảng).",
       "type": "stat"
     },
     {
@@ -76,6 +78,7 @@
         }
       ],
       "title": "Confidence trung bình (theo khoảng)",
+      "description": "Độ tin cậy trung bình (softmax) của các lượt chẩn đoán TRONG khoảng thời gian đang chọn — số này thay đổi theo khoảng đã chọn. Với khoảng ngắn (1-6 giờ) và ít lượt chẩn đoán, một vài ảnh khó/mờ có thể kéo trung bình lệch mạnh do cỡ mẫu nhỏ; chọn 7-30 ngày để xem xu hướng thật. Lưu ý: hiện đang tính cả những ảnh bị OOD-gate gắn cờ \"không phải lá cây trồng\" — chưa loại trừ khỏi trung bình này.",
       "type": "stat"
     },
     {
@@ -86,6 +89,13 @@
       },
       "gridPos": { "h": 8, "w": 12, "x": 0, "y": 4 },
       "id": 3,
+      "options": {
+        "reduceOptions": { "values": true, "calcs": ["lastNotNull"], "fields": "" },
+        "pieType": "pie",
+        "displayLabels": ["name", "percent"],
+        "legend": { "displayMode": "table", "placement": "right", "values": ["value", "percent"] },
+        "tooltip": { "mode": "single", "sort": "none" }
+      },
       "targets": [
         {
           "datasource": { "type": "grafana-clickhouse-datasource", "uid": "clickhouse" },
@@ -118,6 +128,7 @@
         }
       ],
       "title": "Chẩn đoán theo ngày (phân theo cây trồng)",
+      "description": "Số lượt chẩn đoán mỗi ngày trong khoảng đang chọn, chia theo loại cây trồng. Cần chọn khoảng đủ dài (7-30 ngày) để thấy xu hướng — khoảng ngắn (1-6 giờ) thường chỉ có vài điểm dữ liệu, trông như trống.",
       "type": "timeseries"
     }
   ],

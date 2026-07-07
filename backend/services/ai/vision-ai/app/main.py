@@ -52,6 +52,7 @@ def _user_id_from_token(token: str | None) -> str:
         return ""
 
 _producer: KafkaProducer | None = None
+_producer_task: asyncio.Task | None = None
 
 _MAGIC_BYTES: list[tuple[bytes, str]] = [
     (b"\xff\xd8\xff", "image/jpeg"),
@@ -95,7 +96,7 @@ def validate_and_sanitize_image(contents: bytes) -> bytes:
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    global _producer
+    global _producer, _producer_task
     setup_logging(level="INFO")
     logger.info("=" * 55)
     logger.info("Starting VietCropDoctor Vision-AI")
@@ -104,15 +105,20 @@ async def lifespan(app: FastAPI):
 
     bootstrap = os.getenv("KAFKA_BOOTSTRAP_SERVERS", "kafka:29092")
     _producer = KafkaProducer(bootstrap_servers=bootstrap, service="vision-ai")
-    try:
-        await _producer.start()
-    except Exception:
-        logger.warning("Kafka unavailable — prediction results will not be published")
-        _producer = None
+    # Connect in the background so a slow/unavailable broker never blocks
+    # startup; the producer self-heals (retries with backoff) and predictions
+    # keep working without Kafka in the meantime — see `_producer.connected`.
+    _producer_task = asyncio.create_task(_producer.start(), name="kafka-producer-connect")
 
     logger.info("Vision-AI ready.")
     yield
     logger.info("Vision-AI shutting down.")
+    if _producer_task:
+        _producer_task.cancel()
+        try:
+            await _producer_task
+        except (asyncio.CancelledError, Exception):
+            pass
     if _producer:
         await _producer.stop()
 
@@ -176,7 +182,7 @@ async def predict(
     image_id = str(uuid.uuid4())
     image_path = await upload_image(contents, image_id, result["disease"])
 
-    if _producer:
+    if _producer and _producer.connected:
         try:
             await _producer.publish(
                 topic=TOPIC_DISEASE_DETECTED,
@@ -205,6 +211,7 @@ async def health():
     return HealthResponse(
         status="ok",
         model_loaded=app_state.model_loaded,
+        kafka_connected=bool(_producer and _producer.connected),
     )
 
 

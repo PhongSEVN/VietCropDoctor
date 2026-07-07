@@ -19,13 +19,15 @@ from fastapi import APIRouter, Depends, Header, HTTPException, Query
 from jose import JWTError, jwt
 from pydantic import BaseModel
 
+from vcd_shared.auth import require_env
+
 from app import database as db
 from app import feedback_minio
 
 logger = logging.getLogger("rag_engine.expert")
 router = APIRouter(prefix="/expert", tags=["expert"])
 
-_JWT_SECRET = os.getenv("JWT_SECRET", "change-me-in-production-use-64-char-random")
+_JWT_SECRET = require_env("JWT_SECRET")
 _JWT_ALGORITHM = "HS256"
 _STATUSES = ("pending", "in_progress", "answered")
 _PRIORITIES = ("low", "normal", "high", "urgent")

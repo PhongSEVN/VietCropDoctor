@@ -3,10 +3,14 @@ from pydantic import BaseModel, field_validator, EmailStr
 
 
 class RegisterRequest(BaseModel):
+    """Public self-registration. Always creates a 'farmer' account — there is
+    no client-settable role here on purpose. Granting 'agronomist' or 'admin'
+    goes through the admin-only routes in routes/admin.py (create_user /
+    update_user / expert.add), which are gated by require_admin."""
+
     username: str
     password: str
     email: Optional[str] = None
-    role: str = "farmer"
 
     @field_validator("username")
     @classmethod
@@ -23,13 +27,6 @@ class RegisterRequest(BaseModel):
     def password_strength(cls, v: str) -> str:
         if len(v) < 8:
             raise ValueError("password must be at least 8 characters")
-        return v
-
-    @field_validator("role")
-    @classmethod
-    def role_valid(cls, v: str) -> str:
-        if v not in {"farmer", "agronomist", "admin"}:
-            raise ValueError("role must be farmer, agronomist, or admin")
         return v
 
 

@@ -13,8 +13,6 @@ from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Optional
 
-import os
-
 from fastapi import FastAPI, File, Header, HTTPException, Query, UploadFile, status
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
@@ -23,6 +21,7 @@ from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt
 from prometheus_fastapi_instrumentator import Instrumentator
 
+from vcd_shared.auth import require_env
 from vcd_shared.kafka import (
     TOPIC_CHAT_REQUESTED,
     TOPIC_DISEASE_DETECTED,
@@ -51,7 +50,7 @@ _ALLOWED_UPLOAD_EXTENSIONS = {".txt", ".md", ".pdf", ".json"}
 
 logger = logging.getLogger("rag_engine.main")
 
-_JWT_SECRET    = os.getenv("JWT_SECRET", "change-me-in-production-use-64-char-random")
+_JWT_SECRET    = require_env("JWT_SECRET")
 _JWT_ALGORITHM = "HS256"
 _oauth2 = OAuth2PasswordBearer(tokenUrl="/auth/login", auto_error=False)
 
@@ -68,6 +67,7 @@ def _user_id_from_token(authorization: str | None) -> str:
 
 
 _producer: KafkaProducer | None = None
+_producer_task: asyncio.Task | None = None
 _consumer_task: asyncio.Task | None = None
 
 
@@ -82,7 +82,7 @@ async def _on_disease_detected(message: dict) -> None:
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    global _producer, _consumer_task
+    global _producer, _producer_task, _consumer_task
 
     settings = get_settings()
     setup_logging(level=settings.log_level)
@@ -99,23 +99,16 @@ async def lifespan(app: FastAPI):
     bootstrap = os.getenv("KAFKA_BOOTSTRAP_SERVERS", "kafka:29092")
 
     _producer = KafkaProducer(bootstrap_servers=bootstrap, service="rag-engine")
-    try:
-        await _producer.start()
-    except Exception:
-        logger.warning("Kafka producer unavailable — chat events will not be published")
-        _producer = None
+    # Background connect: self-heals via retry/backoff, never blocks startup.
+    _producer_task = asyncio.create_task(_producer.start(), name="kafka-producer-connect")
 
-    try:
-        consumer = KafkaConsumer(
-            bootstrap_servers=bootstrap,
-            topics=[TOPIC_DISEASE_DETECTED],
-            group_id="rag-engine-group",
-        )
-        consumer.subscribe(_on_disease_detected)
-        _consumer_task = asyncio.create_task(consumer.start())
-    except Exception:
-        logger.warning("Kafka consumer unavailable — disease events will not be consumed")
-        _consumer_task = None
+    consumer = KafkaConsumer(
+        bootstrap_servers=bootstrap,
+        topics=[TOPIC_DISEASE_DETECTED],
+        group_id="rag-engine-group",
+    )
+    consumer.subscribe(_on_disease_detected)
+    _consumer_task = asyncio.create_task(consumer.start(), name="kafka-consumer:disease.detected")
 
     logger.info("RAG Engine ready.")
     yield
@@ -125,7 +118,14 @@ async def lifespan(app: FastAPI):
         _consumer_task.cancel()
         try:
             await _consumer_task
-        except asyncio.CancelledError:
+        except (asyncio.CancelledError, Exception):
+            pass
+
+    if _producer_task:
+        _producer_task.cancel()
+        try:
+            await _producer_task
+        except (asyncio.CancelledError, Exception):
             pass
 
     if _producer:
@@ -169,6 +169,7 @@ async def health():
         vectordb_connected=app_state.vectordb_connected,
         llm_reachable=await rag_service.llm_reachable(),
         vectors_count=app_state.vectors_count,
+        kafka_connected=bool(_producer and _producer.connected),
     )
 
 
@@ -230,7 +231,7 @@ async def query(
             image_url=req.image_url,
         ))
 
-    if _producer:
+    if _producer and _producer.connected:
         try:
             await _producer.publish(
                 topic=TOPIC_CHAT_REQUESTED,
@@ -463,7 +464,7 @@ async def submit_feedback(
     if feedback_id is None:
         raise HTTPException(status_code=503, detail="Could not persist feedback")
 
-    if _producer:
+    if _producer and _producer.connected:
         try:
             await _producer.publish(
                 topic=TOPIC_FEEDBACK_SUBMITTED,

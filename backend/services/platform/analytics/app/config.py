@@ -1,6 +1,8 @@
 import os
 
-JWT_SECRET    = os.getenv("JWT_SECRET", "change-me-in-production-use-64-char-random")
+from vcd_shared.auth import require_env
+
+JWT_SECRET    = require_env("JWT_SECRET")
 JWT_ALGORITHM = "HS256"
 
 KAFKA_BOOTSTRAP_SERVERS = os.getenv("KAFKA_BOOTSTRAP_SERVERS", "kafka:29092")

@@ -122,6 +122,7 @@ class HealthResponse(BaseModel):
     model_loaded: bool = False
     vectordb_connected: bool = False
     llm_reachable: bool = False
+    kafka_connected: bool = False
     vectors_count: int = 0
 
 
