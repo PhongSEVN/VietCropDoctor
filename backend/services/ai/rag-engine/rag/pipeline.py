@@ -10,6 +10,7 @@ that can be unit-tested independently of FastAPI.
 """
 from __future__ import annotations
 
+import asyncio
 import logging
 from dataclasses import dataclass, field
 from typing import Optional
@@ -317,7 +318,9 @@ class RAGPipeline:
         with timed(timer, "retrieve_ms"):
             import time as _time
             t0 = _time.perf_counter()
-            query_vec = self.embedder.embed_query(_ret_q)
+            # to_thread: embedding là CPU-bound (sentence-transformers) — chạy
+            # sync sẽ chặn event loop, treo /health và mọi request khác.
+            query_vec = await asyncio.to_thread(self.embedder.embed_query, _ret_q)
             timer.record("embed_ms", (_time.perf_counter() - t0) * 1000)
 
             candidates = await self.retriever.retrieve(
@@ -329,7 +332,9 @@ class RAGPipeline:
 
         # 2. Rerank — thu pool về reranker_top_k chunk đưa vào LLM.
         with timed(timer, "rerank_ms"):
-            chunks = self.reranker.rerank(question, candidates)
+            # to_thread: cross-encoder chấm 30 cặp trên CPU có thể mất nhiều
+            # giây khi Ollama đang chiếm CPU — không được chặn event loop.
+            chunks = await asyncio.to_thread(self.reranker.rerank, question, candidates)
 
         # 3. Generate
         if not chunks:
@@ -395,7 +400,7 @@ class RAGPipeline:
 
         with timed(timer, "retrieve_ms"):
             t0 = _time.perf_counter()
-            self.embedder.embed_query(_ret_q)
+            await asyncio.to_thread(self.embedder.embed_query, _ret_q)
             timer.record("embed_ms", (_time.perf_counter() - t0) * 1000)
 
             candidates = await self.retriever.retrieve(
@@ -406,7 +411,7 @@ class RAGPipeline:
             )
 
         with timed(timer, "rerank_ms"):
-            chunks = self.reranker.rerank(question, candidates)
+            chunks = await asyncio.to_thread(self.reranker.rerank, question, candidates)
 
         timer.record("llm_ms", 0.0)
         latencies = Latencies(
